@@ -37,7 +37,7 @@ Warning: Permanently added 'git.wpengine.com,' (RSA) to the list of known hosts.
 7. SETTING UP THE .GITIGNORE…
   - download this file  https://wpengine.com/wp-content/uploads/2013/10/recommended-gitignore-no-wp.txt or copy the whole content and paste it to your editor and save it as .gitignore in your root directory, so `wamp/www/firstvote/HERE`
 
-#WARNING before doing this COMMIT/PUSH do this only if your branch is not outdated   
+# WARNING before doing this COMMIT/PUSH do this only if your branch is not outdated   
 8. COMMIT
 ```shell
     $ cd wamp/www/firstvote/
