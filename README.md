@@ -132,7 +132,8 @@ UPDATE wp_blogs SET path = CONCAT('/your-wp-install',path);
 Search for: http://oldsite.com (http://firstvotenc.staging.wpengine.com)
 Replace with: http://localhost/your-wp-install
 ```
-  - that will take time AND you're done.
+  - This will take time.
+  - After it's done replacing, go to main site wp-admin and go to permalinks and click only the save button and check now the sites.
 	
 	
   
