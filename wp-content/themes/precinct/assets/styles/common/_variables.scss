@@ -1,0 +1,223 @@
+// Grid settings
+// -------------------------
+
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+$grid-gutter-width:     20px;
+
+$container-lg:          1260px;
+$container-md:          100%;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     992px;
+
+
+
+// Media queries breakpoints
+$screen-lg-min:         1280px;
+$screen-md-max:         ($screen-lg-min - 1);
+
+// Colors
+// -------------------------
+
+$scarlet-darkest: #7D0B22;
+$scarlet-darker: #85132A;
+$scarlet: #9D0E2B;
+$scarlet-lighter: #B03E55;
+$scarlet-lightest: #EBCFD5;
+
+$fire-darkest: #9F320F;
+$fire-darker: #A73A17;
+$fire: #C73F13;
+$fire-lighter: #D26542;
+$fire-lightest: #F4D9D0;
+
+$ginger-darkest: #B15010;
+$ginger-darker: #B95818;
+$ginger: #DE6515;
+$ginger-lighter: #E48343;
+$ginger-lightest: #F8E0D1;
+
+$gold-darkest: #BD9624;
+$gold-darker: #C59E2C;
+$gold: #EDBC2D;
+$gold-lighter: #F0C957;
+$gold-lightest: #FBF1D5;
+
+$lime-darkest: #93932D;
+$lime-darker: #9B9B35;
+$lime: #B8B839;
+$lime-lighter: #C6C660;
+$lime-lightest: #F1F1D8;
+
+$pear-darkest: #798734;
+$pear-darker: #818F3C;
+$pear: #98A942;
+$pear-lighter: #ACBA67;
+$pear-lightest: #EAEED9;
+
+$jade-darkest: #4E784B;
+$jade-darker: #568053;
+$jade: #62975E;
+$jade-lighter: #81AB7E;
+$jade-lightest: #E0EADF;
+
+$sky-darkest: #44678F;
+$sky-darker: #4C6F97;
+$sky: #5681B3;
+$sky-lighter: #779AC2;
+$sky-lightest: #DDE6F0;
+
+$denim-darkest: #273C68;
+$denim-darker: #2F4470;
+$denim: #314C83;
+$denim-lighter: #5A6F9B;
+$denim-lightest: #D6DBE6;
+
+$navy-darkest: #1C2957;
+$navy-darker: #24315F;
+$navy: #24346D;
+$navy-lighter: #4F5C8A;
+$navy-lightest: #D4D7E2;
+
+$indigo-darkest: #312054;
+$indigo-darker: #39285C;
+$indigo: #3E296A;
+$indigo-lighter: #645387;
+$indigo-lightest: #D9D5E1;
+
+$plum-darkest: #5C1043;
+$plum-darker: #64184B;
+$plum: #731454;
+$plum-lighter: #8F4376;
+$plum-lightest: #E3D0DD;
+
+$white: #ffffff;
+$steel: #DCDFE5;
+$pearl: #C3C6CC;
+$heather: #AAADB3;
+$sterling: #91949A;
+$gray: #777A80;
+$stone: #5D6066;
+$ash: #44474D;
+$raven: #2B2E34;
+$jet: #12151B;
+$black: #000000;
+
+$pearl-60: rgba(195, 198, 204, .6);
+$stone-transparent: rgba(93, 96, 102, 0);
+$stone-60: rgba(93, 96, 102, .6);
+$white-50: rgba(255, 255, 255, .5);
+
+// Set standards
+$brand-primary:         $scarlet-darkest;
+$brand-success:         $navy;
+
+$text-color:            $jet;
+
+$link-color:            $navy;
+$link-hover-color:      $navy-darkest;
+
+// Gradients
+// -------------------------
+
+// Utility mixin from Compass
+@mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
+  $gradient-type: if($orientation == vertical, 0, 1);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+}
+
+@mixin trans-gray-gradient-bottom() {
+  @include filter-gradient($stone-transparent, $stone-60, vertical);
+  background-image: -o-linear-gradient(180deg, $stone-transparent 0%, $stone-60 100%);
+  background-image: -moz-linear-gradient(180deg, $stone-transparent 0%, $stone-60 100%);
+  background-image: -ms-linear-gradient(180deg, $stone-transparent 0%, $stone-60 100%);
+  background-image: linear-gradient(180deg, $stone-transparent 0%, $stone-60 100%);
+}
+
+
+// Typography
+// -------------------------
+
+$font-size-base:          18px;
+
+$font-family-sans-serif:  "Lato", sans-serif;
+$font-family-serif:       "Merriweather", serif;
+
+$font-family-base:      $font-family-sans-serif;
+$headings-font-family:  $font-family-sans-serif;
+
+// Buttons
+// -------------------------
+
+$btn-default-color:     $white;
+$btn-default-bg:        $navy;
+$btn-default-border:    transparent;
+
+$btn-primary-color:     $white;
+$btn-primary-bg:        $scarlet;
+$btn-primary-border:    transparent;
+
+
+// Glyphicons path
+// -------------------------
+$icon-font-path:        "../fonts/";
+
+
+// Navbar
+// -------------------------
+
+$navbar-height:         44px;
+$navbar-margin-bottom:  0;
+$navbar-border-radius:  0;
+$navbar-padding-vertical: 12px;
+$navbar-padding-horizontal: 8px;
+
+$navbar-default-bg:     transparent;
+$navbar-default-color:  $white;
+$navbar-default-border: transparent;
+
+$navbar-default-link-color:         $jet;
+$navbar-default-link-hover-color:   $scarlet;
+$navbar-default-link-active-color:  $scarlet;
+$navbar-default-link-active-bg:     transparent;
+
+
+// Dropdowns
+// -------------------------
+
+$dropdown-bg:                    $pearl;
+$dropdown-border:                transparent;
+$dropdown-fallback-border:       transparent;
+$dropdown-divider-bg:            transparent;
+
+$dropdown-link-color:            $navy-darkest;
+$dropdown-link-hover-color:      $navy-darkest;
+$dropdown-link-hover-bg:         $heather;
+
+$dropdown-link-active-color:     $navy-darkest;
+$dropdown-link-active-bg:        lighten($pearl, 5%);
+
+
+// Thumbnails
+// -------------------------
+
+$thumbnail-padding:       0;
+$thumbnail-border:        none;
+$thumbnail-border-radius: 0;
+
+
+// Alerts
+// -------------------------
+
+$alert-padding:               10px;
+$alert-border-radius:         0px;
+
+$alert-danger-bg:             $scarlet-lightest;
+$alert-danger-text:           $scarlet-darkest;
+$alert-danger-border:         $scarlet;
+
+$alert-warning-bg:            $gold-lightest;
+$alert-warning-text:          $jet;
+$alert-warning-border:        $gold;

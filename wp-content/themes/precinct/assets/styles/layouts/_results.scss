@@ -1,0 +1,294 @@
+.sortable {
+  th {
+    cursor: pointer;
+  }
+}
+
+.results.students {
+  .main {
+    width: 100%;
+  }
+
+  .page-header {
+    background: $steel;
+    padding-bottom: 0;
+  }
+
+  .nav-tabs {
+    a {
+      text-decoration: none;
+      color: $jet;
+
+      &:hover, &:active, &:focus {
+        color: $jet;
+        background: $pearl;
+        border-color: $steel;
+      }
+    }
+
+    .active {
+      a {
+        background: $white;
+      }
+    }
+  }
+
+  .entry-summary {
+    small {
+      color: $raven;
+    }
+  }
+
+  .global-footer {
+    display: block;
+    background: $white;
+  }
+}
+
+.results-affix-container {
+  height: 40px;
+
+  .h3 {
+    margin: 0;
+  }
+}
+
+.result-chart {
+  .highcharts-color-0 {
+    fill: $plum;
+    color: $plum;
+  }
+
+  .republican, ._cmb_party-republican {
+    fill: $scarlet;
+
+    span {
+      color: $scarlet !important;
+    }
+  }
+
+  .democrat, ._cmb_party-democrat {
+    fill: $navy;
+
+    span {
+      color: $navy !important;
+    }
+  }
+
+  .libertarian, .independent, ._cmb_party-libertarian {
+    fill: $gold;
+
+    span {
+      color: $gold-darker !important;
+    }
+  }
+
+  .highcharts-axis-labels.highcharts-xaxis-labels {
+    span {
+      text-align: right !important;
+      left: 10px !important;
+      width: 90px !important;
+      white-space: normal !important;
+    }
+  }
+
+  .highcharts-data-label {
+    span {
+      font-size: 13px !important;
+      padding: 3px 5px;
+      background: $white-50;
+    }
+  }
+
+  .highcharts-title {
+    text-align: center !important;
+  }
+
+  .highcharts-subtitle {
+    // left: 20px !important;
+  }
+
+  .highcharts-halo {
+    display: none;
+  }
+
+  ._cmb_adults_vote-dont-know, ._cmb_party-dont-know, .no-selection {
+    fill: $pearl;
+
+    span {
+      color: $raven !important;
+    }
+  }
+
+  ._cmb_grade-elementary, ._cmb_race-asianpacific-islander {
+    fill: $sterling;
+
+    span {
+      color: $gray !important;
+    }
+  }
+
+  ._cmb_grade-middle, ._cmb_race-black, ._cmb_news-friends-and-family, ._cmb_religious-more-than-once-per-week {
+    fill: $gray;
+
+    span {
+      color: $gray !important;
+    }
+  }
+
+  ._cmb_grade-9, ._cmb_race-hispanic, ._cmb_adults_vote-no, ._cmb_register-no, ._cmb_party-unaffiliated, ._cmb_news-newspapers-and-magazines, ._cmb_religious-weekly {
+    fill: $stone;
+
+    span {
+      color: $stone !important;
+    }
+  }
+
+  ._cmb_grade-10, ._cmb_race-white, ._cmb_adults_vote-yes, ._cmb_register-yes, ._cmb_news-social-media, ._cmb_religious-infrequently {
+    fill: $ash;
+
+    span {
+      color: $ash !important;
+    }
+  }
+
+  ._cmb_grade-11, ._cmb_race-native-american, ._cmb_news-television, ._cmb_religious-never {
+    fill: $raven;
+
+    span {
+      color: $raven !important;
+    }
+  }
+
+  ._cmb_grade-12, ._cmb_race-other {
+    fill: $jet;
+
+    span {
+      color: $jet !important;
+    }
+  }
+
+  ._cmb_gender-male {
+    fill: $sky-lighter;
+
+    span {
+      color: $sky-darker !important;
+    }
+  }
+
+  ._cmb_gender-female {
+    fill: lighten($scarlet-lighter, 15%);
+
+    span {
+      color: $scarlet !important;
+    }
+  }
+}
+
+.table-results {
+  table {
+    overflow: hidden;
+    background: $white;
+  }
+
+  thead {
+    th {
+      text-align: center;
+
+      &.precinct {
+        background: $steel;
+        border-bottom: none;
+        border-top: none;
+      }
+    }
+  }
+
+  th {
+    border-color: $white !important;
+  }
+
+  td {
+    border: 5px solid $white;
+    background: $heather;
+    text-align: center;
+    vertical-align: middle !important;
+    position: relative;
+
+    small {
+      position: absolute;
+      font-weight: normal;
+      top: 3px;
+      right: 3px;
+    }
+
+    &.precinct {
+      border-color: $steel;
+    }
+
+    &.winner {
+      background: $plum-darker;
+    }
+
+    &.statewide {
+      background: $steel;
+
+      &.winner {
+        background: $plum;
+      }
+    }
+  }
+
+  .total {
+    th, td {
+      background: $white;
+      border: none;
+      // border-top: 5px solid $white;
+
+      &.precinct {
+        background: $steel;
+      }
+    }
+  }
+
+  .winner {
+    color: $white;
+    font-weight: bold;
+    // border-width: 1px;
+    // border-color: $white !important;
+
+    small {
+      color: $white !important;
+    }
+  }
+
+  .republican {
+    &.winner {
+      background: $scarlet-darker;
+
+      &.statewide {
+        background: $scarlet;
+      }
+    }
+  }
+
+  .democrat {
+    &.winner {
+      background: $navy-darker;
+
+      &.statewide {
+        background: $navy;
+      }
+    }
+  }
+
+  .libertarian, .independent {
+    &.winner {
+      background: $gold-darker;
+
+      &.statewide {
+        background: $gold;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,38 @@
+.btn.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &.menu-item {
+    margin-left: 15px;
+    padding: 0;
+    background: $navy-lighter;
+
+    @media (max-width: $screen-sm-max) {
+      max-width: 200px;
+    }
+
+    a {
+      color: $white;
+    }
+
+    a:hover, a:focus, a:active {
+      color: $white;
+      background: $navy-darker !important;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.btn-gray {
+    background-color: $stone;
+    color: $white;
+
+    &:hover, &:focus, &:active {
+      background-color: $gray;
+      color: $white;
+    }
+  }
+}
