@@ -72,7 +72,7 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 ## HOW TO SETUP/RUN THE WP FILES IN YOUR LOCALHOST
 1. WP FILES
   - copy the content of your wp-config-sample to wp-config
-  - put your DB Details
+  - Open your phpmyadmin and create your DB AND put your DB Details in wp-config file
   - Then Enable MultiSite 
 ```shell 
 define('MULTISITE', true);
