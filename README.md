@@ -86,7 +86,7 @@ define('BLOG_ID_CURRENT_SITE', 1);
 ```shell  
 # MultiSite
 RewriteEngine On
-RewriteBase /subfolder-from-localhost/
+RewriteBase /your-wp-install/
 RewriteRule ^index\.php$ - [L]
 
 # add a trailing slash to /wp-admin
