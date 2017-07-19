@@ -2,10 +2,12 @@ Steps:
 
 Before doing this steps make sure you have a COMPOSER installed.
 
-#[WPENGINE](https://wpengine.com/git/)
+#WPENGINE GIT
+[GIT LINK](https://wpengine.com/git/)
+
 1. Create a ssh key if you don`t have. This key will be link to wpengine and your github account
   - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ - create key
-  - If your having an issue abou the this command `eval $(ssh-agent -s)` then use the bash command or type
+  - If your having an issue about the this command `eval $(ssh-agent -s)` then use the bash command or type
 ```shell
   $ bash 
   $ `eval $(ssh-agent -s)
@@ -65,3 +67,80 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 	`$ git pull staging master` - staging
 	`$ git pull production master` - production
 	
+	
+#HOW TO SETUP it in your LOCALHOST
+*WP FILES
+  - copy the content of your wp-config-sample to wp-config
+  - put your DB Details
+  - Then Enable MultiSite 
+```shell 
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false); // true or false depending if the paths for each multisite is pointed by a subdomain.
+define('DOMAIN_CURRENT_SITE', 'localhost'); // localhost is the DOMAIN of the new location, so even if the ABS_PATH is localhost/whatever, you should have localhost here.
+define('PATH_CURRENT_SITE', '/your-wp-install/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+```
+  - Save your wp-config file and open your htaccess and copy this
+```shell  
+# MultiSite
+RewriteEngine On
+RewriteBase /subfolder-from-localhost/
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . index.php [L]
+```
+  - Save your htaccess and you're done with wp files  
+
+*DB
+  - Your DB/SQL dump is located at wp-content
+  - Open your phpmyadmin and create a new DB
+  - IMPORTANT BEFORE IMPORTING, go to your my.ini or MYSQL.ini and find this `[mysqld]` add this below
+```shell
+performance_schema=ON
+show_compatibility_56 = ON
+```
+  - AND Go to your APACHE and open the httpd.conf and find this text `AllowOverride` and change `None to All`
+  - THEN Restart your SERVER
+  - Import your DB now.
+
+#TIME to EDIT/UPDATE the details
+  - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-name (no trailing slash)`
+  - here's the tricky part. In wp_blogs change all `domain` value to `localhost`. Well if you have 100+ data, then you need to query and update it via this command
+```shell	
+UPDATE wp_blogs SET domain = localhost;
+```
+  - "path" for every entry for each subsite to /your-wp-name/old-data/ (must have trailing slash)
+```shell	
+UPDATE wp_blogs SET path = CONCAT('/your-wp-name',path); - 
+```
+  - concat means to combine the static data of your localhost wp url name and old data value. Sample result is `/firstvote/nc-209/`
+  - In table wp_site: change "domain" to "localhost", and "path" to /your-wp-name/ (must have trailing slash)
+  - In table wp_sitemeta: change "siteurl" to full path ie `http://localhost/your-wp-name/` (must have trailing slash)
+  - In this scenario should atleast have access to your page, if you still get redirection loop or white screen of death, double check the database changes. Now login to wp-login
+  - Install this plugin https://wordpress.org/plugins/better-search-replace/
+```shell
+Search for: http://oldsite.com (http://firstvotenc.staging.wpengine.com)
+Replace with: http://localhost/your-wp-name
+```
+  - that will take time AND you're done.
+	
+	
+  
+#GITHUB REPO
+
+1. https://github.com/Quillor/firstVoteNC
+  - Clone/Download and put it in your localhost directory, mine is c
+2. Since the repo is clean, you need to copy all the files except for the wp-config of firstvote wp files in `wamp/www/firstvote/`
+3. COMMIT/PUSH
+  - All we need to do is just copy and paste the files from staging repo of wpengine which is located in your other folder like mine in `wamp/www/firstvote/`
+  - Then add all files, commit and push to your github repo.
+ 
