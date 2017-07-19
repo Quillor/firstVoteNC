@@ -69,7 +69,7 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 	-`$ git pull production master` - production
 	
 	
-## HOW TO SETUP it in your LOCALHOST
+## HOW TO SETUP/RUN THE WP FILES IN YOUR LOCALHOST
 1. WP FILES
   - copy the content of your wp-config-sample to wp-config
   - put your DB Details
