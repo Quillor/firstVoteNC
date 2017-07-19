@@ -1,8 +1,8 @@
-#Steps:
+# Steps:
 
 Before doing this steps make sure you have a COMPOSER installed.
 
-##WPENGINE GIT
+## WPENGINE GIT
 [GIT LINK](https://wpengine.com/git/)
 
 1. Create a ssh key if you don`t have. This key will be link to wpengine and your github account
@@ -68,7 +68,7 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 	-`$ git pull production master` - production
 	
 	
-##HOW TO SETUP it in your LOCALHOST
+## HOW TO SETUP it in your LOCALHOST
 1. WP FILES
   - copy the content of your wp-config-sample to wp-config
   - put your DB Details
@@ -135,7 +135,7 @@ Replace with: http://localhost/your-wp-name
 	
 	
   
-##GITHUB REPO
+## GITHUB REPO
 
 1. https://github.com/Quillor/firstVoteNC
   - Clone/Download and put it in your localhost directory, mine is c
