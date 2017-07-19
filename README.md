@@ -114,23 +114,23 @@ show_compatibility_56 = ON
   - Import your DB now.
 
 #TIME to EDIT/UPDATE the details
-  - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-name (no trailing slash)`
+  - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-install (no trailing slash)`
   - here's the tricky part. In wp_blogs change all `domain` value to `localhost`. Well if you have 100+ data, then you need to query and update it via this command
 ```shell	
 UPDATE wp_blogs SET domain = localhost;
 ```
-  - "path" for every entry for each subsite to /your-wp-name/old-data/ (must have trailing slash)
+  - "path" for every entry for each subsite to /your-wp-install/old-data/ (must have trailing slash)
 ```shell	
-UPDATE wp_blogs SET path = CONCAT('/your-wp-name',path); - 
+UPDATE wp_blogs SET path = CONCAT('/your-wp-install',path); 
 ```
-  - concat means to combine the static data of your localhost wp url name and old data value. Sample result is `/firstvote/nc-209/`
-  - In table wp_site: change "domain" to "localhost", and "path" to /your-wp-name/ (must have trailing slash)
-  - In table wp_sitemeta: change "siteurl" to full path ie `http://localhost/your-wp-name/` (must have trailing slash)
+  - concat means to combine the static data of your localhost wp url install and old data value. Sample result is `/firstvote/nc-209/`
+  - In table wp_site: change "domain" to "localhost", and "path" to /your-wp-install/ (must have trailing slash)
+  - In table wp_sitemeta: change "siteurl" to full path ie `http://localhost/your-wp-install/` (must have trailing slash)
   - In this scenario should atleast have access to your page, if you still get redirection loop or white screen of death, double check the database changes. Now login to wp-login
   - Install this plugin https://wordpress.org/plugins/better-search-replace/
 ```shell
 Search for: http://oldsite.com (http://firstvotenc.staging.wpengine.com)
-Replace with: http://localhost/your-wp-name
+Replace with: http://localhost/your-wp-install
 ```
   - that will take time AND you're done.
 	
