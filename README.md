@@ -64,12 +64,12 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 12. DEPLOY to production is the same conception of the staging, you only need to replace those staging word.
 
 13. TO PULL
-	`$ git pull staging master` - staging
-	`$ git pull production master` - production
+	-`$ git pull staging master` - staging
+	-`$ git pull production master` - production
 	
 	
 #HOW TO SETUP it in your LOCALHOST
-*WP FILES
+1. WP FILES
   - copy the content of your wp-config-sample to wp-config
   - put your DB Details
   - Then Enable MultiSite 
@@ -100,7 +100,7 @@ RewriteRule . index.php [L]
 ```
   - Save your htaccess and you're done with wp files  
 
-*DB
+2. DB
   - Your DB/SQL dump is located at wp-content
   - Open your phpmyadmin and create a new DB
   - IMPORTANT BEFORE IMPORTING, go to your my.ini or MYSQL.ini and find this `[mysqld]` add this below
