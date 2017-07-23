@@ -1,0 +1,126 @@
+.page-header {
+  margin-top: 0;
+  background: $steel;
+  border-bottom: 0;
+
+  .entry-title {
+    small {
+      float: right;
+      font-weight: 300;
+      color: $text-color;
+      font-size: 16px;
+    }
+  }
+
+  &.photo-overlay {
+    position: relative;
+    margin-bottom: 2em;
+    background-position: center;
+    background-size: cover;
+    height: 139px;
+    z-index: 0;
+
+    .article-title-overlay {
+      position: absolute;
+      padding-bottom: .5em;
+      color: $navy-darkest;
+      text-shadow: $white 0 0 1em;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      text-align: center;
+
+      h1 {
+        border-bottom: none;
+        font-weight: bold;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      // @include trans-gray-gradient-bottom;
+      background: $pearl-60;
+      z-index: 1;
+    }
+
+    &:after {
+      // @include trans-teal-dark-slant;
+      transform: scale3d(1.5, 1.5, 1);
+      right: -50%;
+      opacity: .75;
+      z-index: 2;
+    }
+
+    &:hover {
+      &:after {
+        transform: none;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      height: 262px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      .entry-title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .single-post:not(.hero-image-full) &, .date & {
+    position: relative;
+    border: none;
+    margin: 0 0 50px;
+    padding: 0;
+    height: 50px;
+    overflow: hidden;
+    display: block;
+
+    &:after {
+      content: '';
+      position: absolute;
+      // @include trans-teal-dark-slant;
+      transform: scale3d(1.5, 1.5, 1);
+      top: 0;
+      right: -50%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .single-post & {
+    display: none;
+  }
+}
+
+body.students {
+  background-image: url('../images/banner-flag.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .banner {
+    background: $white;
+  }
+
+  .page-header {
+    background: none;
+  }
+
+  .precinct .col-centered {
+    background: $white;
+    padding-top: 1em;
+    padding-bottom: 5em;
+  }
+
+  .global-footer {
+    display: none;
+  }
+}

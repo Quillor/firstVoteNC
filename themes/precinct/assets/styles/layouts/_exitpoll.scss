@@ -1,0 +1,142 @@
+.single.exit-poll {
+
+  .global-footer {
+    display: none;
+  }
+
+  &, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .wrap {
+    background: $steel;
+    padding-bottom: 10em;
+  }
+
+  .main {
+    background: $white;
+    box-shadow: 0 0 5px 0 $stone;
+    margin-top: 2em;
+    padding-top: 40px;
+  }
+
+  .hentry {
+    @include make-row();
+  }
+
+  .entry-summary {
+    @include make-sm-column(8);
+    @include make-md-column(8);
+    float: none !important;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin: 1em 0;
+  }
+
+  .cmb2-wrap {
+    margin-bottom: 2em;
+  }
+
+  .cmb2-metabox {
+    column-count: 1;
+  }
+
+  .cmb-row {
+    padding-top: 1em;
+    border-top: 1px solid $pearl;
+    margin-bottom: 1em;
+
+    &.error {
+      background: $scarlet-lightest;
+    }
+  }
+
+  label {
+    margin: 0;
+    padding: 0;
+
+    &:after {
+      display: none !important;
+    }
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  input, select {
+    font-size: 16px;
+  }
+
+  legend {
+    color: #222222;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1.3;
+    vertical-align: top;
+    border-bottom: 0;
+    margin: 0;
+  }
+
+  .cmb-th, .cmb-td {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .cmb2_select, .cmb2-text-small {
+    width: 100%;
+  }
+
+  .cmb2-metabox-description {
+    padding: 0;
+    line-height: 1;
+  }
+
+  .cmb-multicheck-toggle {
+    @extend .btn;
+    @extend .btn-sm;
+    background: $steel;
+
+    &:hover, &:active, &:focus {
+      background: $pearl;
+      color: $text-color;
+    }
+  }
+
+  .cmb2-radio-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: inherit;
+      line-height: inherit;
+      margin: 0;
+    }
+
+    input {
+      float: left;
+      margin-top: 9px;
+    }
+
+    label {
+      display: block;
+      padding-left: 25px;
+      font-weight: normal;
+    }
+  }
+
+  .button-primary {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-primary;
+    position: absolute;
+    left: calc(50% - 30px);
+    bottom: -6em;
+    transform: translate3d(-50%, 0, 0);
+    cursor: pointer;
+  }
+}

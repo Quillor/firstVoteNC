@@ -1,0 +1,15 @@
+.global-footer {
+  background-image: url('../images/footer.jpg');
+  background-size: cover;
+  padding: 30px 0 25px;
+  margin-top: 3em;
+
+  a {
+    color: $jet;
+    text-decoration: underline;
+
+    &:hover {
+      color: $navy;
+    }
+  }
+}

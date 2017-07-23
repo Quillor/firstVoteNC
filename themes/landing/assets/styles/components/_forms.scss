@@ -1,0 +1,19 @@
+.caldera-grid.caldera-grid {
+  .form-control {
+    background: lighten($steel, 8%);
+    border: 1px solid $pearl;
+
+    &:focus {
+      background: $white;
+    }
+  }
+
+  .btn-default {
+    @extend .btn-primary;
+    @extend .btn-lg;
+  }
+
+  .alert-success {
+    @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+  }
+}

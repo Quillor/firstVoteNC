@@ -1,0 +1,272 @@
+html {
+  font-weight: 400;
+}
+
+p {
+  word-wrap: break-word;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 16px;
+  }
+}
+
+.main {
+  p, ul, ol {
+    font-size: 18px;
+    line-height: 1.88em;
+    margin-bottom: 1.88em;
+  }
+}
+
+a {
+  transition: all .3s;
+  text-decoration: underline;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin: 1em 0 .5em;
+  font-weight: normal;
+}
+
+h1, .h1 {
+  font-family: $font-family-serif;
+  font-size: 48px;
+
+  + h2, .h2 {
+    margin-top: 0;
+  }
+}
+
+h2, .h2 {
+  white-space: normal;
+
+  @include respondto(sm) {
+    font-size: 34px;
+  }
+
+  @include respondto(md,lg) {
+    font-size: 36px;
+  }
+}
+
+h3, .h3 {
+  font-weight: 700;
+
+  @include respondto(sm) {
+    font-size: 26px;
+  }
+
+  @include respondto(md,lg) {
+    font-size: 28px;
+  }
+}
+
+h4, .h4 {
+}
+
+h5, .h5 {
+  font-family: $font-family-serif;
+}
+
+h6, .h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.meta, .attr, .byline, .entry-meta.entry-meta {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4em;
+  margin: 0 0 1.5em;
+
+  a {
+    // color: $gray;
+  }
+}
+
+.caption {
+  font-size: 15px;
+  line-height: 1.593em;
+  background: none;
+  // color: $gray-light;
+  font-family: $font-family-sans-serif;
+}
+
+.intro {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.54em;
+  margin: 0 0 1.5em;
+}
+
+blockquote, .blockquote {
+  margin: 0 0 1.88em;
+  padding: 0;
+  border: none;
+  font-size: 18px;
+
+  p {
+    font-family: $font-family-sans-serif;
+    padding: 10px 20px;
+    // border-left: 20px solid $gray-lightest;
+    // background: lighten($gray-lightest, 9%);
+    margin: 0;
+
+    @include respondto(xs) {
+      border-left-width: 10px;
+      padding: 10px 10px;
+    }
+
+    @media (min-width: 893px) {
+      margin-left: -7.35%;
+      margin-right: -7.35%;
+    }
+
+    .mce-content-body &, .wp-embed & {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    &[style*=left], &[style*=right], &[style*=center] {
+      font-family: $font-family-serif;
+      font-size: $font-size-h3;
+      background: none;
+      padding: 0;
+      border-left: 0;
+    }
+
+    &[style*=left], &[style*=right] {
+      position: relative;
+      margin: 0 0 1.25rem;
+
+      &:before {
+        content: attr(data-before);
+        position: absolute;
+        top: -22px;
+        left: -24px;
+        z-index: -1;
+        // color: $gray-lightest;
+        font-size: 144px;
+        line-height: 1em;
+      }
+
+      @media (min-width: 545px) {
+        width: 50%;
+      }
+    }
+
+    &[style*=left] {
+      float: left;
+      margin-right: 1.25rem;
+
+      @media (min-width: 893px) {
+        margin-left: -7.35%;
+      }
+
+      @include respondto(xs) {
+        margin-left: 1.25rem;
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      .mce-content-body & {
+        margin-left: 0 !important;
+      }
+    }
+
+    &[style*=right] {
+      float: right;
+      text-align: left !important;
+      margin-left: 1.25rem;
+
+      @media (min-width: 893px) {
+        margin-right: -7.35%;
+      }
+
+      @include respondto(xs) {
+        margin-right: 1.25rem;
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      .mce-content-body & {
+        margin-right: 0 !important;
+      }
+    }
+
+    &[style*=center] {
+      color: $scarlet;
+      margin: 2.5rem 0;
+
+      @media (min-width: 893px) {
+        margin: 4rem -7.35%;
+      }
+
+      @include respondto(xs) {
+        font-size: 22px;
+        text-align: left !important;
+        margin: 0 0 10px 0;
+      }
+
+      .single-flash-cards &, .mce-content-body & {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  &:before {
+    display: none;
+  }
+
+  cite {
+    font-style: italic;
+  }
+}
+
+sup.footnote {
+  a:before {
+    content: '\005B';
+  }
+
+  a:after {
+    content: '\005D';
+  }
+}
+
+.big {
+  font-size: 1.25em;
+  line-height: 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.small, small {
+  font-size: 80%;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.normal-style {
+  font-style: normal !important;
+}
+
+pre {
+  margin-top: 10px;
+}
+
+.tight.tight {
+  li {
+    margin: 0;
+  }
+}
+
+.entry-content {
+  > :first-child {
+    margin-top: 0;
+  }
+}

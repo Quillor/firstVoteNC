@@ -1,0 +1,302 @@
+.single.ballot {
+  .sample-ballot {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    top: 10px;
+    text-transform: uppercase;
+    color: $scarlet;
+    font-size: 3em;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .global-footer {
+    display: none;
+  }
+
+  &, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .wrap {
+    background: $steel;
+    padding-bottom: 10em;
+
+    .container {
+      background: $white;
+      box-shadow: 0 0 5px 0 $stone;
+      margin-top: 2em;
+      position: relative;
+      padding: 0 20px 0 50px;
+
+      @include respondto(sm,md,lg,xl) {
+        padding: 0 40px 0 100px;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 13px;
+        top: 120px;
+        bottom: 80px;
+        width: 25px;
+        background-color: $white;
+        background-image: linear-gradient(transparent 50%, $black 50%);
+        background-size: 25px 40px;
+
+        @include respondto(sm,md,lg,xl) {
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  [class*="cross"] {
+    position: absolute;
+    top: 30px;
+  }
+
+  .cross-left {
+    left: -30px;
+
+    @include respondto(sm,md,lg,xl) {
+      left: -60px;
+    }
+  }
+
+  .cross-right {
+    right: 0px;
+  }
+
+  .cmb2-metabox {
+    border: 1px solid $black;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+
+    @include respondto(sm) {
+      column-gap: 1px;
+      column-rule: 1px solid $black;
+      column-count: 2;
+    }
+
+    @include respondto(md,lg,xl) {
+      column-gap: 1px;
+      column-rule: 1px solid $black;
+      column-count: 3;
+    }
+
+    & > .cmb-row {
+      break-inside: avoid-column;
+      padding-bottom: 2em;
+    }
+  }
+
+  .ballot-head {
+    font-weight: bold;
+    line-height: 1.2em;
+    padding: 15px 0;
+
+    @include respondto(xs) {
+      padding: 15px 20px 15px 0;
+    }
+
+    .h2 {
+      margin: 0;
+      font-weight: bold;
+
+      @include respondto(sm,md,lg,xl) {
+        padding-top: 25px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  .ballot-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ballot-footer {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 30px;
+    border: 1px solid $black;
+  }
+
+  .ballot-wrap-head {
+    position: relative;
+  }
+
+  .ballot-wrap-head, .ballot-footer {
+    border: 1px solid $black;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 60px;
+      height: 25px;
+      background: $black;
+      top: 0;
+      left: -71px;
+
+      @include respondto(sm,md,lg,xl) {
+        left: -81px;
+      }
+    }
+
+    div[class*="col"] {
+      &:not(:last-child), &:only-child {
+        border-right: 1px solid $black;
+      }
+    }
+  }
+
+  .ballot-inst {
+    border-left: 1px solid $black;
+    border-right: 1px solid $black;
+
+    h6 {
+      font-size: $font-size-base;
+    }
+
+    ol {
+      list-style: upper-alpha;
+      padding-left: 1.25em;
+
+      @include respondto(xs,sm) {
+        margin-bottom: 1em;
+      }
+
+      li {
+        padding-left: 1.25em;
+        line-height: 1.2em;
+      }
+    }
+
+    .example {
+      display: block;
+      margin: 0 0 1em 2.5em;
+
+      @include respondto(md,lg,xl) {
+        margin: 2em 0 0 0;
+      }
+    }
+  }
+
+  .cmb-form {
+    @extend .row;
+  }
+
+  .cmb-row {
+    border-bottom: 1px solid $black;
+    padding-bottom: 15px;
+
+    &.error {
+      background: $scarlet-lightest;
+    }
+
+    ul {
+      list-style: none;
+      margin: 15px 0;
+      padding-left: 0;
+    }
+
+    li {
+      font-size: $font-size-base;
+      position: relative;
+      overflow: visible;
+      margin-bottom: .75em;
+      line-height: 1em;
+
+      .cmb2-option {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px; margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      .small {
+        font-weight: normal;
+      }
+
+      label {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        padding-left: 80px;
+
+        input + span:before {
+          content: '';
+          position: absolute;
+          left: 20px;
+          display: block;
+          height: 20px;
+          width: 40px;
+          vertical-align: -0.25em;
+          border-radius: 40px / 20px;
+          border: 1px solid $black;
+          transition: 0.5s ease all;
+          cursor: pointer;
+        }
+
+        input:checked + span:before {
+          background: $black;
+        }
+      }
+    }
+  }
+
+  .section-head {
+    background: $black;
+    color: $white;
+    text-align: center;
+    font-size: $font-size-base;
+    padding: 8px;
+    margin: 0;
+  }
+
+  .contest-head {
+    background: $steel;
+    text-align: center;
+    padding: 15px 8px;
+    border-bottom: 1px solid $black;
+
+    legend, h3, p {
+      margin: 0;
+      font-size: $font-size-base;
+      border-bottom: none;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  .issue-question {
+    padding: 10px;
+  }
+
+  .button-primary {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-primary;
+    position: absolute;
+    left: calc(50% - 30px);
+    bottom: -4em;
+    transform: translate3d(-50%, 0, 0);
+    cursor: pointer;
+  }
+
+  .sample .button-primary {
+    display: none;
+  }
+}
