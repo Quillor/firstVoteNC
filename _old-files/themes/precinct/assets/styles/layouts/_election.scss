@@ -1,0 +1,183 @@
+.edit-election {
+  .main {
+    width: 100%;
+  }
+
+  .cmb-form {
+    input.button-primary {
+      @extend .btn;
+      @extend .btn-default;
+      float: right;
+    }
+  }
+
+  .cmb2-metabox {
+    @include respondto(sm) {
+      column-count: 2;
+    }
+
+    @include respondto(md,lg,xl) {
+      column-count: 3;
+    }
+
+    & > .cmb-row {
+      break-inside: avoid-column;
+      padding-bottom: 2em;
+    }
+
+    label {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    input, select {
+      font-size: 16px;
+    }
+
+    .cmb-th, .cmb-td {
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .cmb2_select, .cmb2-text-small {
+      width: 100%;
+    }
+
+    .cmb2-metabox-description {
+      padding: 0;
+      line-height: 1;
+    }
+
+    .cmb-multicheck-toggle {
+      @extend .btn;
+      @extend .btn-sm;
+      background: $steel;
+
+      &:hover, &:active, &:focus {
+        background: $pearl;
+        color: $text-color;
+      }
+    }
+
+    .cmb2-checkbox-list, .cmb2-radio-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+      }
+
+      input {
+        float: left;
+        margin-top: 9px;
+        width: inherit !important;
+      }
+
+      label {
+        display: block;
+        padding-left: 25px;
+        font-weight: normal;
+      }
+    }
+
+    .cmb-repeat {
+      .cmb-group-description {
+        border-bottom: none;
+        margin: 0;
+      }
+
+      .cmb-repeatable-grouping {
+        border: none;
+        border-left: 2px solid $steel;
+        padding: 0;
+
+        & > button.cmb-remove-group-row {
+          display: none;
+        }
+
+        .inside {
+          .cmb-td {
+            width: 100%;
+            float: none;
+
+            input, textarea {
+              width: 100%;
+            }
+          }
+
+          .cmb-row {
+            border-bottom: 0;
+            padding: 10px;
+            margin: 0;
+          }
+        }
+      }
+
+      .cmb-group-title {
+        margin: 0;
+        background: $steel;
+        font-size: 16px;
+        padding-left: 10px;
+      }
+
+      .cmb-group-name {
+        margin: 0;
+        font-size: $font-size-base;
+        font-weight: bold;
+      }
+
+      .cmb2-metabox-description {
+        font-weight: normal;
+        margin: 0;
+        padding: 0 !important;
+      }
+
+      .cmb-add-row {
+        text-align: right;
+      }
+
+      .cmb-add-group-row {
+        @extend .btn;
+        @extend .btn-sm;
+        background: $stone;
+        color: $white;
+
+        &:hover, &:active, &:focus {
+          background: $ash;
+        }
+      }
+
+      .cmb-remove-row {
+        .cmb-shift-rows {
+          margin: 0;
+        }
+
+        button.cmb-remove-group-row {
+          margin: 0;
+          @extend .btn;
+          @extend .btn-sm;
+          background: $steel;
+
+          &:not(:disabled) {
+            &:hover, &:active, &:focus {
+              background: $pearl;
+              color: $text-color;
+            }
+          }
+
+          &:disabled {
+            color: $ash;
+          }
+        }
+      }
+    }
+  }
+}

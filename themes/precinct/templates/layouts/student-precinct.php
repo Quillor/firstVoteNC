@@ -55,7 +55,7 @@
           if ($voting_start <= $now && $now <= $voting_end) {
             // Is it between 7:30am and 7:30pm?
             $open = clone $today;
-            $open->setTime(00, 30, 00);
+            $open->setTime(07, 30, 00);
             $close = clone $today;
             $close->setTime(24, 30, 00);
 

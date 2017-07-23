@@ -27,6 +27,12 @@ wp-content/mu-plugins/slt-force-strong-passwords.php
 wp-content/mu-plugins/limit-login-attempts
 wp-content/mu-plugins/wpengine-common
 wp-content/mysql.sql
+object-cache.php
+mu-plugins/mu-plugin.php
+mu-plugins/slt-force-strong-passwords.php
+mu-plugins/limit-login-attempts
+mu-plugins/wpengine-common
+mysql.sql
 
 # wp core (as of 3.4.1)
 /db-config.php

@@ -1,0 +1,92 @@
+.banner {
+  padding: 10px;
+}
+
+.navbar-header {
+  position: relative;
+  z-index: 5;
+}
+
+.navbar-brand {
+  width: 289px;
+  padding: 0;
+  height: auto;
+  overflow: hidden;
+
+  @media (max-width: 1125px) {
+    width: 240px;
+  }
+}
+
+.navbar {
+  padding-top: 19px;
+
+  a {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: $font-family-sans-serif;
+    color: $jet;
+    cursor: pointer;
+
+    @media (min-width: $screen-md-min) {
+      .caret {
+        display: none;
+      }
+    }
+  }
+
+  .navbar-nav > li {
+    a {
+      background: none !important;
+
+      &:hover, &:active {
+        color: $scarlet;
+      }
+
+      @media (max-width: 1125px) {
+        font-size: 16x;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+
+    &.active:not(.btn) > a {
+      color: $navy;
+    }
+  }
+}
+
+.navbar-toggle {
+  margin-top: 22px;
+}
+
+.dropdown {
+  ul.dropdown-menu {
+    text-transform: none;
+    width: 230px;
+    left: 0;
+    right: auto;
+    border-radius: 0;
+
+    & > li > a {
+      white-space: normal;
+      font-size: 16px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+  }
+
+  &:hover {
+    & > a {
+      // color: $teal !important;
+    }
+
+    @media (min-width: $screen-md-min) {
+      & > ul.dropdown-menu {
+        display: block;
+        margin-top: -1px;
+      }
+    }
+  }
+}

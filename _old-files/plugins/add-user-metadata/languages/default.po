@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Add User Metadata\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/export-users-to-csv\n"
+"POT-Creation-Date: 2013-12-11 10:13+0100\n"
+"PO-Revision-Date: 2013-12-11 10:13+0100\n"
+"Last-Translator: Ray <studio@quintalinda.com>\n"
+"Language-Team: Q Studio <team@qstudio.us>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.1\n"
+"X-Poedit-KeywordsList: _;_e;_n;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../add-user-metadata.php:117 ../add-user-metadata.php:246
+msgid "Add Metadata"
+msgstr ""
+
+#: ../add-user-metadata.php:132
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../add-user-metadata.php:139
+msgid "Add User Metadata"
+msgstr ""
+
+#: ../add-user-metadata.php:144
+msgid "Opps! Something went wrong..."
+msgstr ""
+
+#: ../add-user-metadata.php:151
+msgid "Debug Info:"
+msgstr ""
+
+#: ../add-user-metadata.php:164
+msgid "Posted Settings:"
+msgstr ""
+
+#: ../add-user-metadata.php:188
+msgid "Usermeta Key"
+msgstr ""
+
+#: ../add-user-metadata.php:195
+msgid "add_user_meta()"
+msgstr ""
+
+#: ../add-user-metadata.php:202
+msgid "Comma Seperated Values"
+msgstr ""
+
+#: ../add-user-metadata.php:209 ../add-user-metadata.php:584
+msgid "Example Data"
+msgstr ""
+
+#: ../add-user-metadata.php:219
+msgid "Unique Keys"
+msgstr ""
+
+#: ../add-user-metadata.php:224
+msgid ""
+"Nothing will be added if a matching key with value already exists for each "
+"user."
+msgstr ""
+
+#: ../add-user-metadata.php:232
+msgid "Debug Output"
+msgstr ""
+
+#: ../add-user-metadata.php:237
+msgid "Fill the screen with geeky debug info after running :)"
+msgstr ""
+
+#: ../add-user-metadata.php:290
+msgid "Metadata Key Empty!"
+msgstr ""
+
+#: ../add-user-metadata.php:316
+msgid "Metadata Values Empty!"
+msgstr ""
+
+#: ../add-user-metadata.php:360
+#, php-format
+msgid "%s This user does not exist, so I'm skipping this one."
+msgstr ""
+
+#: ../add-user-metadata.php:393
+#, php-format
+msgid "%s Key %s existed, but was empty - so I updated the value to %s"
+msgstr ""
+
+#: ../add-user-metadata.php:411
+#, php-format
+msgid "%s Key %s already has the value %s - skipping"
+msgstr ""
+
+#: ../add-user-metadata.php:430
+#, php-format
+msgid "%s Added the key %s with the value %s"
+msgstr ""
+
+#: ../add-user-metadata.php:459
+#, php-format
+msgid "Processed %d Metadata Entries."
+msgstr ""
+
+#: ../add-user-metadata.php:469
+msgid "Add Metadata Failed!"
+msgstr ""
+
+#: ../add-user-metadata.php:516
+msgid "Hide"
+msgstr ""
