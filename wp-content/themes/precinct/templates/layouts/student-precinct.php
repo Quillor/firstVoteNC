@@ -6,7 +6,8 @@
         // Get upcoming election
         $election = new WP_Query([
           'posts_per_page' => 1,  // Just get most recent. But in the future we'll need to change the election dates to be stored with timestamps so we can query them
-          'post_type' => 'election'
+          'post_type' => 'election',
+		  'order' => 'ASC' // latest
         ]);
 
         if ($election->have_posts()) : while ($election->have_posts()) : $election->the_post();

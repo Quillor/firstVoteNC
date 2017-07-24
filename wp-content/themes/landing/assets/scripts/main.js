@@ -65,6 +65,7 @@
             url: countAjax.ajaxurl,
             data: {
               action: 'do-count',
+			  masterelection:$('#election-option').val(),
               countNonce: countAjax.ajaxNonce,
               start: start
             },
@@ -76,7 +77,7 @@
                 doCount(response.start);
               } else {
                 // All done!
-                $('#script-progress').append('All done! <a href="/2016-general-election-results">Now see the results!</a>');
+                $('#script-progress').append('All done! <a href="/general-election-results">Now see the results!</a>');
                 $('#btn-close').show();
               }
             },

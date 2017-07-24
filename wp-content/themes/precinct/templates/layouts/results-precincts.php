@@ -1,7 +1,12 @@
 <?php
 
 $uploads = network_site_url('wp-content/uploads');
-$results = json_decode(file_get_contents($uploads . '/election_results.json'), true);
+
+$election = $_GET['election-option'];	
+$election_name = str_replace(' ', '_', $election);
+$election_name = strtolower($election_name);
+
+$results = json_decode(file_get_contents($uploads . '/election_results_'.$election_name.'.json'), true);
 $blog_ids = array_column($results, 'blog_id');
 $blog_ids_unique = array_unique($blog_ids);
 
@@ -10,7 +15,7 @@ $sites = array();
 foreach ($blog_ids_unique as $blog_id) {
   $details = get_blog_details($blog_id);
   switch_to_blog($blog_id);
-    $q = new WP_Query(['posts_per_page' => 1, 'post_type' => 'election']);
+    $q = new WP_Query(['posts_per_page' => 1, 'post_type' => 'election', 'post_title_like' => get_the_title()]);
     if($q->have_posts()): while($q->have_posts()): $q->the_post();
       if ($details->blogname !== 'North Carolina') {
         $sanitized = sanitize_title($details->blogname);

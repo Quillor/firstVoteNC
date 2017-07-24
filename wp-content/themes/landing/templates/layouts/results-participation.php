@@ -15,9 +15,13 @@
 
 include(locate_template('/lib/fields-exit-poll.php'));
 
+$election = $_GET['election-option'];
+$election_name = str_replace(' ', '_', $election);
+$election_name = strtolower($election_name);
+
 $uploads = wp_upload_dir();
-$results = json_decode(file_get_contents($uploads['basedir'] . '/election_results.json'), true);
-$contests = json_decode(file_get_contents($uploads['basedir'] . '/election_contests.json'), true);
+$results = json_decode(file_get_contents($uploads['basedir'] . '/election_results_'.$election_name.'.json'), true);
+$contests = json_decode(file_get_contents($uploads['basedir'] . '/election_contests_'.$election_name.'.json'), true);
 
 $total = count($results) - count(array_keys(array_column($results, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
 
