@@ -3,8 +3,15 @@ add_action('wp_ajax_nopriv_do-count', 'do_count' );
 add_action('wp_ajax_do-count', 'do_count');
 
 function do_count() {
+  $data_verify = false;	
 
   $nonce = $_POST['countNonce'];
+  
+  $masterelection = $_POST['masterelection'];
+  
+  $election_name = str_replace(' ', '_', $masterelection);
+  $election_name = strtolower($election_name);
+
 
   // check to see if the submitted nonce matches with the
   // generated nonce we created earlier
@@ -16,49 +23,71 @@ function do_count() {
 
   $elections = new WP_Query([
     'post_type' => 'election',
-    'posts_per_page' => 1,
+    'posts_per_page' => -1,
+	'post_title_like' => $masterelection,
     'fields' => 'ids'
   ]);
   $election = $elections->posts;
   $election_id = $election[0];
   $precinct_contests = '';
   
-  		include(locate_template('/lib/fields-statewide-races.php'));
-		include(locate_template('/lib/fields-exit-poll.php'));
-        include(locate_template('/lib/fields-ballot-init.php'));
-		
-  if ( get_option( $precinct_contests ) !== false ) {
-
-		// The option already exists, so we just update it.
-		//update_option( $precinct_contests, $new_value );
-		//$precinct_contests = json_decode(get_option('precinct_contests'), true);
-		// DO NOTHING
-		
-	} else {
-		// The option hasn't been added yet. We'll add it with $autoload set to 'no'.
-
-		json_decode(precinct_contests($ballot_data, $included_races, $custom, $issues), true);
-		add_option( 'precinct_contests', '' );
-	}
   
+  $wp_ballot = new WP_Query(['posts_per_page' => -1, 'post_type' => 'ballot',
+	'meta_query'  => array(
+            array(
+                'key' => '_cmb_election_id',
+                'value' => $election_id
+            )
+        )
+	]);
+	
+    if($wp_ballot->have_posts()){
+		$data_verify = true;
+	} 
+	wp_reset_postdata();
+	
+		  
+	if($data_verify == true){
+				include(locate_template('/lib/fields-statewide-races.php'));
+				include(locate_template('/lib/fields-exit-poll.php'));
+				include(locate_template('/lib/fields-ballot-init.php'));
+				
+		  if ( get_option( $precinct_contests ) !== false ) {
 
-  $precinct_contests = json_decode(get_option('precinct_contests'), true);
-  include(locate_template('/lib/fields-exit-poll.php'));
-  $election_results = array();
+				// The option already exists, so we just update it.
+				//update_option( $precinct_contests, $new_value );
+				//$precinct_contests = json_decode(get_option('precinct_contests'), true);
+				// DO NOTHING
+				
+			} else {
+				// The option hasn't been added yet. We'll add it with $autoload set to 'no'.
 
-  $election_results = precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, $election_results);
+				json_decode(precinct_contests($ballot_data, $included_races, $custom, $issues), true);
+				add_option( 'precinct_contests', '' );
+			}
+		  
 
-  $uploads = wp_upload_dir();
+		  $precinct_contests = json_decode(get_option('precinct_contests'), true);
+		  include(locate_template('/lib/fields-exit-poll.php'));
+		  $election_results = array();
 
-  file_put_contents(
-    $uploads['basedir'] . '/precinct_results.json',
-    json_encode($election_results)
-  );
+		  $election_results = precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, $election_results);
 
-  header('Content-Type: application/json');
-  echo json_encode($election_results);
- 
-  exit;
+		  $uploads = wp_upload_dir();
+
+		  file_put_contents(
+			$uploads['basedir'] . '/precinct_results_'. $election_name.'.json',
+			json_encode($election_results)
+		  );
+
+		  header('Content-Type: application/json');
+		  echo json_encode($election_results);
+		 
+		  exit;
+	}else{
+		update_option('precinct_contests', "{}");
+		exit;
+	}
 }
 
 // Function to count votes
@@ -293,4 +322,12 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
   update_option('precinct_contests', json_encode($precinct_contests));
 
   return $precinct_contests;
+}
+add_filter( 'posts_where', 'title_like_posts_where', 10, 2 );
+function title_like_posts_where( $where, &$wp_query ) {
+    global $wpdb;
+    if ( $post_title_like = $wp_query->get( 'post_title_like' ) ) {
+        $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'' . esc_sql( $wpdb->esc_like( $post_title_like ) ) . '%\'';
+    }
+    return $where;
 }

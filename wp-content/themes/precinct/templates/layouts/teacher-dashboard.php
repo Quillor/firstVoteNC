@@ -4,6 +4,8 @@
       <div class="col-md-6">
 
         <?php
+		$ctr=1;
+		
         $election = new WP_Query([
           'post_type' => 'election',
           'posts_per_page' => -1
@@ -21,7 +23,9 @@
           <tbody>
 
           <?php if ($election->have_posts()) : while ($election->have_posts()): $election->the_post();
-
+				
+				$election_name = str_replace(' ', '_', get_the_title());
+				$election_name = strtolower($election_name);
               /**
                * When election is live
                *
@@ -29,12 +33,15 @@
                *
                */
 
-            if ( current_user_can( 'editor' ) ) { ?>
-
+            if ( current_user_can( 'editor' ) ) { 
+				$data_url = get_the_permalink() . "?results=genera&election-option=".get_the_title();
+			?>
+				
               <tr>
                 <th scope="row">
                   <a href="<?php the_permalink(); ?>?edit"><?php the_title(); ?></a><br />
-                  <span class="small"><a href="<?php the_permalink(); ?>?edit">Edit</a> | <a href="<?php the_permalink(); ?>?preview">Preview Ballot</a> | <a href="<?php the_permalink(); ?>?results=general">Results</a></span>
+                  <span class="small"><a href="<?php the_permalink(); ?>?edit">Edit</a> | <a href="<?php the_permalink(); ?>?preview">Preview Ballot</a> | 
+					 <a href="#"  onclick="return theFunction('<?php echo $data_url;?>', '<?php echo get_the_title() ;?>');">Results</a></span>
                 </th>
                 <td>
                   <?php echo date('m/d/Y', strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true))); ?> |
@@ -56,8 +63,10 @@
                 </td>
               </tr>
 
-            <?php }
-          endwhile; else: ?>
+			
+			<?php   }
+			$ctr++;
+			endwhile; else: ?>
 
             <tr>
               <td colspan="2">
@@ -73,16 +82,65 @@
             </tr>
 
           <?php endif; wp_reset_postdata(); ?>
+		  
+            <?php
+			
+			if($ctr>=1){ ?> 
+			 <tr>
+              <td colspan="2">
+                <div class="well well-sm">
+                  <p><em>You have already a simulation elections have been created for your precinct.</em></p>
+
+                  <?php if ( current_user_can( 'editor' ) ) { ?>
+                    <a class="btn btn-default" href="?add">Add More Simulation Election</a>
+                  <?php } ?>
+
+                </div>
+              </td>
+            </tr>
+			<?php   } ?>
           </tbody>
         </table>
 
 
+		<script type="text/javascript">
+			function theFunction (url, election) {
+				jQuery('#election-option').val(election);
+				jQuery('#data_url').val(url);
+				jQuery('#count-votes').click();
+				//console.log(election);
+				//console.log(url);
+			}
+		</script>
+		
         <?php if (is_super_admin()) { ?>
-          <p class="text-center extra-padding">
-            <button type="button" class="btn btn-primary btn-lg" id="count-votes" data-toggle="modal" data-target="#tally-modal" data-backdrop="static" data-keyboard="false">Count Votes!</button>
+          <p class="text-center extra-padding" style="visibility:hidden;">
+			  <label style="display:initial;"> Select Election to be count.<br/>
+				<select id="election-option" style="height: 45px;" >
+				<option>Select</option>
+				<?php
+								$q = new WP_Query([
+								  'posts_per_page' => -1,
+								  'post_type' => 'election'
+								]);
+								if($q->have_posts()){
+									while($q->have_posts()){
+										$q->the_post(); ?>
+											<option value="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></option>
+															
+										<?php
+									}
+								}
+								 wp_reset_query();
+
+				?>
+					</select>	
+				</label>
+			<input type="hidden" name="data_url" id="data_url"/>
+            <button type="button" class="btn btn-primary btn-lg" id="count-votes" data-toggle="modal" data-target="#tally-modal" data-backdrop="static" data-keyboard="false">ReCount Votes!</button>
           </p>
 
-          <div class="modal fade" id="tally-modal" tabindex="-1" role="dialog">
+          <div class="modal fade" id="tally-modal" tabindex="-1" role="dialog" style="visibility:hidden;opacity:0;">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">

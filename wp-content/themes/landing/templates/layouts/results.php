@@ -12,22 +12,25 @@
 </script>
 
 <?php
+$election = $_GET['election-option'];
+$election_name = str_replace(' ', '_', $election);
+$election_name = strtolower($election_name);
+
 $uploads = wp_upload_dir();
-$results = json_decode(file_get_contents($uploads['basedir'] . '/election_results.json'), true);
-$contests = json_decode(file_get_contents($uploads['basedir'] . '/election_contests.json'), true);
+$results = json_decode(file_get_contents($uploads['basedir'] . '/election_results_'.$election_name.'.json'), true);
+$contests = json_decode(file_get_contents($uploads['basedir'] . '/election_contests_'.$election_name.'.json'), true);
 
 $type = $_GET['results'];
 
-// echo '<pre>';
-// print_r($results);
-// echo '</pre>';
+ //echo '<pre>';
+ //print_r($results);
+ //echo '</pre>';
 
 $races = array_keys($results[0]);
 
 foreach ($races as $race) {
   if (substr($race, 0, 11) == '_cmb_ballot') {
     $data = array_column($results, $race);
-
     // Total number of ballots cast
     $total = count($data) - count(array_keys($data, NULL));
 

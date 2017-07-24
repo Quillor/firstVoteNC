@@ -8,19 +8,24 @@ include(locate_template('/lib/fields-exit-poll.php'));
 // Which race?
 $type = $_GET['results'];
 $race = $_GET['contest'];
+
+$election = $_GET['election-option'];	
+$election_name = str_replace(' ', '_', $election);
+$election_name = strtolower($election_name);
+
 $contests = json_decode(get_option('precinct_contests'), true);
 $match = Extras\array_find_deep($contests, $race);
 
 // Results
 $uploads = wp_upload_dir();
 $uploads_global = network_site_url('wp-content/uploads');
-$results_json = wp_remote_get($uploads['baseurl'] . '/precinct_results.json');
+$results_json = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
 if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
-  $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results.json');
+  $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
   $results_json = $results_file['body'];
 }
 $results = json_decode($results_json, true);
-$statewide = json_decode(file_get_contents($uploads_global . '/election_results.json'), true);
+$statewide = json_decode(file_get_contents($uploads_global . '/election_results_'.$election_name.'.json'), true);
 
 $races = array_keys($results[0]);
 $races_statewide = array_keys($statewide[0]);

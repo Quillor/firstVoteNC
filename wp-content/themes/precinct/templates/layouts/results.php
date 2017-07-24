@@ -1,9 +1,15 @@
 <?php
-
 use Roots\Sage\Extras;
 use Roots\Sage\Titles;
 
+$election_name = $_GET['election-option'];	
+
+
+
 $type = $_GET['results'];
+	
+$election_name = str_replace(' ', '_', $election_name);
+$election_name = strtolower($election_name);	
 
 if (isset($_GET['contest'])) {
   get_template_part('templates/layouts/results', 'contest');
@@ -33,11 +39,11 @@ if (isset($_GET['contest'])) {
   $uploads = wp_upload_dir();
   $uploads_global = network_site_url('wp-content/uploads');
   if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
-    $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results.json');
+    $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
     $results_json = $results_file['body'];
   }
   $results = json_decode($results_json, true);
-  $statewide = json_decode(file_get_contents($uploads_global . '/election_results.json'), true);
+  $statewide = json_decode(file_get_contents($uploads_global . '/election_results_'.$election_name.'.json'), true);
 
   
   if($contests == null || $contests == ''){
