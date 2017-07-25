@@ -13,17 +13,38 @@
 
 <?php
 include(locate_template('/lib/fields-exit-poll.php'));
+error_reporting(0);
+$masterelection = $_GET['election-option'];	
 
-$contests = json_decode(get_option('precinct_contests'), true);
+  $wp_results = new WP_Query([
+    'post_type' => 'election',
+    'posts_per_page' => 1,
+	'post_title_like' => $masterelection,
+    'fields' => 'ids'
+  ]);
+$wp_result = $wp_results->posts;
+//echo $wp_result[0];
+wp_reset_postdata();
 
-$election = $_GET['election-option'];	
-$election_name = str_replace(' ', '_', $election);
+  $votes_contests = new WP_Query([
+    'post_type' => 'votes_contest',
+    'posts_per_page' => 1,
+	'post_title_like' => $wp_result[0]
+  ]);
+
+$votes_contest = $votes_contests->posts; 
+
+//$contests = json_decode(get_option('precinct_contests'), true);
+$contests = json_decode($votes_contest[0]->post_excerpt, true);
+
+$election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);
 
 
 $uploads = wp_upload_dir();
 $uploads_global = network_site_url('wp-content/uploads');
 $results_json = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
+/*
 if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
   $results_file = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
   $results_json = $results_file['body'];
@@ -32,17 +53,15 @@ if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
 //echo "not";
 }
 $results = json_decode($results_json, true);
+*/
+$results = json_decode($votes_contest[0]->post_content, true);
 $statewide = json_decode(file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json'), true);
 //print_r($results);
 
 $total = count($results);
 $total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
-/*
-if($contests == null || $contests == ''){
-	echo "No results yet";  
-}
-else{ */
-	if(true){
+
+
 ?>
 
 
@@ -92,12 +111,23 @@ foreach ($ep_fields as $ep_field) {
     $tally_state = count(array_keys($ep_data_state, $ep_key));
 
     // Precinct count
-    $count[] = array(
-      'id' => $ep_key,
-      'name' => addslashes($ep_option),
-      'count' => $tally,
-      'percent' => round(($tally / $ep_total) * 100, 2)
-    );
+	if($total == 0){
+		$count[] = array(
+		  'id' => $ep_key,
+		  'name' => addslashes($ep_option),
+		  'count' => $tally,
+		  'percent' => 0
+		);
+		
+	}else{
+		$count[] = array(
+		  'id' => $ep_key,
+		  'name' => addslashes($ep_option),
+		  'count' => $tally,
+		  'percent' => round(($tally / $ep_total) * 100, 2)
+		);
+	}
+   
 
     // Statewide count
     $count_state[] = array(
@@ -203,5 +233,4 @@ foreach ($ep_fields as $ep_field) {
     });
   </script>
   <?php
-}
 }

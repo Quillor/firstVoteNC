@@ -34,7 +34,7 @@
                */
 
             if ( current_user_can( 'editor' ) ) { 
-				$data_url = get_the_permalink() . "?results=genera&election-option=".get_the_title();
+				$data_url = get_the_permalink() . "?results=general&election-option=".get_the_title();
 			?>
 				
               <tr>

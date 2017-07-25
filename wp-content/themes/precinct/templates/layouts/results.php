@@ -1,7 +1,7 @@
 <?php
 use Roots\Sage\Extras;
 use Roots\Sage\Titles;
-
+error_reporting(0);
 $masterelection = $_GET['election-option'];	
 
   $wp_results = new WP_Query([
@@ -75,7 +75,7 @@ if (isset($_GET['contest'])) {
 
   
   if( ($contests == null || $contests == '') || ($results[0] == null || $results[0] == '') ){
-	echo '<h2 class="text-center">No results yet Or Please recount the VOTE in the main page.</h2>';  
+	echo '<h2 class="text-center">No results  Or Please recount the VOTE in the main page.</h2>';  
   }
   else{
 // echo '<pre>';
