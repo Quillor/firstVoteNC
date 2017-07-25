@@ -23,7 +23,7 @@
           <tbody>
 
           <?php if ($election->have_posts()) : while ($election->have_posts()): $election->the_post();
-				
+				//echo get_the_id()
 				$election_name = str_replace(' ', '_', get_the_title());
 				$election_name = strtolower($election_name);
               /**
@@ -34,14 +34,21 @@
                */
 
             if ( current_user_can( 'editor' ) ) { 
-				$data_url = get_the_permalink() . "?results=genera&election-option=".get_the_title();
+				$data_url = get_the_permalink() . "?results=general&election-option=".get_the_title();
 			?>
 				
               <tr>
                 <th scope="row">
                   <a href="<?php the_permalink(); ?>?edit"><?php the_title(); ?></a><br />
                   <span class="small"><a href="<?php the_permalink(); ?>?edit">Edit</a> | <a href="<?php the_permalink(); ?>?preview">Preview Ballot</a> | 
-					 <a href="#"  onclick="return theFunction('<?php echo $data_url;?>', '<?php echo get_the_title() ;?>');">Results</a></span>
+					<a href="#"  onclick="return theFunction('<?php echo $data_url;?>', '<?php echo get_the_title() ;?>');">Results</a></span>
+				  	<!--		  
+					<?php //if (is_super_admin()) { ?>
+					 <a href="#"  onclick="return theFunction('<?php// echo $data_url;?>', '<?php //echo get_the_title() ;?>');">Results</a></span>
+					<?php //} else { ?>
+						<a href="<?php// echo $data_url; ?>" >Results</a></span>					
+					<?php// } ?>
+					-->
                 </th>
                 <td>
                   <?php echo date('m/d/Y', strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true))); ?> |
@@ -89,7 +96,7 @@
 			 <tr>
               <td colspan="2">
                 <div class="well well-sm">
-                  <p><em>You have already a simulation elections have been created for your precinct.</em></p>
+                  <p><em>You have already a simulation elections in your precinct.</em></p>
 
                   <?php if ( current_user_can( 'editor' ) ) { ?>
                     <a class="btn btn-default" href="?add">Add More Simulation Election</a>

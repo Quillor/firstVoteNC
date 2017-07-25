@@ -3,9 +3,10 @@
     <div class="row extra-bottom-margin">
       <div class="col-md-7 col-centered">
         <?php
+		$vote_off= true;
         // Get upcoming election
         $election = new WP_Query([
-          'posts_per_page' => 1,  // Just get most recent. But in the future we'll need to change the election dates to be stored with timestamps so we can query them
+          'posts_per_page' => 2,  // Just get most recent 2 post. But in the future we'll need to change the election dates to be stored with timestamps so we can query them
           'post_type' => 'election',
 		  'order' => 'ASC' // latest
         ]);
@@ -56,7 +57,7 @@
           if ($voting_start <= $now && $now <= $voting_end) {
             // Is it between 7:30am and 7:30pm?
             $open = clone $today;
-            $open->setTime(00, 30, 00);
+            $open->setTime(07, 30, 00);
             $close = clone $today;
             $close->setTime(24, 30, 00);
 
@@ -68,8 +69,13 @@
           } else {
             $canvote = false;
           }
+		  
+			if ($canvote === false) { 
+			//do nothing
+            } else{
+				$vote_off = false;
           ?>
-
+			
           <h2><?php the_title(); ?></h2>
           <p>
             <strong>Early voting:</strong>
@@ -79,17 +85,22 @@
           <p><strong>Election day:</strong> <?php echo date('F j, Y', $voting_end); ?></p>
           <p><strong>Poll hours:</strong> 7:30am - 7:30pm</p>
 
-          <p><a class="btn btn-default" href="<?php the_permalink(); ?>">
-            <?php
+          <p><a class="btn btn-default" href="<?php the_permalink(); ?>"> Vote now!
+            <?php/*
             if ($canvote === false) {
               echo 'View sample ballot';
             } else {
               echo 'Vote now!';
-            } ?>
+            } */?>
           </a></p>
 
           <?php
+			}
         endwhile; endif; wp_reset_postdata();
+				if($vote_off==true){?>             
+					<h2 class="text-center">Voting is still closed at this hour.</h2>
+			<?php }
+		
         ?>
       </div>
     </div>

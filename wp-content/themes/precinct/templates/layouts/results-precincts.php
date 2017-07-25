@@ -6,7 +6,7 @@ $election = $_GET['election-option'];
 $election_name = str_replace(' ', '_', $election);
 $election_name = strtolower($election_name);
 
-$results = json_decode(file_get_contents($uploads . '/election_results_'.$election_name.'.json'), true);
+$results = json_decode(file_get_contents($uploads . '/elections/election_results_'.$election_name.'.json'), true);
 $blog_ids = array_column($results, 'blog_id');
 $blog_ids_unique = array_unique($blog_ids);
 
