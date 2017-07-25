@@ -77,7 +77,7 @@
                 doCount(response.start);
               } else {
                 // All done!
-                $('#script-progress').append('All done! <a href="/general-election-results">Now see the results!</a>');
+                $('#script-progress').append('<div id="done-msg">All done! <a href="/general-election-results">Now see the results!</a></div>');
                 $('#btn-close').show();
               }
             },
@@ -91,6 +91,16 @@
         $('#count-votes').on('click', function() {
           // Start counting at 0
           doCount(0);
+        });  // Count votes when button is clicked
+        $('#btn-close').on('click', function() {
+          // Start counting at 0
+          //doCount(0);
+		  $('#progress-bar span').text('0%');
+		  $('#progress-bar').css('width', '0%').attr('aria-valuenow', 0)
+              .attr('aria-valuemin', 0)
+              .attr('aria-valuemax', 100);
+				$('#done-msg').remove();
+				$('#btn-close').hide();
         });
 
       }

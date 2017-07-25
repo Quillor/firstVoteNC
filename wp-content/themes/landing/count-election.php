@@ -34,9 +34,18 @@
                   'post_type' => 'election',
 				  'post_title_like' => $election
                 ]);
+
+				
                 if($q->have_posts()){
                     while($q->have_posts()){
+						
+						//print_r($q);
+						
+						
                         $q->the_post();
+						
+						//echo get_the_ID();
+						//exit;
                         ?>
                         <tr>
                           <td><?php echo $i; ?></td>
@@ -55,7 +64,13 @@
                             <?php
                             $n = new WP_Query([
                               'post_type' => 'ballot',
-                              'posts_per_page' => -1
+                              'posts_per_page' => -1,
+							  'meta_query' => [
+								[
+								  'key' => '_cmb_election_id',
+								  'value' => get_the_ID()
+								]
+							  ]
                             ]);
                             echo $n->found_posts;
                             ?>

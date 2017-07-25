@@ -2,13 +2,35 @@
 use Roots\Sage\Extras;
 use Roots\Sage\Titles;
 
-$election_name = $_GET['election-option'];	
+$masterelection = $_GET['election-option'];	
 
+  $wp_results = new WP_Query([
+    'post_type' => 'election',
+    'posts_per_page' => 1,
+	'post_title_like' => $masterelection,
+    'fields' => 'ids'
+  ]);
+$wp_result = $wp_results->posts;
+//echo $wp_result[0];
+wp_reset_postdata();
 
+  $votes_contests = new WP_Query([
+    'post_type' => 'votes_contest',
+    'posts_per_page' => 1,
+	'post_title_like' => $wp_result[0]
+  ]);
+
+$votes_contest = $votes_contests->posts; 
+/*
+echo $votes_contest[0]->ID;
+echo $votes_contest[0]->post_title;
+echo $votes_contest[0]->post_content;
+echo $votes_contest[0]->post_excerpt;
+*/
 
 $type = $_GET['results'];
 	
-$election_name = str_replace(' ', '_', $election_name);
+$election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);	
 
 if (isset($_GET['contest'])) {
@@ -34,20 +56,26 @@ if (isset($_GET['contest'])) {
   </script>
 
   <?php
-  $contests = json_decode(get_option('precinct_contests'), true);
+  //$contests = json_decode(get_option('precinct_contests'), true);
+  $contests = json_decode($votes_contest[0]->post_excerpt, true);
 
+ 
   $uploads = wp_upload_dir();
   $uploads_global = network_site_url('wp-content/uploads');
+   /*
   if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
-    $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
+    $results_file = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
     $results_json = $results_file['body'];
   }
   $results = json_decode($results_json, true);
-  $statewide = json_decode(file_get_contents($uploads_global . '/election_results_'.$election_name.'.json'), true);
+  */
+  
+  $results = json_decode($votes_contest[0]->post_content, true);
+  $statewide = json_decode(file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json'), true);
 
   
-  if($contests == null || $contests == ''){
-	echo "No results yet";  
+  if( ($contests == null || $contests == '') || ($results[0] == null || $results[0] == '') ){
+	echo '<h2 class="text-center">No results yet Or Please recount the VOTE in the main page.</h2>';  
   }
   else{
 // echo '<pre>';
@@ -56,6 +84,7 @@ if (isset($_GET['contest'])) {
  //print_r($results );
 // // print_r(array_keys($results[150]));
 // echo '</pre>';
+
 
   $races = array_keys($results[0]);
   $races_statewide = array_keys($statewide[0]);
@@ -122,12 +151,23 @@ if (isset($_GET['contest'])) {
           $tally_state = count(array_keys($data_state, $candidate['name']));
 
           // Precinct count
-          $count[] = array(
-            'name' => $candidate['name'],
-            'party' => $candidate['party'],
-            'count' => $tally,
-            'percent' => round(($tally / $total) * 100, 2)
-          );
+		  if($total == 0){
+			  $count[] = array(
+				'name' => $candidate['name'],
+				'party' => $candidate['party'],
+				'count' => $tally,
+				'percent' => 0
+			  );
+		  }else{
+			 $count[] = array(
+				'name' => $candidate['name'],
+				'party' => $candidate['party'],
+				'count' => $tally,
+				'percent' => round(($tally / $total) * 100, 2)
+			  ); 
+		  }
+		  
+          
 
           if ($type !== 'local' && in_array($race, $races_statewide)) {
             // Statewide count
@@ -166,12 +206,27 @@ if (isset($_GET['contest'])) {
         // Total number of 'no selection' votes
         $tally_none = count(array_keys($data, 'none'));
         $tally_none_state = count(array_keys($data_state, 'none'));
-        $count[] = array(
-          'name' => 'No Selection',
-          'party' => 'no-selection',
-          'count' => $tally_none,
-          'percent' => round(($tally_none / $total) * 100, 2)
-        );
+		
+		     // Precinct count
+		  if($total == 0){
+			$count[] = array(
+				'name' => 'No Selection',
+				'party' => 'no-selection',
+				'count' => $tally_none,
+				'percent' => 0
+			);
+		  }else{
+				$count[] = array(
+				  'name' => 'No Selection',
+				  'party' => 'no-selection',
+				  'count' => $tally_none,
+				  'percent' => round(($tally_none / $total) * 100, 2)
+				);
+		  }
+		
+		
+
+		
 		 if($tally_none_state == 0 && $total_state == 0){
 				// do nothing
 			  $count_state[] = array(

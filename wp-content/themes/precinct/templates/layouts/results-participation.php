@@ -23,21 +23,26 @@ $election_name = strtolower($election_name);
 
 $uploads = wp_upload_dir();
 $uploads_global = network_site_url('wp-content/uploads');
-$results_json = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
+$results_json = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
 if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
-  $results_file = wp_remote_get($uploads['baseurl'] . '/precinct_results_'.$election_name.'.json');
+  $results_file = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
   $results_json = $results_file['body'];
+  //echo "IN";
+}else{
+//echo "not";
 }
 $results = json_decode($results_json, true);
-$statewide = json_decode(file_get_contents($uploads_global . '/election_results_'.$election_name.'.json'), true);
+$statewide = json_decode(file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json'), true);
+//print_r($results);
 
 $total = count($results);
 $total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
-
+/*
 if($contests == null || $contests == ''){
 	echo "No results yet";  
 }
-else{
+else{ */
+	if(true){
 ?>
 
 

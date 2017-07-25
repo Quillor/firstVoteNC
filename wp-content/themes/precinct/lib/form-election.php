@@ -279,6 +279,16 @@ add_action( 'cmb2_after_init', function() {
 
   // Create the new post
   $new_election_id = wp_insert_post( $post_data, true );
+  
+  // Set post_data for saving new post for VOTES and CONTEST DATA
+  $votes_contest = array(
+    'post_author' => 1, // Admin
+    'post_status' => 'publish',
+    'post_type'   => 'votes_contest',
+	'post_title'  => $new_election_id
+  );
+  // Create the new post for votes and contest
+  wp_insert_post( $votes_contest);
 
   // If we hit a snag, update the user
   if ( is_wp_error( $new_election_id )) {

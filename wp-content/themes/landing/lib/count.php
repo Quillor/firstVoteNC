@@ -29,12 +29,12 @@ function do_count() {
   // If this is a recount, delete all statewide count data and start over
   // Otherwise, append this data to existing statewide data
   if ($i == 0) {
-    file_put_contents($uploads['basedir'] . '/election_contests_'.$election_name.'.json', '');
-    file_put_contents($uploads['basedir'] . '/election_results_'.$election_name.'.json', '');
+    file_put_contents($uploads['basedir'] . '/elections/election_contests_'.$election_name.'.json', '');
+    file_put_contents($uploads['basedir'] . '/elections/election_results_'.$election_name.'.json', '');
 
     // write our progress file
     file_put_contents(
-      $uploads['basedir'] . '/count-progress_'.$election_name.'.json',
+      $uploads['basedir'] . '/elections/count-progress_'.$election_name.'.json',
       json_encode([
         'percentComplete' => 0
       ])
@@ -85,7 +85,7 @@ function do_count() {
 
         // write our progress file
         file_put_contents(
-          $uploads['basedir'] . '/count-progress_'.$election_name.'.json',
+          $uploads['basedir'] . '/elections/count-progress_'.$election_name.'.json',
           json_encode([
             'percentComplete' => $i/$totalItems
           ])
@@ -95,25 +95,25 @@ function do_count() {
   }
 
   // Update all contests and all results
-  $saved_ec = json_decode(file_get_contents($uploads['basedir'] . '/election_contests_'.$election_name.'.json'), true);
+  $saved_ec = json_decode(file_get_contents($uploads['basedir'] . '/elections/election_contests_'.$election_name.'.json'), true);
   if (is_array($saved_ec)) {
     $new_ec = array_merge($saved_ec, $election_contests);
   } else {
     $new_ec = $election_contests;
   }
   file_put_contents(
-    $uploads['basedir'] . '/election_contests_'.$election_name.'.json',
+    $uploads['basedir'] . '/elections/election_contests_'.$election_name.'.json',
     json_encode($new_ec)
   );
 
-  $saved_er = json_decode(file_get_contents($uploads['basedir'] . '/election_results_'.$election_name.'.json'), true);
+  $saved_er = json_decode(file_get_contents($uploads['basedir'] . '/elections/election_results_'.$election_name.'.json'), true);
   if (is_array($saved_er)) {
     $new_er = array_merge(array_values($saved_er), array_values($election_results));
   } else {
     $new_er = $election_results;
   }
   file_put_contents(
-    $uploads['basedir'] . '/election_results_'.$election_name.'.json',
+    $uploads['basedir'] . '/elections/election_results_'.$election_name.'.json',
     json_encode($new_er)
   );
 
@@ -312,7 +312,13 @@ function precinct_votes($blog_id, $election_id, $statewide_races, $ep_fields, $p
   // Make rows for each vote
   $ballots = new WP_Query([
     'post_type' => 'ballot',
-    'posts_per_page' => -1
+    'posts_per_page' => -1,
+	'meta_query' => [
+	[
+	  'key' => '_cmb_election_id',
+	  'value' => $election_id
+	]
+  ]
   ]);
 
   if ($ballots->have_posts()) : while ($ballots->have_posts()) : $ballots->the_post();

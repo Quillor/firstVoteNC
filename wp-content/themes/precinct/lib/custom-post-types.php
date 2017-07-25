@@ -3,6 +3,37 @@
 namespace Roots\Sage\CPT;
 
 add_action( 'init', function() {
+	register_post_type( 'votes_contest',
+		array('labels' => array(
+				'name' => 'Votes & Contest',
+				'singular_name' => 'Votes & Contest',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New Votes & Contest',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit Votes & Contest',
+				'new_item' => 'New Votes & Contest',
+				'view_item' => 'View Votes & Contest',
+				'search_items' => 'Search Votes & Contest',
+				'not_found' =>  'Nothing found in the Database.',
+				'not_found_in_trash' => 'Nothing found in Trash',
+				'parent_item_colon' => ''
+			), /* end of arrays */
+			'exclude_from_search' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'show_in_nav_menus' => false,
+			'menu_position' => 8,
+			//'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			'supports' => array('title',  'editor', 'excerpt'),
+			'has_archive' => false,
+			'rewrite' => true,
+			'query_var' => true
+		)
+	);
+
+	
 	register_post_type( 'election',
 		array('labels' => array(
 				'name' => 'Elections',

@@ -3,10 +3,13 @@ add_action('wp_ajax_nopriv_do-count', 'do_count' );
 add_action('wp_ajax_do-count', 'do_count');
 
 function do_count() {
-  $data_verify = false;	
-
-  $nonce = $_POST['countNonce'];
+	$vc_title ;
+	$vc_id;
+	$vc_votes ;
+	$vc_contest;	
+	$data_verify = false;	
   
+  $nonce = $_POST['countNonce'];
   $masterelection = $_POST['masterelection'];
   
   $election_name = str_replace(' ', '_', $masterelection);
@@ -31,7 +34,7 @@ function do_count() {
   $election_id = $election[0];
   $precinct_contests = '';
   
-  
+  /*
   $wp_ballot = new WP_Query(['posts_per_page' => -1, 'post_type' => 'ballot',
 	'meta_query'  => array(
             array(
@@ -45,14 +48,28 @@ function do_count() {
 		$data_verify = true;
 	} 
 	wp_reset_postdata();
+	*/
 	
+	$wp_results = new WP_Query(['posts_per_page' => 1, 'post_type' => 'votes_contest','s'  => $election_id ]);
+	
+    if($wp_results->have_posts()){
+		while( $wp_results->have_posts() ) : $wp_results->the_post();
+			$vc_title =  get_the_title();
+			$vc_id =  get_the_ID();
+			$vc_votes =  get_the_content();
+			$vc_contest =  get_the_excerpt();
+			$data_verify = true;
+		endwhile;
+	} 
+	wp_reset_postdata();
 		  
 	if($data_verify == true){
-				include(locate_template('/lib/fields-statewide-races.php'));
-				include(locate_template('/lib/fields-exit-poll.php'));
-				include(locate_template('/lib/fields-ballot-init.php'));
-				
-		  if ( get_option( $precinct_contests ) !== false ) {
+			include(locate_template('/lib/fields-statewide-races.php'));
+			include(locate_template('/lib/fields-exit-poll.php'));
+			include(locate_template('/lib/fields-ballot-init.php'));
+			
+			/*			
+			if ( get_option( $precinct_contests ) !== false ) {
 
 				// The option already exists, so we just update it.
 				//update_option( $precinct_contests, $new_value );
@@ -65,7 +82,7 @@ function do_count() {
 				json_decode(precinct_contests($ballot_data, $included_races, $custom, $issues), true);
 				add_option( 'precinct_contests', '' );
 			}
-		  
+			*/
 
 		  $precinct_contests = json_decode(get_option('precinct_contests'), true);
 		  include(locate_template('/lib/fields-exit-poll.php'));
@@ -82,10 +99,29 @@ function do_count() {
 
 		  header('Content-Type: application/json');
 		  echo json_encode($election_results);
+		  
+		  $votes_contest = array(
+			  'ID'           => $vc_id,
+			  'post_content' => json_encode($election_results) ,
+			  'post_excerpt' => json_encode($precinct_contests) ,
+			  'post_type' => 'votes_contest'
+			);
+			
+			wp_update_post( $votes_contest );
 		 
 		  exit;
 	}else{
-		update_option('precinct_contests', "{}");
+		//update_option('precinct_contests', "{}");
+		 // Set post_data for saving new post for VOTES and CONTEST DATA
+		 $votes_contest = array(
+			'post_author' => 1, // Admin
+			'post_status' => 'publish',
+			'post_type'   => 'votes_contest',
+			'post_title'  => $election_id
+		  );
+		  // Create the new post for votes and contest
+		 wp_insert_post( $votes_contest);
+		
 		exit;
 	}
 }
@@ -172,12 +208,20 @@ function precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, 
   // Make rows for each vote
   $ballots = new WP_Query([
     'post_type' => 'ballot',
-    'posts_per_page' => -1
+    'posts_per_page' => -1,
+	'meta_query' => [
+        [
+          'key' => '_cmb_election_id',
+          'value' => $election_id
+        ]
+      ]
   ]);
-
+  
+  //echo $election_id;
+  
   if ($ballots->have_posts()) : while ($ballots->have_posts()) : $ballots->the_post();
     $ballot_id = get_the_id();
-
+	
     // Get ballot results
     $ballot_responses = get_post_custom();
     $row_votes = array('blog_id' => $blog_id);
