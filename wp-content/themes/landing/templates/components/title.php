@@ -4,6 +4,9 @@ use Roots\Sage\Titles;
 
 $image_id = get_post_thumbnail_id();
 $featured_image_lg = wp_get_attachment_image_src($image_id, 'large');
+$election = $_GET['election-option'];
+$election_name = str_replace(' ', '_', $election);
+$election_name = strtolower($election_name);
 ?>
 
 <header class="page-header photo-overlay" style="background-image: url('<?php echo $featured_image_lg[0]; ?>')">
@@ -11,7 +14,8 @@ $featured_image_lg = wp_get_attachment_image_src($image_id, 'large');
     <div class="container">
       <div class="row">
         <div class="<?php if (!is_page('2016-general-election-results')) { echo 'col-md-8 col-centered'; } ?>">
-          <h1 class="entry-title"><?= Titles\title(); ?></h1>
+          <!-- <h1 class="entry-title"><?//= Titles\title(); ?></h1>-->
+          <h1 class="entry-title"><?php echo $election; ?></h1>
 
           <?php
           if (is_page('2016-general-election-results')) {
@@ -42,7 +46,7 @@ $featured_image_lg = wp_get_attachment_image_src($image_id, 'large');
             if (isset($_GET['contest'])) {
               $race = $_GET['contest'];
               $uploads = wp_upload_dir();
-              $contests = json_decode(file_get_contents($uploads['basedir'] . '/election_contests.json'), true);
+              $contests = json_decode(file_get_contents($uploads['basedir'] . '/elections/election_contests_'.$election_name.'.json'), true);
               ?>
               <h2>
               <?php echo $contests[$race]['title']; ?>
