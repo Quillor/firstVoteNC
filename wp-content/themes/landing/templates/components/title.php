@@ -5,13 +5,52 @@ use Roots\Sage\Titles;
 $image_id = get_post_thumbnail_id();
 $featured_image_lg = wp_get_attachment_image_src($image_id, 'large');
 $election = $_GET['election-option'];
-$election_name = str_replace(' ', '_', $election);
-$election_name = strtolower($election_name);
+	
+if($election == null || $election ==''){
+	$election = "General Election Results"; ?>
+<style>
+#election-selection{
+	display:none;
+}
+</style>
+<?php
+}else{
+	$election_name = str_replace(' ', '_', $election);
+	$election_name = strtolower($election_name);
+}
+
 ?>
+
 
 <header class="page-header photo-overlay" style="background-image: url('<?php echo $featured_image_lg[0]; ?>')">
   <div class="article-title-overlay">
     <div class="container">
+		<p id="election-selection" class="text-center extra-padding">
+			<select id="page-election-option" name="page-election-option" style="height: 45px;" >
+			<?php
+							$q = new WP_Query([
+							  'posts_per_page' => -1,
+							  'post_type' => 'election'
+							]);
+							if($q->have_posts()){
+								while($q->have_posts()){
+									$q->the_post(); 
+									if(get_the_title() == $election){ ?>
+										<option value="<?php echo get_the_title(); ?>" selected="selected"><?php echo get_the_title(); ?></option>		
+									<?php
+									}else{
+									?>
+										<option value="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></option>													
+									<?php
+									}
+								}
+							}
+							 wp_reset_query();
+
+			?>
+				</select>	
+			</label>
+		</p>
       <div class="row">
         <div class="<?php if (!is_page('2016-general-election-results')) { echo 'col-md-8 col-centered'; } ?>">
           <!-- <h1 class="entry-title"><?//= Titles\title(); ?></h1>-->
@@ -71,4 +110,14 @@ $election_name = strtolower($election_name);
       </div>
     </div>
   </div>
+  <script>
+	jQuery('#page-election-option').on('change', function() {
+		var url      = window.location.href;  
+		var parts = url.split('=');
+		var part = parts[0];
+		  //alert( part + "=" + this.value );
+		  window.location.href = part + "=" + this.value;
+		})
+  </script>
 </header>
+

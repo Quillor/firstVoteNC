@@ -3,6 +3,8 @@
 use Roots\Sage\Setup;
 use Roots\Sage\Titles;
 
+
+
 get_template_part('templates/components/title', get_post_type());
 ?>
 
@@ -34,7 +36,7 @@ get_template_part('templates/components/title', get_post_type());
 				display:none;
 			}
 		</style>
-		<form method="GET" action="">
+	<form method="GET" action="">
 		<p class="text-center extra-padding">
 		  <label style="display:initial;"> Select Election to be view.<br/>
 			<select id="election-option" name="election-option" style="height: 45px;" >
