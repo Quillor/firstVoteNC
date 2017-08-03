@@ -44,10 +44,17 @@ foreach ($ep_fields as $ep_field) {
     // Total number of 'no selection' votes in this category
     $none = array_keys($data, 'none');
     $ep_none = count(array_intersect_key(array_flip($ep_all), array_flip($none)));
-    $ep_table['none'][] = array(
-      'count' => $ep_none,
-      'percent' => round(($ep_none / $ep_total) * 100, 2)
-    );
+	if($ep_total==0){
+		$ep_table['none'][] = array(
+		  'count' => $ep_none,
+		  'percent' => 0
+		);	
+	}else{
+		$ep_table['none'][] = array(
+		  'count' => $ep_none,
+		  'percent' => round(($ep_none / $ep_total) * 100, 2)
+		);	
+	}
   }
 
   // Count number of votes per contestant
@@ -70,11 +77,19 @@ foreach ($ep_fields as $ep_field) {
         $ep_total = count(array_keys($ep_data, $ep_key));
 
         // Save to table to output at the end
-        $ep_table[$c_key][] = array(
-          'party' => $candidate['party'],
-          'count' => $tally,
-          'percent' => round(($tally / $ep_total) * 100, 2)
-        );
+		if($ep_total==0){
+			$ep_table[$c_key][] = array(
+			  'party' => $candidate['party'],
+			  'count' => $tally,
+			  'percent' => 0
+			);
+		}else{		
+			$ep_table[$c_key][] = array(
+			  'party' => $candidate['party'],
+			  'count' => $tally,
+			  'percent' => round(($tally / $ep_total) * 100, 2)
+			);
+		}
       }
     }
   } else {
