@@ -59,3 +59,38 @@ section {
     align-items: center;
   }
 }
+
+.quote-box{
+	max-width:450px;
+	width:100%;
+	color:#fff;
+	margin: 0 auto;
+	margin-bottom:20px;
+
+	.blue-box{
+		background-color:#203069;
+		border-radius:10px;
+		padding: 20px;
+		
+	}
+	
+	.red-box{
+		background-color:#9F0728;
+		border-radius:10px;
+		padding: 20px;
+	}
+	
+	.content-box{
+		padding:10px 20px 0px;
+	}
+	
+	.right-quote-image{
+		float:right;
+		clear: both;
+	}
+	.quote-name{
+		font-style: italic;
+		text-align: right;
+		font-weight: 100;
+	}
+}

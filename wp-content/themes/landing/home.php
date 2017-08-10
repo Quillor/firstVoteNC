@@ -80,6 +80,77 @@ use Roots\Sage\Assets;
   <section class="white-bg">
     <div class="container">
       <div class="row">
+        <div class="col-md-12 col-centered text-center">         
+			<img class="aligncenter size-full wp-image-132" src="http://firstvotenc.wpengine.com/wp-content/uploads/2016/05/star.png" alt="star" width="100" height="26" />
+			<blockquote style="padding-bottom:0px !Important; margin-bottom:0px !important">
+			<p style="text-align: center !important;padding-bottom:0px !Important;">Our Impact</p>
+			</blockquote>
+			<img class="aligncenter size-full wp-image-132" src="http://firstvotenc.wpengine.com/wp-content/uploads/2016/05/star.png" alt="star" width="100" height="26" />
+		</div>
+		<div class="row">
+			<div class="col-md-6 ">	
+				<div class="quote-box">	
+					<div class="blue-box">	
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
+						<div class="content-box">
+							<p>This was an excellent resource and set of activities, well put together. Emails were timely and helpful. The website was a breeze to navigate. My students are still talking about it. This may have impacted them more than any other activity they have participating in this semester! </p>				
+						</div> 
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/right-quote.png" class="right-quote-image">
+						<br />
+					</div> 
+				</div> 
+				<div class="quote-box">	
+					<div class="red-box">	
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
+						<div class="content-box">
+							<p>I truly appreciate the effort of the staff, the quality of lesson plans available. Iknow that my students understand the electoral process better because of FirstVote! Thanks for helping me become a more effective Civics teacher to my students! </p>				
+						</div> 
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/right-quote.png" class="right-quote-image">
+						<br />
+					</div> 
+				</div> 
+			</div> 
+			<div class="col-md-6 ">
+				<div class="quote-box ">
+					<div class="red-box">
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
+						<div class="content-box">
+							<p>This was a wonderful idea and amazing inaugural year. </p>
+						</div>
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/right-quote.png" class="right-quote-image">
+						<br />
+					</div>
+				</div>
+				<div class="quote-box">	
+					<div class="blue-box">	
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
+						<div class="content-box">
+							<p>The best part was the way that First Vote was able to tap into a population base that was apathetic and ignorant of the voting process. The students had no knowledge of the process nor did they want to gain knowledge of the process until they found out they were going to be a part of the process. </p>
+						</div> 
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/right-quote.png" class="right-quote-image">
+						<br />
+					</div> 
+				</div>
+				<div class="quote-box">	
+					<div class="blue-box">	
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
+						<div class="content-box">
+							<p>I loved this initiative and the real-world application. I wish we could find a way touse these ideas even when there is not a presidential election. Would it be possible to include state and local elections every year?</p>
+							<p class="quote-name">- Civics teacher and First Vote user</p>
+						</div> 
+						<img src="http://www.firstvotenc.org/wp-content/uploads/images/right-quote.png" class="right-quote-image">
+						<br />
+					</div> 
+				</div> 
+			</div>
+		</div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="white-bg">
+    <div class="container">
+      <div class="row">
         <div class="col-md-8 col-centered text-center">
           <p class="h2 bottom-margin-important">It isn’t enough to just register &mdash; it isn’t even enough to just vote. Our aim is to create an informed and involved citizenry.</p>
           <div class="entry-content-asset">
