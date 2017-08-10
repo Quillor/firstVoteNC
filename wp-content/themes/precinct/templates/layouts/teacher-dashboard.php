@@ -92,7 +92,7 @@
 		  
             <?php
 			
-			if($ctr>=1){ ?> 
+			if($ctr>1){ ?> 
 			 <tr>
               <td colspan="2">
                 <div class="well well-sm">
@@ -121,8 +121,8 @@
 		</script>
 		
         <?php if (is_super_admin()) { ?>
-          <p class="text-center extra-padding" style="visibility:hidden;">
-			  <label style="display:initial;"> Select Election to be count.<br/>
+          <p class="text-center extra-padding" style="">
+			  <label style="display:initial;"> Select Election to be count/recount.<br/>
 				<select id="election-option" style="height: 45px;" >
 				<option>Select</option>
 				<?php
@@ -144,7 +144,7 @@
 					</select>	
 				</label>
 			<input type="hidden" name="data_url" id="data_url"/>
-            <button type="button" class="btn btn-primary btn-lg" id="count-votes" data-toggle="modal" data-target="#tally-modal" data-backdrop="static" data-keyboard="false">ReCount Votes!</button>
+            <button type="button" class="btn btn-primary btn-lg" id="count-votes" data-toggle="modal" data-target="#tally-modal" data-backdrop="static" data-keyboard="false">Count Votes!</button>
           </p>
 
           <div class="modal fade" id="tally-modal" tabindex="-1" role="dialog" style="visibility:hidden;opacity:0;">

@@ -9,8 +9,29 @@ include(locate_template('/lib/fields-exit-poll.php'));
 $type = $_GET['results'];
 $race = $_GET['contest'];
 
-$election = $_GET['election-option'];	
-$election_name = str_replace(' ', '_', $election);
+$masterelection = $_GET['election-option'];
+
+
+  $wp_results = new WP_Query([
+    'post_type' => 'election',
+    'posts_per_page' => 1,
+	'post_title_like' => $masterelection,
+    'fields' => 'ids'
+  ]);
+$wp_result = $wp_results->posts;
+//echo $wp_result[0];
+wp_reset_postdata();
+
+  $votes_contests = new WP_Query([
+    'post_type' => 'votes_contest',
+    'posts_per_page' => 1,
+	'post_title_like' => $wp_result[0]
+  ]);
+
+$votes_contest = $votes_contests->posts; 
+
+	
+$election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);
 
 //$contests = json_decode(get_option('precinct_contests'), true);
