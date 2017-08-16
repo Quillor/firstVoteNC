@@ -35,8 +35,11 @@ wp_reset_postdata();
 $votes_contest = $votes_contests->posts; 
 
 //$contests = json_decode(get_option('precinct_contests'), true);
-$contests = json_decode($votes_contest[0]->post_excerpt, true);
-
+  $pattern = '/\s+("[^"]+)/'; 
+  $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
+  $array_cont = preg_replace($pattern,' \\\$1\\',$contests1);
+  $contests = json_decode( $array_cont, true );
+  
 $election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);
 
@@ -54,13 +57,15 @@ if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
 }
 $results = json_decode($results_json, true);
 */
-$results = json_decode($votes_contest[0]->post_content, true);
+  $results1 = html_entity_decode($votes_contest[0]->post_content);
+  $array_res = preg_replace($pattern,' \\\$1\\',$results1);
+  $results = json_decode( $array_res, true );
+  
 $statewide = json_decode(file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json'), true);
 //print_r($results);
 
 $total = count($results);
 $total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
-
 
 ?>
 

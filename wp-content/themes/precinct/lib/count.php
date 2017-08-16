@@ -84,10 +84,11 @@ function do_count() {
 			}
 			*/
 
-		  $precinct_contests = json_decode(get_option('precinct_contests'), true);
+		  //$precinct_contests = json_decode(get_option('precinct_contests'), true);
 		  include(locate_template('/lib/fields-exit-poll.php'));
 		  $election_results = array();
 
+		  $precinct_contests = precinct_contests($ballot_data, $included_races, $custom, $issues);
 		  $election_results = precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, $election_results);
 
 		  $uploads = wp_upload_dir();
@@ -98,14 +99,24 @@ function do_count() {
 		  );
 
 		  header('Content-Type: application/json');
-		  echo json_encode($election_results);
-		  
-		  $votes_contest = array(
-			  'ID'           => $vc_id,
-			  'post_content' => json_encode($election_results) ,
-			  'post_excerpt' => json_encode($precinct_contests) ,
-			  'post_type' => 'votes_contest'
-			);
+			if($vc_contest == null){
+				$votes_contest = array(
+				  'ID'           => $vc_id,
+				  'post_content' => json_encode(wp_slash($election_results)) ,
+				  'post_excerpt' => json_encode($precinct_contests) ,
+				  'post_type' => 'votes_contest'
+				);
+				
+			}else{
+				
+			  $votes_contest = array(
+				  'ID'           => $vc_id,
+				  'post_content' => json_encode(wp_slash($election_results)) ,
+				  'post_excerpt' => json_encode($precinct_contests) ,
+				  'post_type' => 'votes_contest'
+				);
+				
+			}
 			
 			wp_update_post( $votes_contest );
 		 
@@ -227,6 +238,7 @@ function precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, 
     $row_votes = array('blog_id' => $blog_id);
     foreach ($columns_contests as $contest) {
       if (isset($ballot_responses[$contest])) {
+        //$row_votes[$contest] = str_replace(['&lt;br /&gt;', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $ballot_responses[$contest][0]);
         $row_votes[$contest] = str_replace(['&lt;br /&gt;', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $ballot_responses[$contest][0]);
       } else {
         $row_votes[$contest] = NULL;
@@ -300,12 +312,12 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
         foreach ($race->candidates as $can) {
           if ($ballot_section->section == 'Partisan Offices') {
             $details = [
-              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $can->ballotName),
+              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '\"', '\"', ' Jr'], $can->ballotName),
               'party' => str_replace([' Party', 'Democratic'], ['', 'Democrat'], $can->party)
             ];
           } else {
             $details = [
-              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $can->ballotName)
+              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '\"', '\"', ' Jr'], $can->ballotName)
             ];
           }
 
@@ -349,8 +361,8 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
       $precinct_contests['Issues'][$sanitized_title] = [
         'title' => $question['title'],
         'sanitized_title' => $sanitized_title,
-        'question' => $question['question']
-      ];
+        'question' =>  str_replace(['"', '(', ')',], ['', '"', '"',], $question['question']),
+      ]; 
 
       if (empty($question['options'])) {
         $precinct_contests['Issues'][$sanitized_title]['options'] = ['Yes', 'No'];
