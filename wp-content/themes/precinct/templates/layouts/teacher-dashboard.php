@@ -41,7 +41,8 @@
                 <th scope="row">
                   <a href="<?php the_permalink(); ?>?edit"><?php the_title(); ?></a><br />
                   <span class="small"><a href="<?php the_permalink(); ?>?edit">Edit</a> | <a href="<?php the_permalink(); ?>?preview">Preview Ballot</a> | 
-					<a href="#"  onclick="return theFunction('<?php echo $data_url;?>', '<?php echo get_the_title() ;?>');">Results</a></span>
+					<!--<a href="#"  onclick="return theFunction('<?php //echo $data_url;?>', '<?php //echo get_the_title() ;?>');">Results</a></span>-->
+					<a href="<?php echo $data_url;?>">Results</a></span>
 				  	<!--		  
 					<?php //if (is_super_admin()) { ?>
 					 <a href="#"  onclick="return theFunction('<?php// echo $data_url;?>', '<?php //echo get_the_title() ;?>');">Results</a></span>

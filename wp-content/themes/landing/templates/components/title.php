@@ -5,15 +5,23 @@ use Roots\Sage\Titles;
 $image_id = get_post_thumbnail_id();
 $featured_image_lg = wp_get_attachment_image_src($image_id, 'large');
 $election = $_GET['election-option'];
-	
+
 if($election == null || $election ==''){
-	$election = "General Election Results"; ?>
+	$election = "General Election Results"; 
+	
+	?>
 <style>
 #election-selection{
 	display:none;
 }
 </style>
 <?php
+
+if(Titles\title() != null || Titles\title() != ''){
+	$election =  Titles\title();
+	
+}
+
 }else{
 	$election_name = str_replace(' ', '_', $election);
 	$election_name = strtolower($election_name);
@@ -53,7 +61,7 @@ if($election == null || $election ==''){
 		</p>
       <div class="row">
         <div class="<?php if (!is_page('2016-general-election-results')) { echo 'col-md-8 col-centered'; } ?>">
-          <!-- <h1 class="entry-title"><?//= Titles\title(); ?></h1>-->
+          <h1 class="entry-title"><?//= Titles\title(); ?></h1>
           <h1 class="entry-title"><?php echo $election; ?></h1>
 
           <?php
