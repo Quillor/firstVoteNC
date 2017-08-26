@@ -312,12 +312,12 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
         foreach ($race->candidates as $can) {
           if ($ballot_section->section == 'Partisan Offices') {
             $details = [
-              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '\"', '\"', ' Jr'], $can->ballotName),
-              'party' => str_replace([' Party', 'Democratic'], ['', 'Democrat'], $can->party)
+              'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], [ "\'", ' & ', '\"', '\"', ' Jr'], $can->ballotName),
+              'party' => str_replace(['"', ' Party', 'Democratic'], ["\'", '', 'Democrat'], $can->party)
             ];
           } else {
             $details = [
-              'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '\"', '\"', ' Jr'], $can->ballotName)
+              'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], ["\'",' & ', '\"', '\"', ' Jr'], $can->ballotName)
             ];
           }
 
@@ -346,6 +346,7 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
           $precinct_contests[$contest['section']][$sanitized_title]['candidates'][$c_key]['party'] = $party[1];
 
           $candidate = str_replace($party[0], '', $candidate);
+          $candidate = str_replace('"', '', $candidate);
         }
 
         $precinct_contests[$contest['section']][$sanitized_title]['candidates'][$c_key]['name'] = $candidate;
@@ -361,7 +362,7 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
       $precinct_contests['Issues'][$sanitized_title] = [
         'title' => $question['title'],
         'sanitized_title' => $sanitized_title,
-        'question' =>  str_replace(['"', '(', ')',], ['', '"', '"',], $question['question']),
+        'question' =>  str_replace(['"', '(', ')',], ["'", '\"', '\"',], $question['question']),
       ]; 
 
       if (empty($question['options'])) {
