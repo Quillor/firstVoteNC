@@ -3,6 +3,11 @@
     visibility: visible !important;
     opacity: 1 !important;
 }
+.highcharts-data-labels span {
+    font-size: 13px!important;
+    padding: 3px 5px;
+    background: hsla(0,0%,100%,.5);
+}
 </style>
 <?php
 use Roots\Sage\Extras;
@@ -63,11 +68,12 @@ if (isset($_GET['contest'])) {
   </script>
 
   <?php
-  $pattern = '/\s+("[^"]+)/'; 
+  $pattern = '/\\\\("[^"]+")/'; 
   $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
- // $array_cont = preg_replace($pattern,' \\\$1\\',$contests1);
-  $contests = json_decode( $contests1, true );
+  $array_cont = preg_replace($pattern, '' ,$contests1);
+  $contests = json_decode( $array_cont, true );
   
+
  
   $uploads = wp_upload_dir();
   $uploads_global = network_site_url('wp-content/uploads');
@@ -75,11 +81,13 @@ if (isset($_GET['contest'])) {
   
   //$pattern = '/\s+("[^"]+)/';
   $results1 = ($votes_contest[0]->post_content);
-  $results = json_decode( $results1, true );
+  $array_cont = preg_replace($pattern, '',$results1);
+  $results = json_decode( $array_cont, true );
   
-	
-  $statewide = json_decode(file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json'), true);
-  
+  $statewide1 = file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json');
+  $array_cont = preg_replace($pattern, '',$statewide1);
+  $statewide = json_decode( $array_cont, true);
+   
 
   if( ($contests == null || $contests == '') || ($results[0] == null || $results[0] == '') ){
 	echo '<h2 class="text-center">No results  Or Please recount the VOTE in the main page.</h2>';  
