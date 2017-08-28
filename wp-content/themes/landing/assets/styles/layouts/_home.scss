@@ -94,3 +94,20 @@ section {
 		font-weight: 100;
 	}
 }
+
+.quote-box.right-box{
+	float:right;
+}
+.quote-box.left-box{
+	float:left;
+}
+
+
+@media (max-width: 768px) {
+    .quote-box.right-box{
+		float:none;
+	}
+	.quote-box.left-box{
+		float:none;
+	}
+}
