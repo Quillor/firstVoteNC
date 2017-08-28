@@ -4,7 +4,8 @@ use Roots\Sage\Assets;
 
 ?>
 <main role="main">
-  <?php get_template_part('/templates/components/banner', 'results'); ?>
+
+	<?php get_template_part('/templates/components/banner', 'header-home'); ?>
 
   <section class="white-bg">
     <div class="container text-center partners">
@@ -19,6 +20,8 @@ use Roots\Sage\Assets;
     </div>
   </section>
 
+  <?php get_template_part('/templates/components/banner', 'results'); ?>
+  
   <section class="gray-bg overview">
     <div class="container">
 	  <div class="row flex-sm-up">
@@ -87,9 +90,9 @@ use Roots\Sage\Assets;
 			</blockquote>
 			<img class="aligncenter size-full wp-image-132" src="http://firstvotenc.wpengine.com/wp-content/uploads/2016/05/star.png" alt="star" width="100" height="26" />
 		</div>
-		<div class="row">
+		<div class="row mt-5">
 			<div class="col-md-6 ">	
-				<div class="quote-box">	
+				<div class="quote-box right-box">	
 					<div class="blue-box">	
 						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
 						<div class="content-box">
@@ -99,7 +102,7 @@ use Roots\Sage\Assets;
 						<br />
 					</div> 
 				</div> 
-				<div class="quote-box">	
+				<div class="quote-box right-box">	
 					<div class="red-box">	
 						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
 						<div class="content-box">
@@ -111,8 +114,8 @@ use Roots\Sage\Assets;
 				</div> 
 			</div> 
 			<div class="col-md-6 ">
-				<div class="quote-box ">
-					<div class="red-box">
+				<div class="quote-box left-box">
+					<div class="red-box ">
 						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
 						<div class="content-box">
 							<p>This was a wonderful idea and amazing inaugural year. </p>
@@ -121,7 +124,7 @@ use Roots\Sage\Assets;
 						<br />
 					</div>
 				</div>
-				<div class="quote-box">	
+				<div class="quote-box left-box">	
 					<div class="blue-box">	
 						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
 						<div class="content-box">
@@ -131,7 +134,7 @@ use Roots\Sage\Assets;
 						<br />
 					</div> 
 				</div>
-				<div class="quote-box">	
+				<div class="quote-box left-box">	
 					<div class="blue-box">	
 						<img src="http://www.firstvotenc.org/wp-content/uploads/images/left-quote.png">
 						<div class="content-box">

@@ -49,11 +49,11 @@ function wp_new_user_notification($user_id, $plaintext_pass = '', $school_id, $s
 	});
 	
     $message .=  '<br /><br />';
-    $message .= sprintf(__('Username: %s'), $user->user_login) . '<br />';
-    $message .= sprintf(__('Password: %s'), $plaintext_pass) . '<br />';
-    $message .= sprintf(__('School Name: %s'), $school_name) . '<br />';
-    $message .= sprintf(__('School URL: %s'), $schoolURL.'/') . '<br />';
-    $message .= sprintf(__('Login: %s'), $home_url) . '/teacher-login/ <br />';
+    //$message .= sprintf(__('Username: %s'), $user->user_login) . '<br />';
+    //$message .= sprintf(__('Password: %s'), $plaintext_pass) . '<br />';
+    //$message .= sprintf(__('School Name: %s'), $school_name) . '<br />';
+    //$message .= sprintf(__('School URL: %s'), $schoolURL.'/') . '<br />';
+    //$message .= sprintf(__('Login: %s'), $home_url) . '/teacher-login/ <br />';
 	
     wp_mail($user->user_email, sprintf(__('[%s] Your username and password'), $blogname), $message, $headers);
 
