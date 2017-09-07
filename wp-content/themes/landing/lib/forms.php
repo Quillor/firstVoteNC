@@ -24,7 +24,9 @@ add_filter('caldera_preprocess_live', function($data){
   }
 
   // Generate the password so that the subscriber will have to check email...
-  $password = wp_generate_password( 12, false );
+  //$password = wp_generate_password( 12, false );
+  $password = $data['first_name'].''.$data['last_name'].''.rand(999,10000);
+  $password = str_replace(' ', '', $password );;
 
   $userdata = array(
     'user_login'  =>  $data['email_address'],

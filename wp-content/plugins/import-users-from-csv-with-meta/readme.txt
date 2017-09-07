@@ -4,7 +4,7 @@ Donate link: http://paypal.me/codection
 Tags: csv, import, importer, meta data, meta, user, users, user meta,  editor, profile, custom, fields, delimiter, update, insert
 Requires at least: 3.4
 Tested up to: 4.8
-Stable tag: 1.10.6.5
+Stable tag: 1.10.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,22 @@ Plugin will automatically detect:
 5. Extra profile information (user meta)
 
 == Changelog ==
+
+= 1.10.6.9 =
+*	Thanks to Peri Lane from Apis Productions you can now import roles from CSV. Read documentation to see the way to work.
+
+= 1.10.6.8.1 =
+*	Thanks to @fiddla for debugging all this, as update_option with a value equals to true is saved as 1 in the database, we couldn't use the ==! or === operator to see if the option was active or not. Sorry for so many updates those days with this problems and thanks for the debugging
+
+= 1.10.6.8 =
+*	Bug fixed (now yes) when moving file including date and time thanks to @fiddla
+
+= 1.10.6.7 =
+*	Bug fixed when moving file including date and time
+
+= 1.10.6.6 =
+*	Bug fixed thanks to @ov3rfly (https://wordpress.org/support/topic/wrong-path-to-users-page-after-import/)
+*	Documentation also included in home page of the plugins thanks to suggestions and threads in forum
 
 = 1.10.6.5 =
 *	If multisite is enabled it adds the user to the blog thanks to Rudolph Koegelenberg
@@ -458,7 +474,63 @@ Plugin will automatically detect:
 
 == Frequently Asked Questions ==
 
-*   Not yet
+= Columns position =
+
+You should fill the first two columns with the next values: Username, Email.
+
+The next columns are totally customizable and you can use whatever you want. All rows must contains same columns. User profile will be adapted to the kind of data you have selected. If you want to disable the extra profile information, please deactivate this plugin after make the import.
+
+= id column =
+
+You can use a column called id in order to make inserts or updates of an user using the ID used by WordPress in the wp_users table. We have two different cases:
+
+*	If id doesn't exist in your users table: WordPress core does not allow us insert it, so it will throw an error of kind: invalid_user_id
+*	If id exists: plugin check if username is the same, if yes, it will update the data, if not, it ignores the cell to avoid problems
+
+= Passwords =
+
+We can use a column called "Password" to manage a string that contains user passwords. We have different options for this case:
+
+*	If you don't create a column for passwords: passwords will be generated automatically
+*	If you create a column for passwords: if cell is empty, password won't be updated; if cell has a value, it will be used
+
+= Serialized data =
+
+Plugin can import serialized data. You have to use the serialized string directly in the CSV cell in order the plugin will be able to understand it as an serialized data instead as any other string.
+
+= Lists =
+
+Plugin can import lists as an array. Use this separator: :: two colons, inside the cell in order to split the string in a list of items.
+
+= WordPress default profile data =
+
+You can use those labels if you want to set data adapted to the WordPress default user columns (the ones who use the function wp_update_user)
+
+*	user_nicename: A string that contains a URL-friendly name for the user. The default is the user's username.
+*	user_url: A string containing the user's URL for the user's web site.
+*	display_name: A string that will be shown on the site. Defaults to user's username. It is likely that you will want to change this, for both appearance and security through 	*	obscurity (that is if you don't use and delete the default admin user).
+*	nickname: The user's nickname, defaults to the user's username.
+* 	first_name: The user's first name.
+*	last_name: The user's last name.
+*	description: A string containing content about the user.
+*	jabber: User's Jabber account.
+*	aim: User's AOL IM account.
+*	yim: User's Yahoo IM account.
+*	user_registered: Using the WordPress format for this kind of data Y-m-d H:i:s.
+
+= Multiple imports =
+
+You can upload as many files as you want, but all must have the same columns. If you upload another file, the columns will change to the form of last file uploaded.
+
+= Free and premium support =
+
+You can get:
+
+*	Free support [in WordPress forums](https://wordpress.org/support/plugin/import-users-from-csv-with-meta)
+*	Premium support [writing directly to contacto@codection.com](mailto:contacto@codection.com).
+
+= Customizations, addons, develops... =
+[Write u directly to contacto@codection.com](mailto:contacto@codection.com).
 
 == Installation ==
 
@@ -472,3 +544,5 @@ Now going through the points above, you should now see a new&nbsp;_Import users 
 [Plugin link from dashboard](http://ps.w.org/import-users-from-csv-with-meta/assets/screenshot-1.png)
 
 If you get any error after following through the steps above please contact us through item support comments so we can get back to you with possible helps in installing the plugin and more.
+
+Please read documentation before start using this plugin.

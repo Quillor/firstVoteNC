@@ -40,7 +40,7 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 			$headers = array();
 			$headers_filtered = array();
 			$update_existing_users = $form_data["update_existing_users"];
-			$role = $form_data["role"];
+			$role_default = $form_data["role"];
 			$update_roles_existing_users = $form_data["update_roles_existing_users"];
 			$empty_cell_action = $form_data["empty_cell_action"];
 
@@ -104,11 +104,11 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 						$positions[ $acui_restricted_field ] = false;
 					}
 
-					foreach($data as $element){
+					foreach( $data as $element ){
 						$headers[] = $element;
 
-						if( in_array( strtolower($element) , $acui_restricted_fields ) )
-							$positions[ strtolower($element) ] = $i;
+						if( in_array( strtolower( $element ) , $acui_restricted_fields ) )
+							$positions[ strtolower( $element ) ] = $i;
 
 						if( !in_array( strtolower( $element ), $acui_restricted_fields ) && !in_array( $element, $buddypress_fields ) )
 							$headers_filtered[] = $element;
@@ -140,6 +140,8 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 					$problematic_row = false;
 					$password_position = $positions["password"];
 					$password = "";
+					$role_position = $positions["role"];
+					$role = "";
 					$id_position = $positions["id"];
 					
 					if ( !empty( $id_position ) )
@@ -152,7 +154,15 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 					if( $password_position === false )
 						$password = wp_generate_password();
 					else
-						$password = $data[ $password_position ];
+						$password = $data[ $password_position ];					
+
+					if( $role_position === false )
+						$role = $role_default;
+					else{
+						$roles_cells = explode( ',', $data[ $role_position ] );
+						array_walk( $roles_cells, 'trim' );
+						$role = $roles_cells;
+					}
 
 					if( !empty( $id ) ){ // if user have used id
 						if( acui_user_id_exists( $id ) ){
@@ -499,7 +509,7 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 			?>
 			</table>
 			<br/>
-			<p><?php _e( 'Process finished you can go', 'import-users-from-csv-with-meta' ); ?> <a href="<?php echo get_admin_url() . '/users.php'; ?>"><?php _e( 'here to see results', 'import-users-from-csv-with-meta' ); ?></a></p>
+			<p><?php _e( 'Process finished you can go', 'import-users-from-csv-with-meta' ); ?> <a href="<?php echo get_admin_url( null, 'users.php' ); ?>"><?php _e( 'here to see results', 'import-users-from-csv-with-meta' ); ?></a></p>
 			<?php
 			ini_set('auto_detect_line_endings',FALSE);
 			
@@ -614,7 +624,7 @@ function acui_options()
 				</tr>
 
 				<tr class="form-field">
-					<th scope="row"><label for="role"><?php _e( 'Role', 'import-users-from-csv-with-meta' ); ?></label></th>
+					<th scope="row"><label for="role"><?php _e( 'Default role', 'import-users-from-csv-with-meta' ); ?></label></th>
 					<td>
 					<?php 
 						$list_roles = acui_get_editable_roles(); 
@@ -627,7 +637,7 @@ function acui_options()
 						}
 					?>
 
-					<p class="description"><?php _e( 'If you choose more than one role, the roles would be assigned correctly but you should use some plugin like <a href="https://wordpress.org/plugins/user-role-editor/">User Role Editor</a> to manage them.', 'import-users-from-csv-with-meta' ); ?></p>
+					<p class="description"><?php _e( 'You can also import roles from a CSV column. Please read documentation tab to see how it can be done. If you choose more than one role, the roles would be assigned correctly but you should use some plugin like <a href="https://wordpress.org/plugins/user-role-editor/">User Role Editor</a> to manage them.', 'import-users-from-csv-with-meta' ); ?></p>
 					</td>
 				</tr>
 
@@ -702,7 +712,7 @@ function acui_options()
 				<?php if( is_plugin_active( 'wp-members/wp-members.php' ) ): ?>
 
 				<tr class="form-field form-required">
-					<th scope="row"><label>Y</label></th>
+					<th scope="row"><label>Activate user when they are being imported?</label></th>
 					<td>
 						<select name="activate_users_wp_members">
 							<option value="no_activate"><?php _e( 'Do not activate users', 'import-users-from-csv-with-meta' ); ?></option>
@@ -932,6 +942,16 @@ function acui_options()
 				</td>
 			</tr>
 			<tr valign="top">
+				<th scope="row"><?php _e( "Roles", 'import-users-from-csv-with-meta' ); ?></th>
+				<td><?php _e( "Plugin can import roles from the CSV. This is how it works:", 'import-users-from-csv-with-meta' ); ?>
+					<ul style="list-style:disc outside none; margin-left:2em;">
+						<li><?php _e( "If you <strong>don't create a column for roles</strong>: roles would be chosen from the 'Default role' field in import screen.", 'import-users-from-csv-with-meta' ); ?></li>
+						<li><?php _e( "If you <strong>create a column called 'role'</strong>: if cell is empty, roles would be chosen from 'Default role' field in import screen; if cell has a value, it will be used as role, if this role doesn't exist the default one would be used", 'import-users-from-csv-with-meta' ); ?></li>
+						<li><?php _e( "Multiple roles can be imported creating <strong>a list of roles</strong> using commas to separate values.", 'import-users-from-csv-with-meta' ); ?></li>
+					</ul>
+				</td>
+			</tr>
+			<tr valign="top">
 				<th scope="row"><?php _e( "Serialized data", 'import-users-from-csv-with-meta' ); ?></th>
 				<td><?php _e( "Plugin can now import serialized data. You have to use the serialized string directly in the CSV cell in order the plugin will be able to understand it as an serialized data instead as any other string.", 'import-users-from-csv-with-meta' ); ?>
 				</td>
@@ -959,6 +979,7 @@ function acui_options()
 					</ol>
 				</td>
 			</tr>
+
 			<?php if( is_plugin_active( 'woocommerce/woocommerce.php' ) ): ?>
 
 				<tr valign="top">
@@ -988,7 +1009,6 @@ function acui_options()
 					</ol>
 				</td>
 				</tr>
-
 			<?php endif; ?>
 
 			<?php if( is_plugin_active( 'buddypress/bp-loader.php' ) ): ?>

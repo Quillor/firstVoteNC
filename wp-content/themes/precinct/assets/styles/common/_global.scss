@@ -201,3 +201,35 @@
 .sr-mute {
   speak: none;
 }
+
+.border-right-gray{
+	border-right: 1px solid #e3e3e3;
+}
+.alert-scarlet {
+    background-color: $scarlet;
+    border-color: $scarlet-darker;
+    color: #ffffff;
+	padding:5px 25px 40px;
+}
+a{
+
+  &.btn-blue {
+    background-color: $navy;
+    color: $white;
+ 
+    &:hover, &:focus, &:active {
+      background-color: $navy-darker;
+      color: $white;
+    }
+  }
+
+  &.btn-white {
+    background-color: $white;
+    color: $navy;
+ 
+    &:hover, &:focus, &:active {
+      background-color:  $white;
+      color: $navy-darker;
+    }
+  }
+}

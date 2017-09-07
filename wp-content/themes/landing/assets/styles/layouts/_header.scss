@@ -18,11 +18,13 @@
   }
 }
 
+
+
 .navbar {
   padding-top: 19px;
 
   a {
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
     text-decoration: none;
     font-family: $font-family-sans-serif;
@@ -33,6 +35,9 @@
       .caret {
         display: none;
       }
+    }
+	@media (max-width: 1280px) {
+		font-size: 13px;
     }
   }
 
@@ -96,3 +101,4 @@
     }
   }
 }
+

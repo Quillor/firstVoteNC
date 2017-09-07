@@ -30,7 +30,7 @@ if(Titles\title() != null || Titles\title() != ''){
 ?>
 
 
-<header class="page-header photo-overlay" style="background-image: url('<?php echo $featured_image_lg[0]; ?>')">
+<header class="page-header photo-overlay" style="background-image: url('<?php echo $featured_image_lg[0]; ?>'); ">
   <div class="article-title-overlay">
     <div class="container">
 		<p id="election-selection" class="text-center extra-padding">

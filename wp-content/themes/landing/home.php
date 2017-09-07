@@ -13,7 +13,6 @@ use Roots\Sage\Assets;
       <a href="https://www.ednc.org" target="_blank"><img src="<?php echo Assets\asset_path('images/ednc.png'); ?>" srcset="<?php echo Assets\asset_path('images/ednc@2x.png'); ?> 2x" alt="EdNC" /></a>
       <a href="http://carolinak12.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/Carolina_K12.png'); ?>" srcset="<?php echo Assets\asset_path('images/Carolina_K12@2x.png'); ?> 2x" alt="Carolina K12" /></a>
       <a href="http://www.ncpublicschools.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/NCDPI.png'); ?>" srcset="<?php echo Assets\asset_path('images/NCDPI@2x.png'); ?> 2x" alt="Public Schools of North Carolina" /></a>
-      <a href="https://turbovote.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/TurboVote_Logo.png'); ?>" srcset="<?php echo Assets\asset_path('images/TurboVote_Logo@2x.png'); ?> 2x" alt="Turbo Vote" /></a>
       <a href="http://www.lwvnc.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/LWV_Logo.png'); ?>" srcset="<?php echo Assets\asset_path('images/LWV_Logo@2x.png'); ?> 2x" alt="League of Women Voters of North Carolina" /></a>
       <a href="http://nationalhumanitiescenter.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/NHC_Logo.png'); ?>" srcset="<?php echo Assets\asset_path('images/NHC_Logo@2x.png'); ?> 2x" alt="National Humanities Center" /></a>
       <a href="http://www.techandciviclife.org/" target="_blank"><img src="<?php echo Assets\asset_path('images/CTC_Logo.png'); ?>" srcset="<?php echo Assets\asset_path('images/CTC_Logo@2x.png'); ?> 2x" alt="Center for Technology and Civic Life" /></a>
@@ -29,7 +28,7 @@ use Roots\Sage\Assets;
 			<div class="alert alert-info" role="alert">
 				<h2 class="text-center">Attention All High School Civics Teachers:</h2>
 				<p class="lead text-center">Local Election Package Available for 2017 Races this Fall.</p>
-				<strong>Enrollment for this free service will be available in August</strong>
+				<strong>Enrollment for this free service is now available.</strong>
 			</div>		
 				<p class="alert-desc"> First Vote NC, with the help of Carolina K-12, NCDPI and EdNC launched a civic engagement curriculum and election simulation platform in conjunction with the 2016 elections for NC public and charter high schools.  More than 32,000 students voted in 46 counties in the state. 
 

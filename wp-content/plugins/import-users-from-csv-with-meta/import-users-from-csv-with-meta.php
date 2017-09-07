@@ -3,7 +3,7 @@
 Plugin Name:	Import users from CSV with meta
 Plugin URI:		https://www.codection.com
 Description:	This plugins allows to import users using CSV files to WP database automatically
-Version:		1.10.6.5
+Version:		1.10.6.9
 Author:			codection
 Author URI: 	https://codection.com
 License:     	GPL2
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $url_plugin = WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) );
 $wp_users_fields = array( "id", "user_nicename", "user_url", "display_name", "nickname", "first_name", "last_name", "description", "jabber", "aim", "yim", "user_registered", "password", "user_pass", "locale" );
 $wp_min_fields = array("Username", "Email");
-$acui_fields = array( "bp_group", "bp_group_role" );
+$acui_fields = array( "bp_group", "bp_group_role", "role" );
 $acui_restricted_fields = array_merge( $wp_users_fields, $wp_min_fields, $acui_fields );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -431,6 +431,8 @@ function acui_cron_process(){
 		$path_to_move = get_option( "acui_cron_path_to_move");
 
 		rename( $path_to_file, $path_to_move );
+
+		acui_cron_process_auto_rename(); // optionally rename with date and time included
 	}
 
 	$message .= __( '--Finished at', 'import-users-from-csv-with-meta' ) . ' ' . date("Y-m-d H:i:s") . '<br/><br/>';
@@ -438,9 +440,8 @@ function acui_cron_process(){
 	update_option( "acui_cron_log", $message );
 }
 
-add_action( 'acui_cron_process', 'acui_cron_process_auto_rename', 99 );
 function acui_cron_process_auto_rename () {
-  if( get_option( "acui_cron_path_to_move_auto_rename" ) !== 'yes' )
+  if( get_option( "acui_cron_path_to_move_auto_rename" ) != true )
   	return;
 
   $movefile  = get_option( "acui_cron_path_to_move");

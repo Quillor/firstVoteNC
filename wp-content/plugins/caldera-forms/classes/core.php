@@ -79,6 +79,18 @@ class Caldera_Forms {
 	 */
 	protected static $api;
 
+
+	/**
+	 * Settings collection
+	 *
+	 * Access via Caldera_Forms::settings()
+	 *
+	 * @since 1.5.3
+	 *
+	 * @var Caldera_Forms_Settings
+	 */
+	protected static $settings;
+
 	/**
 	 * Initialize the plugin by setting localization, filters, and administration functions.
 	 *
@@ -118,14 +130,16 @@ class Caldera_Forms {
 		//filter shortcode atts for defaults
 		add_filter( 'shortcode_atts_caldera_form', array( 'Caldera_Forms_Shortcode_Atts', 'allow_default_set' ), 5, 4 );
 		add_filter( 'shortcode_atts_caldera_form_modal', array( 'Caldera_Forms_Shortcode_Atts', 'allow_default_set' ), 5, 4 );
+		add_filter( 'shortcode_atts_caldera_form', array( 'Caldera_Forms_Shortcode_Atts', 'maybe_allow_revision' ), 5, 4 );
+		add_filter( 'shortcode_atts_caldera_form_modal', array( 'Caldera_Forms_Shortcode_Atts', 'maybe_allow_revision' ), 5, 4 );
 
 		//emails
 		add_action( 'caldera_forms_core_init', array( 'Caldera_Forms_Email_Settings', 'maybe_add_hooks' ) );
-		add_action( 'caldera_forms_admin_footer', array( 'Caldera_Forms_Email_Settings', 'ui' ) );
 		add_filter( 'pre_update_option__caldera_forms_email_api_settings', array(
 			'Caldera_Forms_Email_Settings',
 			'sanitize_save'
 		) );
+
 		if ( current_user_can( Caldera_Forms::get_manage_cap( 'admin' ) ) ) {
 			add_action( 'wp_ajax_cf_email_save', array( 'Caldera_Forms_Email_Settings', 'save' ) );
 		}
@@ -184,9 +198,10 @@ class Caldera_Forms {
 		//clear syncer cache on form update
 		add_action( 'caldera_forms_save_form', array( 'Caldera_Forms_Sync_Factory', 'clear_cache' ) );
 
+		//initialize settings
+		Caldera_Forms_Settings_Init::load();
 
-
-		/**
+        /**
 		 * Runs after Caldera Forms core is initialized
 		 *
 		 * @since 1.3.5.3
@@ -393,7 +408,12 @@ class Caldera_Forms {
 					caldera_forms_write_db_flag( 4 );
 				}
 
-				caldera_forms_write_db_flag( 5 );
+				if ( ( $db_version < 6 || $force_update ) && class_exists( 'Caldera_Forms_Forms' ) ) {
+					caldera_forms_db_v6_update();
+
+				}
+
+				caldera_forms_write_db_flag( 6 );
 
 			}else{
 				$version = caldera_forms_get_last_update_version();
@@ -640,7 +660,7 @@ class Caldera_Forms {
 		$request = wp_remote_get( 'https://www.google.com/recaptcha/api/siteverify?' . build_query( $args ) );
 		$result  = json_decode( wp_remote_retrieve_body( $request ) );
 		if ( empty( $result->success ) ) {
-			return new WP_Error( 'error', __( "The wasn't entered correct.", 'caldera-forms' ) . ' <a href="#" class="reset_' . sanitize_text_field( $_POST[ $field[ 'ID' ] ] ) . '">' . __( 'Reset', 'caldera-forms' ) . '<a>.' );
+			return new WP_Error( 'error', __( "The captcha wasn't entered correctly.", 'caldera-forms' ) . ' <a href="#" class="reset_' . sanitize_text_field( $_POST[ $field[ 'ID' ] ] ) . '">' . __( 'Reset', 'caldera-forms' ) . '<a>.' );
 		}
 
 
@@ -972,9 +992,9 @@ class Caldera_Forms {
 							parse_str( $redirect[ 'query' ], $redirect[ 'query' ] );
 							$base_redirect = explode( '?', $base_redirect, 2 );
 							$query_vars    = array_merge( $redirect[ 'query' ], $query_vars );
-							$redirect      = $base_redirect[ 0 ] . '?' . http_build_query( $query_vars );
+							$redirect      = add_query_arg( $query_vars, $base_redirect[ 0 ] );
 						} else {
-							$redirect = $base_redirect . '?' . http_build_query( $query_vars );
+							$redirect      = add_query_arg( $query_vars, $base_redirect );
 						}
 
 						return $redirect;
@@ -2577,33 +2597,16 @@ class Caldera_Forms {
 			$form_instance_number = $_POST[ '_cf_frm_ct' ];
 		}
 
-		// check honey
-		if ( isset( $form[ 'check_honey' ] ) ) {
-			// use multiple honey words
-			$honey_words = apply_filters( 'caldera_forms_get_honey_words', array(
-				'web_site',
-				'url',
-				'email',
-				'company',
-				'name'
-			) );
-			foreach ( $_POST as $honey_word => $honey_value ) {
+		// check honeypot
+        if ( Caldera_Forms_Field_Honey::active( $form ) ) {
+            $passed = Caldera_Forms_Field_Honey::check( $_POST, $form );
+            if( ! $passed ){
+                $url = Caldera_Forms_Field_Honey::redirect_url( $referrer, $form_instance_number, $process_id);
+                return self::form_redirect( 'complete', $url, $form, uniqid( '_cf_bliss_' ) );
+            }
 
-				if ( ! is_array( $honey_value ) && strlen( $honey_value ) && in_array( $honey_word, $honey_words ) ) {
-					// yupo - bye bye
-					$referrer[ 'query' ][ 'cf_su' ] = $form_instance_number;
-					$query_str                      = array(
-						'cf_er' => $process_id
-					);
-					if ( ! empty( $referrer[ 'query' ] ) ) {
-						$query_str = array_merge( $referrer[ 'query' ], $query_str );
-					}
-					$referrer = $referrer[ 'path' ] . '?' . http_build_query( $query_str );
+        }
 
-					return self::form_redirect( 'complete', $referrer, $form, uniqid( '_cf_bliss_' ) );
-				}
-			}
-		}
 		// init filter
 		$form = apply_filters( 'caldera_forms_submit_get_form', $form );
 
@@ -3293,13 +3296,14 @@ class Caldera_Forms {
 	 * Makes Caldera Forms load the preview
 	 */
 	static public function cf_init_preview(){
-		if( ! isset( $_GET, $_GET['cf_preview'] ) ){
+		if( ! isset( $_GET, $_GET[ Caldera_Forms_Admin::PREVIEW_KEY ] ) ){
 			return;
 		}
 
 		global $post, $form;
 
-		$preview_id = trim( $_GET['cf_preview'] );
+
+		$preview_id = trim( $_GET[ Caldera_Forms_Admin::PREVIEW_KEY  ] );
 		if(!empty( $preview_id )){
 			$form = Caldera_Forms_Forms::get_form($preview_id );
 
@@ -3309,6 +3313,7 @@ class Caldera_Forms {
 				if(empty( $form['ID']) || $form['ID'] !== trim( $preview_id ) ){
 					return;
 				}
+
 				if( empty($post) || $post->post_title !== 'Caldera Forms Preview' ){
 					$temp_page = get_page_by_title('Caldera Forms Preview');
 					if(empty($temp_page)){
@@ -3323,17 +3328,46 @@ class Caldera_Forms {
 							'comment_status' => 'closed'
 						);
 						$page_id = wp_insert_post( $post );
-						wp_redirect( trailingslashit( get_home_url() ) . '?page_id='.$page_id.'&preview=true&cf_preview='.$preview_id );
+						$url = add_query_arg( array(
+							'page_id' => $page_id,
+							'preview' => true,
+							Caldera_Forms_Admin::PREVIEW_KEY => $preview_id
+
+						), home_url() );
+
+						if( isset( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ) ){
+							$url = add_query_arg( Caldera_Forms_Admin::REVISION_KEY, absint( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ), $url  );
+						}
+
+						wp_redirect( $url );
 						exit;
 					}
+
 					if( $temp_page->post_status !== 'draft'){
 						wp_update_post( array( 'ID' => $temp_page->ID, 'post_status' => 'draft' ) );
 					}
-					wp_redirect( trailingslashit( get_home_url() ) . '?page_id='.$temp_page->ID.'&preview=true&cf_preview='.$preview_id );
+
+					$url = add_query_arg( array(
+						'page_id' => $temp_page->ID,
+						'preview' => true,
+						Caldera_Forms_Admin::PREVIEW_KEY => $preview_id
+
+					), home_url() );
+
+					if( isset( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ) ){
+						$url = add_query_arg( Caldera_Forms_Admin::REVISION_KEY, absint( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ), $url  );
+					}
+
+					wp_redirect( $url );
 					exit;
 				}
+
 				$post->post_title = $form['name'];
-				$post->post_content = '[caldera_form id="'.$_GET['cf_preview'].'"]';
+				if( isset( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ) ){
+					$post->post_content = '[caldera_form id="' . $_GET[ Caldera_Forms_Admin::PREVIEW_KEY ]. ' revision="' . absint( $_GET[ Caldera_Forms_Admin::REVISION_KEY ] ) . '"]';
+				}else{
+					$post->post_content = '[caldera_form id="' . $_GET[ Caldera_Forms_Admin::PREVIEW_KEY ]. '"]';
+				}
 			}
 		}
 
@@ -3435,7 +3469,7 @@ class Caldera_Forms {
 				$url = set_url_scheme( $url, 'https' );
 			}
 		}
-
+		
 		/**
 		 * Filter the Caldera Forms APU url
 		 *
@@ -3729,13 +3763,17 @@ class Caldera_Forms {
 			$field_classes[ 'field_label' ][] = 'screen-reader-text sr-only';
 		}
 
+		$field_id_attr = Caldera_Forms_Field_Util::get_base_id( $field, $current_form_count, $form );
+
+		$type = Caldera_Forms_Field_Util::get_type( $field, $form );
+
 		$field_structure = array(
 			"field"             => $field,
 			"id"                => $field[ 'ID' ],//'fld_' . $field['slug'],
 			"name"              => $field[ 'ID' ],//$field['slug'],
-			"wrapper_before"    => "<div role=\"field\" data-field-wrapper=\"" . $field[ 'ID' ] . "\" class=\"" . $field_wrapper_class . "\">\r\n",
+			"wrapper_before"    => "<div role=\"field\" data-field-wrapper=\"" . $field[ 'ID' ] . "\" class=\"" . $field_wrapper_class . "\" id=\"" . $field_id_attr . "-wrap\">\r\n",
 			"field_before"      => "<div class=\"" . $field_input_class . "\">\r\n",
-			"label_before"      =>  "<label id=\"" . $field[ 'ID' ] . "Label\" for=\"" . $field[ 'ID' ] . '_' . $current_form_count . "\" class=\"" . implode( ' ', $field_classes[ 'field_label' ] ) . "\">",
+			"label_before"      =>  "<label id=\"" . $field[ 'ID' ] . "Label\" for=\"" . $field_id_attr. "\" class=\"" . implode( ' ', $field_classes[ 'field_label' ] ) . "\">",
 			"label"             =>  $field[ 'label' ],
 			"label_required"    => ( empty( $field[ 'hide_label' ] ) ? ( ! empty( $field[ 'required' ] ) ? " <span aria-hidden=\"true\" role=\"presentation\" class=\"" . implode( ' ', $field_classes[ 'field_required_tag' ] ) . "\" style=\"color:#ee0000;\">*</span>" : "" ) : null ),
 			"label_after"       => "</label>",
@@ -3748,7 +3786,12 @@ class Caldera_Forms {
 			"aria"              => array()
 		);
 
-		$field_structure[ 'aria' ][ 'labelledby' ] = $field[ 'ID' ] . 'Label';
+		if ( ! in_array( $type, array(
+			'button',
+			'hidden'
+		) ) ) {
+			$field_structure[ 'aria' ][ 'labelledby' ] = $field[ 'ID' ] . 'Label';
+		}
 
 		// if has caption
 		if ( ! empty( $field[ 'caption' ] ) ) {
@@ -3789,6 +3832,8 @@ class Caldera_Forms {
 				$aria_atts .= ' aria-' . $att . '="' . esc_attr( $att_val ) . '"';
 			}
 			$field_structure[ 'aria' ] = $aria_atts;
+		}else{
+			$field_structure[ 'aria' ] = '';
 		}
 
 		$field_name        = $field_structure[ 'name' ];
@@ -3846,7 +3891,7 @@ class Caldera_Forms {
 	 * @param null|int $entry_id Optional. Entry ID to load data from. Null, the default, loads form for creating a new entry.
 	 * @param null $shortcode No longer used.
 	 *
-	 * @return void|string HTML for form, if it was able to be laoded
+	 * @return void|string HTML for form, if it was able to be loaded
 	 */
 	static public function render_form( $atts, $entry_id = null, $shortcode = null ) {
 
@@ -3861,6 +3906,8 @@ class Caldera_Forms {
 			$form = Caldera_Forms_Forms::get_form( $atts );
 			$atts = array();
 
+		}elseif ( is_array( $atts ) && Caldera_Forms_Forms::is_revision( $atts )  ){
+			$form = $atts;
 		} elseif ( is_array( $atts ) && isset( $atts[ 'ID' ] ) ) {
 			$form = Caldera_Forms_Forms::get_form( $atts[ 'ID' ] );
 		} else {
@@ -4439,30 +4486,13 @@ class Caldera_Forms {
 				$out .= "</ol></span>\r\n";
 			}
 
-			// sticky sticky honey
-			if ( isset( $form[ 'check_honey' ] ) ) {
-				$out .= "<div class=\"hide\" style=\"display:none; overflow:hidden;height:0;width:0;\">\r\n";
+            // sticky sticky honey
+            if ( Caldera_Forms_Field_Honey::active( $form ) ) {
+                $out .= Caldera_Forms_Field_Honey::field( $form );
+            }
 
-				/**
-				 * Change which words are used to form honey pot
-				 *
-				 * @since unknown
-				 *
-				 * @param array $words An array of words.
-				 */
-				$honey_words = apply_filters( 'caldera_forms_get_honey_words', array(
-					'web_site',
-					'url',
-					'email',
-					'company',
-					'name'
-				) );
-				$word        = $honey_words[ rand( 0, count( $honey_words ) - 1 ) ];
-				$out .= "<label>" . ucwords( str_replace( '_', ' ', $word ) ) . "</label><input type=\"text\" name=\"" . $word . "\" value=\"\" autocomplete=\"off\">\r\n";
-				$out .= "</div>";
-			}
 
-			$out .= $form[ 'grid_object' ]->renderLayout();
+            $out .= $form[ 'grid_object' ]->renderLayout();
 
 			$out .= "</" . $form_element . ">\r\n";
 		}
@@ -4617,13 +4647,25 @@ class Caldera_Forms {
 		if( ! empty( $atts[ 'ID' ] ) && empty( $atts[ 'id' ] )){
 			$atts[ 'id' ] = $atts[ 'ID' ];
 		}
+
+		if( ! empty( $atts[ 'revision' ] ) ){
+			$revision = Caldera_Forms_Forms::get_revision( $atts[ 'revision' ] );
+			if( is_array( $revision ) ){
+				$atts = $revision;
+				$atts[ 'id' ] = $revision[ 'ID' ];
+			}
+		}
+
 		if ( ! isset( $atts[ 'id' ] ) ) {
 			return;
 		}
 
+
+
 		if ( $shortcode === 'caldera_form_modal' || ( ! empty( $atts[ 'modal' ] ) && $atts[ 'modal' ] ) ) {
 			return Caldera_Forms_Render_Modals::modal_form( $atts, $content );
 		}
+
 
 		$form = self::render_form( $atts );
 
@@ -4761,7 +4803,6 @@ class Caldera_Forms {
 	 *
 	 * @since 1.5.0
 	 */
-
 	public static function process_form_via_post(){
 		if (isset($_POST['_cf_frm_id'])) {
 			if ( isset( $_POST[ '_cf_verify' ] ) && Caldera_Forms_Render_Nonce::verify_nonce( $_POST[ '_cf_verify' ], $_POST[ '_cf_frm_id' ] ) ) {
@@ -4811,6 +4852,29 @@ class Caldera_Forms {
 		$mail[ 'message' ] = wpautop( $mail[ 'message' ] );
 		return $mail;
 
+	}
+
+	/**
+	 * Get main instance of Caldera_Forms_Settings class
+	 *
+	 * @since 1.5.3
+	 *
+	 * @return Caldera_Forms_Settings
+	 */
+	public static function settings(){
+		if( ! self::$settings ){
+			self::$settings = new Caldera_Forms_Settings();
+			/**
+			 * Runs after main instance of Caldera_Forms_Settings is created
+			 *
+			 * Access via Caldera_Forms::settings()
+			 *
+			 * @since 1.5.3
+			 */
+			do_action( 'caldera_forms_settings_registered' );
+		}
+
+		return self::$settings;
 	}
 
 }
