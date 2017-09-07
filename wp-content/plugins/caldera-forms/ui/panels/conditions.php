@@ -90,7 +90,7 @@ data-autoload="true"
 								<input type="hidden" name="conditions[{{../../../id}}][fields][{{@key}}]" value="{{field}}" id="condition-bound-field-{{@key}}" data-live-sync="true">
 								<select style="max-width:120px;vertical-align: inherit;" name="conditions[{{../../id}}][group][{{parent}}][{{@key}}][field]" data-sync="#condition-bound-field-{{@key}}">
 									<option></option>
-									<optgroup label="Fields">
+									<optgroup label="<?php _e('Fields', 'caldera-forms'); ?>">
 									{{#each @root/fields}}
 										<option value="{{ID}}" {{#is ../field value=ID}}selected="selected"{{/is}} {{#is conditions/type value=../../../id}}disabled="disabled"{{/is}}>{{label}} [{{slug}}]</option>
 									{{/each}}
@@ -120,10 +120,10 @@ data-autoload="true"
 											{{/each}}
 										</select>
 									{{else}}
-										<input type="text" class="magic-tag-enabled block-input" name="conditions[{{../../../../id}}][group][{{../../parent}}][{{@key}}][value]" value="{{../../value}}" {{#unless ../../field}}placeholder="Select field first" disabled=""{{/unless}}>
+										<input type="text" class="magic-tag-enabled block-input" name="conditions[{{../../../../id}}][group][{{../../parent}}][{{@key}}][value]" value="{{../../value}}" {{#unless ../../field}}placeholder="<?php echo esc_html__( 'Select field first', 'caldera-forms' ); ?>" disabled=""{{/unless}}>
 									{{/if}}
 								{{else}}
-									<input type="text" class="magic-tag-enabled block-input" name="conditions[{{../../../../id}}][group][{{../parent}}][{{@key}}][value]" value="{{../value}}" {{#unless ../field}}placeholder="Select field first" disabled=""{{/unless}}>
+									<input type="text" class="magic-tag-enabled block-input" name="conditions[{{../../../../id}}][group][{{../parent}}][{{@key}}][value]" value="{{../value}}" {{#unless ../field}}placeholder="<?php echo esc_html__( 'Select field first', 'caldera-forms' ); ?>" disabled=""{{/unless}}>
 								{{/find}}
 								</span>
 								<button class="button pull-right" data-remove-line="{{@key}}" type="button"><i class="icon-join"></i></button>

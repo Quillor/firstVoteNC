@@ -35,4 +35,14 @@
       color: $white;
     }
   }
+  &.btn-blue {
+    background-color: $navy;
+    color: $white;
+ 
+    &:hover, &:focus, &:active {
+      background-color: $navy-darker;
+      color: $white;
+    }
+  }
 }
+

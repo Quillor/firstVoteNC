@@ -3,9 +3,9 @@
  * Plugin Name: Caldera Forms - Run Action
  * Plugin URI:  
  * Description: Runs an action on submit
- * Version: 1.0.1
- * Author:      David Cramer
- * Author URI:
+ * Version: 1.0.2
+ * Author:     Caldera Labs
+ * Author URI: https://calderaforms.com
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Translation Domain: cf-run-action
@@ -26,8 +26,8 @@ function cf_run_action_register_processor($pr){
 	$pr['run_action'] = array(
 		"name"              =>  __('Run Action'),
 		"description"       =>  __("Run Action on submission"),
-		"author"            =>  'David Cramer',
-		"author_url"        =>  'http://cramer.co.za',
+		"author"            =>  'Caldera Labs',
+		"author_url"        =>  'https://calderaforms.com',
 		"pre_processor"     =>  'cf_run_action_pre_process',
 		"processor"         =>  'cf_run_action_process',
 		"post_processor"    =>  'cf_run_action_post_process',
@@ -44,6 +44,8 @@ function cf_run_action_register_processor($pr){
  *
  * @param array $config Processor settings. Key 'action' has action name.
  * @param array $form Form submission data.
+ *
+ * @return void|mixed
  */
 function cf_run_action_pre_process( $config, $form){
 	
@@ -87,6 +89,8 @@ function cf_run_action_pre_process( $config, $form){
  *
  * @param array $config Processor settings. Key 'action' has action name.
  * @param array $form Form submission data.
+ *
+ * @return void|mixed
  */
 function cf_run_action_process( $config, $form){
 
@@ -131,10 +135,12 @@ function cf_run_action_process( $config, $form){
  *
  * @param array $config Processor settings. Key 'action' has action name.
  * @param array $form Form submission data.
+ *
+ * @return void|mixed
  */
 function cf_run_action_post_process( $config, $form){
 	
-	// comatability with old version and standard check.
+	// Compatibility with old version and standard check.
 	if( !isset( $config['position'] ) || $config['position'] !== 'post' ){
 		return;
 	}	

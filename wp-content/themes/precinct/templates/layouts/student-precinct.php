@@ -98,7 +98,7 @@
 			}
         endwhile; endif; wp_reset_postdata();
 				if($vote_off==true){?>             
-					<h2 class="text-center">Voting is still closed at this hour.</h2>
+					<h2 class="text-center">Coming Soon!</h2>
 			<?php }
 		
         ?>

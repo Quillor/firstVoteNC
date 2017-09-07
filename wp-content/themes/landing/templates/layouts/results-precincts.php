@@ -54,9 +54,12 @@ ksort($sites);
       <tbody>
         <?php foreach ($sites as $site) {
 			$link = explode("?",$site['link']);
+			$election_replace = str_replace(' ','-',$election ); 
+			$combine = $link[0].'election/'.$election_replace.'/?results=general&election-option='.$election;
+			//echo $combine;
 		?>
           <tr>
-            <td><a href="<?php echo $link[0]; ?>" target="_blank"><?php echo $site['name']; ?></a></td>
+            <td><a href="<?php echo $combine; ?>" target="_blank"><?php echo $site['name']; ?></a></td>
             <td><?php echo $site['count']; ?> </td>
           </tr>
         <?php } ?>

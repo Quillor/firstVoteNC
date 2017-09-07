@@ -17,6 +17,7 @@ class Caldera_Forms_Magic {
 	 */
 	public function __construct() {
 		add_filter( 'caldera_forms_pre_do_field_magic', array( $this, 'field_magic' ), 10,  5 );
+
 	}
 
 
@@ -38,10 +39,10 @@ class Caldera_Forms_Magic {
 	public function field_magic( $_value, $value, $matches, $entry_id, $form ){
 		if( empty( $form ) ){
 			global  $form;
-			
 		}
+
 		if( ! empty( $matches ) && ! empty( $matches[1] ) && ! empty( $matches[1][0]) ){
-			
+
 			if ( Caldera_Forms_Field_Util::has_field_type(  'credit_card_exp', $form ) ) {
 				$split = Caldera_Forms_Magic_Util::split_tags( $matches[1][0] );
 				if( is_array( $split ) && ! empty( $split[1] ) && in_array( $split[1], array( 'month', 'year' ) ) ){

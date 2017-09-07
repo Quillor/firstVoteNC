@@ -23,6 +23,33 @@ class Caldera_Forms_Admin {
 	const VERSION = CFCORE_VER;
 
 	/**
+	 * GET var for from ID to edit
+	 *
+	 * @since 1.5.3
+	 *
+	 * @var string
+	 */
+	const EDIT_KEY = 'edit';
+
+	/**
+	 * GET var for revision ID to edit
+	 *
+	 * @since 1.5.3
+	 *
+	 * @var string
+	 */
+	const REVISION_KEY = 'cf_revision';
+
+	/**
+	 * GET var for form ID when doing a preview
+	 *
+	 * @since 1.5.3
+	 *
+	 * @var string
+	 */
+	const PREVIEW_KEY = 'cf_preview';
+
+	/**
 	 * @var      string
 	 */
 	protected $plugin_slug = 'caldera-forms';
@@ -122,6 +149,8 @@ class Caldera_Forms_Admin {
 		add_action( 'init', array( $this, 'init_pro_admin' ) );
 
 		add_action( 'init', array( 'Caldera_Forms_Admin_Resend', 'watch_for_resend' ) );
+
+        add_action( 'caldera_forms_admin_footer', array( 'Caldera_Forms_Email_Settings', 'ui' ) );
 
 		/**
 		 * Runs after Caldera Forms admin is initialized
@@ -464,8 +493,8 @@ class Caldera_Forms_Admin {
 
 				if( $result ){
 					$out[ 'status' ]    = $do_action;
-					$out[ 'undo' ]      = ( $do_action === 'trash' ? 'active' : esc_html__( 'Trash', 'caldera-forms' ) );
-					$out[ 'undo_text' ] = ( $do_action === 'trash' ? esc_html__( 'Restore', 'caldera-forms' ) : esc_html__( 'Trash', 'caldera-forms' ) );
+					$out[ 'undo' ]      = ( $do_action === 'trash' ? 'active' : esc_html_x( 'Trash', 'Verb: Action of moving to trash', 'caldera-forms' ) );
+					$out[ 'undo_text' ] = ( $do_action === 'trash' ? esc_html__( 'Restore', 'caldera-forms' ) : esc_html_x( 'Trash', 'Verb: Action of moving to trash', 'caldera-forms' ) );
 
 					$form             = strip_tags( $_POST[ 'form' ] );
 					$out[ 'entries' ] = implode( ',', $selectors );
@@ -622,7 +651,13 @@ class Caldera_Forms_Admin {
 		return $buttons;
 	}
 
-
+	/**
+	 * Handles saving general settings
+	 *
+	 * @since unknown
+	 *
+	 * @uses "wp_ajax_save_cf_setting" action
+	 */
 	public static function save_cf_setting(){
 		self::verify_ajax_action();
 		if(empty($_POST['set'])){
@@ -630,13 +665,25 @@ class Caldera_Forms_Admin {
 		}
 		$style_includes = get_option( '_caldera_forms_styleincludes' );
 
-		if(empty($style_includes[$_POST['set']])){
-			$style_includes[$_POST['set']] = true;
+
+		if( 'cdn_enable' == $_POST[ 'set' ] ){
+			Caldera_Forms::settings()->get_cdn()->toggle_cdn_enable();
+
 		}else{
-			$style_includes[$_POST['set']] = false;
+			if(empty($style_includes[$_POST['set']])){
+				$style_includes[$_POST['set']] = true;
+			}else{
+				$style_includes[$_POST['set']] = false;
+			}
+			update_option( '_caldera_forms_styleincludes', $style_includes);
+
 		}
-		update_option( '_caldera_forms_styleincludes', $style_includes);
-		wp_send_json( $style_includes );
+
+		$return_data = array_merge( $style_includes, array(
+			'cdn_enable' => Caldera_Forms::settings()->get_cdn()->enabled()
+		) );
+
+		wp_send_json( $return_data );
 		exit;
 	}
 
@@ -681,16 +728,21 @@ class Caldera_Forms_Admin {
 			wp_send_json_error( );
 		}
 
-		if( isset( $form['form_draft'] ) ){
+		add_filter( 'caldera_forms_save_revision', '__return_false' );
 
+		if ( ! empty( $form[ 'form_draft' ] ) ) {
+			unset( $form['form_draft'] );
+			unset( $forms[ $form['ID'] ]['form_draft'] );
 			Caldera_Forms_Forms::form_state( $form );
 			$state = 'active-form';
-			$label = esc_html__( 'Deactivate', 'caldera-forms' );
+			$label = esc_html__( 'Disable', 'caldera-forms' );
 		}else{
 			Caldera_Forms_Forms::form_state( $form , false );
 			$state = 'draft-form';
-			$label = esc_html__( 'Activate', 'caldera-forms' );
+			$label = esc_html__( 'Enable', 'caldera-forms' );
 		}
+
+		add_filter( 'caldera_forms_save_revision', '__return_true' );
 
 
 		wp_send_json_success( array( 'ID' => $form['ID'], 'state' => $state, 'label' => $label ) );
@@ -1176,7 +1228,7 @@ class Caldera_Forms_Admin {
 					wp_redirect( 'admin.php?page=caldera-forms' );
 					exit;
 				} else {
-					wp_die( __('Sorry, please try again', 'caldera-forms' ), __('Form could not be deleted.', 'caldera-forms' ) );
+					wp_die( __('Form could not be deleted.', 'caldera-forms' ) );
 				}
 
 			}
@@ -1336,7 +1388,7 @@ class Caldera_Forms_Admin {
 
 			foreach( $rawdata as $entry){
 				$submission = Caldera_Forms::get_entry( $entry->_entryid, $form);
-				$data[$entry->_entryid]['date_submitted'] = $entry->_date_submitted;
+				$data[$entry->_entryid]['date_submitted'] = Caldera_Forms::localize_time( $entry->_date_submitted );
 
 				foreach ($structure as $slug => $field_id) {
 					$data[$entry->_entryid][$slug] = ( isset( $submission['data'][$field_id]['value'] ) ? $submission['data'][$field_id]['value'] : null );
@@ -1357,6 +1409,13 @@ class Caldera_Forms_Admin {
 			header("Content-Disposition: attachment; filename=\"" . sanitize_file_name( $form['name'] ) . ".csv\";" );
 			header("Content-Transfer-Encoding: binary");
 			$df = fopen("php://output", 'w');
+
+			$csv_data = apply_filters( 'caldera_forms_admin_csv', array(
+				'headers' => $headers,
+				'data' => $data
+			), $form );
+			$data = $csv_data[ 'data' ];
+			$headers = $csv_data[ 'headers' ];
 			fputcsv($df, $headers);
 			foreach($data as $row){
 				$csvrow = array();
@@ -1405,6 +1464,22 @@ class Caldera_Forms_Admin {
 
 			}
 			return;
+		}
+
+		/** Resotre revisions */
+		if( isset( $_POST[ 'cf_edit_nonce' ], $_POST[ self::REVISION_KEY ], $_POST[ 'form' ], $_POST[ 'restore' ] ) ){
+			if( ! current_user_can( Caldera_Forms::get_manage_cap( 'manage' ) ) || ! wp_verify_nonce( $_POST[ 'cf_edit_nonce' ], 'cf_edit_element' ) ){
+				wp_send_json_error();
+
+			}
+			$restored = Caldera_Forms_Forms::restore_revision( absint( $_POST[ self::REVISION_KEY ] ));
+			if( $restored ){
+				wp_send_json_success();
+			}else{
+				wp_send_json_error();
+			}
+
+			exit;
 		}
 	}
 
@@ -1542,6 +1617,17 @@ class Caldera_Forms_Admin {
 							'text' => __( 'Conditionals getting started guide', 'caldera-forms' )
 						)
 					),
+					"revisions" => array(
+						"name" => __( 'Revisions', 'caldera-forms' ),
+						"location" => "lower",
+						"label" => __( 'Revisions', 'caldera-forms' ),
+						"canvas" => $path . "revisions.php",
+						'tip' => array(
+							'link' => 'https://calderaforms.com/doc/form-revisions-drafts/?utm_source=wp-admin&utm_medium=form-editor&utm_term=tabs',
+							'text' => __( 'Working with form revisions and drafts', 'caldera-forms' )
+						)
+					),
+
 					"variables" => array(
 						"name" => __( 'Variables', 'caldera-forms' ),
 						"location" => "lower",
@@ -1597,6 +1683,13 @@ class Caldera_Forms_Admin {
 				),
 			),
 		);
+
+
+		if( self::is_revision_edit() ){
+			unset( $internal_panels[ 'revisions' ] );
+		}
+
+
 
 		return array_merge( $panels, $internal_panels );
 
@@ -1863,8 +1956,19 @@ class Caldera_Forms_Admin {
 	 * @return bool
 	 */
 	public static function is_edit(){
-		return Caldera_Forms_Admin::is_page() && isset( $_GET[ 'edit' ] );
+		return Caldera_Forms_Admin::is_page() && isset( $_GET[ self::EDIT_KEY ] );
 
+	}
+
+	/**
+	 * Check if is form revision edit page
+	 *
+	 * @since 1.5.0.9
+	 *
+	 * @return bool
+	 */
+	public static function is_revision_edit(){
+		return  self::is_edit() && isset( $_GET[ self::REVISION_KEY ] ) && is_numeric( $_GET[ self::REVISION_KEY ] );
 	}
 
 	/**
@@ -1875,7 +1979,7 @@ class Caldera_Forms_Admin {
 	 * @return bool
 	 */
 	public static function is_main_page(){
-		return Caldera_Forms_Admin::is_page() && ! isset( $_GET[ 'edit' ] );
+		return Caldera_Forms_Admin::is_page() && ! isset( $_GET[ self::EDIT_KEY ] );
 
 	}
 
@@ -1902,6 +2006,45 @@ class Caldera_Forms_Admin {
 		return add_query_arg( 'page', Caldera_Forms::PLUGIN_SLUG, admin_url( 'admin.php' ) );
 	}
 
+	/**
+	 * Get link for form editor
+	 *
+	 * @since 1.5.3
+	 *
+	 * @param string $form_id ID of form to edit
+	 * @param int $revision_id Optional The ID of the revision to edit if editing a revision
+	 *
+	 * @return  string
+	 */
+	public static function form_edit_link( $form_id, $revision_id = false ){
+		$args = array(
+			self::EDIT_KEY => $form_id,
+			'page' => Caldera_Forms::PLUGIN_SLUG
+		);
+
+		if( $revision_id ){
+			$args[ self::REVISION_KEY ] = $revision_id;
+		}
+
+		return add_query_arg( $args, admin_url( 'admin.php' ) );
+	}
+
+	/**
+	 * @param $form_id
+	 * @param bool $revision_id
+	 *
+	 * @return string
+	 */
+	public static function preview_link( $form_id, $revision_id = false ){
+		$args =  array(
+			self::PREVIEW_KEY => $form_id
+		);
+		if( $revision_id ){
+			$args[ self::REVISION_KEY ] = $revision_id;
+		}
+
+		return  add_query_arg( $args, get_home_url() );
+	}
 }
 
 

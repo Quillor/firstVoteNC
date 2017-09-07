@@ -18,6 +18,7 @@ if ( !function_exists('wp_new_user_notification') ) :
  * @param string $plaintext_pass Optional. The user's plaintext password. Default empty.
  */
 function wp_new_user_notification($user_id, $plaintext_pass = '', $school_id, $school_name, $home_url){
+	global $wpdb, $wp_hasher;
 
     $user = get_userdata($user_id);
     $headers ='Content-type: text/html;charset=utf-8' . "\r\n";
@@ -35,6 +36,24 @@ function wp_new_user_notification($user_id, $plaintext_pass = '', $school_id, $s
     if ( empty($plaintext_pass) )
         return;
 
+	// Generate something random for a password reset key.
+    $key = wp_generate_password( 20, false );
+	
+	/** This action is documented in wp-login.php */
+    do_action( 'retrieve_password_key', $user->user_login, $key );
+	
+	// Now insert the key, hashed, into the DB.
+    if ( empty( $wp_hasher ) ) {
+        require_once ABSPATH . WPINC . '/class-phpass.php';
+        $wp_hasher = new PasswordHash( 8, true );
+    }
+    $hashed = time() . ':' . $wp_hasher->HashPassword( $key );
+    $wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user->user_login ) );
+ 
+    $switched_locale = switch_to_locale( get_user_locale( $user ) );
+	
+	//$reset_link = $home_url."wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user->user_login ), 'login' ;
+	$reset_link = site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') ;
 	
 	$path = str_replace('\\', '/', plugin_dir_path( __FILE__ ));
 	$schoolName = $school_name;
@@ -55,7 +74,7 @@ function wp_new_user_notification($user_id, $plaintext_pass = '', $school_id, $s
     //$message .= sprintf(__('School URL: %s'), $schoolURL.'/') . '<br />';
     //$message .= sprintf(__('Login: %s'), $home_url) . '/teacher-login/ <br />';
 	
-    wp_mail($user->user_email, sprintf(__('[%s] Your username and password'), $blogname), $message, $headers);
+    wp_mail($user->user_email, sprintf(__('[%s] Account Information'), $blogname), $message, $headers);
 
 }
 

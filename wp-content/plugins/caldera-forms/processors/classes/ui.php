@@ -112,6 +112,11 @@ class Caldera_Forms_Processor_UI {
 			$input_type = 'checkbox';
 		}
 
+		if( 'dropdown' == $args[ 'type' ] ){
+			$args[ 'magic' ] = false;
+
+		}
+
 		if ( is_string( $args[ 'extra_classes']) ) {
 			$args[ 'extra_classes' ] = array( $args[ 'extra_classes' ] );
 		}
@@ -129,6 +134,8 @@ class Caldera_Forms_Processor_UI {
 		if ( $args[ 'required' ] ) {
 			$classes[] = 'required';
 		}
+
+		$classes[] = $args['id'];
 
 		$args[ 'extra_classes' ][] = 'field-config';
 
@@ -173,7 +180,7 @@ class Caldera_Forms_Processor_UI {
 			<label for="%s" id="%s">
 				%s
 			</label>
-			<div class="caldera-config-field">
+			<div class="%s">
 				%s
 			</div>
 			%s
@@ -182,6 +189,7 @@ class Caldera_Forms_Processor_UI {
 				esc_attr( $id ),
 				esc_attr( self::label_id( $id ) ),
 				$args[ 'label' ],
+				esc_attr( 'caldera-config-field ' . $id . '-wrap' ),
 				self::input( $input_type, $args, $id, $classes, $required, $has_desc ),
 				$desc
 			);
