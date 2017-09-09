@@ -82,7 +82,7 @@ define('PATH_CURRENT_SITE', '/your-wp-install/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 ```
-  - Save your wp-config file and open your htaccess and copy this
+  - Save your wp-config file and backup first your htaccess file (name it like live.htaccess) and then open the .htaccess, copy this
 ```shell  
 # MultiSite
 RewriteEngine On
