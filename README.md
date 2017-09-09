@@ -103,7 +103,7 @@ RewriteRule . index.php [L]
 
 2. DB
   - Your DB/SQL dump is located at wp-content
-  - Open your phpmyadmin and create a new DB
+  - Open your phpmyadmin and create a new DB (latin1_swedish_ci)
   - IMPORTANT BEFORE IMPORTING, go to your my.ini or MYSQL.ini and find this `[mysqld]` add this below
 ```shell
 performance_schema=ON
