@@ -113,7 +113,7 @@ show_compatibility_56 = ON
   - THEN Restart your SERVER
   - Import your DB now.
 
-#TIME to EDIT/UPDATE the details
+# TIME to EDIT/UPDATE the details
   - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-install (no trailing slash)`
   - here's the tricky part. In wp_blogs change all `domain` value to `localhost`. Well if you have 100+ data, then you need to query and update it via this command
 ```shell	
