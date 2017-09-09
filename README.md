@@ -109,7 +109,7 @@ RewriteRule . index.php [L]
 performance_schema=ON
 show_compatibility_56 = ON
 ```
-  - AND Go to your APACHE and open the httpd.conf and find this text `AllowOverride` and change `None to All`
+  - AND Go to your APACHE and open the httpd.conf and find this text `AllowOverride` and change `None` to `All`
   - THEN Restart your SERVER
   - Import your DB now.
 
