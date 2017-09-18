@@ -70,7 +70,7 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 	
 	
 ## HOW TO SETUP/RUN THE WP FILES IN YOUR LOCALHOST
-### REMINDERS 'please disable the debug section in wp-config, set your apache/nginx/mysql for MAMP into default port OR port 80(apache/nginx) and port 3306 for mysql'
+
 
 1. WP FILES
   - copy the content of your wp-config-sample to wp-config
@@ -104,6 +104,8 @@ RewriteRule . index.php [L]
   - Save your htaccess and you're done with wp files  
 
 2. DB
+### REMINDERS 'please disable the debug section in wp-config, set your apache/nginx/mysql for MAMP into default port OR port 80(apache/nginx) and port 3306 for mysql'
+
   - Your DB/SQL dump is located at wp-content
   - Open your phpmyadmin and create a new DB (latin1_swedish_ci)
   #### (WAMP USER)IMPORTANT BEFORE IMPORTING, 
@@ -136,7 +138,7 @@ memory_limit = 128M
   - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-install (no trailing slash)`
   - here's the tricky part. In wp_blogs change all `domain` value to `localhost`. Well if you have 100+ data, then you need to query and update it via this command
 ```shell	
-UPDATE wp_blogs SET domain = localhost;
+UPDATE wp_blogs SET domain = 'localhost';
 ```
   - "path" for every entry for each subsite to /your-wp-install/old-data/ (must have trailing slash)
 ```shell	
