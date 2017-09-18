@@ -8,7 +8,9 @@
 
     if ( isset( $_GET['preview'] ) ) {
       // Display preview ballot
+	  echo '<h1>Preview Ballot</h1>';
       get_template_part('/templates/layouts/ballot');
+	  return false;
     } elseif ( !isset( $_GET['results'] ) ) {
       // Redirect to results view
       //wp_redirect( add_query_arg('results', 'general') );
