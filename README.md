@@ -70,6 +70,8 @@ staging  git@git.wpengine.com:staging/my_wp_install_name.git (push)
 	
 	
 ## HOW TO SETUP/RUN THE WP FILES IN YOUR LOCALHOST
+### REMINDERS 'please disable the debug section in wp-config, set your apache/nginx/mysql for MAMP into default port OR port 80(apache/nginx) and port 3306 for mysql'
+
 1. WP FILES
   - copy the content of your wp-config-sample to wp-config
   - Open your phpmyadmin and create your DB AND put your DB Details in wp-config file
