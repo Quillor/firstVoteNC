@@ -148,7 +148,7 @@ UPDATE wp_blogs SET path = CONCAT('/your-wp-install',path);
   - In table wp_site: change `domain` to `localhost`, and `path` to `/your-wp-install/` (must have trailing slash)
   - In table wp_sitemeta: change `siteurl` to full path ie `http://localhost/your-wp-install/` (must have trailing slash)
   - In this scenario should atleast have access to your page, if you still get redirection loop or white screen of death, double check the database changes. Now login to wp-login
-  - Install this plugin https://wordpress.org/plugins/search-and-replace/ 
+  - Install this plugin https://wordpress.org/plugins/search-and-replace/ (I believe the plugin is already included, you just need to activate it and run it)
   - This plugin will search the any text and replace it with a new text, in our case we need to replace the old url to the new url so that the subsite will show.
   - Go to Tools and click the search/replace link
   - You will need to select 50 table only to perform search and replace, you need to do this 5th-6th time with max of 50 tables per process so you need to manually select the tables, because if you will select all that will cause an issue and it will not perform the search and replace because of huge amount of data run at once.
