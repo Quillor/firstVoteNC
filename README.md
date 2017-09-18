@@ -135,7 +135,7 @@ memory_limit = 128M
   - Import your DB now.
 
 # TIME to EDIT/UPDATE the details
-  - in wp_options change fields "site_url" and "home" to `http://localhost/your-wp-install (no trailing slash)`
+  - in wp_options change fields `site_url` and `home` to `http://localhost/your-wp-install (no trailing slash)`
   - here's the tricky part. In wp_blogs change all `domain` value to `localhost`. Well if you have 100+ data, then you need to query and update it via this command
 ```shell	
 UPDATE wp_blogs SET domain = 'localhost';
@@ -145,13 +145,13 @@ UPDATE wp_blogs SET domain = 'localhost';
 UPDATE wp_blogs SET path = CONCAT('/your-wp-install',path); 
 ```
   - concat means to combine the static data of your localhost wp url install and old data value. Sample result is `/firstvote/nc-209/`
-  - In table wp_site: change "domain" to "localhost", and "path" to /your-wp-install/ (must have trailing slash)
-  - In table wp_sitemeta: change "siteurl" to full path ie `http://localhost/your-wp-install/` (must have trailing slash)
+  - In table wp_site: change `domain` to `localhost`, and `path` to `/your-wp-install/` (must have trailing slash)
+  - In table wp_sitemeta: change `siteurl` to full path ie `http://localhost/your-wp-install/` (must have trailing slash)
   - In this scenario should atleast have access to your page, if you still get redirection loop or white screen of death, double check the database changes. Now login to wp-login
   - Install this plugin https://wordpress.org/plugins/search-and-replace/ 
   - This plugin will search the any text and replace it with a new text, in our case we need to replace the old url to the new url so that the subsite will show.
   - Go to Tools and click the search/replace link
-  - You will need to select  max 50 DB's table only to perform search and replace, you need to do this 4th-5th time so that no error will occur, because if you will select all that will cause an issue and it will not perform the search and replace because of huge amount of data run at once.
+  - You will need to select 50 table only to perform search and replace, you need to do this 5th-6th time with max of 50 tables per process so you need to manually select the tables, because if you will select all that will cause an issue and it will not perform the search and replace because of huge amount of data run at once.
 ```shell
 Search for: oldsite.com (firstvotenc.staging.wpengine.com)
 Replace with: localhost/your-wp-install
