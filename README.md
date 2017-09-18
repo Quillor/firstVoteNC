@@ -106,13 +106,30 @@ RewriteRule . index.php [L]
 2. DB
   - Your DB/SQL dump is located at wp-content
   - Open your phpmyadmin and create a new DB (latin1_swedish_ci)
-  - IMPORTANT BEFORE IMPORTING, go to your my.ini or MYSQL.ini and find this `[mysqld]` add this below
+  #### (WAMP USER)IMPORTANT BEFORE IMPORTING, 
+  - go to your my.ini or MYSQL.ini and find this `[mysqld]` add this below
 ```shell
 performance_schema=ON
 show_compatibility_56 = ON
 ```
   - AND Go to your APACHE and open the httpd.conf and find this text `AllowOverride` and change `None` to `All`
-  - THEN Restart your SERVER
+  - go to your php.ini and replace this data
+```shell
+max_execution_time = 30 
+max_input_time = 60	
+memory_limit = 128M     
+```
+
+  #### for MAMP USER, 
+  - Stop your server 
+  - Check preference and use the standard version 7.0.15
+  - then go to mamp folder, conf -> php7.0.15 -> php.ini (open it) and find and replace this area
+```shell
+max_execution_time = 30 
+max_input_time = 60	
+memory_limit = 128M     
+```
+  - THEN start your SERVER
   - Import your DB now.
 
 # TIME to EDIT/UPDATE the details
