@@ -41,7 +41,7 @@ add_shortcode( 'unity-login-form', function($attributes, $content = null) {
     exit;
   } else {
     if ( $attributes['lost_password_sent'] ) {
-      $return .= '<div class="alert alert-info" role="alert">Check your email for a link to reset your password.</div>';
+      $return .= '<div class="alert alert-info" role="alert">Check your email for a link to reset your password. <br /> <span style="font-weight: bold;" >If you do not receive this in the next few minutes,</span> be sure to check your spam folder</div>';
     }
 
     if ( $attributes['password_updated'] ) {

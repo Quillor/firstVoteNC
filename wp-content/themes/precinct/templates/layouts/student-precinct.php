@@ -6,9 +6,9 @@
 		$vote_off= true;
         // Get upcoming election
         $election = new WP_Query([
-          'posts_per_page' => 2,  // Just get most recent 2 post. But in the future we'll need to change the election dates to be stored with timestamps so we can query them
+          'posts_per_page' => 5,  // Just get most recent 5 post. But in the future we'll need to change the election dates to be stored with timestamps so we can query them
           'post_type' => 'election',
-		  'order' => 'ASC' // latest
+		  'order' => 'DESC' // latest
         ]);
 
         if ($election->have_posts()) : while ($election->have_posts()) : $election->the_post();
@@ -56,6 +56,7 @@
           // // Check if today is during voting period
           if ($voting_start <= $now && $now <= $voting_end) {
             // Is it between 7:30am and 7:30pm?
+			
             $open = clone $today;
             $open->setTime(07, 30, 00);
             $close = clone $today;
@@ -97,7 +98,8 @@
           <?php
 			}
         endwhile; endif; wp_reset_postdata();
-				if($vote_off==true){?>             
+				if($vote_off==true){
+					?>             
 					<h2 class="text-center">Coming Soon!</h2>
 			<?php }
 		

@@ -1,5 +1,7 @@
 <?php
-
+if ( isset( $_GET['preview'] ) ) {  
+ $preview = true;
+}
 use Roots\Sage\Assets;
 use Roots\Sage\CMB;
 
@@ -64,6 +66,7 @@ if ($voting_start <= $now && $now <= $voting_end) {
 <div class="ballot-head row sr-mute" aria-hidden="true">
   <div class="col-sm-6">
     <strong>First Vote NC<br />
+      <?php echo $test; ?><br />
       <?php echo $precinct_name; ?><br />
       <?php echo date('F j, Y', strtotime(get_post_meta(get_the_id(), '_cmb_voting_day', true))); ?>
     </strong>
@@ -161,6 +164,15 @@ if ($voting_start <= $now && $now <= $voting_end) {
       $('#_cmb_voter_ballot_form').on('submit', function(e) {
         e.preventDefault();
       });
+    });
+  </script>
+<?php } ?>
+
+<?php if ($preview == true) { ?>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      // Prevent submission when polls are closed
+      $('#_cmb_voter_ballot_form input[type=submit]').attr("disabled", "disabled");;
     });
   </script>
 <?php } ?>
