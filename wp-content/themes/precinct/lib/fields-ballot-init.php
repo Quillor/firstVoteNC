@@ -16,7 +16,8 @@ $issues = get_post_meta($election_id, '_cmb_custom_questions', true);
 
 array_unshift($issues, [
     'title' => 'Life Skills',
-    'question' => 'Do you think North Carolina\'s curriculum should include more life skill courses?'
+    'question' => 'Do you think North Carolina\'s curriculum should include more life skill courses?',
+	'options' => ['Strongly Agree', 'Agree', 'Unsure', 'Disagree', 'Strongly Disagree']
   ],[
     'title' => 'Personal Data',
     'question' => 'In regards to the data on cell phones and personal computers, which is more important: public safety or privacy?',

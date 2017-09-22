@@ -263,12 +263,14 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 					$users_registered[] = $user_id;
 					$user_object = new WP_User( $user_id );
 
-					if( $created || $update_roles_existing_users == 'yes'){
+					if( $created || $update_roles_existing_users != 'no' ){
 						if(!( in_array("administrator", acui_get_roles($user_id), FALSE) || is_multisite() && is_super_admin( $user_id ) )){
 							
-							$default_roles = $user_object->roles;
-							foreach ( $default_roles as $default_role ) {
-								$user_object->remove_role( $default_role );
+							if( $update_roles_existing_users == 'yes' ){
+								$default_roles = $user_object->roles;
+								foreach ( $default_roles as $default_role ) {
+									$user_object->remove_role( $default_role );
+								}
 							}
 							
 							if( !empty( $role ) ){
@@ -407,17 +409,19 @@ function acui_import_users( $file, $form_data, $attach_id = 0, $is_cron = false 
 					flush();
 
 					$mail_for_this_user = false;
-					if( $created )
-						$mail_for_this_user = true;
+					if( $is_cron ){
+						if( get_option( "acui_send_mail_cron" ) )
+							$mail_for_this_user = true;
+					}
 					else{
-						if( !$is_cron && isset( $form_data["send_email_updated"] ) && $form_data["send_email_updated"] )
-							$mail_for_this_user = true;
-						else if( $is_cron && get_option( "acui_send_mail_cron" ) )
-							$mail_for_this_user = true;
+						if( isset( $form_data["sends_email"] ) && $form_data["sends_email"] ){
+							if( $created || ( !$created && ( isset( $form_data["send_email_updated"] ) && $form_data["send_email_updated"] ) ) )
+								$mail_for_this_user = true;
+						}
 					}
 						
 					// send mail
-					if( isset( $form_data["sends_email"] ) && $form_data["sends_email"] && $mail_for_this_user ):
+					if( isset( $mail_for_this_user ) && $mail_for_this_user ):
 						$key = get_password_reset_key( $user_object );
 						$user_login= $user_object->user_login;
 						
@@ -646,7 +650,8 @@ function acui_options()
 					<td>
 						<select name="update_roles_existing_users">
 							<option value="no"><?php _e( 'No', 'import-users-from-csv-with-meta' ); ?></option>
-							<option value="yes"><?php _e( 'Yes', 'import-users-from-csv-with-meta' ); ?></option>
+							<option value="yes"><?php _e( 'Yes, update and override existing roles', 'import-users-from-csv-with-meta' ); ?></option>
+							<option value="yes_no_override"><?php _e( 'Yes, add new roles and not override existing ones', 'import-users-from-csv-with-meta' ); ?></option>
 						</select>
 					</td>
 				</tr>
