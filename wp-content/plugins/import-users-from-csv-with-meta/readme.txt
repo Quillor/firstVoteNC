@@ -4,7 +4,7 @@ Donate link: http://paypal.me/codection
 Tags: csv, import, importer, meta data, meta, user, users, user meta,  editor, profile, custom, fields, delimiter, update, insert
 Requires at least: 3.4
 Tested up to: 4.8
-Stable tag: 1.10.6.9
+Stable tag: 1.10.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,14 @@ Plugin will automatically detect:
 5. Extra profile information (user meta)
 
 == Changelog ==
+
+= 1.10.7.1 =
+* 	Sending mail in standard import bug solved, thanks to @manverupl for the error report.
+
+= 1.10.7 =
+*	New feature thanks to Todd Zaroban (@tzarob) now you can choose if override or not current roles of each user when you are updating them
+*	Problem solved in repeated email module thanks to @damienper (https://wordpress.org/support/topic/error-in-email_repeated-php/)
+* 	Problem solved in mail sending with cron thanks to @khansadi (https://wordpress.org/support/topic/no-email-is-sent-to-new-users-when-created-via-corn-import/)
 
 = 1.10.6.9 =
 *	Thanks to Peri Lane from Apis Productions you can now import roles from CSV. Read documentation to see the way to work.
