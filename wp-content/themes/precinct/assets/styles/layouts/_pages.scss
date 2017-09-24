@@ -101,7 +101,8 @@
 }
 
 body.students {
-  background-image: url('../images/banner-flag.jpg');
+ // background-image: url('../images/banner-flag.jpg');
+  background-color:$white;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -111,7 +112,14 @@ body.students {
   }
 
   .page-header {
-    background: none;
+    background: $navy;
+	
+	.entry-title {
+		color:$white;
+		small {
+			color:$white;
+		}
+	}
   }
 
   .precinct .col-centered {
