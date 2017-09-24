@@ -5,6 +5,8 @@
 }
 
 .results.students {
+  background-image: url('../images/banner-flag.jpg');
+
   .main {
     width: 100%;
   }
@@ -12,6 +14,13 @@
   .page-header {
     background: $steel;
     padding-bottom: 0;
+	
+	.entry-title {
+		color:$text-color;
+		small {
+			color:$text-color;
+		}
+	}
   }
 
   .nav-tabs {
