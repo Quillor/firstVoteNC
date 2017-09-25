@@ -2,11 +2,11 @@
 /** wp-custom-user-list-table.php
  *
  * Plugin Name: WP Custom User List Table
- * Plugin URI:  #
+ * Plugin URI:  https://github.com/charls637/WP/tree/master/Plugins/wp-custom-user-list-table
  * Description: Displays custom column in user lists.
  * Version:     1.4.0
  * Author:      Charley Birondo
- * Author URI:  http://en.wp.obenland.it/#utm_source=wordpress&utm_medium=plugin&utm_campaign=wp-last-login
+ * Author URI:  https://github.com/charls637
  * Text Domain: wp-custom-user-list-table
  * Domain Path: /lang
  * License:     GPLv2
