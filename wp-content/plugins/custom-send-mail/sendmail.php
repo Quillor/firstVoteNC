@@ -1,8 +1,10 @@
 <?php
 /**
  * Plugin Name: Custom send mail
+ * Plugin URI:  https://github.com/charls637/WP/tree/master/Plugins/ustom-send-mail
  * Description: Overwrites the pluggable 'wp_new_user_notification()' plugin to allow the sending of a custom email
  * Author: Charley Birondo
+ * Author URI:  https://github.com/charls637
  * Version: 1.0
  */
 
