@@ -1,5 +1,36 @@
+.mt-0{
+	margin-top:0px !important;
+}
+.pt-0{
+	padding-top:0px !important;
+}
+.mb-0{
+	margin-bottom:0px !important;
+}
+.pb-0{
+	padding-bottom:0px !important;
+}
 .mt-5{
 	margin-top:70px;
+}
+.font-lato{
+	font-family: Lato,sans-serif !important;
+}
+
+.fluid-container{
+	.vc_row {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.content{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .sign-up .main {
