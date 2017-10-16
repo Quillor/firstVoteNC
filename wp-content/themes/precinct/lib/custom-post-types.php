@@ -26,13 +26,12 @@ add_action( 'init', function() {
 			//'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
 			'capability_type' => 'post',
 			'hierarchical' => false,
-			'supports' => array('title',  'editor', 'excerpt'),
+			'supports' => array('title',  'editor', 'excerpt', 'revisions'),
 			'has_archive' => false,
 			'rewrite' => true,
 			'query_var' => true
 		)
 	);
-
 	
 	register_post_type( 'election',
 		array('labels' => array(
@@ -57,7 +56,8 @@ add_action( 'init', function() {
 			//'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png',
 			'capability_type' => 'post',
 			'hierarchical' => false,
-			'supports' => array('revisions'),
+			//'supports' => array('title', 'revisions'),
+			'supports' => array('revisions','title'),
 			'has_archive' => false,
 			'rewrite' => true,
 			'query_var' => true
@@ -124,7 +124,6 @@ add_action( 'init', function() {
 		)
 	);
 });
-
 
 /**
  * Modify queries on specific templates

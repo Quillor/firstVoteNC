@@ -23,7 +23,8 @@ if (empty($early_voting)) {
 }
 
 // District data from Google
-if ( false === ($district_data = get_transient('districts_' . $election_id))) {
+//if ( false === ($district_data = get_transient('districts_' . $election_id))) {
+if ( true ) {
   $query = 'address=' . urlencode($master['address']);
   $result = get_civic_data('representatives', $query);
   $district_data = $result->divisions;
@@ -38,7 +39,8 @@ if ( false === ($district_data = get_transient('districts_' . $election_id))) {
 // }
 
 // Construct ballot
-if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
+//if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
+if ( true ) {
   // $file = dirname(__FILE__) . '/north_carolina.xml';
   $file = $master['ballot_xml_file'];
 
@@ -59,8 +61,9 @@ if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
       if (!empty($districtNumber = $master['congressional_district'])) {
         $ocd = substr_replace($ocd, $districtNumber, $pos+7);
       }
-    }
 
+    }
+	
     $electoralDistrict = $ballot_xml->xpath("//ElectoralDistrict/ExternalIdentifiers/ExternalIdentifier/Value[text() = '$ocd']");
     if (count($electoralDistrict) > 0) {
       $contest_data[$i]['ocd'] = $ocd;
@@ -133,95 +136,57 @@ if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
       'section' => 'Partisan Offices',
       'races' => [
         [
-          'type' => 'fill',
-          'match' => false,
-          'ballot_title' => 'President and Vice President of the United States',
-          'partisan' => 'true',
-          'votesAllowed' => '1',
-          'candidates' => [
-            [
-              'ballotName' => 'Donald J. Trump<br />Michael R. Pence',
-              'party' => 'Republican',
-              'partyId' => 'par1'
-            ],[
-              'ballotName' => 'Hillary Clinton<br />Tim Kaine',
-              'party' => 'Democrat',
-              'partyId' => 'par2'
-            ],[
-              'ballotName' => 'Gary Johnson<br />William Weld',
-              'party' => 'Libertarian',
-              'partyId' => 'par4'
-            ]
-          ]
-        ],[
           'type' => 'single',
           'match' => true,
-          'xml_title' => 'U.S. Senator',
-          'ballot_title' => 'US Senate',
-          'partisan' => 'true'
-        ],[
-          'type' => 'single',
-          'match' => true,
-          'xml_title' => 'U.S. Representative',
-          'ballot_title' => 'US House of Representatives',
-          'partisan' => 'true'
-        ],[
-          'type' => 'single',
-          'match' => true,
-          'xml_title' => 'NC Governor',
-          'ballot_title' => 'NC Governor',
-          'partisan' => 'true'
-        ],[
-          'type' => 'single',
-          'match' => true,
-          'xml_title' => 'NC Lt. Governor',
-          'ballot_title' => 'NC Lieutenant Governor',
-          'partisan' => 'true'
-        ],[
-          'type' => 'division',
-          'match' => true,
-          'ocd' => 'ocd-division/country:us/state:nc',
-          'partisan' => 'true',
-          'order' => 'alpha'
-        ],[
-          'type' => 'single',
-          'match' => true,
-          'xml_title' => 'NC State Senator',
-          'ballot_title' => 'NC State Senate',
-          'partisan' => 'true'
-        ],[
-          'type' => 'single',
-          'match' => true,
-          'xml_title' => 'NC State Representative',
-          'ballot_title' => 'NC House of Representatives',
-          'partisan' => 'true'
-        ],[
-          'type' => 'division',
-          'match' => false,
-          'ocd' => 'ocd-division/country:us/state:nc/county',
-          'partisan' => 'true',
-          'order' => 'alpha'
-        ],[
-          'type' => 'division',
-          'match' => false,
-          'ocd' => 'ocd-division/country:us/state:nc/place',
-          'partisan' => 'true',
-          'order' => 'alpha'
+          'xml_title' => 'City Council',
+          'ballot_title' => 'Enable Voting',
+          'partisan' => 'false'
         ]
       ]
     ],[
       'section' => 'Nonpartisan Offices',
       'races' => [
-        [
+	 [
           'type' => 'multiple',
           'match' => false,
-          'xml_title' => 'NC Supreme Court',
+          'xml_title' => 'Mayor',
+		  'ballot_title' => 'District Mayor',
           'partisan' => 'false'
         ],[
           'type' => 'multiple',
           'match' => false,
-          'xml_title' => 'NC Court of Appeals',
+          'xml_title' => 'City Council',
+		  'ballot_title' => 'District City Council',
+		  'votesAllowed' => '1',
           'partisan' => 'false'
+        ],[
+          'type' => 'multiple',
+          'match' => false,
+          'xml_title' => 'District',
+		  'ballot_title' => 'District',
+		  'votesAllowed' => '1',
+          'partisan' => 'false'
+        ],[
+          'type' => 'division',
+          'match' => false,
+          'ocd' => 'ocd-division/country:us/state:nc',
+          'partisan' => 'false',
+		  'votesAllowed' => '1',
+          'order' => 'alpha'
+        ],[
+          'type' => 'division',
+          'match' => false,
+          'ocd' => 'ocd-division/country:us/state:nc/county',
+          'partisan' => 'false',
+		  'votesAllowed' => '1',
+          'order' => 'alpha'
+        ],[
+          'type' => 'division',
+          'match' => false,
+          'ocd' => 'ocd-division/country:us/state:nc/place',
+          'partisan' => 'false',
+		  'votesAllowed' => '1',
+          'order' => 'alpha'
         ]
       ]
     ]

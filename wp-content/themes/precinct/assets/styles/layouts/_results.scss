@@ -301,3 +301,66 @@
   }
 
 }
+
+.pie-counts{
+	  
+	 .pie-red-block{
+	 
+		.result-chart {
+		
+			.highcharts-color-0{
+				fill: $pie-red;
+			}
+			.highcharts-color-1{
+				fill: $light-pie-red-1;
+			}
+			.highcharts-color-2{
+				fill: $light-pie-red-2;
+			}
+			.highcharts-color-3{
+				fill: $light-pie-red-3;
+			}
+			.highcharts-color-4{
+				fill: $light-pie-red-4;
+			}
+			.highcharts-color-5{
+				fill: $light-pie-red-5;
+			}
+			.highcharts-color-6{
+				fill: $light-pie-red-6;
+			}
+		}
+	 
+	 }
+	 .pie-blue-block{
+	 
+	 	.result-chart {
+		
+			.highcharts-color-0{
+				fill: $pie-blue;
+			}
+			.highcharts-color-1{
+				fill: $light-pie-blue-1;
+			}
+			.highcharts-color-2{
+				fill: $light-pie-blue-2;
+			}
+			.highcharts-color-3{
+				fill: $light-pie-blue-3;
+			}
+			.highcharts-color-4{
+				fill: $light-pie-blue-4;
+			}
+			.highcharts-color-5{
+				fill: $light-pie-blue-5;
+			}
+			.highcharts-color-6{
+				fill: $light-pie-blue-6;
+			}
+		}
+	 
+	 }
+  
+}
+
+

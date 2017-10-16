@@ -21,7 +21,7 @@
 		
 		<div class="alert-scarlet pt-2 text-center img-rounded">
 			<h2 class="text-center">Coming Soon</h2>
-			<p>The current simulation election will be available on Late October. Until then how about viewing lessons plans for this year?</p>
+			<p>The current simulation election will be available in late October. Until then how about viewing lessons plans for this year?</p>
 			 <a class="btn btn-white text-center" href="<?php echo $actual_link;?>">View Lessons Plans</a>
 		</div>
 		
@@ -29,7 +29,7 @@
         <table class="table table-condensed">
           <thead>
             <tr>
-              <th scope="col" class="h3">Current Simulation Elections</th>
+              <th scope="col" class="h3">Upcoming Simulation Elections</th>
             </tr>
           </thead>
 
@@ -118,15 +118,21 @@
 					
 					
 					<?php if ( current_user_can( 'editor' ) ) { 
-					$data_url = get_the_permalink() . "?results=general&election-option=".get_the_title();
-					
+							$data_url = get_the_permalink() . "?results=general&election-option=".get_the_title();
 					?>
 						
 					  <tr>
 						<th scope="row">
-						  <?php the_title(); ?>
+						    <?php 
+								the_title();
+								if ($voting_start <= $now && $now <= $voting_end) {
+									echo '<small class="ongoing">Active</small>' ;
+								}
+
+							?>
+							
 							<div class="pull-right right">
-								<span class="small"><a class="btn btn-primary btn-xs" href="<?php the_permalink(); ?>?edit">Edit</a> <a class="btn btn-default btn-xs" href="<?php the_permalink(); ?>?preview">Preview Ballot</a> <a  class="btn btn-default btn-xs" href="<?php echo $data_url;?>">Results</a></span>			  
+								<span class="small"><a class="btn btn-primary btn-xs hidden" href="<?php the_permalink(); ?>?edit">Edit</a> <a class="btn btn-default btn-xs hidden" href="<?php the_permalink(); ?>?preview">Preview Ballot</a> <a  class="btn btn-default btn-xs" href="<?php echo $data_url;?>">Results</a></span>			  
 							</div>
 						  <?php// echo date('m/d/Y', strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true))); ?>
 						  <?php //echo date('m/d/Y', strtotime(get_post_meta(get_the_id(), '_cmb_voting_day', true))); ?>
@@ -139,7 +145,7 @@
 						<th scope="row">
 						  <?php the_title(); ?>
 						  <div class="pull-right right">
-							<span class="small"><a class="btn btn-default btn-xs" href="<?php echo add_query_arg('preview', '', the_permalink()); ?>">Preview Ballot</a></span> 
+							<span class="small"><a class="btn btn-default btn-xs hidden" href="<?php echo add_query_arg('preview', '', the_permalink()); ?>">Preview Ballot</a></span> 
 							<span class="small"><a class="btn btn-default btn-xs" href="<?php echo add_query_arg('results', 'general', the_permalink()); ?>">View Results</a></span>
 						  </div>
 						  <?php //echo date('m/d/Y', strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true))); ?> 
@@ -181,7 +187,18 @@
                   <?php } ?>
 
                 </div>
-			<?php   } ?>
+			<?php   } else{
+				 ?> 
+                <div class="well well-sm">
+                  <p><em>You don't have a simulation elections in your precinct.</em></p>
+
+                  <?php if ( current_user_can( 'editor' ) ) { ?>
+                    <a class="btn btn-default" href="?add">Add Simulation Election</a>
+                  <?php } ?>
+
+                </div>
+			<?php 
+			}?>
 
 		<script type="text/javascript">
 			function theFunction (url, election) {
@@ -199,6 +216,7 @@
 				<select id="election-option" style="height: 45px;" >
 				<option>Select</option>
 				<?php
+				
 								$q = new WP_Query([
 								  'posts_per_page' => -1,
 								  'post_type' => 'election'
@@ -206,9 +224,17 @@
 								if($q->have_posts()){
 									while($q->have_posts()){
 										$q->the_post(); ?>
+										<?php
+											$election_day = new DateTime();
+											$election_day->setTimestamp(strtotime(get_post_meta(get_the_id(), '_cmb_voting_day', true)));
+											$election_day->setTime(00, 00, 00); // This was set to 19,30,00 but the polls closed at 14:30, even though the polls opened on time same day. *shrug*
+											$voting_end = $election_day->getTimestamp();
+											if($voting_end  > strtotime('-7 days')) {
+											?>
 											<option value="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></option>
 															
-										<?php
+											<?php
+											}
 									}
 								}
 								 wp_reset_query();

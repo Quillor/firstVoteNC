@@ -23,6 +23,9 @@ $class = '';
       <nav class="navbar collapse navbar-collapse" data-topbar role="navigation" id="navbar-collapse-1">
         <div class="navbar-right">
           <ul class="nav navbar-nav">
+			<li class="<?php echo $class; ?>">
+              <a href="<?php echo home_url(); ?>">Voting</a>
+            </li>
             <?php
             $navs = array(
               array(
@@ -81,6 +84,9 @@ $class = '';
       <nav class="navbar collapse navbar-collapse logged-out" data-topbar role="navigation" id="navbar-collapse-1">
         <div class="navbar-right">
           <ul class="nav navbar-nav">
+            <li class="<?php echo $class; ?>">
+              <a href="<?php echo home_url(); ?>">Voting</a>
+            </li>
             <li class="<?php echo $class; ?>">
               <a href="<?php echo network_site_url('/teacher-login'); ?>">Teacher Login</a>
             </li>

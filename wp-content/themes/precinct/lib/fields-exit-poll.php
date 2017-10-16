@@ -11,8 +11,8 @@ $ep_fields = [
     'id' => $prefix . 'grade',
     'type' => 'radio',
     'options' => [
-      'Elementary' => 'Kindergarten &ndash; 5th grade',
-      'Middle' => '6th &ndash; 8th grade',
+      'Elementary' => 'Elementary (Kindergarten &ndash; 5th grade)',
+      'Middle' => 'Middle (6th &ndash; 8th grade)',
       '9' => '9th grade',
       '10' => '10th grade',
       '11' => '11th grade',
@@ -30,6 +30,9 @@ $ep_fields = [
     'options' => [
       'Female' => 'Female',
       'Male' => 'Male'
+    ], 
+	'attributes' => [
+      'data-validation' => 'required'
     ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
@@ -45,6 +48,9 @@ $ep_fields = [
       'Native American' => 'Native American',
       'Other' => 'Other'
     ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
     'name' => 'Do the adults in your household vote?',
@@ -56,6 +62,9 @@ $ep_fields = [
       'Yes' => 'Yes',
       'Don\'t know' => 'I don\'t know'
     ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
     'name' => 'Do you plan on registering to vote when you are eligible?',
@@ -65,6 +74,9 @@ $ep_fields = [
     'options' => [
       'No' => 'No',
       'Yes' => 'Yes'
+    ],
+	'attributes' => [
+      'data-validation' => 'required'
     ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
@@ -79,6 +91,9 @@ $ep_fields = [
       'Unaffiliated' => 'Unaffiliated',
       'Don\'t know' => 'I don\'t know'
     ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
     'name' => 'What is your primary source of political news?',
@@ -91,6 +106,9 @@ $ep_fields = [
       'Social Media' => 'Social Media',
       'Television' => 'Television'
     ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ],[
     'name' => 'How often do you attend a religious service?',
@@ -102,6 +120,37 @@ $ep_fields = [
       'Weekly' => 'Weekly',
       'Infrequently' => 'Infrequently',
       'Never' => 'Never'
+    ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
+    'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
+  ],[
+    'name' => 'Where do you live?',
+    'label' => 'living',
+    'id' => $prefix . 'living',
+    'type' => 'radio',
+    'options' => [
+      'Urban area' => 'Urban area',
+      'Rural area' => 'Rural area',
+      'Suburban area' => 'Suburban area'
+    ],
+	'attributes' => [
+      'data-validation' => 'required'
+    ],
+    'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
+  ],[
+    'name' => 'Did your participation in this First Vote NC election make you more likely to register and vote when you are eligible?',
+    'label' => 'frequency participation',
+    'id' => $prefix . 'participation',
+    'type' => 'radio',
+    'options' => [
+      'Yes' => 'Yes',
+      'No' => 'No',
+      'Don\'t know' => 'I don\'t know'
+    ],
+	'attributes' => [
+      'data-validation' => 'required'
     ],
     'render_row_cb' => __NAMESPACE__ . '\\accessible_fields_cb'
   ]

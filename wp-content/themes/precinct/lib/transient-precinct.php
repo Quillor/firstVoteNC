@@ -1,5 +1,7 @@
 <?php
-if ( false === ($master = get_transient('master_election_' . $election_id))) {
+//if ( false === ($master = get_transient('master_election_' . $election_id))) {
+if ( true ) {
+
 
   // Get ID of master election
   $master_election = get_post_meta( $election_id, '_cmb_election', true );
@@ -22,6 +24,7 @@ if ( false === ($master = get_transient('master_election_' . $election_id))) {
     $master['address'] = implode(', ', $loc);
     $master['congressional_district'] = get_post_meta($precinct_id, '_cmb_congressional_district', true);
 
+	
   restore_current_blog();
 
   set_transient('master_election_' . $election_id, $master, 6 * HOUR_IN_SECONDS);

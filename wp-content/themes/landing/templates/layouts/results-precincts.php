@@ -33,16 +33,9 @@ foreach ($blog_ids_unique as $blog_id) {
 ksort($sites);
 ?>
 <div class="panel">
-  <div class="panel-heading"><h2 class="h3">Map of participating schools</h2></div>
-  <div class="panel-body">
-    <div class="entry-content-asset">
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1erNunewLx3L_Z4bBNmPAjXC8Pa0" width="640" height="480"></iframe>
-    </div>
-  </div>
-</div>
-
 <div class="table-responsive panel">
-  <div class="panel-heading"><h2 class="h3">Explore results by precinct</h2></div>
+  <div class="panel-heading"><h2 class="h1">Explore results by precinct</h2></div>
+  <h3 class="h2">Choose a precinct</h3>
   <div class="panel-body">
     <table class="table sortable">
       <thead>
@@ -53,17 +46,32 @@ ksort($sites);
       </thead>
       <tbody>
         <?php foreach ($sites as $site) {
-			$link = explode("?",$site['link']);
-			$election_replace = str_replace(' ','-',$election ); 
-			$combine = $link[0].'election/'.$election_replace.'/?results=general&election-option='.$election;
-			//echo $combine;
-		?>
+      $link = explode("?",$site['link']);
+      $election_replace = str_replace(' ','-',$election ); 
+      // Old version 
+
+       $combine = $link[0].'election/'.$election_replace.'/?results=local&election-option='.$election;
+
+    ?>
           <tr>
-            <td><a href="<?php echo $combine; ?>" target="_blank"><?php echo $site['name']; ?></a></td>
+            <td><a href="<?php echo $combine; ?>" target="_blank" class="btn btn-default"><?php echo $site['name']; ?> → </a></td>
             <td><?php echo $site['count']; ?> </td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
   </div>
+</div>  
+  <div class="panel-heading"><h2 class="h3">Map of participating schools</h2></div>
+  <div class="panel-body">
+    <div class="entry-content-asset">
+      <!-- This is the 2016 Map -->
+      <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1erNunewLx3L_Z4bBNmPAjXC8Pa0" width="640" height="480"></iframe> -->
+      <!-- This is the 2017 Map -->
+      <!-- <h3>2017</h3> -->
+      <iframe src="https://www.google.com/maps/d/embed?mid=1qD7CBHvvzhvc1mqda0tXxYrtyEg" width="640" height="480"></iframe>
+    </div>
+  </div>
 </div>
+
+

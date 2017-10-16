@@ -22,10 +22,19 @@ $contests = json_decode(file_get_contents($uploads['basedir'] . '/elections/elec
 
 $type = $_GET['results'];
 
- //echo '<pre>';
- //print_r($results);
- //echo '</pre>';
+if(!isset($_GET['results'])){
+	$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	$newURL =  $actual_link . '&results=precincts';
+	header('Location: '.$newURL);
+	die();
+}
 
+ //echo '<pre>';
+//print_r($results[0]);
+ //echo '</pre>';
+$partisan = false;
+$non_partisan = false;
+$non_partisan_tally = '';
  
 if( ($contests == null || $contests == ' ') || ($results[0] == null || $results[0] == ' ') ){
 	echo '<h2 class="text-center">No results yet Or Please recount the VOTE in the main page.</h2>';  
@@ -41,9 +50,12 @@ else{
 		$total = count($data) - count(array_keys($data, NULL));
 
 		$counts = array();
+		
+
+		
 
 		// Only show type of results for the tab we're on
-		if ($type == 'nonpartisan') {
+		if ($type == 'nonpartisan') {		
 		  if (isset($contests[$race]['candidates'][0]['party']) || isset($contests[$race]['question'])) {
 			continue;
 		  }
@@ -54,9 +66,11 @@ else{
 		} else {
 		  if (!isset($contests[$race]['candidates'][0]['party']) || isset($contests[$race]['question'])) {
 			continue;
+		  }else{
+			  $partisan = true;
 		  }
 		}
-
+	
 		// Count number of votes per contestant
 		if (isset($contests[$race]['candidates'])) {
 		  foreach ($contests[$race]['candidates'] as $candidate) {
@@ -67,12 +81,13 @@ else{
 			  'count' => $tally,
 			  'percent' => round(($tally / $total) * 100, 2)
 			);
+			$non_partisan_tally =  $tally;	
 		  }
 		} else {
 			if($contests[$race]['options'] == null){
 				//do nothing
 			}else{
-			
+			  $tally = '';
 			  foreach ($contests[$race]['options'] as $option) {
 				$tally = count(array_keys($data, $option));
 				$counts[] = array(
@@ -81,7 +96,11 @@ else{
 				  'percent' => round(($tally / $total) * 100, 2)
 				);
 			  }
+				if($tally != null || $tally != ''){
+				  $non_partisan = true;
+			  }
 			}
+		
 		}
 
 		if ($type !== 'issues') {
@@ -103,11 +122,10 @@ else{
 				'percent' => round(($tally_none / $total) * 100, 2)
 			  );
 		  }
-		  
 		}
 		?>
 
-		<div class="row extra-bottom-margin">
+		<div class="row extra-bottom-margin pie-counts">
 		  <div class="col-sm-4">
 			<h2 class="h3"><?php echo $contests[$race]['title']; ?></h2>
 			<?php if (!empty($contests[$race]['question'])) { ?>
@@ -148,5 +166,33 @@ else{
 		</script>
 		<?php
 	  }
+	}
+	if($type != 'issues' && $type != 'participation' && $type != 'precincts'){
+		if($partisan == false && $type == 'partisan' ) {	
+			echo "
+				<h2 class='text-center'>No partisan results for this election.</h2>
+				<p class='text-center lead'>					
+					Check issue-based question and exit-poll data links for state-wide results. <br/>
+					Check link for your individual school's results.
+				</p>
+			";?>
+			<style>
+				.container .row.extra-bottom-margin{display:none}
+			</style>
+	<?php	
+		}
+		if($non_partisan_tally == '' && $type == 'nonpartisan' ) {	
+			echo "	
+				<h2 class='text-center'>No non-partisan results for this election.</h2>
+				<p class='text-center lead'>					
+					Check issue-based question and exit-poll data links for state-wide results. <br/>
+					Check link for your individual school's results.
+				</p>
+			";?>
+			<style>
+				.container .row.extra-bottom-margin{display:none}
+			</style>
+	<?php	
+		}
 	}
 }

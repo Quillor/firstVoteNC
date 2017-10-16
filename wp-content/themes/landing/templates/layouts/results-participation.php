@@ -23,7 +23,8 @@ $uploads = wp_upload_dir();
 $results = json_decode(file_get_contents($uploads['basedir'] . '/elections/election_results_'.$election_name.'.json'), true);
 $contests = json_decode(file_get_contents($uploads['basedir'] . '/elections/election_contests_'.$election_name.'.json'), true);
 
-$total = count($results) - count(array_keys(array_column($results, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
+//$total = count($results) - count(array_keys(array_column($results, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
+$total = count($results) - count(array_keys(array_column($results, 'blog_id'), NULL));
 
 ?>
 
@@ -67,7 +68,7 @@ foreach ($ep_fields as $ep_field) {
   }
   ?>
 
-  <div class="row">
+  <div class="row pie-counts">
     <div class="col-sm-4">
       <h2 class="h3"><?php echo $ep_field['name']; ?></h2>
     </div>

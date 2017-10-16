@@ -4,6 +4,8 @@ namespace Roots\Sage\CMB;
 
 use Roots\Sage\Extras;
 
+error_reporting(0);
+
 add_action( 'cmb2_init', function() {
 
   $prefix = '_cmb_';
@@ -81,7 +83,7 @@ function make_races_cb($field_args, $field) {
 
     // Render each race with matching data from the generated ballot
     // $generated_ballot = get_post_meta( $election_id, '_cmb_generated_ballot', true);
-
+	$header_ctr = 0;
     if (empty($generated_ballot)) {
       ob_start();
         foreach ($ballot_data as $ballot_section) {
@@ -89,6 +91,21 @@ function make_races_cb($field_args, $field) {
           foreach ($ballot_section->races as $race) {
             // Find this race in the election data
             $key = array_search($race->ballot_title, $included_races);
+			
+			//custom added CJ
+			if($race->ballot_title === 'Enable Voting'){
+				if ($z == 0) {
+					echo '<h2 class="section-head h6">';
+						//echo 'NONPARTISAN OFFICES';
+						$hold = explode('- ',get_bloginfo());
+						$hold2 = explode(',',$hold[1]);
+						echo  'CITY OF '.$hold2[0];
+					echo '</h2>';
+					$z++;
+				}
+			}//end cj
+			
+			
             if ($key !== FALSE && $race->votes_allowed > 0) {
               // Print the section title if this is the first race in section
               if ($z == 0) {
@@ -146,7 +163,12 @@ function make_races_cb($field_args, $field) {
                       ?>
                       <li>
                         <label for="<?php echo $sanitized_title . '-' . $j; ?>">
-                          <input type="<?php echo $type; ?>" class="cmb2-option" name="_cmb_ballot_<?php echo $sanitized_title; ?><?php if ($array) {echo '[]';} ?>" id="<?php echo $sanitized_title . '-' . $j; ?>" value="<?php echo $c->ballotName; ?>" aria-label="<?php echo str_replace('<br />', ' ', $c->ballotName) . ' ' . $party; ?>">
+						<?php if($type == 'checkbox'){ ?>
+							<input data-max-checked = "<?php echo $race->votes_allowed; ?>"  type="<?php echo $type; ?>" class="cmb2-option" name="_cmb_ballot_<?php echo $sanitized_title; ?><?php if ($array) {echo '[]';} ?>" id="<?php echo $sanitized_title . '-' . $j; ?>" value="<?php echo $c->ballotName; ?>" aria-label="<?php echo str_replace('<br />', ' ', $c->ballotName) . ' ' . $party; ?>"> 
+						<?php }
+						  else {  ?> 
+						   <input type="<?php echo $type; ?>" class="cmb2-option" name="_cmb_ballot_<?php echo $sanitized_title; ?><?php if ($array) {echo '[]';} ?>" id="<?php echo $sanitized_title . '-' . $j; ?>" value="<?php echo $c->ballotName; ?>" aria-label="<?php echo str_replace('<br />', ' ', $c->ballotName) . ' ' . $party; ?>"> 
+						<?php  }  ?>
                           <span aria-hidden="true"><?php echo $c->ballotName; ?></span>
                           <br />
                           <span class="small" aria-hidden="true"><?php if ($race->partisan == 'true') { echo $party; } else { echo '&nbsp;'; } ?></span>
@@ -202,8 +224,13 @@ function make_races_cb($field_args, $field) {
                       ?>
                       <li>
                         <label for="<?php echo sanitize_title($contest['title']) . '-' . $m; ?>">
+					<?php if($type == 'checkbox'){ ?>
+							<input data-max-checked = "<?php echo $contest['votes_allowed']; ?>" type="<?php echo $type; ?>" class="cmb2-option" name="_cmb_ballot_<?php echo sanitize_title($contest['title']); ?><?php if ($array) {echo '[]';} ?>" id="<?php echo sanitize_title($contest['title']) . '-' . $m; ?>" value="<?php echo $candidate; ?>" aria-label="<?php echo $candidate; ?>">  
+					<?php }
+						  else {  ?>
                           <input type="<?php echo $type; ?>" class="cmb2-option" name="_cmb_ballot_<?php echo sanitize_title($contest['title']); ?><?php if ($array) {echo '[]';} ?>" id="<?php echo sanitize_title($contest['title']) . '-' . $m; ?>" value="<?php echo $candidate; ?>" aria-label="<?php echo $candidate; ?>">
-                          <span aria-hidden="true"><?php echo $listing; ?></span>
+                     <?php  }  ?>
+						  <span aria-hidden="true"><?php echo $listing; ?></span>
                         </label>
                       </li>
                       <?php

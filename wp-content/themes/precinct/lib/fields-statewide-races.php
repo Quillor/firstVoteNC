@@ -1,5 +1,4 @@
 <?php
-
 $statewide_races = array(
   '_cmb_ballot_president-and-vice-president-of-the-united-states',
   '_cmb_ballot_us-senate',
@@ -19,8 +18,16 @@ $statewide_races = array(
   '_cmb_ballot_nc-court-of-appeals-judge-hunter-seat',
   '_cmb_ballot_nc-court-of-appeals-judge-zachary-seat',
   '_cmb_ballot_nc-court-of-appeals-judge-geer-seat',
-  '_cmb_ballot_life-skills-0',
-  '_cmb_ballot_personal-data-1',
+  '_cmb_ballot_issue-1-0',
+  '_cmb_ballot_issue-2-1',
+  '_cmb_ballot_issue-3-2',
+  '_cmb_ballot_issue-4-3',
+  '_cmb_ballot_issue-5-4',
+  '_cmb_ballot_issue-6-5',
+  '_cmb_ballot_issue-7-6',
+  '_cmb_ballot_issue-8-7',
+  '_cmb_ballot_issue-9-8',
+  '_cmb_ballot_issue-10-9',
   '_cmb_grade',
   '_cmb_gender',
   '_cmb_race',
@@ -28,5 +35,7 @@ $statewide_races = array(
   '_cmb_register',
   '_cmb_party',
   '_cmb_news',
-  '_cmb_religious'
+  '_cmb_religious',
+  '_cmb_living',
+  '_cmb_participation'
 );

@@ -45,6 +45,8 @@ $type = $_GET['results'];
 $election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);	
 
+$nationwide = false;
+
 if (isset($_GET['contest'])) {
   get_template_part('templates/layouts/results', 'contest');
 } elseif ($_GET['results'] == 'precincts') {
@@ -70,10 +72,9 @@ if (isset($_GET['contest'])) {
   <?php
   $pattern = '/\\\\("[^"]+")/'; 
   $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
-  $array_cont = preg_replace($pattern, '' ,$contests1);
-  $contests = json_decode( $array_cont, true );
-  
-
+  //$array_cont = preg_replace($pattern, '' ,$contests1);
+  $contests = json_decode( $contests1, true );
+  //print_r($contests);
  
   $uploads = wp_upload_dir();
   $uploads_global = network_site_url('wp-content/uploads');
@@ -81,12 +82,12 @@ if (isset($_GET['contest'])) {
   
   //$pattern = '/\s+("[^"]+)/';
   $results1 = ($votes_contest[0]->post_content);
-  $array_cont = preg_replace($pattern, '',$results1);
-  $results = json_decode( $array_cont, true );
+ // $array_cont = preg_replace($pattern, '',$results1);
+  $results = json_decode( $results1, true );
   
   $statewide1 = file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json');
-  $array_cont = preg_replace($pattern, '',$statewide1);
-  $statewide = json_decode( $array_cont, true);
+  //$array_cont = preg_replace($pattern, '',$statewide1);
+  $statewide = json_decode( $statewide1, true);
    
 
   if( ($contests == null || $contests == '') || ($results[0] == null || $results[0] == '') ){
@@ -97,7 +98,7 @@ if (isset($_GET['contest'])) {
 
   $races = array_keys($results[0]);
   $races_statewide = array_keys($statewide[0]);
-
+  
   foreach ($races as $race) {
 	  //echo $race; 
 	  //echo substr($race, 0, 11) ; 
@@ -108,8 +109,10 @@ if (isset($_GET['contest'])) {
       // Only show type of results for the tab we're on
       if ($type == 'general') {
         if (!in_array($race, $races_statewide) || isset($contests[$match[0][0][0]][$race]['question'])) {
-          continue;
-        }
+		  continue;
+        }else{
+			$nationwide = true;
+		}
       } elseif ($type == 'local') {
         if (in_array($race, $races_statewide) || isset($contests[$match[0][0][0]][$race]['question'])) {
           continue;
@@ -122,6 +125,8 @@ if (isset($_GET['contest'])) {
 
       $data = array_column($results, $race);
       $data_state = array_column($statewide, $race);
+	  
+
 
       // If data is JSON string, unserialize it
       if (FALSE !== unserialize($data[0])) {
@@ -130,8 +135,10 @@ if (isset($_GET['contest'])) {
           $encoded = unserialize($multiple);
           $array = unserialize(html_entity_decode($encoded));
           $flat_data = array_merge(array_values($flat_data), array_values($array));
+		  
         }
         $data = $flat_data;
+		
       }
 
       // If data is JSON string, unserialize it
@@ -148,6 +155,7 @@ if (isset($_GET['contest'])) {
       // Total number of ballots cast
       $total = count($data) - count(array_keys($data, NULL));
       $total_state = count($data_state) - count(array_keys($data_state, NULL));
+
 
       // Set up arrays
       $count = array();
@@ -263,6 +271,7 @@ if (isset($_GET['contest'])) {
       if (isset($contests[$match[0][0][0]][$race]['question'])) {
         $question = $contests[$match[0][0][0]][$race]['question'];
       }
+	  
       ?>
 
       <div class="row">
@@ -364,5 +373,16 @@ if (isset($_GET['contest'])) {
       <?php
     }
   }
+  	if($type != 'issues' && $type != 'participation' && $type != 'precincts'){
+		if($nationwide == false && $type == 'general' ) {	
+			echo '<h2 class="text-center">Not applicable for this election.</h2>';  
+			?>
+			<style>
+				.container .row.extra-bottom-margin{display:none}
+			</style>
+	<?php	
+		}
+	}
 }
 }
+
