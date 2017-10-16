@@ -6,8 +6,6 @@ use Roots\Sage\Assets;
 <main role="main">
 
 	<?php get_template_part('/templates/components/banner', 'header-home'); ?>
-
-
   <section class="gray-bg overview">
     <div class="container">
 	  <div class="row flex-sm-up">

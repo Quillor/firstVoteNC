@@ -1,3 +1,23 @@
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colorchange {
+    from {color: $navy-lighter;}
+    to {color:  $scarlet-lighter;}
+}
+
+/* Standard syntax */
+@keyframes colorchange {
+    from {color: $navy-lighter;}
+    to {color:  $scarlet-lighter;}
+}
+
+small.ongoing{
+	-webkit-animation:colorchange 3s infinite alternate;
+	vertical-align: middle;
+    position: relative;
+    top: -1px;
+    padding-left: 10px;
+}
+
 .page-header {
   margin-top: 0;
   background: $steel;

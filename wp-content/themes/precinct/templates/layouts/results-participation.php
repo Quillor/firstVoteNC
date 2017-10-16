@@ -76,8 +76,8 @@ $results = json_decode($results_json, true);
   $statewide = json_decode( $array_cont, true);
 
 $total = count($results);
-$total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
-
+//$total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
+$total_state = count($statewide) - count(array_keys(array_column($statewide, 'blog_id'), NULL));
 ?>
 
 
@@ -167,18 +167,18 @@ foreach ($ep_fields as $ep_field) {
   }
 
   ?>
-  <div class="row">
+  <div class="row pie-counts">
     <div class="col-sm-12">
       <h2 class="h3"><?php echo $ep_field['name']; ?></h2>
     </div>
 
-    <div class="col-sm-6 extra-bottom-margin">
+    <div class="col-sm-6 extra-bottom-margin pie-red-block">
       <div class="entry-content-asset">
         <div id="<?php echo $ep_field['id']; ?>" class="result-chart"></div>
       </div>
     </div>
 
-    <div class="col-sm-6 extra-bottom-margin">
+    <div class="col-sm-6 extra-bottom-margin pie-blue-block">
       <div class="entry-content-asset">
         <div id="state<?php echo $ep_field['id']; ?>" class="result-chart statewide"></div>
       </div>

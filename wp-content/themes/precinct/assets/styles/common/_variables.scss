@@ -221,3 +221,22 @@ $alert-danger-border:         $scarlet;
 $alert-warning-bg:            $gold-lightest;
 $alert-warning-text:          $jet;
 $alert-warning-border:        $gold;
+
+
+//Pie Colors
+$pie-red:#520110;
+$pie-blue:#091a52;
+
+$light-pie-red-1: lighten($pie-red,10%);
+$light-pie-red-2: lighten($light-pie-red-1,10%);
+$light-pie-red-3: lighten($light-pie-red-2,10%);
+$light-pie-red-4: lighten($light-pie-red-3,10%);
+$light-pie-red-5: lighten($light-pie-red-4,10%);
+$light-pie-red-6: lighten($light-pie-red-5,10%);
+
+$light-pie-blue-1: lighten($pie-blue,10%);
+$light-pie-blue-2: lighten($light-pie-blue-1,10%);
+$light-pie-blue-3: lighten($light-pie-blue-2,10%);
+$light-pie-blue-4: lighten($light-pie-blue-3,10%);
+$light-pie-blue-5: lighten($light-pie-blue-4,10%);
+$light-pie-blue-6: lighten($light-pie-blue-5,10%);

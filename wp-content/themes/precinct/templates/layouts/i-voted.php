@@ -14,14 +14,14 @@ use Roots\Sage\Assets;
           <img src="<?php echo Assets\asset_path('images/sticker.png'); ?>" srcset="<?php echo Assets\asset_path('images/sticker@2x.png'); ?> 2x" alt="I Voted Today! Sticker" />
         </p>
         <p class="text-center">
-          Your ballot has been cast and results will be ready November 9th!
+		  Your ballot has been cast. Your precinct director will be notified when the results are ready.
         </p>
         <p class="text-center">
           <button type="button" class="btn btn-gray" data-dismiss="modal">Return to Precinct</button>
         </p>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body hidden">
         <h2 class="h3 text-center">Are you at least 17 years old?</h2>
         <p>If so, you are invited to sign up below for information about registering to vote, election reminders, and more &mdash; straight to your phone or email!</p>
         <p class="text-center">

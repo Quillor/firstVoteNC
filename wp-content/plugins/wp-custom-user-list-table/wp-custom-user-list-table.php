@@ -114,11 +114,14 @@ class Obenland_Wp_Custom_User_List_Table extends Obenland_Wp_Plugins_v301 {
 			
 			if(user_can($user_id, 'edit_pages') && is_super_admin( $user_id )){
 				$value = 'Super Admin';
+				update_user_meta( $user_id, 'wp-custom-role', $value );
 			}
 			else if(user_can($user_id, 'edit_pages')){
 				$value = 'Precinct Director';
+				update_user_meta( $user_id, 'wp-custom-role', $value );
 			}else{
 				$value =  'Teacher';
+				update_user_meta( $user_id, 'wp-custom-role', $value );
 			}
 			
 			

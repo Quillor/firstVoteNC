@@ -59,13 +59,13 @@ add_action( 'cmb2_init', function() {
 	]);
 
 	$custom_races = $cmb_election_box->add_field( array(
-		'name' 				=> 'Local Contests',
+		'name' 				=> 'Additional Contests',
     'id'          => $prefix . 'custom_contests',
     'type'        => 'group',
     'description' => 'Enter customized contests for which your students may vote in this simulation election. These will appear at the end of the ballot section selected.',
     // 'repeatable'  => false, // use false if you want non-repeatable group
     'options'     => array(
-      'group_title'   => __( 'Local Contest {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+      'group_title'   => __( 'Contest {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
       'add_button'    => __( 'Add Another', 'cmb2' ),
       'remove_button' => __( 'Remove', 'cmb2' ),
       'sortable'      => true, // beta
@@ -120,7 +120,7 @@ add_action( 'cmb2_init', function() {
 	// ]);
 
 	$custom_questions = $cmb_election_box->add_field( array(
-		'name' 				=> 'Issue-Based Questions',
+		'name' 				=> 'Additional Custom Questions',
     'id'          => $prefix . 'custom_questions',
     'type'        => 'group',
     'description' => 'Enter customized questions (yes/no answers) for which students may vote in this simulation election.',

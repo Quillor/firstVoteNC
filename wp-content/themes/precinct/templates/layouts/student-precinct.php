@@ -23,6 +23,7 @@
            *
            *
            */
+		   
 
           /// Get dates
           $early_voting = strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true));
@@ -83,7 +84,7 @@
             <?php echo date('F j, Y', $voting_start); ?> -
             <?php echo date('F j, Y', strtotime('-1 day', $voting_end)); ?>
           </p>
-          <p><strong>Election day:</strong> <?php echo date('F j, Y', $voting_end); ?></p>
+          <p><strong>Election day:</strong> <?php echo date('F j, Y', strtotime('-1 day', $voting_end)); ?></p>
           <p><strong>Poll hours:</strong> 7:30am - 7:30pm</p>
 
           <p><a class="btn btn-default" href="<?php the_permalink(); ?>"> Vote now!
@@ -100,7 +101,7 @@
         endwhile; endif; wp_reset_postdata();
 				if($vote_off==true){
 					?>             
-					<h2 class="text-center">Coming Soon!</h2>
+					<h2 class="text-center">Voting is still closed at this hour.</h2>
 			<?php }
 		
         ?>

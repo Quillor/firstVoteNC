@@ -1,8 +1,15 @@
 .mt-0{
 	margin-top:0px !important;
+	.vc_column-inner {
+		margin-top:0px !important;
+	}
 }
 .pt-0{
 	padding-top:0px !important;
+	
+	.vc_column-inner {
+		padding-top:0px !important;
+	}
 }
 .mb-0{
 	margin-bottom:0px !important;
@@ -27,6 +34,8 @@
 		margin-right: 0px;
 	}
 }
+
+
 
 .mx-auto {
     margin-left: auto !important;

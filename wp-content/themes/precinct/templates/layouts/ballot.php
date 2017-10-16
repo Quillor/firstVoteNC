@@ -27,6 +27,7 @@ $voting_end = $election_day->getTimestamp();
 // $today->setTime(9, 00, 00);
 // $now = $today->getTimestamp();
 
+
 // Now timestamp
 $now = current_time('timestamp');
 $today = new DateTime();
@@ -176,3 +177,19 @@ if ($voting_start <= $now && $now <= $voting_end) {
     });
   </script>
 <?php } ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('input[type="checkbox"]').on('change', function() {
+		var $this = $(this),
+			group = $this.attr('name'),
+			count = $('input[name="' + group + '"]:checked').length,
+			max = $this.data('max-checked');
+		
+		if (count > max) {
+			$this.attr('checked', false);
+			alert("You can vote up to " + max + " contestant only.");
+		}
+	});
+});
+</script>
