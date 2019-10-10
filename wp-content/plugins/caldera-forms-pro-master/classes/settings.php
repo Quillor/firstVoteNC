@@ -69,7 +69,7 @@ class settings  extends repository{
 			$settings->set_api_keys( $keys );
 		}
 
-		if ( ! empty( $saved[ 'enhancedDelivery' ] ) ) {
+		if ( isset( $saved[ 'enhancedDelivery' ] ) ) {
 			$settings->set_enhanced_delivery( $saved[ 'enhancedDelivery' ] );
 		}
 
@@ -220,6 +220,7 @@ class settings  extends repository{
 	 * @param bool $enable
 	 */
 	public function set_enhanced_delivery( $enable ){
+		$enable = rest_sanitize_boolean( $enable );
 		$this->set( 'enhanced_delivery',  $enable  );
 	}
 
@@ -256,11 +257,7 @@ class settings  extends repository{
 	 * @return bool
 	 */
 	public function send_remote(){
-		if ( 'apex' === $this->get_plan() ) {
-			return $this->get_enhanced_delivery();
-		}
-
-		return false;
+		return $this->get_enhanced_delivery();
 
 	}
 

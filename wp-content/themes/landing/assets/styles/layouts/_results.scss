@@ -115,6 +115,13 @@
       background: $white-50;
     }
   }
+  .highcharts-data-labels {
+    span {
+      font-size: 13px !important;
+      padding: 3px 5px;
+      background: $white-50;
+    }
+  }
 
   .highcharts-title {
     text-align: center !important;

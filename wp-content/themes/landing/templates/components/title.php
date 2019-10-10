@@ -103,17 +103,36 @@ if(Titles\title() != null || Titles\title() != ''){
               </h2>
               <?php if (isset($contests[$race]['question'])) { ?>
                 <div class="h2"><small><?php echo $contests[$race]['question']; ?></small></div>
-              <?php } ?>
-            <?php } else {
-              ?>
-              <ul class="nav nav-tabs">
-				        <li class="partisan_nav <?php if ($type == 'partisan') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'partisan'); // remove_query_arg('results'); ?>">Partisan Contest Results</a></li>
-                <li class="non_partisan_nav <?php if ($type == 'nonpartisan') echo 'active'; ?>" role="presentation"><a href="<?php echo add_query_arg('results', 'nonpartisan'); ?>">Nonpartisan Contest Results</a></li>
-                <li class="issued_nav <?php if ($type == 'issues') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'issues'); ?>">Issue-Based Question Results</a></li>
-                <li class="poll_nav <?php if ($type == 'participation') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'participation'); ?>">Exit Poll Data</a></li>
-                <li class="precinct_nav <?php if ($type == 'precincts') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'precincts'); ?>">Precinct Results</a></li>
-              </ul>
-            <?php }
+              <?php } 
+			}
+			else {
+				
+				 if ($_GET['election-option'] == '2018 General Election' ) { ?>
+					
+				  <ul class="nav nav-tabs">
+					<li class="partisan_nav <?php if ($type == 'partisan') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'partisan');  ?>">Partisan Contest Results</a></li>
+					<li class="non_partisan_nav <?php if ($type == 'nonpartisan') echo 'active'; ?>" role="presentation"><a href="<?php echo add_query_arg('results', 'nonpartisan'); ?>">Judicial and Nonpartisan Contest Results</a></li>
+					<li class="issued_nav <?php if ($type == 'issues') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'issues'); ?>">Referenda and Issue-Based Question Results</a></li>
+					<li class="poll_nav <?php if ($type == 'participation') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'participation'); ?>">Exit Poll Data</a></li>
+					<li class="precinct_nav <?php if ($type == 'precincts') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'precincts'); ?>">School Precint Results</a></li>
+				  </ul>
+					
+				<?php	
+				 }
+				 else{
+				?>
+				
+				  <ul class="nav nav-tabs">
+					<li class="partisan_nav <?php if ($type == 'partisan') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'partisan'); // remove_query_arg('results'); ?>">Partisan Contest Results</a></li>
+					<li class="non_partisan_nav <?php if ($type == 'nonpartisan') echo 'active'; ?>" role="presentation"><a href="<?php echo add_query_arg('results', 'nonpartisan'); ?>">Nonpartisan Contest Results</a></li>
+					<li class="issued_nav <?php if ($type == 'issues') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'issues'); ?>">Issue-Based Question Results</a></li>
+					<li class="poll_nav <?php if ($type == 'participation') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'participation'); ?>">Exit Poll Data</a></li>
+					<li class="precinct_nav <?php if ($type == 'precincts') echo 'active'; ?>" role="presentation" ><a href="<?php echo add_query_arg('results', 'precincts'); ?>">Precinct Results</a></li>
+				  </ul>
+			  
+            <?php
+				}
+			}
           } ?>
         </div>
       </div>

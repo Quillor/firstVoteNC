@@ -46,7 +46,7 @@ add_action( 'cmb2_init', function() {
 		'id' => $prefix . 'early_voting',
 		'type' => 'text_date',
 		'date_format' => 'M j, Y',
-		'description' => 'Polls will be open from 7:30am to 7:30pm each day during the early voting period and on election day.',
+		'description' => 'Polls will be open from 7:00am to 4:00pm each day during the early voting period and on election day.',
 	]);
 
 	$cmb_election_box->add_field([
@@ -107,7 +107,12 @@ add_action( 'cmb2_init', function() {
     'name' => 'Candidates',
     'id'   => 'candidates',
     'type' => 'textarea_small',
-		'description' => 'Enter one candidate on each line with their party in parentheses.'
+		'description' => 'Enter one candidate on each line. <br/> If Partisan, add  their party in parentheses. <br/><br/> Example: 
+		<strong>
+			<br/> Jane Doe (Republican) 
+			<br/> John Doe (Democrat)			
+		</strong>		
+		'
 	) );
 
 	// $cmb_election_box->add_field([
@@ -118,6 +123,37 @@ add_action( 'cmb2_init', function() {
 	// 	'select_all_button' => true,
   //   'options_cb' => __NAMESPACE__ . '\\referenda_cb',
 	// ]);
+	
+	//added referenda
+	$included_referenda = $cmb_election_box->add_field( array(
+		'name' 				=> 'Additional Custom Referenda',
+    'id'          => $prefix . 'included_referenda',
+    'type'        => 'group',
+    'description' => 'Enter customized referenda (For/Against answers) for which students may vote in this simulation election.',
+    // 'repeatable'  => false, // use false if you want non-repeatable group
+    'options'     => array(
+      'group_title'   => __( 'Referenda {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+      'add_button'    => __( 'Add Another', 'cmb2' ),
+      'remove_button' => __( 'Remove', 'cmb2' ),
+      'sortable'      => true, // beta
+      // 'closed'     => true, // true to have the groups closed by default
+    ),
+	) );
+
+	// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+	$cmb_election_box->add_group_field( $included_referenda, array(
+    'name' => 'Title',
+    'id'   => 'title',
+    'type' => 'text',
+    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	) );
+
+	$cmb_election_box->add_group_field( $included_referenda, array(
+    'name' => 'Referenda',
+    'id'   => 'question',
+    'type' => 'textarea_small',
+	) );
+	//end
 
 	$custom_questions = $cmb_election_box->add_field( array(
 		'name' 				=> 'Additional Custom Questions',
@@ -136,7 +172,7 @@ add_action( 'cmb2_init', function() {
 
 	// Id's for group's fields only need to be unique for the group. Prefix is not needed.
 	$cmb_election_box->add_group_field( $custom_questions, array(
-    'name' => ' Title',
+    'name' => 'Title',
     'id'   => 'title',
     'type' => 'text',
     // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
@@ -155,8 +191,11 @@ add_action( 'cmb2_init', function() {
  */
 function fvnc_elections_cb($field) {
 	// Save original post data in variable
+
 	global $post;
 	$original = $post;
+	
+	
 
 	// Switch to main site to query master elections
   switch_to_blog(1);
@@ -167,9 +206,15 @@ function fvnc_elections_cb($field) {
 		]);
 
 		$term_options = [ false => 'Select one' ];
+		
 
-		if ($elections->have_posts()) : while ($elections->have_posts()) : $elections->the_post();
-			$term_options[ get_the_id() ] = get_the_title();
+		
+		if ($elections->have_posts()) : while ($elections->have_posts()) : $elections->the_post();		
+		
+			if(strtotime(get_post_meta(get_the_id(), '_cmb_voting_day', true)) > strtotime('-1 days')) {
+				$term_options[ get_the_id() ] = get_the_title();
+			}
+		
 		endwhile; endif; wp_reset_postdata();
 
 	restore_current_blog();
@@ -186,8 +231,12 @@ function fvnc_elections_cb($field) {
  */
 function races_cb($field) {
 	$ballot_json = get_post_meta(get_the_id(), '_cmb_ballot_json', true);
+	
 
-	$ballot = json_decode($ballot_json);
+	$ballot = json_decode(stripslashes($ballot_json));
+	
+	//print_r($ballot);
+	
 	$options = [];
 	// loop through ballot sections
 	foreach($ballot as $section) {

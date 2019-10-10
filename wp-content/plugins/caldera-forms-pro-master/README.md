@@ -1,12 +1,17 @@
-#WordPress Client Plugin For [Caldera Forms Pro](https://calderaforms.com/pro?utm_source=github&utm_medium=caldera-forms-pro&utm_term=readme)
+# WordPress Client Plugin For [Caldera Forms Pro](https://calderaforms.com/pro?utm_source=github&utm_medium=caldera-forms-pro&utm_term=readme)
 
-This is the plugin needed to conenct your WordPress site to [Caldera Forms Pro](https://calderaformspro.com/?utm_source=github&utm_medium=caldera-forms-pro&utm_term=readme). You should be able to install this from the Caldera Forms subemu item Caldera Forms Pro - if you have Caldera Forms 1.5.1 or later installed.
+__[No Longer Needs In Caldera Forms 1.5.8 or Later](https://calderaforms.com/updates/caldera-forms-1-5-8/)__
+
+<blink>You should not install this plugin</blink>
+
+This is the plugin is required to connect your WordPress site to [Caldera Forms Pro](https://calderaformspro.com/?utm_source=github&utm_medium=caldera-forms-pro&utm_term=readme) if you have Caldera Forms 1.5.1 - 1.5.7.1
 
 Please note, this plugin requires:
 * Caldera Forms 1.5.1 or later
 * WordPress 4.7 or later
-* PHP 5.4 or later
+* PHP 5.6 or later
 
 **[Read the getting started guide](https://calderaforms.com/doc/caldera-forms-pro-getting-started?utm_source=github&utm_medium=caldera-forms-pro&utm_term=readme)**
 
-~Current Version:0.3.0~
+# End Of Life
+This code was copied into [Caldera Forms](https://github.com/CalderaWP/Caldera-Forms/issues/2163) any further changes -- bug fixes or new features -- will be done in Caldera Forms.

@@ -12,7 +12,7 @@
 <?php
 use Roots\Sage\Extras;
 use Roots\Sage\Titles;
-error_reporting(0);
+error_reporting(1);
 
 $masterelection = $_GET['election-option'];	
 
@@ -56,10 +56,10 @@ if (isset($_GET['contest'])) {
 } else {
   ?>
 
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
-  <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 
   <script type="text/javascript">
     Highcharts.setOptions({
@@ -70,25 +70,26 @@ if (isset($_GET['contest'])) {
   </script>
 
   <?php
-  $pattern = '/\\\\("[^"]+")/'; 
+  //$pattern = '/\\\\("[^"]+")/'; 
   $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
-  //$array_cont = preg_replace($pattern, '' ,$contests1);
-  $contests = json_decode( $contests1, true );
-  //print_r($contests);
+  $contests2 = str_replace([' Jr','"Bob"', '"Buck"',  '"Tank"', ' "Toby" ', '"Rick"', '"Bill"', '"Buddy"', '"Randy"', '"Pat"', '"Al"', '"Phil"', '"Kathy"', '"Kirk"', '"Tony"'], 
+  [', Jr', '\"Bob\"', '\"Buck\"',  '\"Tank\"', ' \"Toby\" ',  '\"Rick\"','\"Bill\"','\"Buddy\"', '\"Randy\"', '\"Pat\"', '\"Al\"', '\"Phil\"', '\"Kathy\"', '\"Kirk\"', '\"Tony\"'] , $contests1);
+  $contests = json_decode($contests2, true );
+
  
   $uploads = wp_upload_dir();
   $uploads_global = network_site_url('wp-content/uploads');
 
   
-  //$pattern = '/\s+("[^"]+)/';
   $results1 = ($votes_contest[0]->post_content);
- // $array_cont = preg_replace($pattern, '',$results1);
-  $results = json_decode( $results1, true );
-  
+  $results2 = str_replace(["\'", ' Jr', 'Charles Evans \"Democrat'], ["'", ', Jr', 'Charles Evans \"Democrat\"'], $results1);
+  //$results2 = str_replace(["\'", ' Jr','\"Democrat\"','\"Republican\"'], ["'", ', Jr','',''], $results1);
+  $results = json_decode($results2, true );
+
+  //print_r($results2); 
   $statewide1 = file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json');
-  //$array_cont = preg_replace($pattern, '',$statewide1);
   $statewide = json_decode( $statewide1, true);
-   
+
 
   if( ($contests == null || $contests == '') || ($results[0] == null || $results[0] == '') ){
 	echo '<h2 class="text-center">No results  Or Please recount the VOTE in the main page.</h2>';  
@@ -100,6 +101,8 @@ if (isset($_GET['contest'])) {
   $races_statewide = array_keys($statewide[0]);
   
   foreach ($races as $race) {
+
+
 	  //echo $race; 
 	  //echo substr($race, 0, 11) ; 
     if (substr($race, 0, 11) == '_cmb_ballot') {
@@ -124,22 +127,52 @@ if (isset($_GET['contest'])) {
       }
 
       $data = array_column($results, $race);
+	
+	  //print_r($data);
       $data_state = array_column($statewide, $race);
 	  
-
-
-      // If data is JSON string, unserialize it
+	  // If data is JSON string, unserialize it
       if (FALSE !== unserialize($data[0])) {
+		//print_r($data);
         $flat_data = array();
-        foreach ($data as $multiple) {
-          $encoded = unserialize($multiple);
-          $array = unserialize(html_entity_decode($encoded));
-          $flat_data = array_merge(array_values($flat_data), array_values($array));
-		  
+        foreach ($data as $multiple) {	
+			//print_r($multiple); 
+			$encoded = unserialize($multiple);
+			//new
+			$encoded = preg_replace('/(\'|&#0*39;)/', "\'", $encoded);	
+			//print_r($encoded); 
+			//$encoded = unserialize(html_entity_decode($encoded));	
+			
+			
+			//$encoded = str_replace([' "Democrat"'], [''], $encoded);
+			
+			//$encoded = serialize(html_entity_decode($encoded));	
+			//if(strpos($encoded, ' "Democrat"') !== false){
+			//	$encoded = str_replace(['s:30', ' "Democrat"'], ['s:19',''], $encoded);
+			//	}
+			//print_r($encoded. ' <br />'); 
+			//CJ
+			
+			$array = unserialize(html_entity_decode($encoded));	  
+			//add CJ
+			//print_r($encoded); 
+			$array = str_replace(['"Democrat"', '"Republican"', '"Unaffiliated"', '"Libertarian"', '"Green"'], ['','','','',''], $array);
+			//end
+			$flat_data = array_merge(array_values($flat_data), array_values($array));
+
         }
         $data = $flat_data;
-		
+		//print_r($data . '<br />');
+		//var_dump($data);
+	
       }
+	  else{
+		  //added cj
+		  //print_r($data);
+		//$data = str_replace(['Charles Evans "Democrat'], ['Charles Evans "Democrat"'], $data);  
+		$data = str_replace(['"Democrat"', '"Republican"', '"Unaffiliated"', '"Libertarian"', '"Green"', 'Charles Evans "Democrat'], ['','','','','','Charles Evans'], $data);  
+		//print_r($data); 
+	  }
 
       // If data is JSON string, unserialize it
       if (FALSE !== unserialize($data_state[0])) {
@@ -153,9 +186,11 @@ if (isset($_GET['contest'])) {
       }
 
       // Total number of ballots cast
+		//print_r($data);
       $total = count($data) - count(array_keys($data, NULL));
       $total_state = count($data_state) - count(array_keys($data_state, NULL));
-
+	  //echo '<br />';
+	 // print_r(count($data));
 
       // Set up arrays
       $count = array();
@@ -164,20 +199,38 @@ if (isset($_GET['contest'])) {
       // Count number of votes per contestant
       if (isset($contests[$match[0][0][0]][$race]['candidates'])) {
         foreach ($contests[$match[0][0][0]][$race]['candidates'] as $candidate) {
-          $tally = count(array_keys($data, $candidate['name']));
-          $tally_state = count(array_keys($data_state, $candidate['name']));
 
+			//
+			$candidate['name'] = preg_replace('/(\'|&#0*39;)/', "\'", $candidate['name']);			
+			$candidate['name'] = str_replace(',,',  ',',  $candidate['name']);			
+			$data = str_replace(["\'", "  ", ',,'], ["'", " ", ','], $data);	
+			$data = preg_replace('/(\'|&#0*39;)/', "\'", $data);	
+			$data =  preg_replace('/[\[{\(].*[\]}\)]/U' , '', $data);
+			//CJ 
+			//print_r($candidate['name']. '<br/>');
+			//print_r($data); 
+			//print_r($data);
+			
+			$data = preg_replace('/\s+/', ' ', $data);
+			$candidate['name'] = preg_replace('/\s+/', ' ', $candidate['name']);
+			
+          $tally = count(array_keys($data,$candidate['name']));
+          //print_r(count(array_keys($data,$candidate['name'])));
+          //print_r(array_keys($data,$candidate['name']));
+          $tally_state = count(array_keys($data_state, $candidate['name']));
+			
+			
           // Precinct count
 		  if($total == 0){
 			  $count[] = array(
-				'name' => $candidate['name'],
+				'name' => str_replace('&', ' ', $candidate['name']),
 				'party' => $candidate['party'],
 				'count' => $tally,
 				'percent' => 0
 			  );
 		  }else{
 			 $count[] = array(
-				'name' => $candidate['name'],
+				'name' => str_replace('&', ' ', $candidate['name']),
 				'party' => $candidate['party'],
 				'count' => $tally,
 				'percent' => round(($tally / $total) * 100, 2)
@@ -385,4 +438,3 @@ if (isset($_GET['contest'])) {
 	}
 }
 }
-

@@ -35,3 +35,12 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+function ds_ct_enqueue_parent() { 
+	
+	/* DEV*/	
+	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/style.css' ); 
+
+}
+
+add_action( 'wp_enqueue_scripts', 'ds_ct_enqueue_parent' );

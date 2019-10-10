@@ -31,7 +31,7 @@ class client extends api {
 	 * @param string $type Optional. The message type. Default is "main" Options: main|auto
 	 * @return \calderawp\calderaforms\pro\message|\WP_Error|null
 	 */
-	public function create_message( $message, $send, $entry_id, $type = 'main'  ){
+	public function create_message( \calderawp\calderaforms\pro\api\message $message, $send, $entry_id, $type = 'main'  ){
 		$data = $message->to_array();
 		if( $send ){
 			$data[ 'send' ] = true;
@@ -49,7 +49,8 @@ class client extends api {
 						'type' => $type,
 						'entry_id' => $entry_id,
 						'send' => $send,
-						'method' => __METHOD__
+						'method' => __METHOD__,
+						'pdf' => $message->pdf
 					] )->to_wp_error();
 				}
 
@@ -59,6 +60,57 @@ class client extends api {
 		}
 
 		return null;
+
+	}
+
+
+	/**
+	 * Delete a message
+	 *
+	 * @param \calderawp\calderaforms\pro\api\message $message Message db object
+	 *
+	 * @return bool
+	 */
+	public function delete_message( \calderawp\calderaforms\pro\api\message $message ){
+		return $this->_delete_message( $message->get_cfp_id() );
+	}
+
+	/**
+	 * Delete message by app message ID
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param int $cfp_id Remote ID
+	 *
+	 * @return bool
+	 */
+	public function delete_by_app_id( $cfp_id ){
+		try {
+			$message = container::get_instance()->get_messages_db()->get_by_remote_id( $cfp_id );
+			return $this->delete_message( $message );
+		}catch ( Exception $e ) {
+			return false;
+		}
+
+
+	}
+
+	/**
+	 * Delete by local DB (entry_id) entry ID
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param int $entry_id Local ID
+	 *
+	 * @return bool
+	 */
+	public function delete_by_local_id( $entry_id ){
+		try{
+			$message = container::get_instance()->get_messages_db()->get_by_entry_id( $entry_id );
+			return $this->delete_message( $message );
+		}catch ( Exception $e ){
+			return false;
+		}
 
 	}
 
@@ -118,24 +170,30 @@ class client extends api {
 
 	}
 
-
-
 	/**
 	 * @inheritdoc
 	 */
-	protected function set_request_args( $method )
-	{
-		$args = array(
-			'headers' => array(
-				'X-CS-TOKEN'   => $this->keys->get_token(),
-				'X-CS-PUBLIC'  => $this->keys->get_public(),
-				'content-type' => 'application/json'
+	protected function get_url_root(){
+		return caldera_forms_pro_app_url();
+	}
 
-			),
-			'method'  => $method
-		);
+	/**
+	 * Send delete request for message
+	 *
+	 * @since 0.10.0
+	 *
+	 * @param int $cfp_id
+	 *
+	 * @return bool
+	 */
+	protected function _delete_message(  $cfp_id ){
+		$response = $this->request( sprintf( '/message/%d', $cfp_id ), [ ], 'DELETE' );
+		if ( ! is_wp_error( $response ) && 201 == wp_remote_retrieve_response_code( $response ) ) {
+			return true;
 
-		return $args;
+		}
+
+		return false;
 	}
 
 }

@@ -21,7 +21,7 @@ if ( ( $error = $exit_poll->prop( 'submission_error' ) ) && is_wp_error( $error 
 }
 
 // Display metabox on page (changing save button text)
-$output .= cmb2_get_metabox_form( $exit_poll, 'fake-oject-id', array( 'save_button' => 'Submit Poll' ) );
+$output .= cmb2_get_metabox_form( $exit_poll, 'fake-oject-id', array( 'save_button' => 'Finish' ) );
 
 echo $output;
 ?>

@@ -67,42 +67,52 @@ class CF_Custom_Fields_Pods {
 	 */
 	public function set_pods( Pods $pods ){
 		$this->pods = $pods;
-	}
+    }
 
-	/**
-	 * Track uploads
-	 *
-	 * @since 2.1.0
-	 *
-	 * @uses "caldera_forms_file_added_to_media_library" action
-	 *
-	 * @param int $id Attatchment ID
-	 * @param array $field Field ID
-	 */
-	public function file_uploaded( $id, $field ){
-		$this->files[ $field[ 'ID' ] ] = $id;
-	}
+    /**
+     * Track uploads
+     *
+     * @since 2.1.0
+     *
+     * @uses "caldera_forms_file_added_to_media_library" action
+     *
+     * @param int $id Attachment ID
+     * @param array $field Field ID
+     */
+    public function file_uploaded( $id, $field ){
 
-	/**
-	 * Save file field properly using Pods
-	 *
-	 * @since 2.2.0
-	 *
-	 * @uses "cf_custom_fields_post_save_meta_key_to_post_type" action
-	 *
-	 * @param $value
-	 * @param $slug
-	 * @param $entry_id
-	 * @param $field
-	 */
-	public function save( $value, $slug, $entry_id, $field ){
-		if( is_object( $this->pods ) && isset( $this->files[ $field[ 'ID' ] ] ) ){
-			$this->pods->save( $slug, array(
-				'image_field'  => $this->files[ $field[ 'ID' ] ] ,
-			), $entry_id );
+        $this->files[ $field[ 'ID' ] ] = $id;
+        //Set a transient to retrieve the file attachment ID after a processor as Paypal was used
+        Caldera_Forms_Transient::set_transient( 'cf_file_attachment_' . $field[ 'ID' ], $id );
+    }
 
-		}
+    /**
+     * Save file field properly using Pods
+     *
+     * @since 2.2.0
+     *
+     * @uses "cf_custom_fields_post_save_meta_key_to_post_type" action
+     *
+     * @param $value
+     * @param $slug
+     * @param $entry_id
+     * @param $field
+     */
+    public function save( $value, $slug, $entry_id, $field ){
 
-	}
+
+        if (is_object($this->pods) && isset($this->files[$field['ID']])) {
+
+            $this->pods->save($slug, array(
+                'image_field' => $this->files[$field['ID']],
+            ), $entry_id);
+
+        } else if ( is_object($this->pods) && $field['type'] === 'file' && isset($value) ) {
+            //Set to be used in cases processors like Paypal were used
+            $attachment_id = Caldera_Forms_Transient::get_transient('cf_file_attachment_' . $field['ID']);
+            $this->pods->save($slug, $attachment_id, $entry_id);
+
+        }
+    }
 
 }

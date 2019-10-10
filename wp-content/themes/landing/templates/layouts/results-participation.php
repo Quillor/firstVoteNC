@@ -1,7 +1,7 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 
 <script type="text/javascript">
   Highcharts.setOptions({
@@ -59,12 +59,24 @@ foreach ($ep_fields as $ep_field) {
     $tally = count(array_keys($ep_data, $ep_key));
 
     // Precinct count
-    $count[] = array(
-      'id' => $ep_key,
-      'name' => addslashes($ep_option),
-      'count' => $tally,
-      'percent' => round(($tally / $ep_total) * 100, 2)
-    );
+	if($ep_total == 0){
+		$count[] = array(
+		  'id' => $ep_key,
+		  'name' => addslashes($ep_option),
+		  'count' => $tally,
+		  'percent' => 0
+		);
+	}
+	else{
+		$count[] = array(
+		  'id' => $ep_key,
+		  'name' => addslashes($ep_option),
+		  'count' => $tally,
+		  'percent' => round(($tally / $ep_total) * 100, 2)
+		);
+	}
+	
+   
   }
   ?>
 

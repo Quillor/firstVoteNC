@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Visual Composer cs_CZ\n"
+"Project-Id-Version: WPBakery Page Builder cs_CZ\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 17:41+0200\n"
-"PO-Revision-Date: 2017-08-22 17:41+0200\n"
+"POT-Creation-Date: 2018-05-14 16:15+0300\n"
+"PO-Revision-Date: 2018-05-14 16:15+0300\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: PROFI STRÁNKY.CZ <sluzby@profi-stranky.cz>\n"
 "Language: cs_CZ\n"
@@ -12,701 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
-
-#: config/./lean-map.php:121
-msgid "Same window"
-msgstr "Stejné okno"
-
-#: config/./lean-map.php:122
-msgid "New window"
-msgstr "Nové okno"
-
-#: config/./lean-map.php:130 config/./content/shortcode-vc-posts-slider.php:90
-#: config/./deprecated/shortcode-vc-posts-grid.php:9
-#: include/./params/sorted_list/sorted_list.php:100
-msgid "Link to post"
-msgstr "Odkaz na příspěvek"
-
-#: config/./lean-map.php:134 config/./content/shortcode-vc-posts-slider.php:93
-#: config/./deprecated/shortcode-vc-posts-grid.php:13
-#: include/./params/sorted_list/sorted_list.php:99
-#: include/./templates/teaser.html.php:22
-#: include/./templates/teaser.html.php:43
-msgid "No link"
-msgstr "Žádný odkaz"
-
-#: config/./lean-map.php:138 config/./content/shortcode-vc-posts-slider.php:91
-#: config/./deprecated/shortcode-vc-posts-grid.php:17
-msgid "Link to bigger image"
-msgstr "Odkázat na větší obrázek"
-
-#: config/./lean-map.php:145
-msgid "Alert"
-msgstr "Upozornění"
-
-#: config/./lean-map.php:146
-msgid "Info"
-msgstr "Informace"
-
-#: config/./lean-map.php:147
-msgid "Tick"
-msgstr "Zaškrtávátko"
-
-#: config/./lean-map.php:148
-msgid "Explanation"
-msgstr "Vysvětlení"
-
-#: config/./lean-map.php:149
-msgid "Address book"
-msgstr "Kniha adres"
-
-#: config/./lean-map.php:150
-msgid "Alarm clock"
-msgstr "Budík"
-
-#: config/./lean-map.php:151
-msgid "Anchor"
-msgstr "Kotva"
-
-#: config/./lean-map.php:152
-msgid "Application Image"
-msgstr "Obrázek aplikace"
-
-#: config/./lean-map.php:153
-msgid "Arrow"
-msgstr "Šipka"
-
-#: config/./lean-map.php:154
-msgid "Asterisk"
-msgstr "Hvězdička"
-
-#: config/./lean-map.php:155
-msgid "Hammer"
-msgstr "Kladivo"
-
-#: config/./lean-map.php:156
-msgid "Balloon"
-msgstr "Bublina"
-
-#: config/./lean-map.php:157
-msgid "Balloon Buzz"
-msgstr "Bublina"
-
-#: config/./lean-map.php:158
-msgid "Balloon Facebook"
-msgstr "Facebook bublina"
-
-#: config/./lean-map.php:159
-msgid "Balloon Twitter"
-msgstr "Twitter bublina"
-
-#: config/./lean-map.php:160
-msgid "Battery"
-msgstr "Baterie"
-
-#: config/./lean-map.php:161
-msgid "Binocular"
-msgstr "Dalekohled"
-
-#: config/./lean-map.php:162
-msgid "Document Excel"
-msgstr "Excelový dokument"
-
-#: config/./lean-map.php:163
-msgid "Document Image"
-msgstr "Obrázkový dokument"
-
-#: config/./lean-map.php:164
-msgid "Document Music"
-msgstr "Hudební soubor"
-
-#: config/./lean-map.php:165
-msgid "Document Office"
-msgstr "Office dokument"
-
-#: config/./lean-map.php:166
-msgid "Document PDF"
-msgstr "PDF dokument"
-
-#: config/./lean-map.php:167
-msgid "Document Powerpoint"
-msgstr "Powerpoint prezentace"
-
-#: config/./lean-map.php:168
-msgid "Document Word"
-msgstr "Word dokument"
-
-#: config/./lean-map.php:169
-msgid "Bookmark"
-msgstr "Záložka"
-
-#: config/./lean-map.php:170
-msgid "Camcorder"
-msgstr "Videokamera"
-
-#: config/./lean-map.php:171
-msgid "Camera"
-msgstr "Fotoaparát"
-
-#: config/./lean-map.php:172
-msgid "Chart"
-msgstr "Tabulka"
-
-#: config/./lean-map.php:173
-msgid "Chart pie"
-msgstr "Koláčový graf k tabulce"
-
-#: config/./lean-map.php:174
-msgid "Clock"
-msgstr "Hodiny"
-
-#: config/./lean-map.php:175
-msgid "Fire"
-msgstr "Oheň"
-
-#: config/./lean-map.php:176
-msgid "Heart"
-msgstr "Srdce"
-
-#: config/./lean-map.php:177
-msgid "Mail"
-msgstr "Pošta"
-
-#: config/./lean-map.php:178
-msgid "Play"
-msgstr "Hrát"
-
-#: config/./lean-map.php:179
-msgid "Shield"
-msgstr "Štít"
-
-#: config/./lean-map.php:180
-msgid "Video"
-msgstr "Video"
-
-#: config/./lean-map.php:186
-#: include/./classes/core/class-vc-shared-library.php:335
-msgid "Grey"
-msgstr "Šedá"
-
-#: config/./lean-map.php:187
-#: include/./classes/core/class-vc-shared-library.php:326
-msgid "Blue"
-msgstr "Modrá"
-
-#: config/./lean-map.php:188
-#: include/./classes/core/class-vc-shared-library.php:327
-msgid "Turquoise"
-msgstr "Tyrkysová"
-
-#: config/./lean-map.php:189
-#: include/./classes/core/class-vc-shared-library.php:338
-msgid "Green"
-msgstr "Zelená"
-
-#: config/./lean-map.php:190
-#: include/./classes/core/class-vc-shared-library.php:336
-msgid "Orange"
-msgstr "Oranžová"
-
-#: config/./lean-map.php:191
-msgid "Red"
-msgstr "Červená"
-
-#: config/./lean-map.php:192
-#: include/./classes/core/class-vc-shared-library.php:334
-msgid "Black"
-msgstr "Černá"
-
-#: config/./lean-map.php:199
-msgid "Regular"
-msgstr ""
-
-#: config/./lean-map.php:200 config/./content/shortcode-vc-zigzag.php:70
-#: config/./tta/shortcode-vc-tta-tour.php:130
-msgid "Large"
-msgstr "Velký"
-
-#: config/./lean-map.php:201 config/./content/shortcode-vc-zigzag.php:68
-#: config/./social/shortcode-vc-googleplus.php:20
-#: config/./tta/shortcode-vc-tta-tour.php:132
-msgid "Small"
-msgstr "Malé"
-
-#: config/./lean-map.php:202
-msgid "Mini"
-msgstr "Nejmenší"
-
-#: config/./lean-map.php:208 config/./containers/shortcode-vc-column.php:40
-#: config/./containers/shortcode-vc-column.php:55
-#: config/./containers/shortcode-vc-row.php:114
-#: config/./containers/shortcode-vc-row.php:129
-#: config/./containers/shortcode-vc-section.php:75
-#: config/./containers/shortcode-vc-section.php:90
-#: config/./content/shortcode-vc-gallery.php:111
-#: config/./content/shortcode-vc-images-carousel.php:39
-#: config/./content/shortcode-vc-single-image.php:182
-#: config/./content/vc-icon-element.php:184
-#: config/./grids/class-vc-grids-common.php:490
-#: config/./grids/class-vc-grids-common.php:547
-#: config/./grids/class-vc-grids-common.php:861
-#: config/./grids/class-vc-grids-common.php:918
-#: config/./grids/class-vc-grids-common.php:1125
-#: config/./grids/class-vc-grids-common.php:1174
-#: config/./social/shortcode-vc-googleplus.php:34
-#: config/./tta/shortcode-vc-tta-accordion.php:66
-#: config/./tta/shortcode-vc-tta-accordion.php:86
-#: config/./tta/shortcode-vc-tta-accordion.php:117
-#: config/./tta/shortcode-vc-tta-accordion.php:145
-#: config/./tta/shortcode-vc-tta-pageable.php:33
-#: config/./tta/shortcode-vc-tta-pageable.php:61
-#: config/./tta/shortcode-vc-tta-tabs.php:66
-#: config/./tta/shortcode-vc-tta-tabs.php:87
-#: config/./tta/shortcode-vc-tta-tabs.php:128
-#: config/./tta/shortcode-vc-tta-tabs.php:156
-#: config/./tta/shortcode-vc-tta-tour.php:66
-#: config/./tta/shortcode-vc-tta-tour.php:87
-#: config/./tta/shortcode-vc-tta-tour.php:142
-#: config/./tta/shortcode-vc-tta-tour.php:170
-#: include/./autoload/vc-image-filters.php:56
-#: include/./params/animation_style/animation_style.php:41
-#: include/./params/css_editor/css_editor.php:134
-#: include/./params/vc_grid_item/shortcodes.php:14
-#: include/./params/vc_grid_item/shortcodes.php:495
-#: include/./templates/pages/vc-settings/default-template-post-type.tpl.php:27
-msgid "None"
-msgstr "Žádný"
-
-#: config/./lean-map.php:209
-msgid "Address book icon"
-msgstr "Ikona adresáře"
-
-#: config/./lean-map.php:210
-msgid "Alarm clock icon"
-msgstr "Ikona budíku"
-
-#: config/./lean-map.php:211
-msgid "Anchor icon"
-msgstr "Ikona kotvy"
-
-#: config/./lean-map.php:212
-msgid "Application Image icon"
-msgstr "Ikona aplikace"
-
-#: config/./lean-map.php:213
-msgid "Arrow icon"
-msgstr "Ikona šipky"
-
-#: config/./lean-map.php:214
-msgid "Asterisk icon"
-msgstr "Ikona hvězdičky"
-
-#: config/./lean-map.php:215
-msgid "Hammer icon"
-msgstr "Ikona kladiva"
-
-#: config/./lean-map.php:216
-msgid "Balloon icon"
-msgstr "Balónová ikona"
-
-#: config/./lean-map.php:217
-msgid "Balloon Buzz icon"
-msgstr "Balónová ikona Buzz"
-
-#: config/./lean-map.php:218
-msgid "Balloon Facebook icon"
-msgstr "Balónová ikona Facebooku"
-
-#: config/./lean-map.php:219
-msgid "Balloon Twitter icon"
-msgstr "Balónová ikona Twitteru"
-
-#: config/./lean-map.php:220
-msgid "Battery icon"
-msgstr "Ikona baterie"
-
-#: config/./lean-map.php:221
-msgid "Binocular icon"
-msgstr "Ikona dalekohledu"
-
-#: config/./lean-map.php:222
-msgid "Document Excel icon"
-msgstr "Ikona dokumentu MS Excel"
-
-#: config/./lean-map.php:223
-msgid "Document Image icon"
-msgstr "Ikona dokumentu"
-
-#: config/./lean-map.php:224
-msgid "Document Music icon"
-msgstr "Ikona hudebního souboru"
-
-#: config/./lean-map.php:225
-msgid "Document Office icon"
-msgstr "Ikona dokumentu MS Office"
-
-#: config/./lean-map.php:226
-msgid "Document PDF icon"
-msgstr "Ikona dokumentu PDF"
-
-#: config/./lean-map.php:227
-msgid "Document Powerpoint icon"
-msgstr "Ikona dokumentu MS Powerpoint"
-
-#: config/./lean-map.php:228
-msgid "Document Word icon"
-msgstr "Ikona dokumentu MS Word"
-
-#: config/./lean-map.php:229
-msgid "Bookmark icon"
-msgstr "Ikona záložky"
-
-#: config/./lean-map.php:230
-msgid "Camcorder icon"
-msgstr "Ikona videokamery"
-
-#: config/./lean-map.php:231
-msgid "Camera icon"
-msgstr "Ikona fotoaparátu"
-
-#: config/./lean-map.php:232
-msgid "Chart icon"
-msgstr "Ikona grafu"
-
-#: config/./lean-map.php:233
-msgid "Chart pie icon"
-msgstr "Ikona koláčového grafu"
-
-#: config/./lean-map.php:234
-msgid "Clock icon"
-msgstr "Ikona hodin"
-
-#: config/./lean-map.php:235
-msgid "Fire icon"
-msgstr "Ikona ohně"
-
-#: config/./lean-map.php:236
-msgid "Heart icon"
-msgstr "Ikona srdce"
-
-#: config/./lean-map.php:237
-msgid "Mail icon"
-msgstr "Ikona pošty"
-
-#: config/./lean-map.php:238
-msgid "Play icon"
-msgstr "Ikona přehrát"
-
-#: config/./lean-map.php:239
-msgid "Shield icon"
-msgstr "Ikona štítu"
-
-#: config/./lean-map.php:240
-msgid "Video icon"
-msgstr "Ikona videa"
-
-#: config/./templates.php:13
-msgid "Landing Page"
-msgstr "Úvodní stránka"
-
-#: config/./templates.php:23
-msgid "Call to Action Page"
-msgstr "Stránka \"volání akce\""
-
-#: config/./templates.php:33
-msgid "Feature List"
-msgstr "Seznam vlastností"
-
-#: config/./templates.php:43
-msgid "Description Page"
-msgstr "Popisná stránka"
-
-#: config/./templates.php:53
-msgid "Service List"
-msgstr "Seznam služeb"
-
-#: config/./templates.php:63
-msgid "Product Page"
-msgstr "Stránka s produkty"
-
-#: config/./templates.php:72
-msgid "FAQ section"
-msgstr "Sekce častých dotazů"
-
-#: config/./templates.php:82
-msgid "About section"
-msgstr "Sekce \"O stránce\""
-
-#: config/./templates.php:92
-msgid "About with features"
-msgstr "Stránka \"O stránce\" s vlastnostmi"
-
-#: config/./templates.php:102
-msgid "Three image description"
-msgstr "Tříobrázkový popis"
-
-#: config/./templates.php:112
-msgid "News list"
-msgstr "Seznam novinek"
-
-#: config/./templates.php:122
-msgid "Product description"
-msgstr "Popis produktu"
-
-#: config/./templates.php:132
-msgid "Description with accordion"
-msgstr "Popis v harmonikové podobě"
-
-#: config/./templates.php:144
-msgid "Two column list"
-msgstr "Dvousloupcový seznam"
-
-#: config/./templates.php:154
-msgid "About with tour section"
-msgstr "Stránka \"O stránce\" s prohlídkou"
-
-#: config/./templates.php:168
-msgid "Rounded image description"
-msgstr "Popis zaobleného obrázku"
-
-#: config/./templates.php:178
-msgid "Description with success message"
-msgstr "Popis s oznámením o úspěšnosti"
-
-#: config/./templates.php:188
-msgid "Images with tab description"
-msgstr "Obrázky se záložkou popisu"
-
-#: config/./templates.php:198
-msgid "Square on background"
-msgstr "Čtverec na pozadí"
-
-#: config/./templates.php:208
-msgid "Product description with tabs"
-msgstr "Popis produktu se záložkami"
-
-#: config/./templates.php:218
-msgid "Description with headings"
-msgstr "Popis s nadpisem"
-
-#: config/./templates.php:228
-msgid "Video with description"
-msgstr "Video s popisem"
-
-#: config/./templates.php:238
-msgid "Description with buttons"
-msgstr "Popis s tlačítky"
-
-#: config/./templates.php:248
-msgid "Map and Contacts"
-msgstr "Mapa a Kontakty"
-
-#: config/./templates.php:258
-msgid "Help section"
-msgstr "Nápověda"
-
-#: config/./templates.php:268
-msgid "Screen description"
-msgstr "Popis obrazovky"
-
-#: config/./templates.php:278
-msgid "Description with round images"
-msgstr "Popis se zaoblenými obrázky"
-
-#: config/./templates.php:288
-msgid "FAQ in three columns"
-msgstr "Často kladené dotazy - tři sloupce"
-
-#: config/./templates.php:298
-msgid "Centre description"
-msgstr "Popis uprostřed"
-
-#: config/./templates.php:308
-msgid "Description with gallery"
-msgstr "Galerie s popiskem"
-
-#: config/./templates.php:318
-msgid "Centre description with image"
-msgstr "Popis uprostřed s obrázkem"
-
-#: config/./templates.php:328
-msgid "Description with thumbnails"
-msgstr "Popis s náhledovými obrázky"
-
-#: config/./templates.php:338
-msgid "About with left gallery"
-msgstr "Stránka \"O stránce\" s galerií vlevo"
-
-#: config/./templates.php:348
-msgid "Five image layout"
-msgstr "Pětiobrázkové rozložení"
-
-#: config/./templates.php:358
-msgid "Accordion news list"
-msgstr "Novinky v harmonice"
-
-#: config/./templates.php:368
-msgid "Product with social icons"
-msgstr "Produkt s ikonami sociálních sítí"
-
-#: config/./templates.php:378
-msgid "Complex news layout"
-msgstr "Rozvržení stránky \"Novinky\""
-
-#: config/./templates.php:388
-msgid "Product list with CTA"
-msgstr "Seznam produktů s call to action"
-
-#: config/./templates.php:398
-msgid "Intro with features"
-msgstr "Úvod s popisem vlastností"
-
-#: config/./templates.php:408
-msgid "Image gallery with description"
-msgstr "Obrázková galerie s popisem"
-
-#: config/./templates.php:418
-msgid "Team members"
-msgstr "Členové týmu"
-
-#: config/./templates.php:428
-msgid "Large image with thumbnails"
-msgstr "Velký obrázek s náhledy"
-
-#: config/./templates.php:438
-msgid "Complex news layout II"
-msgstr "Rozvržení novinek 2"
-
-#: config/./templates.php:448
-msgid "Service description layout"
-msgstr "Rozložení popisu služby"
-
-#: config/./templates.php:458
-msgid "Articles with headings"
-msgstr ""
-
-#: config/./templates.php:476
-msgid "Call to Action section"
-msgstr ""
-
-#: config/./templates.php:488
-msgid "Charts section"
-msgstr ""
-
-#: config/./templates.php:506
-msgid "Chess Grid"
-msgstr ""
-
-#: config/./templates.php:528
-msgid "Features and articles"
-msgstr ""
-
-#: config/./templates.php:570
-msgid "Features and charts"
-msgstr ""
-
-#: config/./templates.php:604
-msgid "Features with video parallax"
-msgstr ""
-
-#: config/./templates.php:626
-msgid "Features with full width promo"
-msgstr ""
-
-#: config/./templates.php:664
-msgid "Full height hero section"
-msgstr ""
-
-#: config/./templates.php:678
-msgid "Full height with transparent block"
-msgstr ""
-
-#: config/./templates.php:692
-msgid "Full height parallax"
-msgstr ""
-
-#: config/./templates.php:702
-msgid "Header section with features"
-msgstr ""
-
-#: config/./templates.php:733
-msgid "Helps with icons"
-msgstr ""
-
-#: config/./templates.php:743
-msgid "Plain articles"
-msgstr ""
-
-#: config/./templates.php:757
-msgid "Post portfolio"
-msgstr ""
-
-#: config/./templates.php:767
-msgid "Product introduction"
-msgstr ""
-
-#: config/./templates.php:793
-msgid "Services with block buttons"
-msgstr ""
-
-#: config/./templates.php:815
-msgid "Tabs with features"
-msgstr ""
-
-#: config/./templates.php:837
-msgid "Video section"
-msgstr ""
-
-#: config/./templates.php:851
-msgid "Video promo"
-msgstr ""
-
-#: config/./templates.php:861
-msgid "Equal Feature List"
-msgstr ""
-
-#: config/./templates.php:871
-msgid "Parallax Introduction"
-msgstr ""
-
-#: config/./templates.php:881
-msgid "Three Informative Blocks"
-msgstr ""
-
-#: config/./templates.php:892
-msgid "Description Articles"
-msgstr ""
-
-#: config/./templates.php:902
-msgid "Full Height Features"
-msgstr ""
-
-#: config/./templates.php:912
-msgid "Business Description"
-msgstr ""
-
-#: config/./templates.php:922
-msgid "Article Hero Image"
-msgstr ""
-
-#: config/./templates.php:932
-msgid "My Team Members"
-msgstr ""
-
-#: config/./templates.php:942
-msgid "Hero Image With Description"
-msgstr ""
-
-#: config/./templates.php:952
-msgid "Description with Image on Background"
-msgstr ""
-
-#: config/./templates.php:962
-msgid "Three Image with Article"
-msgstr ""
 
 #: config/./buttons/shortcode-vc-btn.php:27
 #: config/./content/shortcode-vc-message.php:156
@@ -837,11 +145,11 @@ msgstr ""
 #: include/./params/sorted_list/sorted_list.php:97
 #: include/./params/vc_grid_item/shortcodes.php:19
 #: include/./params/vc_grid_item/shortcodes.php:246
-#: include/./templates/teaser.html.php:36
-#: include/./templates/teaser.html.php:60
 #: include/./templates/pages/partials/vc-roles-parts/_post_types.tpl.php:15
 #: include/./templates/pages/partials/vc-roles-parts/_settings.tpl.php:18
 #: include/./templates/pages/partials/vc-roles-parts/_shortcodes.tpl.php:33
+#: include/./templates/teaser.html.php:36
+#: include/./templates/teaser.html.php:60
 msgid "Custom"
 msgstr "Vlastní"
 
@@ -1404,11 +712,11 @@ msgstr ""
 #: config/./wp/shortcode-vc-wp-search.php:29
 #: config/./wp/shortcode-vc-wp-tagcloud.php:52
 #: config/./wp/shortcode-vc-wp-text.php:35
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:71
+#: include/./classes/vendors/plugins/acf/shortcode.php:67
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:156
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:79
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:147
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:71
-#: include/./classes/vendors/plugins/acf/shortcode.php:67
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:94
 #: include/./params/vc_grid_item/shortcodes.php:61
 #: include/./params/vc_grid_item/shortcodes.php:180
@@ -1485,11 +793,11 @@ msgstr "Speciální jméno třídy"
 #: config/./wp/shortcode-vc-wp-search.php:31
 #: config/./wp/shortcode-vc-wp-tagcloud.php:54
 #: config/./wp/shortcode-vc-wp-text.php:37
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:73
+#: include/./classes/vendors/plugins/acf/shortcode.php:69
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:158
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:81
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:149
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:73
-#: include/./classes/vendors/plugins/acf/shortcode.php:69
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:96
 #: include/./params/vc_grid_item/shortcodes.php:63
 #: include/./params/vc_grid_item/shortcodes.php:182
@@ -1675,13 +983,13 @@ msgstr "Tlačítko"
 #: config/./tta/shortcode-vc-tta-tour.php:15
 #: include/./autoload/vendors/gravity_forms.php:35
 #: include/./classes/settings/class-vc-automapper.php:338
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:35
+#: include/./classes/vendors/plugins/acf/shortcode.php:34
 #: include/./classes/vendors/plugins/class-vc-vendor-contact-form7.php:56
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:136
 #: include/./classes/vendors/plugins/class-vc-vendor-ninja-forms.php:40
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:59
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:127
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:35
-#: include/./classes/vendors/plugins/acf/shortcode.php:34
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:11
 #: include/./params/vc_grid_item/shortcodes.php:170
 #: include/./params/vc_grid_item/shortcodes.php:195
@@ -1812,7 +1120,7 @@ msgstr ""
 #: config/./deprecated/shortcode-vc-cta-button2.php:39
 #: config/./social/shortcode-vc-googleplus.php:41
 #: include/./params/vc_grid_item/shortcodes.php:339
-#: include/./templates/params/column_offset/template.tpl.php:30
+#: include/./templates/params/column_offset/template.tpl.php:37
 msgid "Width"
 msgstr "Šířka"
 
@@ -2099,6 +1407,46 @@ msgstr ""
 msgid "Parallax"
 msgstr ""
 
+#: config/./containers/shortcode-vc-column.php:40
+#: config/./containers/shortcode-vc-column.php:55
+#: config/./containers/shortcode-vc-row.php:114
+#: config/./containers/shortcode-vc-row.php:129
+#: config/./containers/shortcode-vc-section.php:75
+#: config/./containers/shortcode-vc-section.php:90
+#: config/./content/shortcode-vc-gallery.php:111
+#: config/./content/shortcode-vc-images-carousel.php:39
+#: config/./content/shortcode-vc-single-image.php:182
+#: config/./content/vc-icon-element.php:184
+#: config/./grids/class-vc-grids-common.php:490
+#: config/./grids/class-vc-grids-common.php:547
+#: config/./grids/class-vc-grids-common.php:861
+#: config/./grids/class-vc-grids-common.php:918
+#: config/./grids/class-vc-grids-common.php:1125
+#: config/./grids/class-vc-grids-common.php:1174 config/./lean-map.php:208
+#: config/./social/shortcode-vc-googleplus.php:34
+#: config/./tta/shortcode-vc-tta-accordion.php:66
+#: config/./tta/shortcode-vc-tta-accordion.php:86
+#: config/./tta/shortcode-vc-tta-accordion.php:117
+#: config/./tta/shortcode-vc-tta-accordion.php:145
+#: config/./tta/shortcode-vc-tta-pageable.php:33
+#: config/./tta/shortcode-vc-tta-pageable.php:61
+#: config/./tta/shortcode-vc-tta-tabs.php:66
+#: config/./tta/shortcode-vc-tta-tabs.php:87
+#: config/./tta/shortcode-vc-tta-tabs.php:128
+#: config/./tta/shortcode-vc-tta-tabs.php:156
+#: config/./tta/shortcode-vc-tta-tour.php:66
+#: config/./tta/shortcode-vc-tta-tour.php:87
+#: config/./tta/shortcode-vc-tta-tour.php:142
+#: config/./tta/shortcode-vc-tta-tour.php:170
+#: include/./autoload/vc-image-filters.php:56
+#: include/./params/animation_style/animation_style.php:41
+#: include/./params/css_editor/css_editor.php:134
+#: include/./params/vc_grid_item/shortcodes.php:14
+#: include/./params/vc_grid_item/shortcodes.php:495
+#: include/./templates/pages/vc-settings/default-template-post-type.tpl.php:27
+msgid "None"
+msgstr "Žádný"
+
 #: config/./containers/shortcode-vc-column.php:41
 #: config/./containers/shortcode-vc-column.php:56
 #: config/./containers/shortcode-vc-row.php:115
@@ -2220,7 +1568,7 @@ msgstr ""
 #: config/./content/shortcode-vc-toggle.php:57
 #: config/./grids/class-vc-grids-common.php:1126
 #: config/./grids/class-vc-grids-common.php:1175
-#: include/./helpers/helpers_api.php:500
+#: include/./helpers/helpers_api.php:498
 msgid "Default"
 msgstr "Standartní"
 
@@ -3097,10 +2445,10 @@ msgstr ""
 #: config/./grids/class-vc-grids-common.php:277
 #: config/./tta/shortcode-vc-tta-section.php:48
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:109
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1272
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1335
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1449
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1280
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1343
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1457
 #: include/./params/loop/loop.php:446
 #: include/./params/sorted_list/sorted_list.php:91
 #: include/./params/vc_link/vc_link.php:18
@@ -3387,6 +2735,25 @@ msgstr ""
 msgid "Link"
 msgstr "Odkaz"
 
+#: config/./content/shortcode-vc-posts-slider.php:90
+#: config/./deprecated/shortcode-vc-posts-grid.php:9 config/./lean-map.php:130
+#: include/./params/sorted_list/sorted_list.php:100
+msgid "Link to post"
+msgstr "Odkaz na příspěvek"
+
+#: config/./content/shortcode-vc-posts-slider.php:91
+#: config/./deprecated/shortcode-vc-posts-grid.php:17 config/./lean-map.php:138
+msgid "Link to bigger image"
+msgstr "Odkázat na větší obrázek"
+
+#: config/./content/shortcode-vc-posts-slider.php:93
+#: config/./deprecated/shortcode-vc-posts-grid.php:13 config/./lean-map.php:134
+#: include/./params/sorted_list/sorted_list.php:99
+#: include/./templates/teaser.html.php:22
+#: include/./templates/teaser.html.php:43
+msgid "No link"
+msgstr "Žádný odkaz"
+
 #: config/./content/shortcode-vc-posts-slider.php:95
 msgid "Link type."
 msgstr "Typ odkazu."
@@ -3464,8 +2831,8 @@ msgstr "Datum"
 
 #: config/./content/shortcode-vc-posts-slider.php:134
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:107
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1464
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1489
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1472
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1497
 msgid "ID"
 msgstr "ID"
 
@@ -4013,11 +3380,22 @@ msgstr "Zvolte barvu vašeho prvku."
 msgid "Extra small"
 msgstr ""
 
+#: config/./content/shortcode-vc-zigzag.php:68 config/./lean-map.php:201
+#: config/./social/shortcode-vc-googleplus.php:20
+#: config/./tta/shortcode-vc-tta-tour.php:132
+msgid "Small"
+msgstr "Malé"
+
 #: config/./content/shortcode-vc-zigzag.php:69
 #: config/./social/shortcode-vc-googleplus.php:21
 #: config/./tta/shortcode-vc-tta-tour.php:131
 msgid "Medium"
 msgstr "Střední"
+
+#: config/./content/shortcode-vc-zigzag.php:70 config/./lean-map.php:200
+#: config/./tta/shortcode-vc-tta-tour.php:130
+msgid "Large"
+msgstr "Velký"
 
 #: config/./content/shortcode-vc-zigzag.php:71
 #: config/./tta/shortcode-vc-tta-tour.php:129
@@ -4064,7 +3442,7 @@ msgid ""
 "Settings/WPBakery Page Builder/General Settings."
 msgstr ""
 "Pokud používáte non-latin znaky, ověřte si, že jsou aktivovány v Obecném "
-"nastavení Visual Composeru"
+"nastavení WPBakery Page Builderu"
 
 #: config/./content/vc-custom-heading-element.php:42
 msgid "Add link to custom heading."
@@ -4499,8 +3877,8 @@ msgid "Load More Button"
 msgstr ""
 
 #: config/./grids/class-vc-grids-common.php:33
-#: include/./classes/shortcodes/vc-basic-grid.php:92
 #: include/./classes/shortcodes/paginator/class-vc-pageable.php:55
+#: include/./classes/shortcodes/vc-basic-grid.php:92
 msgid "Load more"
 msgstr "Načíst více"
 
@@ -4699,7 +4077,7 @@ msgid "Input meta key for grid ordering."
 msgstr "Vložte \"Klíč meta\" pro řazení mřížky."
 
 #: config/./grids/class-vc-grids-common.php:333
-#: include/./templates/params/column_offset/template.tpl.php:27
+#: include/./templates/params/column_offset/template.tpl.php:34
 msgid "Offset"
 msgstr "Odsazení"
 
@@ -5186,6 +4564,328 @@ msgstr "Mřížka médií"
 msgid "Media grid from Media Library"
 msgstr ""
 
+#: config/./lean-map.php:121
+msgid "Same window"
+msgstr "Stejné okno"
+
+#: config/./lean-map.php:122
+msgid "New window"
+msgstr "Nové okno"
+
+#: config/./lean-map.php:145
+msgid "Alert"
+msgstr "Upozornění"
+
+#: config/./lean-map.php:146
+msgid "Info"
+msgstr "Informace"
+
+#: config/./lean-map.php:147
+msgid "Tick"
+msgstr "Zaškrtávátko"
+
+#: config/./lean-map.php:148
+msgid "Explanation"
+msgstr "Vysvětlení"
+
+#: config/./lean-map.php:149
+msgid "Address book"
+msgstr "Kniha adres"
+
+#: config/./lean-map.php:150
+msgid "Alarm clock"
+msgstr "Budík"
+
+#: config/./lean-map.php:151
+msgid "Anchor"
+msgstr "Kotva"
+
+#: config/./lean-map.php:152
+msgid "Application Image"
+msgstr "Obrázek aplikace"
+
+#: config/./lean-map.php:153
+msgid "Arrow"
+msgstr "Šipka"
+
+#: config/./lean-map.php:154
+msgid "Asterisk"
+msgstr "Hvězdička"
+
+#: config/./lean-map.php:155
+msgid "Hammer"
+msgstr "Kladivo"
+
+#: config/./lean-map.php:156
+msgid "Balloon"
+msgstr "Bublina"
+
+#: config/./lean-map.php:157
+msgid "Balloon Buzz"
+msgstr "Bublina"
+
+#: config/./lean-map.php:158
+msgid "Balloon Facebook"
+msgstr "Facebook bublina"
+
+#: config/./lean-map.php:159
+msgid "Balloon Twitter"
+msgstr "Twitter bublina"
+
+#: config/./lean-map.php:160
+msgid "Battery"
+msgstr "Baterie"
+
+#: config/./lean-map.php:161
+msgid "Binocular"
+msgstr "Dalekohled"
+
+#: config/./lean-map.php:162
+msgid "Document Excel"
+msgstr "Excelový dokument"
+
+#: config/./lean-map.php:163
+msgid "Document Image"
+msgstr "Obrázkový dokument"
+
+#: config/./lean-map.php:164
+msgid "Document Music"
+msgstr "Hudební soubor"
+
+#: config/./lean-map.php:165
+msgid "Document Office"
+msgstr "Office dokument"
+
+#: config/./lean-map.php:166
+msgid "Document PDF"
+msgstr "PDF dokument"
+
+#: config/./lean-map.php:167
+msgid "Document Powerpoint"
+msgstr "Powerpoint prezentace"
+
+#: config/./lean-map.php:168
+msgid "Document Word"
+msgstr "Word dokument"
+
+#: config/./lean-map.php:169
+msgid "Bookmark"
+msgstr "Záložka"
+
+#: config/./lean-map.php:170
+msgid "Camcorder"
+msgstr "Videokamera"
+
+#: config/./lean-map.php:171
+msgid "Camera"
+msgstr "Fotoaparát"
+
+#: config/./lean-map.php:172
+msgid "Chart"
+msgstr "Tabulka"
+
+#: config/./lean-map.php:173
+msgid "Chart pie"
+msgstr "Koláčový graf k tabulce"
+
+#: config/./lean-map.php:174
+msgid "Clock"
+msgstr "Hodiny"
+
+#: config/./lean-map.php:175
+msgid "Fire"
+msgstr "Oheň"
+
+#: config/./lean-map.php:176
+msgid "Heart"
+msgstr "Srdce"
+
+#: config/./lean-map.php:177
+msgid "Mail"
+msgstr "Pošta"
+
+#: config/./lean-map.php:178
+msgid "Play"
+msgstr "Hrát"
+
+#: config/./lean-map.php:179
+msgid "Shield"
+msgstr "Štít"
+
+#: config/./lean-map.php:180
+msgid "Video"
+msgstr "Video"
+
+#: config/./lean-map.php:186
+#: include/./classes/core/class-vc-shared-library.php:335
+msgid "Grey"
+msgstr "Šedá"
+
+#: config/./lean-map.php:187
+#: include/./classes/core/class-vc-shared-library.php:326
+msgid "Blue"
+msgstr "Modrá"
+
+#: config/./lean-map.php:188
+#: include/./classes/core/class-vc-shared-library.php:327
+msgid "Turquoise"
+msgstr "Tyrkysová"
+
+#: config/./lean-map.php:189
+#: include/./classes/core/class-vc-shared-library.php:338
+msgid "Green"
+msgstr "Zelená"
+
+#: config/./lean-map.php:190
+#: include/./classes/core/class-vc-shared-library.php:336
+msgid "Orange"
+msgstr "Oranžová"
+
+#: config/./lean-map.php:191
+msgid "Red"
+msgstr "Červená"
+
+#: config/./lean-map.php:192
+#: include/./classes/core/class-vc-shared-library.php:334
+msgid "Black"
+msgstr "Černá"
+
+#: config/./lean-map.php:199
+msgid "Regular"
+msgstr ""
+
+#: config/./lean-map.php:202
+msgid "Mini"
+msgstr "Nejmenší"
+
+#: config/./lean-map.php:209
+msgid "Address book icon"
+msgstr "Ikona adresáře"
+
+#: config/./lean-map.php:210
+msgid "Alarm clock icon"
+msgstr "Ikona budíku"
+
+#: config/./lean-map.php:211
+msgid "Anchor icon"
+msgstr "Ikona kotvy"
+
+#: config/./lean-map.php:212
+msgid "Application Image icon"
+msgstr "Ikona aplikace"
+
+#: config/./lean-map.php:213
+msgid "Arrow icon"
+msgstr "Ikona šipky"
+
+#: config/./lean-map.php:214
+msgid "Asterisk icon"
+msgstr "Ikona hvězdičky"
+
+#: config/./lean-map.php:215
+msgid "Hammer icon"
+msgstr "Ikona kladiva"
+
+#: config/./lean-map.php:216
+msgid "Balloon icon"
+msgstr "Balónová ikona"
+
+#: config/./lean-map.php:217
+msgid "Balloon Buzz icon"
+msgstr "Balónová ikona Buzz"
+
+#: config/./lean-map.php:218
+msgid "Balloon Facebook icon"
+msgstr "Balónová ikona Facebooku"
+
+#: config/./lean-map.php:219
+msgid "Balloon Twitter icon"
+msgstr "Balónová ikona Twitteru"
+
+#: config/./lean-map.php:220
+msgid "Battery icon"
+msgstr "Ikona baterie"
+
+#: config/./lean-map.php:221
+msgid "Binocular icon"
+msgstr "Ikona dalekohledu"
+
+#: config/./lean-map.php:222
+msgid "Document Excel icon"
+msgstr "Ikona dokumentu MS Excel"
+
+#: config/./lean-map.php:223
+msgid "Document Image icon"
+msgstr "Ikona dokumentu"
+
+#: config/./lean-map.php:224
+msgid "Document Music icon"
+msgstr "Ikona hudebního souboru"
+
+#: config/./lean-map.php:225
+msgid "Document Office icon"
+msgstr "Ikona dokumentu MS Office"
+
+#: config/./lean-map.php:226
+msgid "Document PDF icon"
+msgstr "Ikona dokumentu PDF"
+
+#: config/./lean-map.php:227
+msgid "Document Powerpoint icon"
+msgstr "Ikona dokumentu MS Powerpoint"
+
+#: config/./lean-map.php:228
+msgid "Document Word icon"
+msgstr "Ikona dokumentu MS Word"
+
+#: config/./lean-map.php:229
+msgid "Bookmark icon"
+msgstr "Ikona záložky"
+
+#: config/./lean-map.php:230
+msgid "Camcorder icon"
+msgstr "Ikona videokamery"
+
+#: config/./lean-map.php:231
+msgid "Camera icon"
+msgstr "Ikona fotoaparátu"
+
+#: config/./lean-map.php:232
+msgid "Chart icon"
+msgstr "Ikona grafu"
+
+#: config/./lean-map.php:233
+msgid "Chart pie icon"
+msgstr "Ikona koláčového grafu"
+
+#: config/./lean-map.php:234
+msgid "Clock icon"
+msgstr "Ikona hodin"
+
+#: config/./lean-map.php:235
+msgid "Fire icon"
+msgstr "Ikona ohně"
+
+#: config/./lean-map.php:236
+msgid "Heart icon"
+msgstr "Ikona srdce"
+
+#: config/./lean-map.php:237
+msgid "Mail icon"
+msgstr "Ikona pošty"
+
+#: config/./lean-map.php:238
+msgid "Play icon"
+msgstr "Ikona přehrát"
+
+#: config/./lean-map.php:239
+msgid "Shield icon"
+msgstr "Ikona štítu"
+
+#: config/./lean-map.php:240
+msgid "Video icon"
+msgstr "Ikona videa"
+
 #: config/./social/shortcode-vc-facebook.php:7
 msgid "Facebook Like"
 msgstr "Facebook To se mi líbí"
@@ -5530,6 +5230,306 @@ msgstr "Postranní panel"
 
 #: config/./structure/shortcode-vc-widget-sidebar.php:25
 msgid "Select widget area to display."
+msgstr ""
+
+#: config/./templates.php:13
+msgid "Landing Page"
+msgstr "Úvodní stránka"
+
+#: config/./templates.php:23
+msgid "Call to Action Page"
+msgstr "Stránka \"volání akce\""
+
+#: config/./templates.php:33
+msgid "Feature List"
+msgstr "Seznam vlastností"
+
+#: config/./templates.php:43
+msgid "Description Page"
+msgstr "Popisná stránka"
+
+#: config/./templates.php:53
+msgid "Service List"
+msgstr "Seznam služeb"
+
+#: config/./templates.php:63
+msgid "Product Page"
+msgstr "Stránka s produkty"
+
+#: config/./templates.php:72
+msgid "FAQ section"
+msgstr "Sekce častých dotazů"
+
+#: config/./templates.php:82
+msgid "About section"
+msgstr "Sekce \"O stránce\""
+
+#: config/./templates.php:92
+msgid "About with features"
+msgstr "Stránka \"O stránce\" s vlastnostmi"
+
+#: config/./templates.php:102
+msgid "Three image description"
+msgstr "Tříobrázkový popis"
+
+#: config/./templates.php:112
+msgid "News list"
+msgstr "Seznam novinek"
+
+#: config/./templates.php:122
+msgid "Product description"
+msgstr "Popis produktu"
+
+#: config/./templates.php:132
+msgid "Description with accordion"
+msgstr "Popis v harmonikové podobě"
+
+#: config/./templates.php:144
+msgid "Two column list"
+msgstr "Dvousloupcový seznam"
+
+#: config/./templates.php:154
+msgid "About with tour section"
+msgstr "Stránka \"O stránce\" s prohlídkou"
+
+#: config/./templates.php:168
+msgid "Rounded image description"
+msgstr "Popis zaobleného obrázku"
+
+#: config/./templates.php:178
+msgid "Description with success message"
+msgstr "Popis s oznámením o úspěšnosti"
+
+#: config/./templates.php:188
+msgid "Images with tab description"
+msgstr "Obrázky se záložkou popisu"
+
+#: config/./templates.php:198
+msgid "Square on background"
+msgstr "Čtverec na pozadí"
+
+#: config/./templates.php:208
+msgid "Product description with tabs"
+msgstr "Popis produktu se záložkami"
+
+#: config/./templates.php:218
+msgid "Description with headings"
+msgstr "Popis s nadpisem"
+
+#: config/./templates.php:228
+msgid "Video with description"
+msgstr "Video s popisem"
+
+#: config/./templates.php:238
+msgid "Description with buttons"
+msgstr "Popis s tlačítky"
+
+#: config/./templates.php:248
+msgid "Map and Contacts"
+msgstr "Mapa a Kontakty"
+
+#: config/./templates.php:258
+msgid "Help section"
+msgstr "Nápověda"
+
+#: config/./templates.php:268
+msgid "Screen description"
+msgstr "Popis obrazovky"
+
+#: config/./templates.php:278
+msgid "Description with round images"
+msgstr "Popis se zaoblenými obrázky"
+
+#: config/./templates.php:288
+msgid "FAQ in three columns"
+msgstr "Často kladené dotazy - tři sloupce"
+
+#: config/./templates.php:298
+msgid "Centre description"
+msgstr "Popis uprostřed"
+
+#: config/./templates.php:308
+msgid "Description with gallery"
+msgstr "Galerie s popiskem"
+
+#: config/./templates.php:318
+msgid "Centre description with image"
+msgstr "Popis uprostřed s obrázkem"
+
+#: config/./templates.php:328
+msgid "Description with thumbnails"
+msgstr "Popis s náhledovými obrázky"
+
+#: config/./templates.php:338
+msgid "About with left gallery"
+msgstr "Stránka \"O stránce\" s galerií vlevo"
+
+#: config/./templates.php:348
+msgid "Five image layout"
+msgstr "Pětiobrázkové rozložení"
+
+#: config/./templates.php:358
+msgid "Accordion news list"
+msgstr "Novinky v harmonice"
+
+#: config/./templates.php:368
+msgid "Product with social icons"
+msgstr "Produkt s ikonami sociálních sítí"
+
+#: config/./templates.php:378
+msgid "Complex news layout"
+msgstr "Rozvržení stránky \"Novinky\""
+
+#: config/./templates.php:388
+msgid "Product list with CTA"
+msgstr "Seznam produktů s call to action"
+
+#: config/./templates.php:398
+msgid "Intro with features"
+msgstr "Úvod s popisem vlastností"
+
+#: config/./templates.php:408
+msgid "Image gallery with description"
+msgstr "Obrázková galerie s popisem"
+
+#: config/./templates.php:418
+msgid "Team members"
+msgstr "Členové týmu"
+
+#: config/./templates.php:428
+msgid "Large image with thumbnails"
+msgstr "Velký obrázek s náhledy"
+
+#: config/./templates.php:438
+msgid "Complex news layout II"
+msgstr "Rozvržení novinek 2"
+
+#: config/./templates.php:448
+msgid "Service description layout"
+msgstr "Rozložení popisu služby"
+
+#: config/./templates.php:458
+msgid "Articles with headings"
+msgstr ""
+
+#: config/./templates.php:476
+msgid "Call to Action section"
+msgstr ""
+
+#: config/./templates.php:488
+msgid "Charts section"
+msgstr ""
+
+#: config/./templates.php:506
+msgid "Chess Grid"
+msgstr ""
+
+#: config/./templates.php:528
+msgid "Features and articles"
+msgstr ""
+
+#: config/./templates.php:570
+msgid "Features and charts"
+msgstr ""
+
+#: config/./templates.php:604
+msgid "Features with video parallax"
+msgstr ""
+
+#: config/./templates.php:626
+msgid "Features with full width promo"
+msgstr ""
+
+#: config/./templates.php:664
+msgid "Full height hero section"
+msgstr ""
+
+#: config/./templates.php:678
+msgid "Full height with transparent block"
+msgstr ""
+
+#: config/./templates.php:692
+msgid "Full height parallax"
+msgstr ""
+
+#: config/./templates.php:702
+msgid "Header section with features"
+msgstr ""
+
+#: config/./templates.php:733
+msgid "Helps with icons"
+msgstr ""
+
+#: config/./templates.php:743
+msgid "Plain articles"
+msgstr ""
+
+#: config/./templates.php:757
+msgid "Post portfolio"
+msgstr ""
+
+#: config/./templates.php:767
+msgid "Product introduction"
+msgstr ""
+
+#: config/./templates.php:793
+msgid "Services with block buttons"
+msgstr ""
+
+#: config/./templates.php:815
+msgid "Tabs with features"
+msgstr ""
+
+#: config/./templates.php:837
+msgid "Video section"
+msgstr ""
+
+#: config/./templates.php:851
+msgid "Video promo"
+msgstr ""
+
+#: config/./templates.php:861
+msgid "Equal Feature List"
+msgstr ""
+
+#: config/./templates.php:871
+msgid "Parallax Introduction"
+msgstr ""
+
+#: config/./templates.php:881
+msgid "Three Informative Blocks"
+msgstr ""
+
+#: config/./templates.php:892
+msgid "Description Articles"
+msgstr ""
+
+#: config/./templates.php:902
+msgid "Full Height Features"
+msgstr ""
+
+#: config/./templates.php:912
+msgid "Business Description"
+msgstr ""
+
+#: config/./templates.php:922
+msgid "Article Hero Image"
+msgstr ""
+
+#: config/./templates.php:932
+msgid "My Team Members"
+msgstr ""
+
+#: config/./templates.php:942
+msgid "Hero Image With Description"
+msgstr ""
+
+#: config/./templates.php:952
+msgid "Description with Image on Background"
+msgstr ""
+
+#: config/./templates.php:962
+msgid "Three Image with Article"
 msgstr ""
 
 #: config/./tta/shortcode-vc-tta-accordion.php:7
@@ -6261,6 +6261,51 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
+#: include/./autoload/vc-pages/page-design-options.php:40
+msgid "Important notice"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-design-options.php:42
+#: include/./autoload/vc-pages/page-design-options.php:45
+msgid ""
+"You have an outdated version of WPBakery Page Builder Design Options. It is "
+"required to review and save it."
+msgstr ""
+
+#: include/./autoload/vc-pages/page-design-options.php:56
+msgid "Open Design Options"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-role-manager.php:12
+msgid "Role Manager"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-role-manager.php:17
+msgid "Roles Manager"
+msgstr ""
+
+#: include/./autoload/vc-pages/pages.php:60
+#: include/./autoload/vc-pages/pages.php:78
+#: include/./classes/core/class-vc-base.php:761
+#: include/./classes/editors/class-vc-backend-editor.php:81
+#: include/./classes/editors/navbar/class-vc-navbar.php:93
+#: include/./classes/editors/navbar/class-vc-navbar.php:95
+msgid "WPBakery Page Builder"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:38
+msgid "About"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:92
+msgid "What's New"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:94
+#: include/./templates/pages/vc-welcome/vc-resources.php:9
+msgid "Resources"
+msgstr ""
+
 #: include/./autoload/vc-pointers-backend-editor.php:29
 msgid "Welcome to WPBakery Page Builder"
 msgstr ""
@@ -6306,51 +6351,6 @@ msgstr ""
 #, php-format
 msgid ""
 "P.S. Learn more at our <a href=\"%s\" target=\"_blank\">Knowledge Base</a>."
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:40
-msgid "Important notice"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:42
-#: include/./autoload/vc-pages/page-design-options.php:45
-msgid ""
-"You have an outdated version of WPBakery Page Builder Design Options. It is "
-"required to review and save it."
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:56
-msgid "Open Design Options"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-role-manager.php:12
-msgid "Role Manager"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-role-manager.php:17
-msgid "Roles Manager"
-msgstr ""
-
-#: include/./autoload/vc-pages/pages.php:60
-#: include/./autoload/vc-pages/pages.php:78
-#: include/./classes/core/class-vc-base.php:761
-#: include/./classes/editors/class-vc-backend-editor.php:81
-#: include/./classes/editors/navbar/class-vc-navbar.php:93
-#: include/./classes/editors/navbar/class-vc-navbar.php:95
-msgid "WPBakery Page Builder"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:38
-msgid "About"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:92
-msgid "What's New"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:94
-#: include/./templates/pages/vc-welcome/vc-resources.php:9
-msgid "Resources"
 msgstr ""
 
 #: include/./autoload/vendors/gravity_forms.php:21
@@ -6961,7 +6961,6 @@ msgid "Templates"
 msgstr "Šablony"
 
 #: include/./classes/editors/navbar/class-vc-navbar.php:175
-#: include/./templates/editors/partials/backend_editor_footer.tpl.php:44
 msgid "Frontend"
 msgstr "Veřejná část webu (Frontend)"
 
@@ -7048,9 +7047,9 @@ msgid ""
 "shortcodes to the list of WPBakery Page Builder content elements menu (Note: "
 "to map shortcode it needs to be installed on site)."
 msgstr ""
-"Používat Visual Composer shortcode Mapper k přidávání vlastních nebo "
-"shortcode třetích stran, k seznamu prvků menu Visual Composeru. Pro nalezení "
-"shortcode musí být nainstalován na vašem webu."
+"Používat WPBakery Page Builder shortcode Mapper k přidávání vlastních nebo "
+"shortcode třetích stran, k seznamu prvků menu WPBakery Page Builderu. Pro "
+"nalezení shortcode musí být nainstalován na vašem webu."
 
 #: include/./classes/settings/class-vc-automapper.php:221
 msgid "Map Shortcode"
@@ -7590,32 +7589,32 @@ msgstr "Vytvořit kopii %s"
 msgid "Delete %s"
 msgstr "Odstranit %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1133
+#: include/./classes/shortcodes/shortcodes.php:1136
 #, php-format
 msgid "Append to this %s"
 msgstr "Připojit k %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1135
+#: include/./classes/shortcodes/shortcodes.php:1138
 #, php-format
 msgid "Prepend to this %s"
 msgstr "Přidat před %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1138
+#: include/./classes/shortcodes/shortcodes.php:1141
 #, php-format
 msgid "Move this %s"
 msgstr "Přesunout %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1144
+#: include/./classes/shortcodes/shortcodes.php:1147
 #, php-format
 msgid "Edit this %s"
 msgstr "Upravit %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1145
+#: include/./classes/shortcodes/shortcodes.php:1148
 #, php-format
 msgid "Clone this %s"
 msgstr "Vytvořit kopii %s"
 
-#: include/./classes/shortcodes/shortcodes.php:1146
+#: include/./classes/shortcodes/shortcodes.php:1149
 #, php-format
 msgid "Delete this %s"
 msgstr "Odstranit %s"
@@ -7721,8 +7720,8 @@ msgid "Delete this grid item "
 msgstr "Odstranit tuto mřížkovou položku"
 
 #: include/./classes/shortcodes/vc-posts-grid.php:135
-#: include/./templates/shortcodes/vc_posts_slider.php:167
 #: include/./templates/shortcodes/post_block/_item.php:22
+#: include/./templates/shortcodes/vc_posts_slider.php:167
 #, php-format
 msgid "Permalink to %s"
 msgstr "Odkaz na %s"
@@ -7759,8 +7758,8 @@ msgid "Toggle row"
 msgstr "Ihned přepnout"
 
 #: include/./classes/shortcodes/vc-single-image.php:61
-#: include/./params/default_params.php:309
 #: include/./params/css_editor/css_editor.php:126
+#: include/./params/default_params.php:309
 msgid "Add image"
 msgstr "Přidat obrázek"
 
@@ -7805,6 +7804,87 @@ msgid ""
 msgstr ""
 "K získání automatických aktualizací je potřeba aktivovaná licence. Prosím, "
 "navštivte <a href=\""
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:18
+#: include/./classes/vendors/plugins/acf/shortcode.php:18
+msgid "Field name"
+msgstr "Název pole"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:22
+#: include/./classes/vendors/plugins/acf/shortcode.php:22
+msgid "Select field from group."
+msgstr "Vyberte pole ze skupiny."
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:32
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:36
+#: include/./classes/vendors/plugins/acf/shortcode.php:31
+#: include/./classes/vendors/plugins/acf/shortcode.php:35
+msgid "Advanced Custom Field"
+msgstr "Rozšířené vlastní pole"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:42
+#: include/./classes/vendors/plugins/acf/shortcode.php:39
+msgid "Field group"
+msgstr "Skupina polí"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:46
+#: include/./classes/vendors/plugins/acf/shortcode.php:43
+msgid "Select field group."
+msgstr "Vyberte skupinu polí"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:52
+#: include/./classes/vendors/plugins/acf/shortcode.php:48
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:73
+msgid "Show label"
+msgstr "Zobrazit popisek"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:55
+#: include/./classes/vendors/plugins/acf/shortcode.php:51
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:77
+#: include/./params/vc_grid_item/shortcodes.php:652
+msgid "Enter label to display before key value."
+msgstr "Vložte popisek ke zobrazení před klíčovou hodnotu."
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:59
+#: include/./classes/vendors/plugins/acf/shortcode.php:55
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:81
+msgid "Align"
+msgstr "Zarovnání"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:62
+#: include/./classes/vendors/plugins/acf/shortcode.php:58
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:84
+#: include/./params/font_container/font_container.php:91
+msgid "left"
+msgstr "Levé"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:63
+#: include/./classes/vendors/plugins/acf/shortcode.php:59
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:85
+#: include/./params/font_container/font_container.php:92
+msgid "right"
+msgstr "Pravé"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:64
+#: include/./classes/vendors/plugins/acf/shortcode.php:60
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:86
+#: include/./params/font_container/font_container.php:93
+msgid "center"
+msgstr "Středové"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:65
+#: include/./classes/vendors/plugins/acf/shortcode.php:61
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:87
+#: include/./params/font_container/font_container.php:94
+msgid "justify"
+msgstr "Blokové"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:67
+#: include/./classes/vendors/plugins/acf/shortcode.php:63
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:90
+#: include/./params/vc_grid_item/shortcodes.php:664
+msgid "Select alignment."
+msgstr "Zvolte zarovnání textu."
 
 #: include/./classes/vendors/plugins/class-vc-vendor-contact-form7.php:49
 msgid "No contact forms found"
@@ -8225,202 +8305,121 @@ msgstr ""
 "Pamatuj: pole \"na stránku\" určuje, kolik produktů se zobrazí na stránce, "
 "ale nepřidá stránkování."
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1275
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1338
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1452
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1283
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1346
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1460
 msgid "Id"
 msgstr "ID"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1267
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1330
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1444
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1275
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1338
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1452
 msgid "Sku"
 msgstr "SKU"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
 msgid "Name"
 msgstr "Název"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
 msgid "Slug"
 msgstr "Strojový přepis"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1463
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1471
 msgid "SKU"
 msgstr "SKU"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1465
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1473
 msgid "Price"
 msgstr "Cena"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1466
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1474
 msgid "Regular Price"
 msgstr "Normální cena"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1467
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1475
 msgid "Sale Price"
 msgstr "Prodejní cena"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1468
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1476
 msgid "Price html"
 msgstr "HTML cena"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1469
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1477
 msgid "Reviews count"
 msgstr "Počet recenzí"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1470
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1478
 msgid "Short description"
 msgstr "Krátký popis"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1471
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1479
 msgid "Dimensions"
 msgstr "Rozměry"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1472
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1480
 msgid "Rating count"
 msgstr "Počet hodnocení"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1473
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1481
 msgid "Weight"
 msgstr "Váha"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1474
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1482
 msgid "Is on sale"
 msgstr "Je v prodeji"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1475
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1501
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1483
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1509
 msgid "Custom field"
 msgstr "Vlastní pole"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1490
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1498
 msgid "Order number"
 msgstr "Číslo pořadí"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1491
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1499
 msgid "Currency"
 msgstr "Měna"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1492
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1500
 msgid "Total"
 msgstr "Celkem"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1493
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1501
 msgid "Status"
 msgstr "Stav"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1494
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1502
 msgid "Payment method"
 msgstr "Způsob platby"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1495
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1503
 msgid "Billing address city"
 msgstr "Město (Fakturační adresa)"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1496
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1504
 msgid "Billing address country"
 msgstr "Stát (Fakturační adresa)"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1497
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1505
 msgid "Shipping address city"
 msgstr "Město (Doručovací adresa)"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1498
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1506
 msgid "Shipping address country"
 msgstr "Země (Doručovací adresa)"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1499
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1507
 msgid "Customer Note"
 msgstr "Poznámka zákazníka"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1500
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1508
 msgid "Customer API"
 msgstr "Zákaznická API"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:18
-#: include/./classes/vendors/plugins/acf/shortcode.php:18
-msgid "Field name"
-msgstr "Název pole"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:22
-#: include/./classes/vendors/plugins/acf/shortcode.php:22
-msgid "Select field from group."
-msgstr "Vyberte pole ze skupiny."
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:32
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:36
-#: include/./classes/vendors/plugins/acf/shortcode.php:31
-#: include/./classes/vendors/plugins/acf/shortcode.php:35
-msgid "Advanced Custom Field"
-msgstr "Rozšířené vlastní pole"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:42
-#: include/./classes/vendors/plugins/acf/shortcode.php:39
-msgid "Field group"
-msgstr "Skupina polí"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:46
-#: include/./classes/vendors/plugins/acf/shortcode.php:43
-msgid "Select field group."
-msgstr "Vyberte skupinu polí"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:52
-#: include/./classes/vendors/plugins/acf/shortcode.php:48
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:73
-msgid "Show label"
-msgstr "Zobrazit popisek"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:55
-#: include/./classes/vendors/plugins/acf/shortcode.php:51
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:77
-#: include/./params/vc_grid_item/shortcodes.php:652
-msgid "Enter label to display before key value."
-msgstr "Vložte popisek ke zobrazení před klíčovou hodnotu."
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:59
-#: include/./classes/vendors/plugins/acf/shortcode.php:55
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:81
-msgid "Align"
-msgstr "Zarovnání"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:62
-#: include/./classes/vendors/plugins/acf/shortcode.php:58
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:84
-#: include/./params/font_container/font_container.php:91
-msgid "left"
-msgstr "Levé"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:63
-#: include/./classes/vendors/plugins/acf/shortcode.php:59
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:85
-#: include/./params/font_container/font_container.php:92
-msgid "right"
-msgstr "Pravé"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:64
-#: include/./classes/vendors/plugins/acf/shortcode.php:60
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:86
-#: include/./params/font_container/font_container.php:93
-msgid "center"
-msgstr "Středové"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:65
-#: include/./classes/vendors/plugins/acf/shortcode.php:61
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:87
-#: include/./params/font_container/font_container.php:94
-msgid "justify"
-msgstr "Blokové"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:67
-#: include/./classes/vendors/plugins/acf/shortcode.php:63
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:90
-#: include/./params/vc_grid_item/shortcodes.php:664
-msgid "Select alignment."
-msgstr "Zvolte zarovnání textu."
 
 #: include/./classes/vendors/plugins/woocommerce/grid-item-filters.php:16
 msgid "WooCommerce add to card link"
@@ -8487,31 +8486,31 @@ msgstr "Taxonomie"
 msgid "Wrong vc_map object. Base attribute is required"
 msgstr "Špatný objekt vc_map. Základní atribut je požadován"
 
-#: include/./helpers/helpers_api.php:492
+#: include/./helpers/helpers_api.php:490
 msgid "CSS Animation"
 msgstr "CSS Animace"
 
-#: include/./helpers/helpers_api.php:502
+#: include/./helpers/helpers_api.php:500
 msgid "Top to bottom"
 msgstr "Od shora dolů"
 
-#: include/./helpers/helpers_api.php:503
+#: include/./helpers/helpers_api.php:501
 msgid "Bottom to top"
 msgstr "Od spoda nahoru"
 
-#: include/./helpers/helpers_api.php:504
+#: include/./helpers/helpers_api.php:502
 msgid "Left to right"
 msgstr "Zleva do prava"
 
-#: include/./helpers/helpers_api.php:505
+#: include/./helpers/helpers_api.php:503
 msgid "Right to left"
 msgstr "Zprava do leva"
 
-#: include/./helpers/helpers_api.php:506
+#: include/./helpers/helpers_api.php:504
 msgid "Appear from center"
 msgstr "Zobrazovat od středu"
 
-#: include/./helpers/helpers_api.php:511
+#: include/./helpers/helpers_api.php:509
 msgid ""
 "Select type of animation for element to be animated when it \"enters\" the "
 "browsers viewport (Note: works only in modern browsers)."
@@ -9051,6 +9050,83 @@ msgstr "Přidat řádek"
 msgid "Drag to reorder"
 msgstr "Tažením uspořádejte"
 
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:97
+msgid "Add Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:98
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:137
+#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:14
+#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:15
+msgid "Grid Builder"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:99
+msgid "Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:100
+msgid "Edit Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:101
+msgid "View Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:102
+msgid "Search Grid templates"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:103
+msgid "No Grid templates found"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:104
+msgid "No Grid templates found in Trash"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:221
+msgid "Builder"
+msgstr "Tvůrce"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:222
+msgid ""
+"If you add this template, all your current changes will be removed. Are you "
+"sure you want to add template?"
+msgstr ""
+"Pokud přidáte tuto šablonu, všechny vaše změny budou odstraněny. Jste si "
+"jisti, že chcete šablonu přidat?"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:112
+msgid "Post title"
+msgstr "Název příspěvku"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:113
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:114
+msgid ""
+"The WordPress Excerpt is an optional summary or description of a post; in "
+"short, a post summary."
+msgstr ""
+"Wordpress excerpt je zkrácený obsah nebo popisný text příspěvku; stručně: "
+"výtak příspěvku."
+
+#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:38
+msgid "Grid element settings"
+msgstr "Nastavení prvků mřížky"
+
+#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:58
+#, php-format
+msgid "%s/12 width"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:147
+msgid "Grid Templates"
+msgstr "Mřížková šablona"
+
+#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:166
+msgid "Custom Grid Templates"
+msgstr ""
+
 #: include/./params/vc_grid_item/shortcodes.php:11
 #: include/./params/vc_grid_item/shortcodes.php:455
 #: include/./params/vc_grid_item/shortcodes.php:485
@@ -9297,8 +9373,8 @@ msgstr "Základní mřížka: Výchozí"
 #: include/./params/vc_grid_item/templates.php:57
 #: include/./params/vc_grid_item/templates.php:77
 #: include/./params/vc_grid_item/templates.php:85
-#: include/./templates/teaser.html.php:69
 #: include/./templates/shortcodes/post_block/_item.php:22
+#: include/./templates/teaser.html.php:69
 msgid "Read more"
 msgstr "Číst více"
 
@@ -9458,83 +9534,6 @@ msgstr "Masonry media: Sklouznout nahoru"
 msgid "Masonry media: Simple blur with scale"
 msgstr "Masonry media: Jednoduché rozostření se změnou velikosti"
 
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:97
-msgid "Add Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:98
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:137
-#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:14
-#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:15
-msgid "Grid Builder"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:99
-msgid "Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:100
-msgid "Edit Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:101
-msgid "View Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:102
-msgid "Search Grid templates"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:103
-msgid "No Grid templates found"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:104
-msgid "No Grid templates found in Trash"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:221
-msgid "Builder"
-msgstr "Tvůrce"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:222
-msgid ""
-"If you add this template, all your current changes will be removed. Are you "
-"sure you want to add template?"
-msgstr ""
-"Pokud přidáte tuto šablonu, všechny vaše změny budou odstraněny. Jste si "
-"jisti, že chcete šablonu přidat?"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:112
-msgid "Post title"
-msgstr "Název příspěvku"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:113
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:114
-msgid ""
-"The WordPress Excerpt is an optional summary or description of a post; in "
-"short, a post summary."
-msgstr ""
-"Wordpress excerpt je zkrácený obsah nebo popisný text příspěvku; stručně: "
-"výtak příspěvku."
-
-#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:38
-msgid "Grid element settings"
-msgstr "Nastavení prvků mřížky"
-
-#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:58
-#, php-format
-msgid "%s/12 width"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:147
-msgid "Grid Templates"
-msgstr "Mřížková šablona"
-
-#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:166
-msgid "Custom Grid Templates"
-msgstr ""
-
 #: include/./params/vc_link/vc_link.php:18
 msgid "Select URL"
 msgstr "Zvolte URL"
@@ -9542,25 +9541,6 @@ msgstr "Zvolte URL"
 #: include/./params/vc_link/vc_link.php:18
 msgid "URL"
 msgstr "URL adresa"
-
-#: include/./templates/teaser.html.php:20
-#: include/./templates/teaser.html.php:41
-msgid "Link to"
-msgstr "Odkaz na"
-
-#: include/./templates/teaser.html.php:24
-#: include/./templates/teaser.html.php:45
-msgid "On post"
-msgstr "V příspěvku"
-
-#: include/./templates/teaser.html.php:26
-#: include/./templates/teaser.html.php:47
-msgid "Big image"
-msgstr "Velký obrázek"
-
-#: include/./templates/teaser.html.php:35
-msgid "Featured"
-msgstr "Zvýrazněné"
 
 #: include/./templates/editors/partials/add_element_search.tpl.php:11
 msgid "Search element by name"
@@ -9576,7 +9556,6 @@ msgstr ""
 
 #: include/./templates/editors/partials/add_element_tabs.tpl.php:30
 #: include/./templates/editors/popups/vc_ui-panel-preset.tpl.php:10
-#: include/./templates/pages/vc-welcome/vc-welcome.php:29
 #, fuzzy
 msgid "My Elements"
 msgstr "Prvky"
@@ -9733,6 +9712,53 @@ msgstr "Skrýt panel"
 msgid "Edit Elements"
 msgstr "Upravit elementy"
 
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:32
+#: include/./templates/pages/vc-settings/tab.php:112
+msgid "Activate WPBakery Page Builder"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:33
+msgid ""
+"WPBakery Page Builder Template Library downloads are available for activated"
+"\tversions only. Activate WPBakery Page Builder direct license to access "
+"Template Library and receive other benefits."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:35
+#, fuzzy
+msgid "Activate License"
+msgstr "Aktivovat licenci"
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:69
+msgid "Download Template"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:81
+msgid "Downloading template ... please wait!"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:82
+msgid ""
+"Don't close this window until download is complete - you will\n"
+"\t\t\t\tbe redirected back to Template Library automatically."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:108
+msgid "Download Templates"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:109
+msgid ""
+"Access WPBakery Page Builder Template Library for unique layout\n"
+"\t\ttemplates. Download chosen templates and discover new layouts with "
+"regular template\n"
+"\t\tupdates from WPBakery Page Builder team."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:113
+msgid "Access Library"
+msgstr ""
+
 #: include/./templates/editors/popups/vc_ui-panel-add-element.tpl.php:25
 msgid ""
 "Elements within this list are deprecated and are no longer supported in "
@@ -9811,53 +9837,6 @@ msgid ""
 "their size value."
 msgstr ""
 "Změňte rozložení řádků manuálně, určením počtu sloupců a jejich velikostí."
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:32
-#: include/./templates/pages/vc-settings/tab.php:112
-msgid "Activate WPBakery Page Builder"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:33
-msgid ""
-"WPBakery Page Builder Template Library downloads are available for activated"
-"\tversions only. Activate WPBakery Page Builder direct license to access "
-"Template Library and receive other benefits."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:35
-#, fuzzy
-msgid "Activate License"
-msgstr "Aktivovat licenci"
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:69
-msgid "Download Template"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:81
-msgid "Downloading template ... please wait!"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:82
-msgid ""
-"Don't close this window until download is complete - you will\n"
-"\t\t\t\tbe redirected back to Template Library automatically."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:108
-msgid "Download Templates"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:109
-msgid ""
-"Access WPBakery Page Builder Template Library for unique layout\n"
-"\t\ttemplates. Download chosen templates and discover new layouts with "
-"regular template\n"
-"\t\tupdates from WPBakery Page Builder team."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:113
-msgid "Access Library"
-msgstr ""
 
 #: include/./templates/pages/partials/vc-roles-parts/_backend_editor.tpl.php:12
 msgid "Disable Classic editor"
@@ -10083,21 +10062,21 @@ msgid ""
 "you to get around plugin:"
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:26
+#: include/./templates/pages/vc-welcome/vc-resources.php:23
 msgid "Official Support"
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:28
+#: include/./templates/pages/vc-welcome/vc-resources.php:25
 #, php-format
 msgid ""
 "To get your support related question answered in the fastest timing, please "
 "head over to our <a href=\"%s\" target=\"_blank\">support page</a> and open "
 "Support ticket. To open a support ticket you should have a valid support "
 "subscription in case if your support has expired you can <a href=\"%s\" "
-"target=\"_blank\">purchase support extension</a> on CodeCanyon."
+"target=\"_blank\">purchase support extension</a> on support.wpbakery.com."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:30
+#: include/./templates/pages/vc-welcome/vc-resources.php:27
 #, php-format
 msgid ""
 "Before applying for support please make sure you understand the rules of "
@@ -10107,48 +10086,47 @@ msgid ""
 msgstr ""
 
 #: include/./templates/pages/vc-welcome/vc-welcome.php:11
-msgid "User-Friendly and RTL Compatible"
+msgid "New Interface, Native Colors"
 msgstr ""
 
 #: include/./templates/pages/vc-welcome/vc-welcome.php:13
 msgid ""
-"Enjoy full RTL compatibility of WPBakery Page Builder Page Builder with "
-"fully automatic text and grid adjustments."
+"A new slim interface of WPBakery Page Builder with native WordPress colors "
+"will become your best companion. Enjoy editing your website hassle free via "
+"desktop or mobile."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:14
+#: include/./templates/pages/vc-welcome/vc-welcome.php:21
+msgid "Native Colors"
+msgstr ""
+
+#: include/./templates/pages/vc-welcome/vc-welcome.php:23
 msgid ""
-"Receive even more control over access rights and create your own elements "
-"with a single click. Access completely new elements with completely new "
-"WPBakery Page Builder Page Builder."
+"Default WordPress colors will blend your WordPress and page builder "
+"experience in no time."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:22
-msgid "RTL Compatible"
-msgstr ""
+#: include/./templates/pages/vc-welcome/vc-welcome.php:28
+#, fuzzy
+msgid "New Icons"
+msgstr "Ikona"
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:24
+#: include/./templates/pages/vc-welcome/vc-welcome.php:30
 msgid ""
-"Develop RTL friendly layout with WPBakery Page Builder Page Builder "
-"automatically."
+"Simple and beautiful SVG icons for all our content elements and controls "
+"tailored for mobile devices."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:31
-msgid ""
-"Create elements like a presets and add them to the Add Element window for "
-"quick access."
+#: include/./templates/pages/vc-welcome/vc-welcome.php:35
+#, fuzzy
+msgid "Icon Library Updates"
+msgstr "Knihovna ikon"
+
+#: include/./templates/pages/vc-welcome/vc-welcome.php:37
+msgid "Add even more icons to your website with our updated icon libraries."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:36
-msgid "Column Parallax"
-msgstr ""
-
-#: include/./templates/pages/vc-welcome/vc-welcome.php:38
-msgid ""
-"Apply parallax effect to a single column and create even better layouts."
-msgstr ""
-
-#: include/./templates/params/column_offset/template.tpl.php:14
+#: include/./templates/params/column_offset/template.tpl.php:21
 #, fuzzy, php-format
 msgid ""
 "Responsive design settings are currently disabled. You can enable them in "
@@ -10156,21 +10134,21 @@ msgid ""
 "\"Disable responsive content elements\"."
 msgstr ""
 "Nastavení responsivního designu je momentálně zakázáno. Můžete je povolit v "
-"<a href=\"%s\">nastavení Visual composeru</a>"
+"<a href=\"%s\">nastavení WPBakery Page Builderu</a>"
 
-#: include/./templates/params/column_offset/template.tpl.php:24
+#: include/./templates/params/column_offset/template.tpl.php:31
 msgid "Device"
 msgstr "Zařízení"
 
-#: include/./templates/params/column_offset/template.tpl.php:33
+#: include/./templates/params/column_offset/template.tpl.php:40
 msgid "Hide on device?"
 msgstr "Skrýt na zařízení"
 
-#: include/./templates/params/column_offset/template.tpl.php:60
+#: include/./templates/params/column_offset/template.tpl.php:69
 msgid "Inherit: "
 msgstr "Dědit:"
 
-#: include/./templates/params/column_offset/template.tpl.php:61
+#: include/./templates/params/column_offset/template.tpl.php:70
 msgid "Inherit from default"
 msgstr "Převzít z výchozího"
 
@@ -10229,4038 +10207,21 @@ msgstr ""
 msgid "Tweet"
 msgstr "Tweet"
 
-#~ msgid "Visual Composer"
-#~ msgstr "Visual Composer"
-
-#~ msgid "Visual Composer Settings"
-#~ msgstr "Nastavení Visual Composeru"
-
-#~ msgid "BACKEND EDITOR"
-#~ msgstr "Backendový editor (V Administraci)"
-
-#~ msgid "FRONTEND EDITOR"
-#~ msgstr "Frontendový editor (Na webu)"
-
-#~ msgid "CLASSIC MODE"
-#~ msgstr "Klasický režim"
-
-#~ msgid "Edit %s with Visual Composer"
-#~ msgstr "Upravit %s Visual Composerem"
-
-#~ msgid "Edit with Visual Composer"
-#~ msgstr "Upravit Visual Composerem"
-
-#~ msgid "Exit Visual Composer edit mode"
-#~ msgstr "Opustit úpravy ve Visual Composeru"
-
-#~ msgid "Save current page as a Template"
-#~ msgstr "Uložit současnou stránku jako šablonu"
-
-#~ msgid "Load Template"
-#~ msgstr "Načíst šablonu"
-
-#~ msgid "No custom templates yet."
-#~ msgstr "Žádné vlastní šablony."
-
-#~ msgid "Show Visual Composer & default editor"
-#~ msgstr "Zobrazit Visual Composer a výchozí editor"
-
-#~ msgid "Show only Visual Composer"
-#~ msgstr "Zobrazit pouze Visual Composer"
-
-#~ msgid "Don't allow to use Visual Composer"
-#~ msgstr "Nepovolit používání Visual Composeru"
-
-#~ msgid "Visual Composer access"
-#~ msgstr "Přístup Visual Composeru"
-
-#~ msgid "Enabled shortcodes"
-#~ msgstr "Povolené shortcodes"
-
-#~ msgid "(deprecated since v%s)"
-#~ msgstr "(odebráno již od verze %s)"
-
-#~ msgid "Select All"
-#~ msgstr "Zvolit vše"
-
-#~ msgid "Select none"
-#~ msgstr "Nezvolit nic"
-
-#~ msgid "Empty value"
-#~ msgstr "Prázdná hodnota"
-
-#~ msgid "This is required to enable file writing for js_composer"
-#~ msgstr "Toto je vyžadováno k umožnění zápisu souborů js_composeru"
-
-#~ msgid "Downloading package from envato market..."
-#~ msgstr "Stahování balíčku z obchodu Envato..."
-
-#~ msgid "Error! Envato API error"
-#~ msgstr "Ejhle! Chyba v aplikaci Envato"
-
-#~ msgid "Error on unzipping package"
-#~ msgstr "Chyba při rozbalování archivu"
-
-#~ msgid "My templates"
-#~ msgstr "Mé šablony"
-
-#~ msgid "Default templates"
-#~ msgstr "Výchozí šablony"
-
-#~ msgid "Append previosly saved template to the current layout"
-#~ msgstr "Přidat předešle uloženou šablonu k současnému rozložení"
-
-#~ msgid "Append default template to the current layout"
-#~ msgstr "Připojit výchozí šablonu k současnému rozložení"
-
-#~ msgid "Post Carousel"
-#~ msgstr "Kolotoč příspěvků"
-
-#~ msgid "Call to Action Button"
-#~ msgstr "Zavolat akční tlačítko"
-
-#~ msgid "Posts Grid"
-#~ msgstr "Mřížka příspěvků"
-
-#~ msgid "Please activate your license in Product License tab!"
-#~ msgstr "Prosím, aktivujte svou licenci v záložce \"Licence\"!"
-
-#~ msgid "Download new version from CodeCanyon."
-#~ msgstr "Stáhněte novou verzi z CodeCanyon"
-
-#~ msgid "Update Visual Composer now."
-#~ msgstr "Aktualizujte Visual Composer"
-
-#~ msgid "What text use as form title. Leave blank if no title is needed."
-#~ msgstr "Nadpis formuláře. Ponechte prázdné, pokud není potřeba."
-
-#~ msgid "Icon from icon library"
-#~ msgstr "Ikona z knihovny ikon"
-
-#~ msgid "Icon color."
-#~ msgstr "Barva ikony"
-
-#~ msgid "Custom Icon Color"
-#~ msgstr "Vlastní barva ikony"
-
-#~ msgid "Background Style"
-#~ msgstr "Styl pozadí"
-
-#~ msgid "Background style for icon."
-#~ msgstr "Styl pozadí pro ikonu."
-
-#~ msgid "Background Color."
-#~ msgstr "Barva pozadí."
-
-#~ msgid "Align left"
-#~ msgstr "Zarovnání vlevo"
-
-#~ msgid "Align right"
-#~ msgstr "Zarovnání vpravo"
-
-#~ msgid "Align center"
-#~ msgstr "Zarovnání doprostřed"
-
-#~ msgid "Regular size"
-#~ msgstr "Pravidelná velikost"
-
-#~ msgid ""
-#~ "Select type of animation if you want this element to be animated when it "
-#~ "enters into the browsers viewport. Note: Works only in modern browsers."
-#~ msgstr ""
-#~ "Vyberte tyo animace, pokud chcete, aby byl tento element animován, když "
-#~ "se objeví v okně prohlížeče. Poznámka: Funguje jen v moderních "
-#~ "prohlížečích"
-
-#~ msgid "Stretch row and content without spaces"
-#~ msgstr "Roztáhni řádek a obsah bez mezer"
-
-#~ msgid ""
-#~ "Select stretching options for row and content. Stretched row overlay "
-#~ "sidebar and may not work if parent container has overflow: hidden css "
-#~ "property."
-#~ msgstr ""
-#~ "Zvolte možnosti roztahování řádku a obsahu. Překrytí sidebaru nemusí "
-#~ "fungovat, pokud má rodičovský prvek nastavenu CSS vlastnost stylu "
-#~ "overflow:hidden;"
-
-#~ msgid "Css"
-#~ msgstr "CSS"
-
-#~ msgid "Design options"
-#~ msgstr "Možnosti designu"
-
-#~ msgid "Width & Responsiveness"
-#~ msgstr "Šířka a flexibilita"
-
-#~ msgid "Separator color."
-#~ msgstr "Barva oddělovače"
-
-#~ msgid "Separator style."
-#~ msgstr "Styl oddělovače."
-
-#~ msgid "Border width in pixels."
-#~ msgstr "Šířka okraje v pixelech (obrazových bodech)"
-
-#~ msgid "Separator title."
-#~ msgstr "Název oddělovače"
-
-#~ msgid "Select message box style."
-#~ msgstr "Zvolte styl pole pro zprávu"
-
-#~ msgid "Facebook like button"
-#~ msgstr "Facebookové tlačítko To se mi líbí"
-
-#~ msgid "Button count"
-#~ msgstr "Počet tlačítek"
-
-#~ msgid "Box count"
-#~ msgstr "Počet polí"
-
-#~ msgid "Share on twitter button"
-#~ msgstr "Tlačítko Sdílet na twitteru"
-
-#~ msgid "Select type of annotation"
-#~ msgstr "Zvolte typ vysvětlivky"
-
-#~ msgid "Button layout"
-#~ msgstr "Rozložení tlačítka"
-
-#~ msgid "Toggle block title."
-#~ msgstr "Přepnout blokový titulek"
-
-#~ msgid "Toggle style."
-#~ msgstr "Přepnout styl"
-
-#~ msgid "Toggle size."
-#~ msgstr "Přepnout velikost"
-
-#~ msgid ""
-#~ "Enter text which will be used as widget title. Leave blank if no title is "
-#~ "needed."
-#~ msgstr ""
-#~ "Vložte text, který bude použit jako název Widgetu. Ponechte prázdné, "
-#~ "pokud název není potřeba."
-
-#~ msgid ""
-#~ "Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" "
-#~ "or other sizes defined by current theme. Alternatively enter image size "
-#~ "in pixels: 200x100 (Width x Height). Leave empty to use \"thumbnail\" "
-#~ "size."
-#~ msgstr ""
-#~ "Zadejte velikost obrázku. Například: \"thumbnail\", \"medium\", \"large"
-#~ "\", \"full\" nebo jiné velikosti definované šablonou, nebo zadejte "
-#~ "velikost v pixelech. Ponechte prázdné k použití velikosti \"thumbnail\"."
-
-#~ msgid "Select display style."
-#~ msgstr "Zvolte styl zobrazení."
-
-#~ msgid "Link to large image?"
-#~ msgstr "Odkazovat na velký obrázek?"
-
-#~ msgid "If selected, image will be linked to the larger image."
-#~ msgstr "Pokud je zvoleno, obrázek bude odkazovat na větší obrázek."
-
-#~ msgid "Yes, please"
-#~ msgstr "Ano, prosím"
-
-#~ msgid "Enter URL if you want this image to have a link."
-#~ msgstr "Vložte adresu, pokud chcet aby na ni tento obrázek odkazoval."
-
-#~ msgid "On click"
-#~ msgstr "S kliknutím"
-
-#~ msgid "Do nothing"
-#~ msgstr "Nedělat nic"
-
-#~ msgid "Define action for onclick event if needed."
-#~ msgstr "Určete akci po kliknutí, pokud je potřeba."
-
-#~ msgid ""
-#~ "Enter links for each slide here. Divide links with linebreaks (Enter) . "
-#~ msgstr ""
-#~ "Zadejte sem odkazy pro každý snímek. Oddělte odkazy odřádkováním (Enter)"
-
-#~ msgid "What to do when slide is clicked?"
-#~ msgstr "Co dělat, když je kliknuto na snímek?"
-
-#~ msgid "Slider mode"
-#~ msgstr "Mód posuvníku"
-
-#~ msgid ""
-#~ "Slides will be positioned horizontally (for horizontal swipes) or "
-#~ "vertically (for vertical swipes)"
-#~ msgstr "Snímky budou pozicovány vodorovně"
-
-#~ msgid "Duration of animation between slides (in ms)"
-#~ msgstr "Doba trvání animace mezi snímky"
-
-#~ msgid ""
-#~ "Set numbers of slides you want to display at the same time on slider's "
-#~ "container for carousel mode."
-#~ msgstr "Nastavte počet snímků, které chcete zobrazit najednou."
-
-#~ msgid "Enables autoplay mode."
-#~ msgstr "Povolit samoposouvání snímků"
-
-#~ msgid "If YES pagination control will be removed."
-#~ msgstr "Pokud zaškrtnete, ovládání stránkování bude skryto."
-
-#~ msgid "If \"YES\" prev/next control will be removed."
-#~ msgstr "Pokud zaškrtnete, tlačítka předchozí/další budou odebrána."
-
-#~ msgid "If \"YES\" part of the next slide will be visible on the right side."
-#~ msgstr "Pokud zaškrtnete, část dalšího snímku bude viděna na pravém okraji."
-
-#~ msgid "Enables loop mode."
-#~ msgstr "Povolit mód smyčky"
-
-#~ msgid "Auto rotate tabs"
-#~ msgstr "Automaticky přepínat panely"
-
-#~ msgid "Tab title."
-#~ msgstr "Název záložky"
-
-#~ msgid ""
-#~ "Enter section number to be active on load or enter false to collapse all "
-#~ "sections."
-#~ msgstr ""
-#~ "Vložte číslo sekce, aby byla aktivní při načtení nebo vepište \"false\", "
-#~ "ke sbalení všech sekcí."
-
-#~ msgid "Allow collapsible all"
-#~ msgstr "Povolit možnost \"Sbalit vše\""
-
-#~ msgid "Select checkbox to allow all sections to be collapsible."
-#~ msgstr "Zvolte checkbox k povolení sbalení všech sekcí."
-
-#~ msgid "Allow"
-#~ msgstr "Povolit"
-
-#~ msgid "Disable keyboard interactions"
-#~ msgstr "Zakázat klávesové interakce"
-
-#~ msgid ""
-#~ "Disables keyboard arrows interactions LEFT/UP/RIGHT/DOWN/SPACES keys."
-#~ msgstr "Zakázat používání klávesových šipek a mezerníku."
-
-#~ msgid "Accordion section title."
-#~ msgstr "Název harmonikové sekce"
-
-#~ msgid "Teaser (posts) Grid"
-#~ msgstr "Mřížka zkrácených výpisů příspěvků"
-
-#~ msgid "Select post types to populate posts from."
-#~ msgstr "Vyberte typ obsahu, k naplnění."
-
-#~ msgid "Teasers count"
-#~ msgstr "Počet ukázek"
-
-#~ msgid "How many teasers to show? Enter number or word \"All\"."
-#~ msgstr ""
-#~ "Jak moc z ukázky chcete zobrazovat? Vložte počet slov nebo \"All\" pro "
-#~ "celý text."
-
-#~ msgid "Full Content"
-#~ msgstr "Celý obsah"
-
-#~ msgid "Layout"
-#~ msgstr "Rozložení"
-
-#~ msgid "Title + Thumbnail + Text"
-#~ msgstr "Název + Náhledový obrázek + Text"
-
-#~ msgid "Thumbnail + Title + Text"
-#~ msgstr "Náhledový obrázek + Název + Text"
-
-#~ msgid "Thumbnail + Text"
-#~ msgstr "Náhledový obrázek + Text"
-
-#~ msgid "Thumbnail + Title"
-#~ msgstr "Náhledový obrázek + Název"
-
-#~ msgid "Thumbnail only"
-#~ msgstr "Jen náhledový obrázek"
-
-#~ msgid "Title + Text"
-#~ msgstr "Název + Text"
-
-#~ msgid "Teaser layout."
-#~ msgstr "Rozložení ukázky."
-
-#~ msgid "Thumbnail to bigger image, title to post"
-#~ msgstr "Náhledový obrázek na větší obrázek, název přímo k příspěvku"
-
-#~ msgid "Teaser grid layout"
-#~ msgstr "Rozložení mřížky ukázky"
-
-#~ msgid "Grid"
-#~ msgstr "Mřížka"
-
-#~ msgid "Grid with filter"
-#~ msgstr "Mřížka s filtrem"
-
-#~ msgid "Carousel"
-#~ msgstr "Kolotoč"
-
-#~ msgid "Select taxonomies."
-#~ msgstr "Zvolte taxonomie"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,) to retrieve "
-#~ "only them. Use this in conjunction with \"Post types\" field."
-#~ msgstr ""
-#~ "Vložte do tohoto pole ID příspěvku/stránky. Zadejte více ID oddělené "
-#~ "čárkami (,). Použijte ve spojení s typem obsahu."
-
-#~ msgid "Exclude Post/Page IDs"
-#~ msgstr "Vyřadit ID příspěvku/stránky"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,) to exclude "
-#~ "them from query."
-#~ msgstr ""
-#~ "Vložte ID příspěvků/stránek které chcete vynechat. Více ID oddělujte "
-#~ "čárkami (,)"
-
-#~ msgid ""
-#~ "If you want to narrow output, enter category names here. Note: Only "
-#~ "listed categories will be included. Divide categories with linebreaks "
-#~ "(Enter) . "
-#~ msgstr ""
-#~ "Chcete-li zúžit výstup, zadejte názvy kategorií zde. Poznámka: budou "
-#~ "zařazeny pouze uvedené kategorie. Oddělujte kategorie zalomením řádku - "
-#~ "odřádkováním (Enter)."
-
-#~ msgid "Order way"
-#~ msgstr "Způsob řazení"
-
-#~ msgid "Slides count"
-#~ msgstr "Počet snímků"
-
-#~ msgid "How many slides to show? Enter number or word \"All\"."
-#~ msgstr "Kolik snímků zobrazit? Vložte počet nebo slovo \"All\""
-
-#~ msgid "Some sliders support description text, what content use for it?"
-#~ msgstr "Některé posuvníky podporují popisný text. Co má obsahovat?"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,), to retrieve "
-#~ "only them. Use this in conjunction with \"Post types\" field."
-#~ msgstr ""
-#~ "Vyplňte toto pole ID příspěvků oddělenými čárkami (,), aby byly vypsány "
-#~ "jen tyto. Použijte to ve spolupráci s polem \"Post types\""
-
-#~ msgid "Place widgetised sidebar"
-#~ msgstr "Umístěte postranní panel s Widgety"
-
-#~ msgid "Select which widget area output."
-#~ msgstr "Vyberte, kterou plochu pro widgety zde zobrazit."
-
-#~ msgid "Text on the button."
-#~ msgstr "Text on the button."
-
-#~ msgid "Button link."
-#~ msgstr "Odkaz tlačítka."
-
-#~ msgid "Button color."
-#~ msgstr "Barva tlačítka."
-
-#~ msgid "Button icon."
-#~ msgstr "Ikona tlačítka."
-
-#~ msgid "Button size."
-#~ msgstr "Velikost tlačítka."
-
-#~ msgid "Button alignment"
-#~ msgstr "Zarovnání tlačítka"
-
-#~ msgid "Button style."
-#~ msgstr "Styl tlačítka"
-
-#~ msgid "Align bottom"
-#~ msgstr "Zarovnání dolů"
-
-#~ msgid "Heading first line"
-#~ msgstr "Nadpis na prvním řádku"
-
-#~ msgid "Text for the first heading line."
-#~ msgstr "Text nadpisu na prvním řádku"
-
-#~ msgid "Heading second line"
-#~ msgstr "Nadpis druhého řádku"
-
-#~ msgid "Optional text for the second heading line."
-#~ msgstr "Volitelný text pro nadpis druhého řádku."
-
-#~ msgid "CTA style"
-#~ msgstr "styl CTA"
-
-#~ msgid "Call to action style."
-#~ msgstr "Styl volej akci"
-
-#~ msgid "Call to action element width in percents."
-#~ msgstr "Šířka prvku Volej akci v procentech (%)"
-
-#~ msgid "Text align in call to action block."
-#~ msgstr "Zarovnání textu v bloku Volej akci."
-
-#~ msgid "Custom Background Color"
-#~ msgstr "Volitelná barva pozadí"
-
-#~ msgid "Select background color for your element."
-#~ msgstr "Zvolte barvu pozadí vašeho prvku."
-
-#~ msgid "Promotional text"
-#~ msgstr "Propagační text"
-
-#~ msgid "Link to the video. More about supported formats at %s."
-#~ msgstr "Odkáz na video. Více o podporovaných formátech na %s."
-
-#~ msgid ""
-#~ "Visit %s to create your map. 1) Find location 2) Click \"Share\" and make "
-#~ "sure map is public on the web 3) Click folder icon to reveal \"Embed on "
-#~ "my site\" link 4) Copy iframe code and paste it here."
-#~ msgstr ""
-#~ "Navštivte %s k vytvoření vaší mapy. 1) Najděte místo 2) Klikněte na "
-#~ "\"Share\" a přesvědčete se, že mapa je veřejně přístupná 3) Klikněte na "
-#~ "ikonu složky odhalující odkaz \"Embed on my site\" 4) Zkopírujte kód a "
-#~ "vložte jej sem."
-
-#~ msgid ""
-#~ "Enter map height in pixels. Example: 200 or leave it empty to make map "
-#~ "responsive."
-#~ msgstr ""
-#~ "Vložte výšku mapy v pixelech (obrazových bodech). Např.: 200. Pokud "
-#~ "necháte prázdné, mapa se bude roztahovat podle stránky."
-
-#~ msgid "Output raw html code on your page"
-#~ msgstr "Vypsat surový HTML kód do vaší stránky"
-
-#~ msgid "Output raw javascript code on your page"
-#~ msgstr "Vypsat surový JavaScript kód na stránce"
-
-#~ msgid "Raw js"
-#~ msgstr "Surový Javascript"
-
-#~ msgid "Enter your JS code."
-#~ msgstr "Vložte váš JavaScript kód."
-
-#~ msgid "Image feed from your flickr account"
-#~ msgstr "Zdroj obrázků z vašeho účtu na Flickru"
-
-#~ msgid "Number of photos."
-#~ msgstr "Počet fotek."
-
-#~ msgid "Photo stream type."
-#~ msgstr "Typ přenosu fotografií."
-
-#~ msgid "Display"
-#~ msgstr "Zobrazení"
-
-#~ msgid "Latest"
-#~ msgstr "Nejnovější"
-
-#~ msgid "Photo order."
-#~ msgstr "Pořadí fotografií"
-
-#~ msgid "Graphic values"
-#~ msgstr "Grafické hodnoty"
-
-#~ msgid ""
-#~ "Input graph values, titles and color here. Divide values with linebreaks "
-#~ "(Enter). Example: 90|Development|#e75956"
-#~ msgstr ""
-#~ "Vložte hodnoty grafu, názvy a barvy sem. Oddělujte hodnoty odentrováním "
-#~ "(Zalomením řádku). Například: 90|Inteligence|#e75956"
-
-#~ msgid ""
-#~ "Enter measurement units (if needed) Eg. %, px, points, etc. Graph value "
-#~ "and unit will be appended to the graph title."
-#~ msgstr "Vložte krokové jednotky (pokud jsou potřeba)."
-
-#~ msgid "Bar color"
-#~ msgstr "Barva lišty"
-
-#~ msgid "Bar custom color"
-#~ msgstr "Vlastní barva lišty"
-
-#~ msgid "Add Stripes?"
-#~ msgstr "Přidat pruhy?"
-
-#~ msgid "Add animation? Will be visible with striped bars."
-#~ msgstr "Přidat animaci? Bude viditelná s pruhovanou lištou."
-
-#~ msgid "Pie value"
-#~ msgstr "Hodnoty na koláči"
-
-#~ msgid "Input graph value here. Choose range between 0 and 100."
-#~ msgstr "Vložte hodnoty grafu sem. Zvolte hodnoty mezi 0 a 100."
-
-#~ msgid "Pie label value"
-#~ msgstr "Popisek hodnoty koláče"
-
-#~ msgid "Input integer value for label. If empty \"Pie value\" will be used."
-#~ msgstr ""
-#~ "Vložte číselnou hodnotu pro popisek. Pokud bude prázdná, bude použito "
-#~ "\"Pie value\"."
-
-#~ msgid "Number of comments to show"
-#~ msgstr "Počet komentářů ke zobrazení"
-
-#~ msgid "Sort by"
-#~ msgstr "Řadit podle"
-
-#~ msgid "Page IDs, separated by commas."
-#~ msgstr "ID stránek, které chcete vyřadit oddělujte čárkou (,)"
-
-#~ msgid "Select menu"
-#~ msgstr "Zvolte menu"
-
-#~ msgid "Number of posts to show"
-#~ msgstr "Počet příspěvků k zobrazení"
-
-#~ msgid "Display as dropdown"
-#~ msgstr "Zobrazit jako rozbalovací výběr"
-
-#~ msgid "How many items would you like to display?"
-#~ msgstr "Kolik položek budete chtít zobrazit?"
-
-#~ msgid "Display item content?"
-#~ msgstr "Zobrazit obsah položek?"
-
-#~ msgid "Enter empty space height."
-#~ msgstr "Vložte výšku prázdného prostoru."
-
-#~ msgid "This is custom heading element with Google Fonts"
-#~ msgstr "Toto je vlastní nadpis s použitím Google písma"
-
-#~ msgid "0px"
-#~ msgstr "0 pixelů"
-
-#~ msgid "1px"
-#~ msgstr "1pixel"
-
-#~ msgid "2px"
-#~ msgstr "2 pixely"
-
-#~ msgid "3px"
-#~ msgstr "3 pixely"
-
-#~ msgid "4px"
-#~ msgstr "4 pixely"
-
-#~ msgid "5px"
-#~ msgstr "5 pixelů"
-
-#~ msgid "10px"
-#~ msgstr "10 pixelů"
-
-#~ msgid "15px"
-#~ msgstr "15 pixelů"
-
-#~ msgid "20px"
-#~ msgstr "20 pixelů"
-
-#~ msgid "25px"
-#~ msgstr "25 pixelů"
-
-#~ msgid "30px"
-#~ msgstr "30 pixelů"
-
-#~ msgid "35px"
-#~ msgstr "35 pixelů"
-
-#~ msgid "Data settings"
-#~ msgstr "Nastavení dat"
-
-#~ msgid "Sorting"
-#~ msgstr "Řazení"
-
-#~ msgid "Item design"
-#~ msgstr "Styl položky"
-
-#~ msgid "Grid with media from library"
-#~ msgstr "Mřížka s médii z knihovny"
-
-#~ msgid "Masonry grid with media from library"
-#~ msgstr "Masonry grid s médii z knihovny médií"
-
-#~ msgid "Please enter template name"
-#~ msgstr "Prosím, vložte název šablony"
-
-#~ msgid "Enter custom layout for your row:"
-#~ msgstr "Vložte vlastní rozložení pro váš řádek:"
-
-#~ msgid "New template successfully saved!"
-#~ msgstr "Nová šablona úspěšně uložena!"
-
-#~ msgid "Nothing to save. Template is empty."
-#~ msgstr "Nic k uložení. Šablona je prázdná."
-
-#~ msgid "Save draft"
-#~ msgstr "Uložit koncept"
-
-#~ msgid "Append previously saved template to the current layout"
-#~ msgstr "Přidat předešle uloženou šablonu do současného rozložení"
-
-#~ msgid "View all posts filed under %s"
-#~ msgstr "Zobrazit všechny příspěvky pod %s"
-
-#~ msgid "Feed for all posts filed under %s"
-#~ msgstr "Vypsat všechny příspěvky pod %s"
-
-#~ msgid " Add to this grid item"
-#~ msgstr "Přidat k této mřížkové položce"
-
-#~ msgid "Single block"
-#~ msgstr "Samostatný blok"
-
-#~ msgid "No animation"
-#~ msgstr "Žádná animace"
-
-#~ msgid ""
-#~ "Hola! Please <a href=\"%s\">activate your copy</a> of Visual Composer to "
-#~ "receive automatic updates."
-#~ msgstr ""
-#~ "Dobrý den! Prosím, <a href=\"%s\">aktivujte vaši kopii</a> Visual "
-#~ "Composeru, abyste dostávali automatické aktualizace."
-
-#~ msgid "Map shortcode"
-#~ msgstr "Nalézt shortcode"
-
-#~ msgid "Please enter shortcode string"
-#~ msgstr "Prosím, vložte řetězec zastupující shortcode."
-
-#~ msgid "Parse shortcode"
-#~ msgstr "Zpracovat shortcode"
-
-#~ msgid ""
-#~ "Please enter valid shortcode like [my_shortcode first_param="
-#~ "\"first_param_value\"]My shortcode content[/my_shortcode]"
-#~ msgstr ""
-#~ "Prosím, vložte funkční shortcode jako [my_shortcode first_param="
-#~ "\"first_param_value\"]My shortcode content[/my_shortcode]"
-
-#~ msgid "General information"
-#~ msgstr "Základní informace"
-
-#~ msgid "Shortcode parameters"
-#~ msgstr "Parametre shortcode"
-
-#~ msgid ""
-#~ "Default value or list of values for dropdown type(separate by comma)."
-#~ msgstr ""
-#~ "Výchozí hodnota nebo seznam výchozích hodnot z výběru (oddělujte čárkami)"
-
-#~ msgid "Explain param."
-#~ msgstr "Popište parametr."
-
-#~ msgid "Content types"
-#~ msgstr "Typy obsahu"
-
-#~ msgid "User groups access rules"
-#~ msgstr "Pravidla přístupu skupin uživatelů"
-
-#~ msgid "Envato Username"
-#~ msgstr "Uživatelské jméno Envato"
-
-#~ msgid "Secret API Key"
-#~ msgstr "Tajný API klíč"
-
-#~ msgid "Visual Composer License Key"
-#~ msgstr "Licenční klíč Visual Composeru"
-
-#~ msgid "Something went wrong! Please try again later."
-#~ msgstr "Něco se zvrtlo! Prosím, zkuste to znovu později."
-
-#~ msgid "License successfully activated. Thank you!"
-#~ msgstr "Licence byla úspěšně aktivována. Děkujeme Vám!"
-
-#~ msgid "Your license key is deactivated."
-#~ msgstr "Váš licenční klíč je deaktivovaný"
-
-#~ msgid "Envato username and license key are required."
-#~ msgstr "Uživatelské jméno Envato a licenční klíč jsou požadovány."
-
-#~ msgid "Invalid liense key. Please check information in your envato profile."
-#~ msgstr "Nesprávný licenční klíč"
-
-#~ msgid "Wrong data. Please check your information or ask support for help."
-#~ msgstr ""
-#~ "Špatná data. Prosím, ověřte si své informace nebo kontaktujte podporu."
-
-#~ msgid "License successfully activated. Thank you! (401)"
-#~ msgstr "Licence úspěšně aktivována. Děkujeme vám! (401)"
-
-#~ msgid ""
-#~ "Your license key is already activated on another website ({site}), you "
-#~ "should deactivate it first or <a href=\"%s\" target=\"_blank\">obtain new "
-#~ "license key</a>."
-#~ msgstr ""
-#~ "Váš licenční klíč byl už v minulosti aktivován na jiné stránce ({site}), "
-#~ "musíte jej nejdříve deaktivovat, nebo <a href=\"%s\" target=\"_blank"
-#~ "\">zakoupit novou licenci</a>."
-
-#~ msgid "Deactivate license"
-#~ msgstr "Deaktivovat licenci"
-
-#~ msgid ""
-#~ "Select for which content types Visual Composer should be available during "
-#~ "post creation/editing."
-#~ msgstr ""
-#~ "Vyberte, které typy obsahu bude Visual Composer schopný přidávat nebo "
-#~ "upravovat."
-
-#~ msgid ""
-#~ "If you want to add some custom CSS code to the plugin and don't want to "
-#~ "modify any files, then it's a good place to enter your code at this field."
-#~ msgstr "Pokud chcete přidat nějaké CSS, potom jej vložte sem."
-
-#~ msgid ""
-#~ "Check this checkbox to prevent content elements from \"stacking\" one on "
-#~ "top other (on small media screens, eg. mobile)."
-#~ msgstr "Zaškrtněte k prevenci obsahování prvků nahoře."
-
-#~ msgid "Select subsets for google fonts."
-#~ msgstr "Zvolte podřád Google písem."
-
-#~ msgid ""
-#~ "Enable the use of custom design options for your site. When checked, "
-#~ "custom css file will be used."
-#~ msgstr ""
-#~ "Povolte používání vlastních možností vzhledu na vaší stránce. Když je "
-#~ "zaškrtnuté, vlastní CSS bude použito."
-
-#~ msgid ""
-#~ "To change default vertical spacing between content elements, enter new "
-#~ "value here. Example: 20px"
-#~ msgstr ""
-#~ "Ke změně výchozího svislého odsazení mezi prvky obsahu, vložte novou "
-#~ "hodnotu, např. 20px (20 obr. bodů)"
-
-#~ msgid ""
-#~ "To change default horizontal spacing between columns, enter new value in "
-#~ "pixels here."
-#~ msgstr ""
-#~ "Ke změně výchozího vodorovného odsazení sloupců, vložte novou hodnotu (v "
-#~ "obr. bodech)"
-
-#~ msgid ""
-#~ "By default content elements \"stack\" one on top other when screen size "
-#~ "is smaller then 768px. Here you can change that value if needed."
-#~ msgstr ""
-#~ "Ve výchozím stavu se obsahové prvky \"hromadí\" nahoře, když je obrazovka "
-#~ "menší než 768px. Zde můžete hodnotu změnit."
-
-#~ msgid "Your Envato username."
-#~ msgstr "Vaše uživatelské jméno na Envato."
-
-#~ msgid ""
-#~ "Please enter your CodeCanyon Visual Composer license key, you can find "
-#~ "your key by following the instructions on <a href=\"%s\" target=\"_blank"
-#~ "\">this page</a>. License key looks similar to this: bjg759fk-"
-#~ "kvta-6584-94h6-75jg8vblatftq."
-#~ msgstr ""
-#~ "Prosím, vložte licenční klíč CodeCanyon Visual Composeru, který můžete "
-#~ "nalézt podle instrukcí na <a href=\"%s\" target=\"_blank\">této stránce</"
-#~ "a>. Licenční klíč vypadá nějak takhle: bjg759fk-"
-#~ "kvta-6584-94h6-75jg8vblatftq."
-
-#~ msgid ""
-#~ "You can find API key by visiting your Envato Account page, then clicking "
-#~ "the My Settings tab. At the bottom of the page you'll find your account's "
-#~ "API key. <a href='%s' target='_blank'>Need help?</a>"
-#~ msgstr ""
-#~ "Licenční klíč můžete najít návštěvou vašeho účtu na Envato, a kliknutím "
-#~ "na záložku \"My settings\". Na konci stránky najdete API klíč vašeho "
-#~ "účtu. <a href='%s' target='_blank'>Potřebujete pomoc?</a>"
-
-#~ msgid ""
-#~ "A valid license key qualifies you for support and enables automatic "
-#~ "updates. <strong>A license key may only be used for one Visual Composer "
-#~ "installation on one WordPress site at a time.</strong> If you previosly "
-#~ "activated your license key on another site, then you should deactivate it "
-#~ "first or <a href=\"%s\" target=\"_blank\">obtain new license key</a>."
-#~ msgstr ""
-#~ "Funkcní licenční klíč vám přinese výhody, jako automatické aktualizace "
-#~ "nebo bezplatnou podporu.Licenční klíč může být použit pouze pro jednu "
-#~ "kopii Visual Composeru na jedné instalaci Wordpressu. Pokud jste v "
-#~ "minulosti klíč aktivovali někde jinde, nejdříve jej deaktivujte, nebo "
-#~ "zakupte <a href=\"%s\" target=\"_blank\">nový licenční klíč</a>"
-
-#~ msgid ""
-#~ "Visual Composer: Your css class names settings are deprecated. <a href="
-#~ "\"%s\">Click here to resolve</a>."
-#~ msgstr ""
-#~ "Visual composer: Vaaše názvy CSS tříd byly odebrány. <a href=\"%s"
-#~ "\">Kliknutím to můžete vyřešit</a>."
-
-#~ msgid ""
-#~ "<strong>Deprecated:</strong> To override class names that are applied to "
-#~ "Visual Composer content elements you should use WordPress add_filter"
-#~ "('vc_shortcodes_css_class') function. <a class='vc_show_example'>See "
-#~ "Example</a>."
-#~ msgstr ""
-#~ "<strong>Odebráno:</strong> K přepsání názvů tříd, aplikovaných obsahu "
-#~ "Visual Composeru, použijte Wordpress add_filter"
-#~ "('vc_shortcodes_css_class'). Podívejte se <a class='vc_show_example'>na "
-#~ "ukázku</a>"
-
-#~ msgid ""
-#~ "You have used element class names settings to replace row and column css "
-#~ "classes."
-#~ msgstr "Použili jste třídu prvku k přepsání tříd řádků a sloupců."
-
-#~ msgid ""
-#~ "Below is code snippet which you should add to your functions.php file in "
-#~ "your theme, to replace row and column classes with custom classes saved "
-#~ "by you earlier."
-#~ msgstr ""
-#~ "Níže je kód, který byste měli přidat k souboru functions.php vaší "
-#~ "šablony, abyste přepsali řádky a sloupce s vlastními třídami, předtím "
-#~ "uloženými."
-
-#~ msgid "Remove all saved"
-#~ msgstr "Odstranit vše uložené"
-
-#~ msgid "Restore to defaults"
-#~ msgstr "Obnovit výchozí"
-
-#~ msgid "Post Count"
-#~ msgstr "Počet příspěvků"
-
-#~ msgid "Order By"
-#~ msgstr "Řadit podle"
-
-#~ msgid "Individual Posts/Pages"
-#~ msgstr "Jednotlivé příspěvky/stránky"
-
-#~ msgid "Adjust"
-#~ msgstr "Přizpůsobit"
-
-#~ msgid "Archive"
-#~ msgstr "Archiv"
-
-#~ msgid "Area Chart"
-#~ msgstr "Plošný graf"
-
-#~ msgid "Arrows"
-#~ msgstr "Šipky"
-
-#~ msgid "Arrows Horizontal"
-#~ msgstr "Vodorovné šipky"
-
-#~ msgid "Arrows Vertical"
-#~ msgstr "Svislé šipky"
-
-#~ msgid "At"
-#~ msgstr "Zavináč"
-
-#~ msgid "Ban"
-#~ msgstr "Zákaz"
-
-#~ msgid "Bar Chart"
-#~ msgstr "Sloupcový graf"
-
-#~ msgid "Barcode"
-#~ msgstr "Čárový kód"
-
-#~ msgid "Bars"
-#~ msgstr "Lišta"
-
-#~ msgid "Beer"
-#~ msgstr "Pivo"
-
-#~ msgid "Bell"
-#~ msgstr "Zvon"
-
-#~ msgid "Bell Outlined"
-#~ msgstr "Zvon, obrys"
-
-#~ msgid "Bell Slash"
-#~ msgstr "Puklý zvon"
-
-#~ msgid "Bell Slash Outlined"
-#~ msgstr "Puklý zvon, obrys"
-
-#~ msgid "Bicycle"
-#~ msgstr "Kolo"
-
-#~ msgid "Binoculars"
-#~ msgstr "Dalekohled"
-
-#~ msgid "Birthday Cake"
-#~ msgstr "Narozeninový dort"
-
-#~ msgid "Lightning Bolt"
-#~ msgstr "Blesk"
-
-#~ msgid "Bomb"
-#~ msgstr "Bomba"
-
-#~ msgid "Book"
-#~ msgstr "Kniha"
-
-#~ msgid "Bookmark Outlined"
-#~ msgstr "Záložka, obrys"
-
-#~ msgid "Briefcase"
-#~ msgstr "Kufřík"
-
-#~ msgid "Bug"
-#~ msgstr "Hmyz"
-
-#~ msgid "Building"
-#~ msgstr "Budování"
-
-#~ msgid "Building Outlined"
-#~ msgstr "Budování, obrys"
-
-#~ msgid "bullhorn"
-#~ msgstr "Trouba"
-
-#~ msgid "Bullseye"
-#~ msgstr "Střed"
-
-#~ msgid "Bus"
-#~ msgstr "Autobus"
-
-#~ msgid "Calculator"
-#~ msgstr "Kalkulačka"
-
-#~ msgid "Calendar-o"
-#~ msgstr "Kalendář"
-
-#~ msgid "Camera-retro"
-#~ msgstr "Retro fotoaparát"
-
-#~ msgid "Car"
-#~ msgstr "Auto"
-
-#~ msgid "Caret Square Outlined Down"
-#~ msgstr "Stříška dolů, hranatá, obrys"
-
-#~ msgid "Caret Square Outlined Left"
-#~ msgstr "Stříška vlevo, hranatá, obrys"
-
-#~ msgid "Caret Square Outlined Right"
-#~ msgstr "Stříška vpravo, hranatá, obrys"
-
-#~ msgid "Caret Square Outlined Up"
-#~ msgstr "Stříška nahorz, hranatá, obrys"
-
-#~ msgid "Closed Captions"
-#~ msgstr "Uzavřené popisky"
-
-#~ msgid "Certificate"
-#~ msgstr "Certifikát"
-
-#~ msgid "Check"
-#~ msgstr "Zaškrtnutí"
-
-#~ msgid "Check Circle"
-#~ msgstr "Zaškrtnutí, kulatá"
-
-#~ msgid "Check Circle Outlined"
-#~ msgstr "Zaškrtnutí, kulatá, obrys"
-
-#~ msgid "Check Square"
-#~ msgstr "Zaškrtnutí, hranatá"
-
-#~ msgid "Check Square Outlined"
-#~ msgstr "Zaškrtnutí, hranatá, obrys"
-
-#~ msgid "Child"
-#~ msgstr "Dítě"
-
-#~ msgid "Circle Outlined"
-#~ msgstr "Kroužek, obrys"
-
-#~ msgid "Circle Outlined Notched"
-#~ msgstr "Kroužek, vroubkovaná, obrys"
-
-#~ msgid "Circle Outlined Thin"
-#~ msgstr "Kroužek, tenká, obrys"
-
-#~ msgid "Clock Outlined"
-#~ msgstr "Hodiny, obrys"
-
-#~ msgid "Cloud"
-#~ msgstr "Mrak"
-
-#~ msgid "Cloud Download"
-#~ msgstr "Cloud stažení"
-
-#~ msgid "Cloud Upload"
-#~ msgstr "Cloud nahrávání"
-
-#~ msgid "Code"
-#~ msgstr "Kód"
-
-#~ msgid "Code-fork"
-#~ msgstr "Kód"
-
-#~ msgid "Coffee"
-#~ msgstr "Kafe"
-
-#~ msgid "Cog"
-#~ msgstr "Zub"
-
-#~ msgid "Cogs"
-#~ msgstr "Zuby"
-
-#~ msgid "Comment"
-#~ msgstr "Komentář"
-
-#~ msgid "Comment-o"
-#~ msgstr "Komentář"
-
-#~ msgid "Comments"
-#~ msgstr "Komentáře"
-
-#~ msgid "Comments-o"
-#~ msgstr "Komentář"
-
-#~ msgid "Compass"
-#~ msgstr "Kompas"
-
-#~ msgid "Copyright"
-#~ msgstr "Autorská práva"
-
-#~ msgid "credit-card"
-#~ msgstr "Kreditní karta"
-
-#~ msgid "Crop"
-#~ msgstr "Oříznutí"
-
-#~ msgid "Crosshairs"
-#~ msgstr "Kříž"
-
-#~ msgid "Cube"
-#~ msgstr "Krychle"
-
-#~ msgid "Cubes"
-#~ msgstr "Krychle"
-
-#~ msgid "Cutlery"
-#~ msgstr "Příbor"
-
-#~ msgid "Database"
-#~ msgstr "Databáze"
-
-#~ msgid "Dot Circle O"
-#~ msgstr "Tečka, kulatá"
-
-#~ msgid "Download"
-#~ msgstr "Stahování"
-
-#~ msgid "Ellipsis Horizontal"
-#~ msgstr "Vodorovná elipsa"
-
-#~ msgid "Ellipsis Vertical"
-#~ msgstr "Svislá elipsa"
-
-#~ msgid "Envelope"
-#~ msgstr "Obálka"
-
-#~ msgid "Envelope Outlined"
-#~ msgstr "Obálka, obrys"
-
-#~ msgid "Envelope Square"
-#~ msgstr "Obálka, hranatá"
-
-#~ msgid "Eraser"
-#~ msgstr "Guma"
-
-#~ msgid "Exchange"
-#~ msgstr "Výměna"
-
-#~ msgid "Exclamation"
-#~ msgstr "Vykřičník"
-
-#~ msgid "Exclamation Circle"
-#~ msgstr "Vykřičník, kulatá"
-
-#~ msgid "Exclamation Triangle"
-#~ msgstr "Vykřičník, trojúhelníková"
-
-#~ msgid "External Link"
-#~ msgstr "Externí odkaz"
-
-#~ msgid "External Link Square"
-#~ msgstr "Externí odkaz, hranatá"
-
-#~ msgid "Eye"
-#~ msgstr "Oko"
-
-#~ msgid "Eye Slash"
-#~ msgstr "Řasa"
-
-#~ msgid "Eyedropper"
-#~ msgstr "Kapátko"
-
-#~ msgid "Fax"
-#~ msgstr "Fax"
-
-#~ msgid "Female"
-#~ msgstr "Žena"
-
-#~ msgid "Fighter-jet"
-#~ msgstr "Bojový letoun"
-
-#~ msgid "Archive File Outlined"
-#~ msgstr "Soubor archivu"
-
-#~ msgid "Audio File Outlined"
-#~ msgstr "Hudební soubor"
-
-#~ msgid "Code File Outlined"
-#~ msgstr "Soubor kódu"
-
-#~ msgid "Excel File Outlined"
-#~ msgstr "Excel dokument"
-
-#~ msgid "Image File Outlined"
-#~ msgstr "Obrázkový soubor"
-
-#~ msgid "PDF File Outlined"
-#~ msgstr "PDF dokument"
-
-#~ msgid "Powerpoint File Outlined"
-#~ msgstr "Powerpoint dokument"
-
-#~ msgid "Video File Outlined"
-#~ msgstr "Video soubor"
-
-#~ msgid "Word File Outlined"
-#~ msgstr "Dokument MS Word"
-
-#~ msgid "Film"
-#~ msgstr "Film"
-
-#~ msgid "Fire-extinguisher"
-#~ msgstr "Hasicí přístroj"
-
-#~ msgid "Flag"
-#~ msgstr "Vlajka"
-
-#~ msgid "Flag-checkered"
-#~ msgstr "Kostkovaná vlajka"
-
-#~ msgid "Flag Outlined"
-#~ msgstr "vlajka, obrys"
-
-#~ msgid "Flask"
-#~ msgstr "Baňka"
-
-#~ msgid "Folder"
-#~ msgstr "Složka"
-
-#~ msgid "Folder Outlined"
-#~ msgstr "Složka, obrys"
-
-#~ msgid "Folder Open"
-#~ msgstr "Otevřená složka"
-
-#~ msgid "Folder Open Outlined"
-#~ msgstr "Otevřená složka, obrys"
-
-#~ msgid "Frown Outlined"
-#~ msgstr "Zamračený, obrys"
-
-#~ msgid "Futbol Outlined"
-#~ msgstr "Fotbal, obrys"
-
-#~ msgid "Gamepad"
-#~ msgstr "Herní podložka"
-
-#~ msgid "Gavel"
-#~ msgstr "Palička"
-
-#~ msgid "Gift"
-#~ msgstr "Dar"
-
-#~ msgid "Glass"
-#~ msgstr "Sklenice"
-
-#~ msgid "Globe"
-#~ msgstr "Globus"
-
-#~ msgid "Graduation Cap"
-#~ msgstr "Promoční čepice"
-
-#~ msgid "HDD"
-#~ msgstr "Pevný disk"
-
-#~ msgid "Headphones"
-#~ msgstr "Sluchátka"
-
-#~ msgid "Heart Outlined"
-#~ msgstr "Srdce, obrys"
-
-#~ msgid "History"
-#~ msgstr "Historie"
-
-#~ msgid "Home"
-#~ msgstr "Dům"
-
-#~ msgid "Inbox"
-#~ msgstr "Příchozí"
-
-#~ msgid "Info Circle"
-#~ msgstr "Informace, kruhová"
-
-#~ msgid "Key"
-#~ msgstr "Klíč"
-
-#~ msgid "Keyboard Outlined"
-#~ msgstr "Klávesnice, obrys"
-
-#~ msgid "Laptop"
-#~ msgstr "Laptop"
-
-#~ msgid "Leaf"
-#~ msgstr "List"
-
-#~ msgid "Lemon Outlined"
-#~ msgstr "Citrón, obrys"
-
-#~ msgid "Level Down"
-#~ msgstr "Snížení úrovně"
-
-#~ msgid "Level Up"
-#~ msgstr "Zvýšení úrovně"
-
-#~ msgid "Life Ring"
-#~ msgstr "Záchranný kruh"
-
-#~ msgid "Lightbulb Outlined"
-#~ msgstr "Žárovka, obrys"
-
-#~ msgid "Location-arrow"
-#~ msgstr "Šipka umístění"
-
-#~ msgid "Lock"
-#~ msgstr "Zámek"
-
-#~ msgid "Magic"
-#~ msgstr "Kouzlo"
-
-#~ msgid "Magnet"
-#~ msgstr "Magnet"
-
-#~ msgid "Male"
-#~ msgstr "Mužské pohlaví"
-
-#~ msgid "Map-marker"
-#~ msgstr "Mapová značka"
-
-#~ msgid "Meh Outlined"
-#~ msgstr "Nezajímavé"
-
-#~ msgid "Microphone"
-#~ msgstr "Microfon"
-
-#~ msgid "Microphone Slash"
-#~ msgstr "Mikrofon, škrtnutý"
-
-#~ msgid "Minus"
-#~ msgstr "Mínus"
-
-#~ msgid "Minus Circle"
-#~ msgstr "Mínus, kulatá"
-
-#~ msgid "Minus Square"
-#~ msgstr "Mínus, hranatá"
-
-#~ msgid "Minus Square Outlined"
-#~ msgstr "Mínus, hranatá, obrys"
-
-#~ msgid "Mobile Phone"
-#~ msgstr "Mobilní telefon"
-
-#~ msgid "Money"
-#~ msgstr "Peníze"
-
-#~ msgid "Moon Outlined"
-#~ msgstr "Měsíc, obrys"
-
-#~ msgid "Music"
-#~ msgstr "Hudba"
-
-#~ msgid "Newspaper Outlined"
-#~ msgstr "Noviny, obrys"
-
-#~ msgid "Paint Brush"
-#~ msgstr "Štětec"
-
-#~ msgid "Paper Plane"
-#~ msgstr "Papírové letadlo"
-
-#~ msgid "Paper Plane Outlined"
-#~ msgstr "Papírové letadlo, obrys"
-
-#~ msgid "Paw"
-#~ msgstr "Tlapka"
-
-#~ msgid "Pencil"
-#~ msgstr "Tužka"
-
-#~ msgid "Pencil Square"
-#~ msgstr "Tužka, hranatá"
-
-#~ msgid "Pencil Square Outlined"
-#~ msgstr "Tužka, hranatá, obrys"
-
-#~ msgid "Phone"
-#~ msgstr "Telefon"
-
-#~ msgid "Phone Square"
-#~ msgstr "Telefon, hranatá"
-
-#~ msgid "Picture Outlined"
-#~ msgstr "Obrázek, obrys"
-
-#~ msgid "Plane"
-#~ msgstr "Letadlo"
-
-#~ msgid "Plug"
-#~ msgstr "Připojení"
-
-#~ msgid "Plus Circle"
-#~ msgstr "Plus, kulatá"
-
-#~ msgid "Plus Square"
-#~ msgstr "Plus, hranatá"
-
-#~ msgid "Plus Square Outlined"
-#~ msgstr "Plus, hranatá, obrys"
-
-#~ msgid "Power Off"
-#~ msgstr "Vypnout"
-
-#~ msgid "Print"
-#~ msgstr "Tisk"
-
-#~ msgid "Puzzle Piece"
-#~ msgstr "Díl puzzle"
-
-#~ msgid "QRcode"
-#~ msgstr "QR Kód"
-
-#~ msgid "Question"
-#~ msgstr "Otázka"
-
-#~ msgid "Question Circle"
-#~ msgstr "Otázka, kulatá"
-
-#~ msgid "Quote-left"
-#~ msgstr "Levá úvozovka"
-
-#~ msgid "Quote-right"
-#~ msgstr "Pravá úvozovka"
-
-#~ msgid "Recycle"
-#~ msgstr "Recyklace"
-
-#~ msgid "Refresh"
-#~ msgstr "Nahrát znovu"
-
-#~ msgid "Reply"
-#~ msgstr "Odpovědět"
-
-#~ msgid "Reply-all"
-#~ msgstr "Odpovědět všem"
-
-#~ msgid "Retweet"
-#~ msgstr "Sdílet na Twitteru"
-
-#~ msgid "Road"
-#~ msgstr "Ulice"
-
-#~ msgid "Rocket"
-#~ msgstr "Raketa"
-
-#~ msgid "RSS Square"
-#~ msgstr "RSS, hranatá"
-
-#~ msgid "Search Minus"
-#~ msgstr "Vyhledávání mimo"
-
-#~ msgid "Search Plus"
-#~ msgstr "Vyhledávání včetně"
-
-#~ msgid "Share"
-#~ msgstr "Sdílení"
-
-#~ msgid "Share Alt"
-#~ msgstr "Sdílení, alternativní"
-
-#~ msgid "Share Alt Square"
-#~ msgstr "Sdílení, hranatá, alternativní"
-
-#~ msgid "Share Square"
-#~ msgstr "Sdílení, hranatá"
-
-#~ msgid "Share Square Outlined"
-#~ msgstr "Sdílení, hranatá, obrys"
-
-#~ msgid "shield"
-#~ msgstr "Štít"
-
-#~ msgid "shopping-cart"
-#~ msgstr "Nákupní košík"
-
-#~ msgid "Sign In"
-#~ msgstr "Přihlásit se"
-
-#~ msgid "Sign Out"
-#~ msgstr "Odhlášení"
-
-#~ msgid "signal"
-#~ msgstr "Signál"
-
-#~ msgid "Sitemap"
-#~ msgstr "Mapa webu"
-
-#~ msgid "Sliders"
-#~ msgstr "Slidery"
-
-#~ msgid "Smile Outlined"
-#~ msgstr "Smajlík, obrys"
-
-#~ msgid "Sort"
-#~ msgstr "Pořadí"
-
-#~ msgid "Sort Alpha Ascending"
-#~ msgstr "Řadit abecedně, vzestupně"
-
-#~ msgid "Sort Alpha Descending"
-#~ msgstr "Řadit abecedně, sestupně"
-
-#~ msgid "Sort Amount Ascending"
-#~ msgstr "Řadit podle množství, vzestupně"
-
-#~ msgid "Sort Amount Descending"
-#~ msgstr "Řadit podle množství, sestupně"
-
-#~ msgid "Sort Ascending"
-#~ msgstr "Řadit vzestupně"
-
-#~ msgid "Sort Descending"
-#~ msgstr "Řadit sestupně"
-
-#~ msgid "Sort Numeric Ascending"
-#~ msgstr "Řadit numericky, vzestupně (1-10)"
-
-#~ msgid "Sort Numeric Descending"
-#~ msgstr "Řadit numericky, sestupně (10-1)"
-
-#~ msgid "Space Shuttle"
-#~ msgstr "Raketoplán"
-
-#~ msgid "Spinner"
-#~ msgstr "Kužel"
-
-#~ msgid "spoon"
-#~ msgstr "Lžíce"
-
-#~ msgid "Square Outlined"
-#~ msgstr "Čtverec, obrys"
-
-#~ msgid "Star"
-#~ msgstr "Hvězda"
-
-#~ msgid "star-half"
-#~ msgstr "Půl hvězdy"
-
-#~ msgid "Star Half Outlined"
-#~ msgstr "Půl hvězdy, obrys"
-
-#~ msgid "Star Outlined"
-#~ msgstr "Hvězda, obrys"
-
-#~ msgid "Suitcase"
-#~ msgstr "Kufr"
-
-#~ msgid "Sun Outlined"
-#~ msgstr "Slunce, obrys"
-
-#~ msgid "tablet"
-#~ msgstr "Tablet"
-
-#~ msgid "Tachometer"
-#~ msgstr "Tachometr"
-
-#~ msgid "tag"
-#~ msgstr "Štítek"
-
-#~ msgid "tags"
-#~ msgstr "Štítky"
-
-#~ msgid "Tasks"
-#~ msgstr "Úlohy"
-
-#~ msgid "Taxi"
-#~ msgstr "Taxi"
-
-#~ msgid "Terminal"
-#~ msgstr "Přepážka"
-
-#~ msgid "Thumb Tack"
-#~ msgstr "Připínáček"
-
-#~ msgid "thumbs-down"
-#~ msgstr "Palec dolů"
-
-#~ msgid "Thumbs Down Outlined"
-#~ msgstr "Palec dolů, obrys"
-
-#~ msgid "Thumbs Up Outlined"
-#~ msgstr "Palec nahoru, obrys"
-
-#~ msgid "thumbs-up"
-#~ msgstr "Palec nahoru"
-
-#~ msgid "Ticket"
-#~ msgstr "Vstupenka"
-
-#~ msgid "Times"
-#~ msgstr "Hodiny"
-
-#~ msgid "Times Circle"
-#~ msgstr "Kulaté hodiny"
-
-#~ msgid "Times Circle Outlined"
-#~ msgstr "Kulaté hodiny, obrys"
-
-#~ msgid "tint"
-#~ msgstr "Odstín"
-
-#~ msgid "Toggle Off"
-#~ msgstr "Vypnout"
-
-#~ msgid "Toggle On"
-#~ msgstr "Zapnout"
-
-#~ msgid "Trash"
-#~ msgstr "Koš"
-
-#~ msgid "Trash Outlined"
-#~ msgstr "Koš, obrys"
-
-#~ msgid "Tree"
-#~ msgstr "Strom"
-
-#~ msgid "trophy"
-#~ msgstr "Trofej"
-
-#~ msgid "truck"
-#~ msgstr "Náklaďák"
-
-#~ msgid "TTY"
-#~ msgstr "TTY"
-
-#~ msgid "Umbrella"
-#~ msgstr "Deštník"
-
-#~ msgid "University"
-#~ msgstr "Univerzita"
-
-#~ msgid "unlock"
-#~ msgstr "Odemknout"
-
-#~ msgid "Unlock Alt"
-#~ msgstr "Odemknout, alternativní"
-
-#~ msgid "Upload"
-#~ msgstr "Nahrát"
-
-#~ msgid "Users"
-#~ msgstr "Uživatelé"
-
-#~ msgid "Video Camera"
-#~ msgstr "Videokamera"
-
-#~ msgid "volume-down"
-#~ msgstr "Snížit hlasitost"
-
-#~ msgid "volume-off"
-#~ msgstr "Vypnout zvuk"
-
-#~ msgid "volume-up"
-#~ msgstr "Zvýšit hlasitost"
-
-#~ msgid "Wheelchair"
-#~ msgstr "Kolečkové křeslo"
-
-#~ msgid "WiFi"
-#~ msgstr "Bezdrátové připojení"
-
-#~ msgid "Wrench"
-#~ msgstr "Klíč"
-
-#~ msgid "File"
-#~ msgstr "Soubor"
-
-#~ msgid "File Outlined"
-#~ msgstr "Soubor, obrys"
-
-#~ msgid "File Text"
-#~ msgstr "Textový soubor"
-
-#~ msgid "File Text Outlined"
-#~ msgstr "Textový soubor, obrys"
-
-#~ msgid "cog"
-#~ msgstr "Ozubené kolo"
-
-#~ msgid "refresh"
-#~ msgstr "Aktualizovat"
-
-#~ msgid "American Express Credit Card"
-#~ msgstr "Kreditní karta American Express"
-
-#~ msgid "Discover Credit Card"
-#~ msgstr "Kreditní karta Discover"
-
-#~ msgid "MasterCard Credit Card"
-#~ msgstr "Kreditní karta Mastercard"
-
-#~ msgid "Paypal Credit Card"
-#~ msgstr "Kreditní karta Paypal"
-
-#~ msgid "Stripe Credit Card"
-#~ msgstr "Kreditní karta Stripe"
-
-#~ msgid "Visa Credit Card"
-#~ msgstr "Kreditní karta Visa"
-
-#~ msgid "Goole Wallet"
-#~ msgstr "Goole Wallet"
-
-#~ msgid "Paypal"
-#~ msgstr "Paypal"
-
-#~ msgid "Bitcoin (BTC)"
-#~ msgstr "Bitcoin (BTC)"
-
-#~ msgid "Euro (EUR)"
-#~ msgstr "Euro (EUR)"
-
-#~ msgid "GBP"
-#~ msgstr "Britská Libra (GBP)"
-
-#~ msgid "Shekel (ILS)"
-#~ msgstr "Šekel (ILS)"
-
-#~ msgid "Indian Rupee (INR)"
-#~ msgstr "Indická Rupie (INR)"
-
-#~ msgid "Japanese Yen (JPY)"
-#~ msgstr "Japonský Jen (JPY)"
-
-#~ msgid "Korean Won (KRW)"
-#~ msgstr "Korejský Won (KRW)"
-
-#~ msgid "Russian Ruble (RUB)"
-#~ msgstr "Ruský Rubl (RUB)"
-
-#~ msgid "Turkish Lira (TRY)"
-#~ msgstr "Turecká lyra (TRY)"
-
-#~ msgid "US Dollar"
-#~ msgstr "Americký dolar (USD)"
-
-#~ msgid "Align Center"
-#~ msgstr "Zarovnání doprostřed"
-
-#~ msgid "Align Justify"
-#~ msgstr "Zarovnání do bloku"
-
-#~ msgid "Align Left"
-#~ msgstr "Zarovnání vlevo"
-
-#~ msgid "Align Right"
-#~ msgstr "Zarovnání vpravo"
-
-#~ msgid "Bold"
-#~ msgstr "Tučný"
-
-#~ msgid "Chain Broken"
-#~ msgstr "Zlomený řetěz"
-
-#~ msgid "Clipboard"
-#~ msgstr "Kopírovací schránka"
-
-#~ msgid "Files Outlined"
-#~ msgstr "Soubory, obrys"
-
-#~ msgid "Floppy Outlined"
-#~ msgstr "Disketa, obrys"
-
-#~ msgid "Font"
-#~ msgstr "Písmo"
-
-#~ msgid "Header"
-#~ msgstr "Hlavička"
-
-#~ msgid "Indent"
-#~ msgstr "Odsazení"
-
-#~ msgid "Italic"
-#~ msgstr "Kurzíva"
-
-#~ msgid "List"
-#~ msgstr "Seznam"
-
-#~ msgid "List alt"
-#~ msgstr "Seznam, alternativní"
-
-#~ msgid "List ol"
-#~ msgstr "Číslovaný seznam"
-
-#~ msgid "List ul"
-#~ msgstr "Neuspořádaný seznam"
-
-#~ msgid "Outdent"
-#~ msgstr "Odzazení"
-
-#~ msgid "Paperclip"
-#~ msgstr "Sponka"
-
-#~ msgid "paragraph"
-#~ msgstr "Odstavec"
-
-#~ msgid "Scissors"
-#~ msgstr "Nůžky"
-
-#~ msgid "Strikethrough"
-#~ msgstr "Přeškrtnutí"
-
-#~ msgid "Subscript"
-#~ msgstr "Dolní index"
-
-#~ msgid "Superscript"
-#~ msgstr "Horní index"
-
-#~ msgid "Table"
-#~ msgstr "Tabulka"
-
-#~ msgid "Text-height"
-#~ msgstr "Výška textu"
-
-#~ msgid "Text-width"
-#~ msgstr "Šířka textu"
-
-#~ msgid "Th"
-#~ msgstr "Náhled"
-
-#~ msgid "Th-large"
-#~ msgstr "Náhled, velký"
-
-#~ msgid "Th-list"
-#~ msgstr "Náhled seznam"
-
-#~ msgid "Underline"
-#~ msgstr "Podtržení"
-
-#~ msgid "Undo"
-#~ msgstr "Krok zpět"
-
-#~ msgid "Angle Double Down"
-#~ msgstr "Dvojitý úhel dolů"
-
-#~ msgid "Angle Double Left"
-#~ msgstr "Dvojitý úhel doleva"
-
-#~ msgid "Angle Double Right"
-#~ msgstr "Dvojitý úhel doprava"
-
-#~ msgid "Angle Double Up"
-#~ msgstr "Dvojitý úhel nahoru"
-
-#~ msgid "Angle Down"
-#~ msgstr "Úhel dolů"
-
-#~ msgid "Angle Left"
-#~ msgstr "Úhel doleva"
-
-#~ msgid "Angle Right"
-#~ msgstr "Úhel doprava"
-
-#~ msgid "Angle Up"
-#~ msgstr "Úhel nahoru"
-
-#~ msgid "Arrow Circle Down"
-#~ msgstr "Šipka dolů, zaoblená"
-
-#~ msgid "Arrow Circle Left"
-#~ msgstr "Šipka doleva, zaoblená"
-
-#~ msgid "Arrow Circle Outlined Down"
-#~ msgstr "Šipka doleva, zaoblená, obrys"
-
-#~ msgid "Arrow Circle Outlined Left"
-#~ msgstr "Šipka doleva, zaoblená, obrys"
-
-#~ msgid "Arrow Circle Outlined Right"
-#~ msgstr "Šipka doprava, zaoblená, obrys"
-
-#~ msgid "Arrow Circle Outlined Up"
-#~ msgstr "Šipka nahoru, zaoblená, obrys"
-
-#~ msgid "Arrow Circle Right"
-#~ msgstr "Šipka doprava, zaoblená"
-
-#~ msgid "Arrow Circle Up"
-#~ msgstr "Šipka nahoru, zaoblená"
-
-#~ msgid "Arrow Down"
-#~ msgstr "Šipka dolů"
-
-#~ msgid "Arrow Left"
-#~ msgstr "Šipka doleva"
-
-#~ msgid "Arrow Right"
-#~ msgstr "Šipka doprava"
-
-#~ msgid "Arrow Up"
-#~ msgstr "Šipka nahoru"
-
-#~ msgid "Arrows Alt"
-#~ msgstr "Šipky, alternativní"
-
-#~ msgid "Caret Down"
-#~ msgstr "Stříška dolů"
-
-#~ msgid "Caret Left"
-#~ msgstr "Stříška doleva"
-
-#~ msgid "Caret Right"
-#~ msgstr "Stříška doprava"
-
-#~ msgid "Caret Up"
-#~ msgstr "Stříška nahoru"
-
-#~ msgid "Chevron Circle Down"
-#~ msgstr "Šíp dolů, zaoblený"
-
-#~ msgid "Chevron Circle Left"
-#~ msgstr "Šíp doleva, zaoblený"
-
-#~ msgid "Chevron Circle Right"
-#~ msgstr "Šíp doprava, zaoblený"
-
-#~ msgid "Chevron Circle Up"
-#~ msgstr "Šíp nahoru, zaoblený"
-
-#~ msgid "Chevron Down"
-#~ msgstr "Šíp dolů"
-
-#~ msgid "Chevron Left"
-#~ msgstr "Šíp doleva"
-
-#~ msgid "Chevron Right"
-#~ msgstr "Šíp doprava"
-
-#~ msgid "Chevron Up"
-#~ msgstr "Šíp nahoru"
-
-#~ msgid "Hand Outlined Down"
-#~ msgstr "Ruka dolů, obrys"
-
-#~ msgid "Hand Outlined Left"
-#~ msgstr "Ruka doleva, obrys"
-
-#~ msgid "Hand Outlined Right"
-#~ msgstr "Ruka doprava, obrys"
-
-#~ msgid "Hand Outlined Up"
-#~ msgstr "Dlouhá šipka doprava"
-
-#~ msgid "Long Arrow Down"
-#~ msgstr "Dlouhá šipka dolů"
-
-#~ msgid "Long Arrow Left"
-#~ msgstr "Dlouhá šipka doleva"
-
-#~ msgid "Long Arrow Right"
-#~ msgstr "Dlouhá šipka doprava"
-
-#~ msgid "Long Arrow Up"
-#~ msgstr "Dlouhá šipka nahoru"
-
-#~ msgid "Backward"
-#~ msgstr "Zpětný"
-
-#~ msgid "Compress"
-#~ msgstr "Stlačit"
-
-#~ msgid "Eject"
-#~ msgstr "Vysunout"
-
-#~ msgid "Expand"
-#~ msgstr "Rozbalit"
-
-#~ msgid "Fast Backward"
-#~ msgstr "Rychle dozadu"
-
-#~ msgid "Fast Forward"
-#~ msgstr "Rychle dopředu"
-
-#~ msgid "Forward"
-#~ msgstr "Dopředu"
-
-#~ msgid "Pause"
-#~ msgstr "Pozastavit"
-
-#~ msgid "Play Circle"
-#~ msgstr "Přehrát, kulatá"
-
-#~ msgid "Play Circle Outlined"
-#~ msgstr "Přehrát, kulatá, obrys"
-
-#~ msgid "Step Backward"
-#~ msgstr "Krok zpět"
-
-#~ msgid "Step Forward"
-#~ msgstr "Krok vpřed"
-
-#~ msgid "Stop"
-#~ msgstr "Zastavit"
-
-#~ msgid "YouTube Play"
-#~ msgstr "Youtube Play"
-
-#~ msgid "App.net"
-#~ msgstr "App.net"
-
-#~ msgid "Android"
-#~ msgstr "Android"
-
-#~ msgid "AngelList"
-#~ msgstr "AngelList"
-
-#~ msgid "Apple"
-#~ msgstr "Apple"
-
-#~ msgid "Behance"
-#~ msgstr "Behance"
-
-#~ msgid "Behance Square"
-#~ msgstr "Behance, hranatá"
-
-#~ msgid "Bitbucket"
-#~ msgstr "Bitbucket"
-
-#~ msgid "Bitbucket Square"
-#~ msgstr "Bitbucket, hranatá"
-
-#~ msgid "Codepen"
-#~ msgstr "Codepen"
-
-#~ msgid "CSS 3 Logo"
-#~ msgstr "CSS 3 logo"
-
-#~ msgid "Delicious Logo"
-#~ msgstr "Delicious logo"
-
-#~ msgid "deviantART"
-#~ msgstr "DevianART"
-
-#~ msgid "Digg Logo"
-#~ msgstr "Digg logo"
-
-#~ msgid "Dribbble"
-#~ msgstr "Dribble"
-
-#~ msgid "Dropbox"
-#~ msgstr "Dropbox"
-
-#~ msgid "Drupal Logo"
-#~ msgstr "Drupal logo"
-
-#~ msgid "Galactic Empire"
-#~ msgstr "Galactic Empire"
-
-#~ msgid "Facebook"
-#~ msgstr "Facebook"
-
-#~ msgid "Facebook Square"
-#~ msgstr "Facebook, hranatá"
-
-#~ msgid "Flickr"
-#~ msgstr "Flickr"
-
-#~ msgid "Foursquare"
-#~ msgstr "Foursquare"
-
-#~ msgid "Git"
-#~ msgstr "Git"
-
-#~ msgid "Git Square"
-#~ msgstr "Git, hranatá"
-
-#~ msgid "GitHub"
-#~ msgstr "Github"
-
-#~ msgid "GitHub Alt"
-#~ msgstr "GitHub, alternativní"
-
-#~ msgid "GitHub Square"
-#~ msgstr "Github, hranatá"
-
-#~ msgid "Gittip"
-#~ msgstr "Gittip"
-
-#~ msgid "Google Logo"
-#~ msgstr "Google logo"
-
-#~ msgid "Google Plus"
-#~ msgstr "Google plus"
-
-#~ msgid "Google Plus Square"
-#~ msgstr "Google plus, hranatá"
-
-#~ msgid "Hacker News"
-#~ msgstr "Hacker News"
-
-#~ msgid "HTML 5 Logo"
-#~ msgstr "HTML 5 logo"
-
-#~ msgid "Instagram"
-#~ msgstr "Instagram"
-
-#~ msgid "ioxhost"
-#~ msgstr "Ioxhost"
-
-#~ msgid "Joomla Logo"
-#~ msgstr "Joomla logo"
-
-#~ msgid "jsFiddle"
-#~ msgstr "JSFiddle"
-
-#~ msgid "last.fm"
-#~ msgstr "last.fm"
-
-#~ msgid "last.fm Square"
-#~ msgstr "last.fm, hranatá"
-
-#~ msgid "LinkedIn"
-#~ msgstr "LinkedIn"
-
-#~ msgid "LinkedIn Square"
-#~ msgstr "LinkedIn, hranatá"
-
-#~ msgid "Linux"
-#~ msgstr "Linux"
-
-#~ msgid "MaxCDN"
-#~ msgstr "MaxCDN"
-
-#~ msgid "meanpath"
-#~ msgstr "Meanpath"
-
-#~ msgid "OpenID"
-#~ msgstr "OpenID"
-
-#~ msgid "Pagelines"
-#~ msgstr "Pagelines"
-
-#~ msgid "Pied Piper Logo"
-#~ msgstr "Pied Piper logo"
-
-#~ msgid "Pied Piper Alternate Logo"
-#~ msgstr "Pied Piper logo, alternativní"
-
-#~ msgid "Pinterest Square"
-#~ msgstr "Pinterest, hranatá"
-
-#~ msgid "QQ"
-#~ msgstr "QQ"
-
-#~ msgid "Rebel Alliance"
-#~ msgstr "Rebel alliance"
-
-#~ msgid "reddit Logo"
-#~ msgstr "Reddit"
-
-#~ msgid "reddit Square"
-#~ msgstr "Reddit, hranatá"
-
-#~ msgid "Renren"
-#~ msgstr "Renren"
-
-#~ msgid "Skype"
-#~ msgstr "Skype"
-
-#~ msgid "Slack Logo"
-#~ msgstr "Slack logo"
-
-#~ msgid "Slideshare"
-#~ msgstr "Slideshare"
-
-#~ msgid "SoundCloud"
-#~ msgstr "Soundcloud"
-
-#~ msgid "Spotify"
-#~ msgstr "Spotify"
-
-#~ msgid "Stack Exchange"
-#~ msgstr "Stack Exchange"
-
-#~ msgid "Stack Overflow"
-#~ msgstr "StackOverflow"
-
-#~ msgid "Steam"
-#~ msgstr "Steam"
-
-#~ msgid "Steam Square"
-#~ msgstr "Steam, hranatá"
-
-#~ msgid "StumbleUpon Logo"
-#~ msgstr "StumbleUpon logo"
-
-#~ msgid "StumbleUpon Circle"
-#~ msgstr "StumbleUpon, hranatá"
-
-#~ msgid "Tencent Weibo"
-#~ msgstr "Tencent Weibo"
-
-#~ msgid "Trello"
-#~ msgstr "Trello"
-
-#~ msgid "Tumblr"
-#~ msgstr "Tumblr"
-
-#~ msgid "Tumblr Square"
-#~ msgstr "Tumblr, hranatá"
-
-#~ msgid "Twitch"
-#~ msgstr "Twitch"
-
-#~ msgid "Twitter"
-#~ msgstr "Twitter"
-
-#~ msgid "Twitter Square"
-#~ msgstr "Twitter, hranatá"
-
-#~ msgid "Vimeo Square"
-#~ msgstr "Vimeo, hranatá"
-
-#~ msgid "Vine"
-#~ msgstr "Vine"
-
-#~ msgid "VK"
-#~ msgstr "VK"
-
-#~ msgid "Weibo"
-#~ msgstr "Weibo"
-
-#~ msgid "Weixin (WeChat)"
-#~ msgstr "Weixin (WeChat)"
-
-#~ msgid "Windows"
-#~ msgstr "Windows"
-
-#~ msgid "Wordpress Logo"
-#~ msgstr "Wordpress"
-
-#~ msgid "Xing"
-#~ msgstr "Xing"
-
-#~ msgid "Xing Square"
-#~ msgstr "Xing, hranatá"
-
-#~ msgid "Yahoo Logo"
-#~ msgstr "Yahoo"
-
-#~ msgid "Yelp"
-#~ msgstr "Yelp"
-
-#~ msgid "YouTube"
-#~ msgstr "YouTube"
-
-#~ msgid "YouTube Square"
-#~ msgstr "Youtube, hranatá"
-
-#~ msgid "Ambulance"
-#~ msgstr "Záchranka"
-
-#~ msgid "H Square"
-#~ msgstr "Čtverec"
-
-#~ msgid "Hospital Outlined"
-#~ msgstr "Nemocnice, obrys"
-
-#~ msgid "Medkit"
-#~ msgstr "Lékárnička"
-
-#~ msgid "Stethoscope"
-#~ msgstr "Stetoskop"
-
-#~ msgid "User-md"
-#~ msgstr "Uživatel"
-
-#~ msgid "Dial"
-#~ msgstr "Vytáčení"
-
-#~ msgid "Pilcrow"
-#~ msgstr "Znak odstavce"
-
-#~ msgid "Hash"
-#~ msgstr "Mřížka"
-
-#~ msgid "Key-inv"
-#~ msgstr "Klíč"
-
-#~ msgid "Chart-pie-alt"
-#~ msgstr "Koláčový graf, alternativní"
-
-#~ msgid "Chart-pie"
-#~ msgstr "Koláčový graf"
-
-#~ msgid "Chart-bar"
-#~ msgstr "Lineární graf"
-
-#~ msgid "Moon-inv"
-#~ msgstr "Měsíc"
-
-#~ msgid "Mobile"
-#~ msgstr "Mobilní telefon"
-
-#~ msgid "Cd"
-#~ msgstr "CD"
-
-#~ msgid "Split"
-#~ msgstr "Rozdělit"
-
-#~ msgid "Block"
-#~ msgstr "Blok"
-
-#~ msgid "Resize-full"
-#~ msgstr "Změna velikosti, plná"
-
-#~ msgid "Article-alt"
-#~ msgstr "Článek, alternativní"
-
-#~ msgid "Article"
-#~ msgstr "Článek"
-
-#~ msgid "Pencil-alt"
-#~ msgstr "Tužka"
-
-#~ msgid "Attach"
-#~ msgstr "Připojit"
-
-#~ msgid "Resize-full-alt"
-#~ msgstr "Změna velikosti, alternativní"
-
-#~ msgid "Book-open"
-#~ msgstr "Otevřená kniha"
-
-#~ msgid "Arrow-curved"
-#~ msgstr "Zakřivená šipka"
-
-#~ msgid "Equalizer"
-#~ msgstr "Ekvalizér"
-
-#~ msgid "Heart-empty"
-#~ msgstr "Srdce, prázdná"
-
-#~ msgid "Lock-empty"
-#~ msgstr "Zámek, prázdná"
-
-#~ msgid "Comment-inv"
-#~ msgstr "Komentář"
-
-#~ msgid "Resize-small"
-#~ msgstr "Změnit velikost, malá"
-
-#~ msgid "Cursor"
-#~ msgstr "Kurzor"
-
-#~ msgid "Aperture"
-#~ msgstr "Clona"
-
-#~ msgid "Play-circle2"
-#~ msgstr "Přehrát, kruhová"
-
-#~ msgid "Resize-small-alt"
-#~ msgstr "Změnit velikost"
-
-#~ msgid "Folder-empty"
-#~ msgstr "Složka, prázdná"
-
-#~ msgid "Comment-alt"
-#~ msgstr "Komentář"
-
-#~ msgid "Lock-open"
-#~ msgstr "Otevřený zámek"
-
-#~ msgid "Lock-open-empty"
-#~ msgstr "Otevřený prázdný zámek"
-
-#~ msgid "Box"
-#~ msgstr "Pole"
-
-#~ msgid "Resize-vertical"
-#~ msgstr "Svislá změna velikosti"
-
-#~ msgid "Aperture-alt"
-#~ msgstr "Clona"
-
-#~ msgid "Steering-wheel"
-#~ msgstr "Volant"
-
-#~ msgid "To-start"
-#~ msgstr "Na začátek"
-
-#~ msgid "Move"
-#~ msgstr "Přesunout"
-
-#~ msgid "Resize-horizontal"
-#~ msgstr "Vodorovná změna velikosti"
-
-#~ msgid "Rss-alt"
-#~ msgstr "RSS"
-
-#~ msgid "Comment-alt2"
-#~ msgstr "Komentář"
-
-#~ msgid "Rss"
-#~ msgstr "RSS"
-
-#~ msgid "Comment-inv-alt"
-#~ msgstr "Komentář"
-
-#~ msgid "Comment-inv-alt2"
-#~ msgstr "Komentář"
-
-#~ msgid "Pin"
-#~ msgstr "Kolík"
-
-#~ msgid "Picture"
-#~ msgstr "Obrázek"
-
-#~ msgid "Tag"
-#~ msgstr "Štítek"
-
-#~ msgid "Chat"
-#~ msgstr "Chat"
-
-#~ msgid "Popup"
-#~ msgstr "Pop-up"
-
-#~ msgid "To-end"
-#~ msgstr "Na konec"
-
-#~ msgid "Book-alt"
-#~ msgstr "Kniha"
-
-#~ msgid "Brush"
-#~ msgstr "Štětec"
-
-#~ msgid "Down"
-#~ msgstr "Dolů"
-
-#~ msgid "Chat-inv"
-#~ msgstr "Chat"
-
-#~ msgid "Tag-empty"
-#~ msgstr "Prázdný tag"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Ok-circle"
-#~ msgstr "Kolečko OK"
-
-#~ msgid "Location"
-#~ msgstr "Umístění"
-
-#~ msgid "Brush-alt"
-#~ msgstr "Kartáč"
-
-#~ msgid "Location-inv"
-#~ msgstr "Umístění"
-
-#~ msgid "Signal"
-#~ msgstr "Signál"
-
-#~ msgid "Layers"
-#~ msgstr "Vrstvy"
-
-#~ msgid "Award"
-#~ msgstr "Cena"
-
-#~ msgid "Up"
-#~ msgstr "Nahoru"
-
-#~ msgid "Calendar-inv"
-#~ msgstr "Calendář"
-
-#~ msgid "Location-alt"
-#~ msgstr "Umístění"
-
-#~ msgid "Download-cloud"
-#~ msgstr "Stáhnout z virtuálního úložiště"
-
-#~ msgid "Cancel-circle"
-#~ msgstr "Kolečko zrušení"
-
-#~ msgid "Upload-cloud"
-#~ msgstr "Nahrávání na virtuální úložiště"
-
-#~ msgid "Calendar-alt"
-#~ msgstr "Kalendář"
-
-#~ msgid "Down-circle"
-#~ msgstr "Dolní kolečko"
-
-#~ msgid "Award-empty"
-#~ msgstr "Cena, prázdná"
-
-#~ msgid "Layers-alt"
-#~ msgstr "Vrstvy"
-
-#~ msgid "Sun"
-#~ msgstr "Slunce"
-
-#~ msgid "Left-circle"
-#~ msgstr "Levé kolečko"
-
-#~ msgid "Mic"
-#~ msgstr "Mikrofon"
-
-#~ msgid "Plus-circle"
-#~ msgstr "Zaoblené plus"
-
-#~ msgid "Trash-empty"
-#~ msgstr "Prázdný koš"
-
-#~ msgid "Volume-off"
-#~ msgstr "Ztlumit hlasitost"
-
-#~ msgid "Right-circle"
-#~ msgstr "Pravé kolečko"
-
-#~ msgid "List-nested"
-#~ msgstr "Vnořený seznam"
-
-#~ msgid "Sun-inv"
-#~ msgstr "Slunce"
-
-#~ msgid "Bat-empty"
-#~ msgstr "Prázdná baterie"
-
-#~ msgid "Up-circle"
-#~ msgstr "Kolečko nahoru"
-
-#~ msgid "Volume-up"
-#~ msgstr "Přidat hlasitost"
-
-#~ msgid "Doc"
-#~ msgstr "Dokument"
-
-#~ msgid "Quote-left-alt"
-#~ msgstr "Levá uvozovka, alternativní"
-
-#~ msgid "Minus-circle"
-#~ msgstr "Mínus, zaoblené"
-
-#~ msgid "Bat-half"
-#~ msgstr "Polovina baterie"
-
-#~ msgid "Cw"
-#~ msgstr "CW"
-
-#~ msgid "Doc-inv"
-#~ msgstr "Dokument"
-
-#~ msgid "Quote-right-alt"
-#~ msgstr "Pravé uvozovky"
-
-#~ msgid "Help"
-#~ msgstr "Nápověda"
-
-#~ msgid "Doc-alt"
-#~ msgstr "Dokument, alternativní"
-
-#~ msgid "Loop"
-#~ msgstr "Smyčka"
-
-#~ msgid "Bat-full"
-#~ msgstr "Baterie nabita"
-
-#~ msgid "Flash"
-#~ msgstr "Záblesk"
-
-#~ msgid "Moon"
-#~ msgstr "Měsíc"
-
-#~ msgid "Bat-charge"
-#~ msgstr "Nabíjení baterie"
-
-#~ msgid "Loop-alt"
-#~ msgstr "Smyčka, alternativní"
-
-#~ msgid "Lamp"
-#~ msgstr "Svítilna"
-
-#~ msgid "Doc-inv-alt"
-#~ msgstr "Dokument, alternativní"
-
-#~ msgid "Pencil-neg"
-#~ msgstr "Zakázané úpravy"
-
-#~ msgid "Adjust Brightness"
-#~ msgstr "Přizpůsobit jas"
-
-#~ msgid "Adjust Contrast"
-#~ msgstr "Přizpůsobit kontrast"
-
-#~ msgid "Anchor Outline"
-#~ msgstr "Kotva, obrys"
-
-#~ msgid "Arrow Back Outline"
-#~ msgstr "Šipka zpět, obrys"
-
-#~ msgid "Arrow Back"
-#~ msgstr "Šipka zpět"
-
-#~ msgid "Arrow Down Outline"
-#~ msgstr "Šipka dolů, obrys"
-
-#~ msgid "Arrow Down Thick"
-#~ msgstr "Šipka dolů, tlustá"
-
-#~ msgid "Arrow Forward Outline"
-#~ msgstr "Šipka vpřed, obrys"
-
-#~ msgid "Arrow Forward"
-#~ msgstr "Šipka vpřed"
-
-#~ msgid "Arrow Left Outline"
-#~ msgstr "Šipka vlevo, obrys"
-
-#~ msgid "Arrow Left Thick"
-#~ msgstr "šipka vlevo, tlustá"
-
-#~ msgid "Arrow Loop Outline"
-#~ msgstr "Šipka smyčky, obrys"
-
-#~ msgid "Arrow Loop"
-#~ msgstr "Šipka smyčky"
-
-#~ msgid "Arrow Maximise Outline"
-#~ msgstr "Šipka maximalizace, obrys"
-
-#~ msgid "Arrow Maximise"
-#~ msgstr "Šipka maximalizace"
-
-#~ msgid "Arrow Minimise Outline"
-#~ msgstr "Šipka minimalizace, obrys"
-
-#~ msgid "Arrow Minimise"
-#~ msgstr "Šipka minimalizace"
-
-#~ msgid "Arrow Move Outline"
-#~ msgstr "Šipka přesouvání, obrys"
-
-#~ msgid "Arrow Move"
-#~ msgstr "Šipka přesouvání"
-
-#~ msgid "Arrow Repeat Outline"
-#~ msgstr "Šipka opakování, obrys"
-
-#~ msgid "Arrow Repeat"
-#~ msgstr "Šipka opakování"
-
-#~ msgid "Arrow Right Outline"
-#~ msgstr "Šipka vpravo, obrys"
-
-#~ msgid "Arrow Right Thick"
-#~ msgstr "Šipka vpravo, tlustá"
-
-#~ msgid "Arrow Shuffle"
-#~ msgstr "Šipka náhodného přehrávání"
-
-#~ msgid "Arrow Sorted Down"
-#~ msgstr "Šipka seřazeno dolů"
-
-#~ msgid "Arrow Sorted Up"
-#~ msgstr "Šipka seřazeno"
-
-#~ msgid "Arrow Sync Outline"
-#~ msgstr "Šipka synchronizace"
-
-#~ msgid "Arrow Sync"
-#~ msgstr "Šipka synchronizace"
-
-#~ msgid "Arrow Unsorted"
-#~ msgstr "Šipka neseřazeno"
-
-#~ msgid "Arrow Up Outline"
-#~ msgstr "Šipka nahoru, obrys"
-
-#~ msgid "Arrow Up Thick"
-#~ msgstr "Šipka nahoru, silná"
-
-#~ msgid "Attachment Outline"
-#~ msgstr "Příloha, obrys"
-
-#~ msgid "Attachment"
-#~ msgstr "Příloha"
-
-#~ msgid "Backspace Outline"
-#~ msgstr "Backspace, obrys"
-
-#~ msgid "Backspace"
-#~ msgstr "Backspace"
-
-#~ msgid "Battery Charge"
-#~ msgstr "Nabíjení baterie"
-
-#~ msgid "Battery Full"
-#~ msgstr "Plná baterie"
-
-#~ msgid "Battery High"
-#~ msgstr "Nabitá baterie"
-
-#~ msgid "Battery Low"
-#~ msgstr "Téměř prázdná baterie"
-
-#~ msgid "Battery Mid"
-#~ msgstr "Poloprázdná baterie"
-
-#~ msgid "Beaker"
-#~ msgstr "Pohár"
-
-#~ msgid "Business Card"
-#~ msgstr "Vizitka"
-
-#~ msgid "Calendar Outline"
-#~ msgstr "Kalendář, obrys"
-
-#~ msgid "Camera Outline"
-#~ msgstr "Fotoaparát, obrys"
-
-#~ msgid "Cancel Outline"
-#~ msgstr "Zrušit, obrys"
-
-#~ msgid "Chart Area Outline"
-#~ msgstr "Oblast grafu, obrys"
-
-#~ msgid "Chart Area"
-#~ msgstr "Oblast grafu"
-
-#~ msgid "Chart Bar Outline"
-#~ msgstr "Sloupcový graf, obrys"
-
-#~ msgid "Chart Bar"
-#~ msgstr "Sloupcový graf"
-
-#~ msgid "Chart Line Outline"
-#~ msgstr "Lineární graf, obrys"
-
-#~ msgid "Chart Line"
-#~ msgstr "Lineární graf"
-
-#~ msgid "Chart Pie Outline"
-#~ msgstr "Koláčový graf, obrys"
-
-#~ msgid "Chart Pie"
-#~ msgstr "Koláčový graf"
-
-#~ msgid "Chevron Left Outline"
-#~ msgstr "Hrot, levý, obrys"
-
-#~ msgid "Chevron Right Outline"
-#~ msgstr "Hrot, pravý, obrys"
-
-#~ msgid "Cloud Storage"
-#~ msgstr "Virtuální úložiště"
-
-#~ msgid "Cloud Storage Outline"
-#~ msgstr "Virtuální úložiště, obrys"
-
-#~ msgid "Code Outline"
-#~ msgstr "Kód, obrys"
-
-#~ msgid "Cog Outline"
-#~ msgstr "Zub, obrys"
-
-#~ msgid "Contacts"
-#~ msgstr "Kontakty"
-
-#~ msgid "Credit Card"
-#~ msgstr "Kreditní karta"
-
-#~ msgid "Css3"
-#~ msgstr "CSS 3"
-
-#~ msgid "Delete Outline"
-#~ msgstr "Odstranit, obrys"
-
-#~ msgid "Device Desktop"
-#~ msgstr "Zařízení - Počítač"
-
-#~ msgid "Device Laptop"
-#~ msgstr "Zařízení - Notebook (Laptop)"
-
-#~ msgid "Device Phone"
-#~ msgstr "Zařízení - Telefon"
-
-#~ msgid "Device Tablet"
-#~ msgstr "Zařízení - Tablet"
-
-#~ msgid "Directions"
-#~ msgstr "Směry"
-
-#~ msgid "Divide Outline"
-#~ msgstr "Dělení, obrys"
-
-#~ msgid "Divide"
-#~ msgstr "Dělení"
-
-#~ msgid "Document Add"
-#~ msgstr "Přidat dokument"
-
-#~ msgid "Document Delete"
-#~ msgstr "Odstranit dokument"
-
-#~ msgid "Document Text"
-#~ msgstr "Textový dokument"
-
-#~ msgid "Document"
-#~ msgstr "Dokument"
-
-#~ msgid "Download Outline"
-#~ msgstr "Stáhnout, obrys"
-
-#~ msgid "Eject Outline"
-#~ msgstr "Vysunout, obrys"
-
-#~ msgid "Equals Outline"
-#~ msgstr "Rovnost, obrys"
-
-#~ msgid "Equals"
-#~ msgstr "Rovnost"
-
-#~ msgid "Export Outline"
-#~ msgstr "Export, obrys"
-
-#~ msgid "Export"
-#~ msgstr "Export"
-
-#~ msgid "Eye Outline"
-#~ msgstr "Oko, obrys"
-
-#~ msgid "Feather"
-#~ msgstr "Peří"
-
-#~ msgid "Flag Outline"
-#~ msgstr "Vlajka, obrys"
-
-#~ msgid "Flash Outline"
-#~ msgstr "Blesk, obrys"
-
-#~ msgid "Flow Children"
-#~ msgstr "Plovoucí dítě"
-
-#~ msgid "Flow Merge"
-#~ msgstr "Sloučený průtok"
-
-#~ msgid "Flow Parallel"
-#~ msgstr "Rovnoběžný průtok"
-
-#~ msgid "Flow Switch"
-#~ msgstr "Průtokový spínač"
-
-#~ msgid "Folder Add"
-#~ msgstr "Přidat složku"
-
-#~ msgid "Folder Delete"
-#~ msgstr "Odstranit složku"
-
-#~ msgid "Globe Outline"
-#~ msgstr "Globus, obrys"
-
-#~ msgid "Group Outline"
-#~ msgstr "Skupina, obrys"
-
-#~ msgid "Heart Full Outline"
-#~ msgstr "Srdce, obrys"
-
-#~ msgid "Heart Half Outline"
-#~ msgstr "Polovina srdce, obrys"
-
-#~ msgid "Heart Outline"
-#~ msgstr "Srdce, obrys"
-
-#~ msgid "Home Outline"
-#~ msgstr "Domů, obrys"
-
-#~ msgid "Html5"
-#~ msgstr "HTML5"
-
-#~ msgid "Image Outline"
-#~ msgstr "Obrázek, obrys"
-
-#~ msgid "Infinity Outline"
-#~ msgstr "Nekonečno, obrys"
-
-#~ msgid "Infinity"
-#~ msgstr "Nekonečno"
-
-#~ msgid "Info Large Outline"
-#~ msgstr "Informace, velká, obrys"
-
-#~ msgid "Info Large"
-#~ msgstr "Informace, velká"
-
-#~ msgid "Info Outline"
-#~ msgstr "Informace, obrys"
-
-#~ msgid "Input Checked Outline"
-#~ msgstr "Zaškrtnutý, obrys"
-
-#~ msgid "Input Checked"
-#~ msgstr "Zaškrtnutý"
-
-#~ msgid "Key Outline"
-#~ msgstr "Klávesa, obrys"
-
-#~ msgid "Keyboard"
-#~ msgstr "Klávesnice"
-
-#~ msgid "Lightbulb"
-#~ msgstr "Žárovka"
-
-#~ msgid "Link Outline"
-#~ msgstr "Odkaz, obrys"
-
-#~ msgid "Location Arrow Outline"
-#~ msgstr "Šipka umístění, obrys"
-
-#~ msgid "Location Arrow"
-#~ msgstr "Šipka umístění"
-
-#~ msgid "Location Outline"
-#~ msgstr "Umístění, obrys"
-
-#~ msgid "Lock Closed Outline"
-#~ msgstr "Zámek zamčený, obrys"
-
-#~ msgid "Lock Closed"
-#~ msgstr "Zámek zamčený"
-
-#~ msgid "Lock Open Outline"
-#~ msgstr "Zámek otevřený, obrys"
-
-#~ msgid "Lock Open"
-#~ msgstr "Zámek otevřený"
-
-#~ msgid "Map"
-#~ msgstr "Mapa"
-
-#~ msgid "Media Eject Outline"
-#~ msgstr "Vysunout, obrys"
-
-#~ msgid "Media Eject"
-#~ msgstr "Vysunout"
-
-#~ msgid "Media Fast Forward Outline"
-#~ msgstr "Rychle přetočit, obrys"
-
-#~ msgid "Media Fast Forward"
-#~ msgstr "Rychle přetočit"
-
-#~ msgid "Media Pause Outline"
-#~ msgstr "Pozastavit, obrys"
-
-#~ msgid "Media Pause"
-#~ msgstr "Pozastavit"
-
-#~ msgid "Media Play Outline"
-#~ msgstr "Přehrát, obrys"
-
-#~ msgid "Media Play Reverse Outline"
-#~ msgstr "Přehrát pozpátku, obrys"
-
-#~ msgid "Media Play Reverse"
-#~ msgstr "Přehrát pozpátku"
-
-#~ msgid "Media Play"
-#~ msgstr "Přehrát"
-
-#~ msgid "Media Record Outline"
-#~ msgstr "Nahrávat, obrys"
-
-#~ msgid "Media Record"
-#~ msgstr "Nahrávat"
-
-#~ msgid "Media Rewind Outline"
-#~ msgstr "Přetočit, obrys"
-
-#~ msgid "Media Rewind"
-#~ msgstr "Přetočit"
-
-#~ msgid "Media Stop Outline"
-#~ msgstr "Zastavení přehrávání, obrys"
-
-#~ msgid "Media Stop"
-#~ msgstr "Zastavení přehrávání"
-
-#~ msgid "Message Typing"
-#~ msgstr "Psaní zprávy"
-
-#~ msgid "Message"
-#~ msgstr "Zpráva"
-
-#~ msgid "Messages"
-#~ msgstr "Zprávy"
-
-#~ msgid "Microphone Outline"
-#~ msgstr "Mikrofon, obrys"
-
-#~ msgid "Minus Outline"
-#~ msgstr "Mínus, obrys"
-
-#~ msgid "Mortar Board"
-#~ msgstr "Maltová deska"
-
-#~ msgid "News"
-#~ msgstr "Novinky"
-
-#~ msgid "Notes Outline"
-#~ msgstr "Poznámky, obrys"
-
-#~ msgid "Notes"
-#~ msgstr "Poznámky"
-
-#~ msgid "Pen"
-#~ msgstr "Pero"
-
-#~ msgid "Phone Outline"
-#~ msgstr "Telefon, obrys"
-
-#~ msgid "Pi Outline"
-#~ msgstr "Ludolfovo číslo (Pi), obrys"
-
-#~ msgid "Pi"
-#~ msgstr "Ludolfovo číslo (Pi)"
-
-#~ msgid "Pin Outline"
-#~ msgstr "Kolík, obrys"
-
-#~ msgid "Pipette"
-#~ msgstr "Pipeta"
-
-#~ msgid "Plane Outline"
-#~ msgstr "Letadlo, obrys"
-
-#~ msgid "Plus Outline"
-#~ msgstr "Plus, obrys"
-
-#~ msgid "Point Of Interest Outline"
-#~ msgstr "Zajímavost, obrys"
-
-#~ msgid "Point Of Interest"
-#~ msgstr "Zajímavost"
-
-#~ msgid "Power Outline"
-#~ msgstr "Napájení, obrys"
-
-#~ msgid "Power"
-#~ msgstr "Napájení"
-
-#~ msgid "Printer"
-#~ msgstr "Tiskárna"
-
-#~ msgid "Puzzle Outline"
-#~ msgstr "Puzzle, obrys"
-
-#~ msgid "Puzzle"
-#~ msgstr "Puzzle"
-
-#~ msgid "Radar Outline"
-#~ msgstr "Radar, obrys"
-
-#~ msgid "Radar"
-#~ msgstr "Radar"
-
-#~ msgid "Refresh Outline"
-#~ msgstr "Aktualizovat, obrys"
-
-#~ msgid "Rss Outline"
-#~ msgstr "RSS, obrys"
-
-#~ msgid "Scissors Outline"
-#~ msgstr "Nůžky, obrys"
-
-#~ msgid "Shopping Bag"
-#~ msgstr "Nákupní taška"
-
-#~ msgid "Shopping Cart"
-#~ msgstr "Nákupní vozík"
-
-#~ msgid "Social At Circular"
-#~ msgstr "Sociální ikona At, kruhová"
-
-#~ msgid "Social Dribbble Circular"
-#~ msgstr "Sociální ikona Dribble, kruhová"
-
-#~ msgid "Social Dribbble"
-#~ msgstr "Sociální ikona Dribble"
-
-#~ msgid "Social Facebook Circular"
-#~ msgstr "Sociální ikona Facebook, kruhová"
-
-#~ msgid "Social Facebook"
-#~ msgstr "Sociální ikona Facebook"
-
-#~ msgid "Social Flickr Circular"
-#~ msgstr "Sociální ikona Flickr, kruhová"
-
-#~ msgid "Social Flickr"
-#~ msgstr "Sociální ikona Flickr"
-
-#~ msgid "Social Github Circular"
-#~ msgstr "Sociální ikona GitHub, kruhová"
-
-#~ msgid "Social Github"
-#~ msgstr "Sociální ikona GitHub"
-
-#~ msgid "Social Google Plus Circular"
-#~ msgstr "Sociální ikona Google plus, kruhová"
-
-#~ msgid "Social Google Plus"
-#~ msgstr "Sociální ikona Google plus"
-
-#~ msgid "Social Instagram Circular"
-#~ msgstr "Sociální ikona Instagram, kruhová"
-
-#~ msgid "Social Instagram"
-#~ msgstr "Sociální ikona Instagram"
-
-#~ msgid "Social Last Fm Circular"
-#~ msgstr "Sociální ikona Last Fm, kruhová"
-
-#~ msgid "Social Last Fm"
-#~ msgstr "Sociální ikona Last Fm"
-
-#~ msgid "Social Linkedin Circular"
-#~ msgstr "Sociální ikona LinkedIn, kruhová"
-
-#~ msgid "Social Linkedin"
-#~ msgstr "Sociální ikona LinkedIn"
-
-#~ msgid "Social Pinterest Circular"
-#~ msgstr "Sociální ikona Pinterest, kruhová"
-
-#~ msgid "Social Pinterest"
-#~ msgstr "Sociální ikona Pinterest"
-
-#~ msgid "Social Skype Outline"
-#~ msgstr "Sociální ikona Skype, obrys"
-
-#~ msgid "Social Skype"
-#~ msgstr "Sociální ikona Skype"
-
-#~ msgid "Social Tumbler Circular"
-#~ msgstr "Sociální ikona Tumbler, kruhová"
-
-#~ msgid "Social Tumbler"
-#~ msgstr "Sociální ikona Tumbler"
-
-#~ msgid "Social Twitter Circular"
-#~ msgstr "Sociální ikona Twitter, kruhová"
-
-#~ msgid "Social Twitter"
-#~ msgstr "Sociální ikona Twitter"
-
-#~ msgid "Social Vimeo Circular"
-#~ msgstr "Sociální ikona Vimeo, kruhová"
-
-#~ msgid "Social Vimeo"
-#~ msgstr "Sociální ikona Vimeo"
-
-#~ msgid "Social Youtube Circular"
-#~ msgstr "Sociální ikona Youtube, kruhová"
-
-#~ msgid "Social Youtube"
-#~ msgstr "Sociální ikona Youtube"
-
-#~ msgid "Sort Alphabetically Outline"
-#~ msgstr "Řadit podle abecedy, obrys"
-
-#~ msgid "Sort Alphabetically"
-#~ msgstr "Řadit podle abecedy"
-
-#~ msgid "Sort Numerically Outline"
-#~ msgstr "Řadit podle čísel, obrys"
-
-#~ msgid "Sort Numerically"
-#~ msgstr "Řadit podle čísel"
-
-#~ msgid "Spanner Outline"
-#~ msgstr "Francouzský klíč, obrys"
-
-#~ msgid "Spanner"
-#~ msgstr "Francouzský klíč"
-
-#~ msgid "Spiral"
-#~ msgstr "Spirála"
-
-#~ msgid "Star Full Outline"
-#~ msgstr "Hvězda, obrys"
-
-#~ msgid "Star Half Outline"
-#~ msgstr "Polovina hvězdy, obrys"
-
-#~ msgid "Star Half"
-#~ msgstr "Polovina hvězdy"
-
-#~ msgid "Star Outline"
-#~ msgstr "Hvězda, obrys"
-
-#~ msgid "Starburst Outline"
-#~ msgstr "Záření, obrys"
-
-#~ msgid "Starburst"
-#~ msgstr "Záření"
-
-#~ msgid "Stopwatch"
-#~ msgstr "Stopky"
-
-#~ msgid "Support"
-#~ msgstr "Podpora"
-
-#~ msgid "Tabs Outline"
-#~ msgstr "Štítky, obrys"
-
-#~ msgid "Th Large Outline"
-#~ msgstr "Náhled, velký, obrys"
-
-#~ msgid "Th Large"
-#~ msgstr "Náhled, velký"
-
-#~ msgid "Th List Outline"
-#~ msgstr "Náhled seznam, obrys"
-
-#~ msgid "Th List"
-#~ msgstr "Náhled seznam"
-
-#~ msgid "Th Menu Outline"
-#~ msgstr "Náhled menu, obrys"
-
-#~ msgid "Th Menu"
-#~ msgstr "Náhled menu"
-
-#~ msgid "Th Small Outline"
-#~ msgstr "Náhled malý, obrys"
-
-#~ msgid "Th Small"
-#~ msgstr "Náhled malý"
-
-#~ msgid "Thermometer"
-#~ msgstr "Teploměr"
-
-#~ msgid "Thumbs Down"
-#~ msgstr "Palec dolů"
-
-#~ msgid "Thumbs Ok"
-#~ msgstr "Palec nahoru"
-
-#~ msgid "Thumbs Up"
-#~ msgstr "Palec nahoru"
-
-#~ msgid "Tick Outline"
-#~ msgstr "Klíště, obrys"
-
-#~ msgid "Time"
-#~ msgstr "Čas"
-
-#~ msgid "Times Outline"
-#~ msgstr "Doba, obrys"
-
-#~ msgid "Upload Outline"
-#~ msgstr "Nahrát, obrys"
-
-#~ msgid "User Add Outline"
-#~ msgstr "Přidat uživatele, obrys"
-
-#~ msgid "User Add"
-#~ msgstr "Přidat uživatele"
-
-#~ msgid "User Delete Outline"
-#~ msgstr "Odstranit uživatele, obrys"
-
-#~ msgid "User Delete"
-#~ msgstr "Odstranit uživatele"
-
-#~ msgid "User Outline"
-#~ msgstr "Uživatel, obrys"
-
-#~ msgid "Vendor Android"
-#~ msgstr "Prodejce Android"
-
-#~ msgid "Vendor Apple"
-#~ msgstr "Prodejce Apple"
-
-#~ msgid "Vendor Microsoft"
-#~ msgstr "Prodejce Microsoft"
-
-#~ msgid "Video Outline"
-#~ msgstr "Video, obrys"
-
-#~ msgid "Volume Down"
-#~ msgstr "Snížit hlasitost"
-
-#~ msgid "Volume Mute"
-#~ msgstr "Zcela ztišit hlasitost"
-
-#~ msgid "Volume Up"
-#~ msgstr "Zvýšit hlasitost"
-
-#~ msgid "Volume"
-#~ msgstr "Hlasitost"
-
-#~ msgid "Warning Outline"
-#~ msgstr "Upozornění, obrys"
-
-#~ msgid "Watch"
-#~ msgstr "Hodinky"
-
-#~ msgid "Waves Outline"
-#~ msgstr "Vlny, obrys"
-
-#~ msgid "Waves"
-#~ msgstr "Vlny"
-
-#~ msgid "Weather Cloudy"
-#~ msgstr "Zamračené počasí"
-
-#~ msgid "Weather Downpour"
-#~ msgstr "Liják"
-
-#~ msgid "Weather Night"
-#~ msgstr "Noční počasí"
-
-#~ msgid "Weather Partly Sunny"
-#~ msgstr "Poloslunečné počasí"
-
-#~ msgid "Weather Shower"
-#~ msgstr "Srážkové počasí"
-
-#~ msgid "Weather Snow"
-#~ msgstr "Sněhové počasí"
-
-#~ msgid "Weather Stormy"
-#~ msgstr "Bouřlivé počasí"
-
-#~ msgid "Weather Sunny"
-#~ msgstr "Slunečné počasí"
-
-#~ msgid "Weather Windy Cloudy"
-#~ msgstr "Větrné, zamračené počasí"
-
-#~ msgid "Weather Windy"
-#~ msgstr "Větrné počasí"
-
-#~ msgid "Wi Fi Outline"
-#~ msgstr "Bezdrátové připojení, obrys"
-
-#~ msgid "Wi Fi"
-#~ msgstr "Bezdrátové připojení"
-
-#~ msgid "Wine"
-#~ msgstr "Víno"
-
-#~ msgid "World Outline"
-#~ msgstr "Svět, obrys"
-
-#~ msgid "World"
-#~ msgstr "Svět"
-
-#~ msgid "Zoom In Outline"
-#~ msgstr "Přiblížení, obrys"
-
-#~ msgid "Zoom In"
-#~ msgstr "Přiblížení"
-
-#~ msgid "Zoom Out Outline"
-#~ msgstr "Oddálení, obrys"
-
-#~ msgid "Zoom Out"
-#~ msgstr "Oddálení"
-
-#~ msgid "Zoom Outline"
-#~ msgstr "Přiblížení, obrys"
-
-#~ msgid "Note"
-#~ msgstr "Poznámka"
-
-#~ msgid "Note Beamed"
-#~ msgstr "Poznámka, zářivá"
-
-#~ msgid "Flashlight"
-#~ msgstr "Svítilna"
-
-#~ msgid "Heart Empty"
-#~ msgstr "Prázdné srdce"
-
-#~ msgid "Star Empty"
-#~ msgstr "Prázdná hvězda"
-
-#~ msgid "Cancel Circled"
-#~ msgstr "Zrušit, zaoblená"
-
-#~ msgid "Cancel Squared"
-#~ msgstr "Zrušit, hranatá"
-
-#~ msgid "Plus Circled"
-#~ msgstr "Plus, zaoblená"
-
-#~ msgid "Plus Squared"
-#~ msgstr "Plus, hranatá"
-
-#~ msgid "Minus Circled"
-#~ msgstr "Mínus, zaoblená"
-
-#~ msgid "Minus Squared"
-#~ msgstr "Mínus, hranatá"
-
-#~ msgid "Help Circled"
-#~ msgstr "Pomoc, zaoblená"
-
-#~ msgid "Info Circled"
-#~ msgstr "Info, zaoblená"
-
-#~ msgid "Back"
-#~ msgstr "Zpět"
-
-#~ msgid "Bookmarks"
-#~ msgstr "Záložky"
-
-#~ msgid "Upload Cloud"
-#~ msgstr "Nahrávání na virtuální úložiště"
-
-#~ msgid "Reply All"
-#~ msgstr "Odpověď všem"
-
-#~ msgid "Quote"
-#~ msgstr "Citace"
-
-#~ msgid "Attention"
-#~ msgstr "Pozornost"
-
-#~ msgid "Vcard"
-#~ msgstr "Vizitka"
-
-#~ msgid "Address"
-#~ msgstr "Adresa"
-
-#~ msgid "Direction"
-#~ msgstr "Směr"
-
-#~ msgid "Cup"
-#~ msgstr "Šálek"
-
-#~ msgid "Docs"
-#~ msgstr "Dokumenty"
-
-#~ msgid "Doc Landscape"
-#~ msgstr "Dokument na šířku"
-
-#~ msgid "Doc Text"
-#~ msgstr "Dokument text"
-
-#~ msgid "Doc Text Inv"
-#~ msgstr "Sada ikon typů souborů"
-
-#~ msgid "Newspaper"
-#~ msgstr "Noviny"
-
-#~ msgid "Book Open"
-#~ msgstr "Otevřená kniha"
-
-#~ msgid "Tools"
-#~ msgstr "Nástroje"
-
-#~ msgid "Shareable"
-#~ msgstr "Sdílitelný"
-
-#~ msgid "Basket"
-#~ msgstr "Koš"
-
-#~ msgid "Bag"
-#~ msgstr "Taška"
-
-#~ msgid "Login"
-#~ msgstr "Přihlášení"
-
-#~ msgid "Logout"
-#~ msgstr "Odhlášení"
-
-#~ msgid "Mute"
-#~ msgstr "Ztlumení"
-
-#~ msgid "Sound"
-#~ msgstr "Zvuk"
-
-#~ msgid "Hourglass"
-#~ msgstr "Přesýpací hodiny"
-
-#~ msgid "Light Down"
-#~ msgstr "Zhasnout"
-
-#~ msgid "Light Up"
-#~ msgstr "Rozsvítit"
-
-#~ msgid "Resize Full"
-#~ msgstr "Změna velikosti, plná"
-
-#~ msgid "Resize Small"
-#~ msgstr "Změna velikosti, malá"
-
-#~ msgid "Window"
-#~ msgstr "Okno"
-
-#~ msgid "Arrow Combo"
-#~ msgstr "Šipka kombo"
-
-#~ msgid "Down Circled"
-#~ msgstr "Dolů, zaoblená"
-
-#~ msgid "Left Circled"
-#~ msgstr "Doleva, zaoblená"
-
-#~ msgid "Right Circled"
-#~ msgstr "Doprava, zaoblená"
-
-#~ msgid "Up Circled"
-#~ msgstr "Nahoru, zaoblená"
-
-#~ msgid "Down Open"
-#~ msgstr "Dolů, otevřená"
-
-#~ msgid "Left Open"
-#~ msgstr "Doleva, otevřená"
-
-#~ msgid "Right Open"
-#~ msgstr "Doprava, otevřená"
-
-#~ msgid "Up Open"
-#~ msgstr "Nahoru, otevřená"
-
-#~ msgid "Down Open Mini"
-#~ msgstr "Dolů, otevřená malá"
-
-#~ msgid "Left Open Mini"
-#~ msgstr "Doleva, otevřená malá"
-
-#~ msgid "Right Open Mini"
-#~ msgstr "Doprava, otevřená malá"
-
-#~ msgid "Up Open Mini"
-#~ msgstr "Nahoru, otevřená malá"
-
-#~ msgid "Down Open Big"
-#~ msgstr "Dolů, otevřená velká"
-
-#~ msgid "Left Open Big"
-#~ msgstr "Doleva, otevřená velká"
-
-#~ msgid "Right Open Big"
-#~ msgstr "Doprava, otevřená velká"
-
-#~ msgid "Up Open Big"
-#~ msgstr "Nahoru, otevřená velká"
-
-#~ msgid "Down Dir"
-#~ msgstr "Směr dolů"
-
-#~ msgid "Left Dir"
-#~ msgstr "Směr doleva"
-
-#~ msgid "Right Dir"
-#~ msgstr "Směr doprava"
-
-#~ msgid "Up Dir"
-#~ msgstr "Směr nahoru"
-
-#~ msgid "Down Bold"
-#~ msgstr "Dolů tlustá"
-
-#~ msgid "Left Bold"
-#~ msgstr "Doleva tlustá"
-
-#~ msgid "Right Bold"
-#~ msgstr "Doprava tlustá"
-
-#~ msgid "Up Bold"
-#~ msgstr "Nahoru tlustá"
-
-#~ msgid "Down Thin"
-#~ msgstr "Dolů tenká"
-
-#~ msgid "Left Thin"
-#~ msgstr "Doleva tenká"
-
-#~ msgid "Right Thin"
-#~ msgstr "Doprava tenká"
-
-#~ msgid "Up Thin"
-#~ msgstr "Nahoru tenká"
-
-#~ msgid "Ccw"
-#~ msgstr "Ccw"
-
-#~ msgid "Arrows Ccw"
-#~ msgstr "Šipky Ccw"
-
-#~ msgid "Shuffle"
-#~ msgstr "Míchání"
-
-#~ msgid "Switch"
-#~ msgstr "Přepínač"
-
-#~ msgid "Record"
-#~ msgstr "Nahrávka"
-
-#~ msgid "To End"
-#~ msgstr "Nakonec"
-
-#~ msgid "To Start"
-#~ msgstr "Na začátek"
-
-#~ msgid "Progress 0"
-#~ msgstr "Proces 0"
-
-#~ msgid "Progress 1"
-#~ msgstr "Proces 1"
-
-#~ msgid "Progress 2"
-#~ msgstr "Proces 2"
-
-#~ msgid "Progress 3"
-#~ msgstr "Proces 3"
-
-#~ msgid "Palette"
-#~ msgstr "Paleta"
-
-#~ msgid "List Add"
-#~ msgstr "Přidat seznam"
-
-#~ msgid "Trophy"
-#~ msgstr "Trofej"
-
-#~ msgid "Back In Time"
-#~ msgstr "Zpět v čase"
-
-#~ msgid "Monitor"
-#~ msgstr "Monitor"
-
-#~ msgid "Network"
-#~ msgstr "Síť"
-
-#~ msgid "Install"
-#~ msgstr "Instalovat"
-
-#~ msgid "Cloud Thunder"
-#~ msgstr "Bouřkový mrak"
-
-#~ msgid "Flight"
-#~ msgstr "Let"
-
-#~ msgid "Lifebuoy"
-#~ msgstr "Záchranný kruh"
-
-#~ msgid "Mouse"
-#~ msgstr "Myš"
-
-#~ msgid "Dot"
-#~ msgstr "Tečka"
-
-#~ msgid "Dot 2"
-#~ msgstr "Tečka 2"
-
-#~ msgid "Dot 3"
-#~ msgstr "Tečka 3"
-
-#~ msgid "Erase"
-#~ msgstr "Vymazat"
-
-#~ msgid "Tape"
-#~ msgstr "Páska"
-
-#~ msgid "Water"
-#~ msgstr "Voda"
-
-#~ msgid "Droplet"
-#~ msgstr "Kapička"
-
-#~ msgid "Air"
-#~ msgstr "Vzduch"
-
-#~ msgid "Floppy"
-#~ msgstr "Disketový"
-
-#~ msgid "Megaphone"
-#~ msgstr "Megafon"
-
-#~ msgid "Drive"
-#~ msgstr "Pohon"
-
-#~ msgid "Bucket"
-#~ msgstr "Kbelík"
-
-#~ msgid "Flow Cascade"
-#~ msgstr "Kaskádový průtok"
-
-#~ msgid "Flow Branch"
-#~ msgstr "Větvené ústí"
-
-#~ msgid "Flow Tree"
-#~ msgstr "Větvení"
-
-#~ msgid "Flow Line"
-#~ msgstr "Výstup potrubí"
-
-#~ msgid "Gauge"
-#~ msgstr "Měřidlo"
-
-#~ msgid "Traffic Cone"
-#~ msgstr "Dopravní kužel"
-
-#~ msgid "Cc"
-#~ msgstr "Cc"
-
-#~ msgid "Cc By"
-#~ msgstr "Cc By"
-
-#~ msgid "Cc Nc"
-#~ msgstr "Cc Nc"
-
-#~ msgid "Cc Nc Eu"
-#~ msgstr "Cc Nc Eu"
-
-#~ msgid "Cc Nc Jp"
-#~ msgstr "Cc Nc Jp"
-
-#~ msgid "Cc Sa"
-#~ msgstr "Cc Sa"
-
-#~ msgid "Cc Nd"
-#~ msgstr "Cc Nd"
-
-#~ msgid "Cc Pd"
-#~ msgstr "Cc Pd"
-
-#~ msgid "Cc Zero"
-#~ msgstr "Cc Zero"
-
-#~ msgid "Cc Share"
-#~ msgstr "cc Share"
-
-#~ msgid "Cc Remix"
-#~ msgstr "Cc Remix"
-
-#~ msgid "Github"
-#~ msgstr "Github"
-
-#~ msgid "Github Circled"
-#~ msgstr "Github, kulatá"
-
-#~ msgid "Flickr Circled"
-#~ msgstr "Flicker, kulatá"
-
-#~ msgid "Vimeo"
-#~ msgstr "Vimeo"
-
-#~ msgid "Vimeo Circled"
-#~ msgstr "Vimeo, kulatá"
-
-#~ msgid "Twitter Circled"
-#~ msgstr "Twitter, kulatá"
-
-#~ msgid "Facebook Circled"
-#~ msgstr "Facebook, kulatá"
-
-#~ msgid "Facebook Squared"
-#~ msgstr "Facebook, hranatá"
-
-#~ msgid "Gplus"
-#~ msgstr "Google plus"
-
-#~ msgid "Gplus Circled"
-#~ msgstr "Google plus, kulatá"
-
-#~ msgid "Pinterest Circled"
-#~ msgstr "Pinterest, kulatá"
-
-#~ msgid "Tumblr Circled"
-#~ msgstr "Tumblr, kulatá"
-
-#~ msgid "Linkedin"
-#~ msgstr "LinkedIn"
-
-#~ msgid "Linkedin Circled"
-#~ msgstr "LinkedIn, kulatá"
-
-#~ msgid "Dribbble Circled"
-#~ msgstr "Dribble, kulatá"
-
-#~ msgid "Stumbleupon"
-#~ msgstr "Stumbleupon"
-
-#~ msgid "Stumbleupon Circled"
-#~ msgstr "Stumbleupon, kulatá"
-
-#~ msgid "Lastfm"
-#~ msgstr "Lastfm"
-
-#~ msgid "Lastfm Circled"
-#~ msgstr "Lastfm, kulatá"
-
-#~ msgid "Rdio"
-#~ msgstr "Rdio"
-
-#~ msgid "Rdio Circled"
-#~ msgstr "Rdio, kulatá"
-
-#~ msgid "Spotify Circled"
-#~ msgstr "Spotify, kulatá"
-
-#~ msgid "Qq"
-#~ msgstr "Qq"
-
-#~ msgid "Instagrem"
-#~ msgstr "Instagram"
-
-#~ msgid "Evernote"
-#~ msgstr "Evernote"
-
-#~ msgid "Flattr"
-#~ msgstr "Flattr"
-
-#~ msgid "Skype Circled"
-#~ msgstr "Skype, kulatá"
-
-#~ msgid "Sina Weibo"
-#~ msgstr "Sina Weibo"
-
-#~ msgid "Picasa"
-#~ msgstr "Galerie Picasa"
-
-#~ msgid "Soundcloud"
-#~ msgstr "Sít na sdílení zvuků Soundcloud"
-
-#~ msgid "Mixi"
-#~ msgstr "Japonská sociální síť Mixi"
-
-#~ msgid "Google Circles"
-#~ msgstr "Okruhy Google"
-
-#~ msgid "Vkontakte"
-#~ msgstr "Sociální síť Vkontakte"
-
-#~ msgid "Smashing"
-#~ msgstr "Senzační"
-
-#~ msgid "Sweden"
-#~ msgstr "Švédský"
-
-#~ msgid "Db Shape"
-#~ msgstr "Tvar Db"
-
-#~ msgid "Logo Db"
-#~ msgstr "Logo Db"
-
-#~ msgid "Tv"
-#~ msgstr "Televize"
-
-#~ msgid "Bulb"
-#~ msgstr "Žárovka"
-
-#~ msgid "Diamond"
-#~ msgstr "Diamant"
-
-#~ msgid "Stack"
-#~ msgstr "Stoh"
-
-#~ msgid "Like"
-#~ msgstr "Like"
-
-#~ msgid "Photo"
-#~ msgstr "Fotka"
-
-#~ msgid "Paperplane"
-#~ msgstr "Vlaštovka z papíru"
-
-#~ msgid "Params"
-#~ msgstr "Parametry"
-
-#~ msgid "Banknote"
-#~ msgstr "Bankovka"
-
-#~ msgid "Data"
-#~ msgstr "Data"
-
-#~ msgid "Study"
-#~ msgstr "Studium"
-
-#~ msgid "Lab"
-#~ msgstr "Laboratoř"
-
-#~ msgid "Food"
-#~ msgstr "Jídlo"
-
-#~ msgid "T Shirt"
-#~ msgstr "Tričko"
-
-#~ msgid "Clip"
-#~ msgstr "Připnout"
-
-#~ msgid "Shop"
-#~ msgstr "Obchod"
-
-#~ msgid "Vallet"
-#~ msgstr "Peněženka"
-
-#~ msgid "Vynil"
-#~ msgstr "Vynil"
-
-#~ msgid "Truck"
-#~ msgstr "Nákladní auto"
-
-#~ msgid ""
-#~ "Note: Featured image overwrites background image and color from \"Design "
-#~ "options\"."
-#~ msgstr ""
-#~ "Poznámka: Náhledový obrázek přepíše obrázek na pozadi a barvu z \"Design "
-#~ "options\"."
-
-#~ msgid "Grid item"
-#~ msgstr "Položka mřížky"
-
-#~ msgid "1:1"
-#~ msgstr "1:1"
-
-#~ msgid "4:3"
-#~ msgstr "4:3"
-
-#~ msgid "3:4"
-#~ msgstr "3:4"
-
-#~ msgid "16:9"
-#~ msgstr "16:9"
-
-#~ msgid "9:16"
-#~ msgstr "9:16"
-
-#~ msgid "Post data"
-#~ msgstr "Data příspěvku"
-
-#~ msgid "Post data source"
-#~ msgstr "Zdroj dat příspěvku"
-
-#~ msgid "Custom field name to retrieve meta data value."
-#~ msgstr "Vlastní název pole k získání metadat."
-
-#~ msgid "Add Grid Element"
-#~ msgstr "Přidat mřížkové rozložení"
-
-#~ msgid "Grid Elements"
-#~ msgstr "Mřížky"
-
-#~ msgid "Edit Grid Element"
-#~ msgstr "Upravit mřížkové prvky"
-
-#~ msgid "View Grid Element"
-#~ msgstr "Zobrazit mřížkové prvky"
-
-#~ msgid "Search Grid Elements"
-#~ msgstr "Prohledávat mřížkové prvky"
-
-#~ msgid "No grid elements found"
-#~ msgstr "Žádné mřížkové prvky nebyly nalezeny"
-
-#~ msgid "No grid elements found in Trash"
-#~ msgstr "Žádné mřížkové prvky nebyly v koši nalezeny"
-
-#~ msgid "Grid Element Builder"
-#~ msgstr "Tvůrce mřížkových prvků"
-
-#~ msgid "/12 width"
-#~ msgstr "Šířka /12"
-
-#~ msgid "1/1"
-#~ msgstr "1/1"
-
-#~ msgid "1/2 + 1/2"
-#~ msgstr "1/2 + 1/2"
-
-#~ msgid "1/3 + 1/3 + 1/3"
-#~ msgstr "1/3 + 1/3 + 1/3"
-
-#~ msgid ""
-#~ "Here you can customize teaser block design. It will be used instead of "
-#~ "default settings in \"Posts Grid\" or \"Carousel\" content elements."
-#~ msgstr ""
-#~ "Zde můžete nastavit design ukázky. Bude to použito namísto výchozího "
-#~ "nastavení v \"Posts Grid\" or \"Carousel\" content elements"
-
-#~ msgid ""
-#~ "Field type is changed from `textarea_html` to `textarea`, because it is "
-#~ "already used by `"
-#~ msgstr ""
-#~ "Typ pole byl změněn z `textarea_html` na `textarea`, protože už byl "
-#~ "použit  `"
-
-#~ msgid "Hide"
-#~ msgstr "Skrýt"
-
-#~ msgid "Welcome to Blank Page, You Have No Content Yet!"
-#~ msgstr "Vítejte na prázdné stránce. Zatím zde není nic! :)"
-
-#~ msgid " Add Some Content or Use Predefined Layouts..."
-#~ msgstr "Přidejte nějaký obsah nebo použijte předdefinované rozvržení..."
-
-#~ msgid "Choose Your Layout"
-#~ msgstr "Zvolte vaše rozložení"
-
-#~ msgid "More Layouts"
-#~ msgstr "Více rozložení"
-
-#~ msgid "Choose row layout from predefined options."
-#~ msgstr "Zvolte rozložení řádku z předdefinovaných možností."
-
-#~ msgid "Here you can change title of the current "
-#~ msgstr "Zde můžete změnit titulek aktuální"
-
-#~ msgid ""
-#~ "Enter custom CSS code here. Your custom CSS will be outputted only on "
-#~ "this particular page."
-#~ msgstr ""
-#~ "Sem vložte vlastní CSS kód. Váš CSS kód bude vypsán pouze na této stránce."
-
-#~ msgid "Save template"
-#~ msgstr "Uložit šablonu"
-
-#~ msgid "Save your layout and reuse it on different sections of your website"
-#~ msgstr "Uložit rozložení a znovu použít v jiné sekci webu"
-
-#~ msgid "Click to toggle"
-#~ msgstr "Kliknutím přepnout"
-
-#~ msgid "Follow us on twitter"
-#~ msgstr "Následujte nás na Twitteru"
-
-#~ msgid "Paginator"
-#~ msgstr "Stránkovač"
+#: include/./templates/teaser.html.php:20
+#: include/./templates/teaser.html.php:41
+msgid "Link to"
+msgstr "Odkaz na"
+
+#: include/./templates/teaser.html.php:24
+#: include/./templates/teaser.html.php:45
+msgid "On post"
+msgstr "V příspěvku"
+
+#: include/./templates/teaser.html.php:26
+#: include/./templates/teaser.html.php:47
+msgid "Big image"
+msgstr "Velký obrázek"
+
+#: include/./templates/teaser.html.php:35
+msgid "Featured"
+msgstr "Zvýrazněné"

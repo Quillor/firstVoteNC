@@ -129,7 +129,8 @@ if ( true ) {
 
     $i++;
   }
-
+	
+	/*
   // Sort array into order we need for ballot
   $ballot_order = [
     [
@@ -138,41 +139,20 @@ if ( true ) {
         [
           'type' => 'single',
           'match' => true,
-          'xml_title' => 'City Council',
-          'ballot_title' => 'Enable Voting',
+          'xml_title' => 'Custom Ballot',
+          'ballot_title' => 'Custom Ballot',
           'partisan' => 'false'
         ]
       ]
     ],[
       'section' => 'Nonpartisan Offices',
       'races' => [
-	 [
+		[
           'type' => 'multiple',
           'match' => false,
           'xml_title' => 'Mayor',
 		  'ballot_title' => 'District Mayor',
           'partisan' => 'false'
-        ],[
-          'type' => 'multiple',
-          'match' => false,
-          'xml_title' => 'City Council',
-		  'ballot_title' => 'District City Council',
-		  'votesAllowed' => '1',
-          'partisan' => 'false'
-        ],[
-          'type' => 'multiple',
-          'match' => false,
-          'xml_title' => 'District',
-		  'ballot_title' => 'District',
-		  'votesAllowed' => '1',
-          'partisan' => 'false'
-        ],[
-          'type' => 'division',
-          'match' => false,
-          'ocd' => 'ocd-division/country:us/state:nc',
-          'partisan' => 'false',
-		  'votesAllowed' => '1',
-          'order' => 'alpha'
         ],[
           'type' => 'division',
           'match' => false,
@@ -191,7 +171,93 @@ if ( true ) {
       ]
     ]
   ];
+*/
 
+  // Sort array into order we need for ballot
+  $ballot_order = [
+    [
+      'section' => 'Partisan Offices',
+      'races' => [
+	   [
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'U.S. Senator',
+          'ballot_title' => 'US Senate',
+          'partisan' => 'true'
+        ],[
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'U.S. Representative',
+          'ballot_title' => 'US House of Representatives',
+          'partisan' => 'true'
+        ],[
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'NC Governor',
+          'ballot_title' => 'NC Governor',
+          'partisan' => 'true'
+        ],[
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'NC Lt. Governor',
+          'ballot_title' => 'NC Lieutenant Governor',
+          'partisan' => 'true'
+        ],[
+          'type' => 'division',
+          'match' => true,
+          'ocd' => 'ocd-division/country:us/state:nc',
+          'partisan' => 'true',
+          'order' => 'alpha'
+        ],[
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'NC State Senator',
+          'ballot_title' => 'NC State Senate',
+          'partisan' => 'true'
+        ],[
+          'type' => 'single',
+          'match' => true,
+          'xml_title' => 'NC State Representative',
+          'ballot_title' => 'NC House of Representatives',
+          'partisan' => 'true'
+        ],[
+          'type' => 'division',
+          'match' => false,
+          'ocd' => 'ocd-division/country:us/state:nc/county',
+          'partisan' => 'true',
+          'order' => 'alpha'
+        ],[
+          'type' => 'division',
+          'match' => false,
+          'ocd' => 'ocd-division/country:us/state:nc/place',
+          'partisan' => 'true',
+          'order' => 'alpha'
+        ]
+      ]
+    ],[
+      'section' => 'Nonpartisan Offices',
+      'races' => [
+        [
+          'type' => 'multiple',
+          'match' => false,
+          'xml_title' => 'NC Supreme Court',
+          'partisan' => 'false'
+        ],[
+          'type' => 'multiple',
+          'match' => false,
+          'xml_title' => 'NC Court of Appeals',
+          'partisan' => 'false'
+        ],[
+          'type' => 'multiple',
+          'match' => false,
+          'xml_title' => 'District Court Judge',
+          'partisan' => 'false'
+        ]
+      ]
+    ]
+  ];
+  
+   
   // Create ballot
   $j = 0;
   $k = 0;
@@ -299,6 +365,7 @@ if ( true ) {
   }
 
   $ballot_json = json_encode($ballot);
+  
 
   set_transient('ballot_' . $election_id, $ballot_json, 7 * DAY_IN_SECONDS);
 }

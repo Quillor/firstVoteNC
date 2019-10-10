@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $content - shortcode content
  * @var $el_class
  * @var $el_id
- * @var $this WPBakeryShortCode_VC_Tta_Accordion|WPBakeryShortCode_VC_Tta_Tabs|WPBakeryShortCode_VC_Tta_Tour|WPBakeryShortCode_VC_Tta_Pageable
+ * @var WPBakeryShortCode_Vc_Tta_Accordion|WPBakeryShortCode_Vc_Tta_Tabs|WPBakeryShortCode_Vc_Tta_Tour|WPBakeryShortCode_Vc_Tta_Pageable $this
  */
 $el_class = $css = $css_animation = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
@@ -25,7 +25,7 @@ $this->enqueueTtaScript();
 $prepareContent = $this->getTemplateVariable( 'content' );
 
 $class_to_filter = $this->getTtaGeneralClasses();
-$class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class ) . $this->getCSSAnimation( $css_animation );
+$class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getCSSAnimation( $css_animation );
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 
 $output = '<div ' . $this->getWrapperAttributes() . '>';
@@ -45,4 +45,4 @@ $output .= $this->getTemplateVariable( 'tabs-list-right' );
 $output .= '</div>';
 $output .= '</div>';
 
-echo $output;
+return $output;

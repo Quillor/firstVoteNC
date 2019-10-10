@@ -6,12 +6,12 @@ Author URI:		http://plugins.plainview.se
 Description:	Monitors activity on a site or blog.
 Plugin Name:	Plainview Activity Monitor
 Plugin URI:		https://wordpress.org/plugins/plainview-activity-monitor/
-Version:		20161228
+Version:		20180826
 */
 
 require_once( 'vendor/autoload.php' );
 
-define( 'PLAINVIEW_ACTIVITY_MONITOR_VERSION', 20161228 );
+define( 'PLAINVIEW_ACTIVITY_MONITOR_VERSION', 20180826 );
 
 function Plainview_Activity_Monitor()
 {

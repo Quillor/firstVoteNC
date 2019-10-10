@@ -8,59 +8,54 @@ use \calderawp\calderaforms\pro\admin\menu;
  * @since 0.0.1
  */
 add_action( 'caldera_forms_includes_complete', function(){
+	$db_ver_option = 'cf_pro_db_v';
 	//add database table if needed
-	if( 1 > get_option( 'cf_pro_db_v', 0 ) ){
+	if( 1 > get_option( $db_ver_option, 0 ) ){
 		caldera_forms_pro_drop_tables();
 		caldera_forms_pro_db_delta_1();
-		update_option( 'cf_pro_db_v', 1 );
+		//set to 2 to skip autoload disable on new installs
+		update_option( $db_ver_option, 2 );
+	}
+
+	if( 2 > get_option( $db_ver_option, 0 ) ){
+		caldera_forms_pro_db_delta_2();
+		update_option( $db_ver_option, 2 );
+	}
+
+	include_once __DIR__ .'/vendor/autoload.php';
+
+	//add menu page
+	if ( is_admin() ) {
+		$slug       = 'cf-pro';
+		$assets_url = plugin_dir_url( __FILE__  ) . 'dist/';
+		$view_dir =  __DIR__ . '/dist';
+		$scripts = new scripts( $assets_url, $slug, CF_PRO_VER );
+		if( Caldera_Forms_Admin::is_edit() ){
+			add_action( 'admin_init', function() use ( $scripts, $view_dir ){
+				$tab = new \calderawp\calderaforms\pro\admin\tab( __DIR__ . '/build/tab.php' );
+				add_action( 'caldera_forms_get_panel_extensions', [ $tab, 'add_tab' ] );
+				container::get_instance()->set_tab_html( $scripts->webpack( $view_dir, 'tab', false ) );
+
+			} );
+
+		}
+
+		$menu = new menu( $view_dir, $slug, $scripts);
+		add_action( 'admin_menu', [ $menu, 'display' ] );
 	}
 
 	//add hooks
 	container::get_instance()->get_hooks()->add_hooks();
 
-	//add menu page
-	if ( is_admin() ) {
-		$slug       = 'cf-pro';
-		$assets_url = plugin_dir_url( __FILE__  ) . 'assets/';
-		$assets_dir = dirname( __FILE__ )  . '/assets/';
-		$scripts = new scripts( $assets_url, $slug, CF_PRO_VER );
-		add_action( 'admin_enqueue_scripts', [ $scripts, 'register_assets' ] );
-		$menu = new menu( $assets_dir . 'templates', $slug, $scripts);
-		add_action( 'admin_menu', [ $menu, 'display' ] );
-	}
+	/**
+	 * Runs after Caldera Forms Pro is loaded
+	 *
+	 * @since 0.5.0
+	 */
+	do_action( 'caldera_forms_pro_loaded' );
+
 });
 
-/**
- * PSR-4 Autoloader for Caldera Forms Pro
- */
-spl_autoload_register(function ($class) {
-
-	// project-specific namespace prefix
-	$prefix = 'calderawp\\calderaforms\\pro';
-
-	// base directory for the namespace prefix
-	$base_dir = __DIR__ . '/classes/';
-
-	// does the class use the namespace prefix?
-	$len = strlen($prefix);
-	if (strncmp($prefix, $class, $len) !== 0) {
-		// no, move to the next registered autoloader
-		return;
-	}
-
-	// get the relative class name
-	$relative_class = substr($class, $len);
-
-	// replace the namespace prefix with the base directory, replace namespace
-	// separators with directory separators in the relative class name, append
-	// with .php
-	$file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
-
-	// if the file exists, require it
-	if (file_exists($file)) {
-		require $file;
-	}
-});
 
 /**
  * Delete CF Pro DB Table
@@ -104,8 +99,34 @@ function caldera_forms_pro_db_delta_1(){
 
 }
 
+
+/**
+ * Rewrite the options to not autoload
+ *
+ * @since 0.8.1
+ */
+function caldera_forms_pro_db_delta_2(){
+
+	$forms = Caldera_Forms_Forms::get_forms(false);
+	if( ! empty( $forms ) ){
+		array_walk( $forms, function( $id ){
+			return '_cf_pro_' . caldera_forms_very_safe_string( $id );
+		});
+		//set options storage to be not autoloaded
+		$where = '`option_name` = "' . implode( '" OR `option_name` = "', array_keys( $forms ) ) . '"';
+
+		global $wpdb;
+		$sql = sprintf( "UPDATE `%s` SET `autoload`='no' WHERE %s", $wpdb->options, $where );
+		$wpdb->get_results( $sql  );
+
+	}
+
+}
+
 /**
  * Get the URL for the Caldera Forms Pro App
+ *
+ * @since 0.0.1
  *
  * @return string
  */
@@ -130,6 +151,30 @@ function caldera_forms_pro_app_url(){
 	 */
 	return untrailingslashit( apply_filters( 'caldera_forms_pro_app_url', CF_PRO_APP_URL ) );
 }
+
+
+/**
+ * Get the URL for the Caldera Forms Pro log app
+ *
+ * @since 0.8.0
+ *
+ * @return string
+ */
+function caldera_forms_pro_log_url(){
+
+	/**
+	 * Filter URL for Caldera Forms Pro log app
+	 *
+	 * Useful for local dev or running your own instance of app
+	 *
+	 * @since 0.8.0
+	 *
+	 * @param string $url The root URL for app
+	 */
+	return untrailingslashit( apply_filters( 'caldera_forms_pro_log_url', 'https://logger.calderaformspro.com' ) );
+
+}
+
 
 
 /**
@@ -191,6 +236,17 @@ if( ! function_exists( 'caldera_forms_safe_explode' ) ){
  * @since 0.2.0
  */
 add_action( 'init', function(){
+	/**
+	 * Disable updater
+	 *
+	 * @since 0.4.0
+	 *
+	 * @param bool $disable Use __return_true to disable updates via Github
+	 */
+	if( apply_filters( 'caldera_forms_pro_disable_updater', false ) ){
+		return;
+	}
+
 	if ( is_admin() ) {
 		include_once  __DIR__ . '/updater.php';
 
@@ -205,14 +261,41 @@ add_action( 'init', function(){
 			'zip_url'            => 'https://github.com/CalderaWP/caldera-forms-pro/archive/master.zip',
 			'sslverify'          => true,
 			'requires'           => '4.7',
-			'tested'             => '4.8',
+			'tested'             => '4.9.1',
 			'readme'             => 'README.md',
-			'version'            => '0.0.1'
+			'version'            => CF_PRO_VER
 		);
 		new WP_GitHub_Updater($config);
 	}
 });
 
+/**
+ * Compare public key and token to saved keys
+ *
+ * @since 0.9.0
+ *
+ * @param string $public Public key to check
+ * @param string $token Token to check
+ *
+ * @return bool
+ */
+function caldera_forms_pro_compare_to_saved_keys( $public, $token ){
+	$settings = container::get_instance()->get_settings();
+	return hash_equals( $public, $settings->get_api_keys()->get_public() ) && hash_equals( $settings->get_api_keys()->get_token(), $token );
+}
+
+/**
+ * Create the URL for file request endpoints
+ *
+ * @since 0.9.0
+ *
+ * @param string $path File path
+ *
+ * @return string
+ */
+function caldera_forms_pro_file_request_url( $path ){
+	return add_query_arg( 'file', urlencode( $path ), Caldera_Forms_API_Util::url( 'pro/file' ) );
+}
 
 /**
  * Shim for boolval in PHP v5.5
@@ -227,4 +310,40 @@ if ( ! function_exists( 'boolval' ) ) {
 
 }
 
+/**
+ * Activation hook callback
+ *
+ * @since 0.11.0
+ */
+function caldera_forms_pro_activation_hook_callback(){
+	//make sure we have autoloader
+	include_once __DIR__ .'/vendor/autoload.php';
+
+	//delete old message tracking transient keys -- should only be one
+	$past_versions = get_option(  'cf_pro_past_versions', [] );
+	if( ! empty( $past_versions ) ){
+		foreach ( $past_versions as $i => $version ){
+			Caldera_Forms_Transient::delete_transient( caldera_forms_pro_log_tracker_key( $version ) );
+			unset( $past_versions[$i] );
+		}
+
+	}
+	$past_versions[] = CF_PRO_VER;
+
+	update_option( 'cf_pro_past_versions', $past_versions, 'no'  );
+
+}
+
+/**
+ * Get the name of the CF transient (not actual transient) used to track repeat log messages
+ *
+ * @since 0.11.0
+ *
+ * @param string $version Version number
+ *
+ * @return string
+ */
+function caldera_forms_pro_log_tracker_key( $version ){
+	return md5( __FUNCTION__ . $version );
+}
 

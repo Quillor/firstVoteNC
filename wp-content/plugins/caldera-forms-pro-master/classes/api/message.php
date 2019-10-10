@@ -2,6 +2,7 @@
 
 
 namespace calderawp\calderaforms\pro\api;
+use calderawp\calderaforms\pro\attachments\attachments;
 use calderawp\calderaforms\pro\container;
 use calderawp\calderaforms\pro\exceptions\Exception;
 use calderawp\calderaforms\pro\repository;
@@ -43,7 +44,9 @@ class message extends repository {
 		'content',
 		'subject',
 		'entry_data',
-		'entry_id'
+		'entry_id',
+		'files',
+		'attachments'
 	];
 
 	/**
@@ -56,6 +59,7 @@ class message extends repository {
 	 */
 	public function __set( $name, $value )
 	{
+
 		if( $this->allowed_key( $name )){
 			$this->set( $name, $value );
 		}
@@ -97,6 +101,11 @@ class message extends repository {
 				throw new Exception( 'Must use add_recpient for to/reply/cc/bcc');
 
  			}
+
+ 			if( in_array( $key, [ 'attachments' ] ) ){
+			    throw new Exception( 'Must use add__attachment for attachments');
+		    }
+
 			$this->items[ $key ] = $value;
 		}
 
@@ -181,12 +190,37 @@ class message extends repository {
 		$data = $e->get_entry()->to_array( false );
 		$data[ 'fields' ] = [];
 
-		/** @var \Caldera_Forms_Entry_Field $field */
-		foreach ( $e->get_fields() as $field ){
-			$data[ 'fields' ][ $field->field_id ] = $field->to_array( false );
+		$fields = $e->get_fields();
+		if( ! empty( $fields ) ){
+			/** @var \Caldera_Forms_Entry_Field $field */
+			foreach ( $fields as $field ){
+				$data[ 'fields' ][ $field->field_id ] = $field->to_array( false );
+			}
 		}
 
+
 		$this->items[ 'entry_data' ] = $data;
+
+	}
+
+	/**
+	 * Add an attachment
+	 *
+	 * @since 0.9.0
+	 *
+	 * @param $path
+	 *
+	 * @return message;
+	 */
+	public function add_attachment( $path )
+	{
+		if( ! file_exists( $path ) ){
+
+		}else{
+			$this->items[ 'attachments' ][] = esc_url_raw( caldera_forms_pro_file_request_url( $path ) );
+		}
+
+		return $this;
 
 	}
 

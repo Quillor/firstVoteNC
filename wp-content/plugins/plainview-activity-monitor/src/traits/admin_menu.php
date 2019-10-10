@@ -38,13 +38,6 @@ trait admin_menu
 			->menu_slug( 'plainview_activity_monitor' )
 			->page_title( $this->_( 'Activity monitor' ) );
 
-		if ( ! defined( 'PLAINVIEW_ACTIVITY_MONITOR_PLUGIN_PACK_VERSION' ) )
-			$menu_page
-			->submenu( 'activity_monitor_premium_pack' )
-			->callback_this( 'admin_menu_premium_pack_info' )
-			->menu_title( $this->_( 'Premium Pack' ) )
-			->page_title( $this->_( 'Activity Monitor Premium Pack Information' ) );
-
 		$action = new \plainview\wordpress\activity_monitor\actions\admin_menu;
 		$action->menu_page = $menu_page;
 		$action->execute();
@@ -208,7 +201,7 @@ trait admin_menu
 		$form = $this->form2();
 		$form->css_class( 'plainview_form_auto_tabs' );
 
-		$r = $this->p_( 'This tool can be used to mass delete activites from the database. Use the filters to select the activities to be deleted.' );
+		$r = $this->p_( 'This tool can be used to mass delete activites from the database. Use the filters to select the activities to be deleted. Use the "show" boxes to select activities to delete.' );
 		$filters_settings = new filters_settings();
 		$show_filter_options = new actions\add_filter_settings();
 		$show_filter_options->filters_settings = $filters_settings;
@@ -241,7 +234,11 @@ trait admin_menu
 				$list_activities->filters_settings = $filters_settings;
 				$list_activities->execute();
 
-				if ( count( $list_activities->result ) < 1 )
+				$count = count( $list_activities->result );
+
+				$this->debug( '%d activities to delete.', $count );
+
+				if ( $count < 1 )
 					break;
 
 				$remove_activities = new actions\remove_activities();
@@ -363,16 +360,6 @@ trait admin_menu
 		$r .= $form->display_form_table();
 		$r .= $form->close_tag();
 
-		echo $r;
-	}
-
-	/**
-		@brief		Display info about the plugin pack.
-		@since		2016-02-03 22:05:53
-	**/
-	public function admin_menu_premium_pack_info()
-	{
-		$r = file_get_contents( __DIR__ . '../../../html/plugin_pack_info.html' );
 		echo $r;
 	}
 

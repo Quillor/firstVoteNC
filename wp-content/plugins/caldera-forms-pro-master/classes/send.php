@@ -28,6 +28,8 @@ class send {
 	 * @return \calderawp\calderaforms\pro\message|array
 	 */
 	public static function main_mailer( $mail, $entry_id, $form_id, $send = true ){
+
+
 		$form_settings = container::get_instance()->get_settings()->get_form( $form_id );
 		if ( ! $form_settings ) {
 			return $mail;
@@ -67,10 +69,20 @@ class send {
 			}
 		}
 
+		if( $form_settings->should_attatch_pdf() ){
+			$message->pdf = true;
+		}
+
+		if( isset( $mail[ 'attachments' ] ) && ! empty( $mail[ 'attachments'])){
+			foreach ( $mail[ 'attachments'] as $attachment ) {
+				$message = $message->add_attachment( $attachment );
+			}
+		}
 		$message->entry_id = $entry_id;
 		$message->add_entry_data( $entry_id, \Caldera_Forms_Forms::get_form( $form_id ) );
 
 		$response = self::send_via_api( $message, $entry_id, $send );
+
 		return $response;
 
 	}
@@ -106,13 +118,13 @@ class send {
 	 *
 	 * @param api\message $message Message object
 	 * @param int $entry_id Entry ID for message
-	 * @param bool $send If ture app will store and send. If false, only store.
+	 * @param bool $send If true app will store and send. If false, only store.
 	 * @param string $type Optional. The message type. Default is "main" Options: main|auto
 	 *
 	 * @return message|null|\WP_Error
 	 */
 	public static function send_via_api( \calderawp\calderaforms\pro\api\message $message, $entry_id, $send,  $type = 'main' ){
-		$client   = new client( container::get_instance()->get_settings()->get_api_keys() );
+		$client   = container::get_instance()->get_api_client();
 		$response = $client->create_message( $message, $send, $entry_id, $type );
 
 		return $response;

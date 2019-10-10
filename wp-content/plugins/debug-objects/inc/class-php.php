@@ -6,7 +6,7 @@
  * @subpackage  Debug_Objects_Php
  * @author      Frank Bültge <frank@bueltge.de>
  * @license     http://opensource.org/licenses/gpl-license.php GNU Public License
- * @since       Version 2.0.0
+ * @since       Version 2.0.1-dev
  *
  * Php Version 5.3
  */
@@ -19,7 +19,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 /**
  * Class Debug_Objects_Php
  */
-class Debug_Objects_Php {
+class Debug_Objects_Php extends Debug_Objects {
 
 	/**
 	 * @var
@@ -66,12 +66,12 @@ class Debug_Objects_Php {
 
 	/**
 	 * Constructor
-	 *
-	 * @return \Debug_Objects_Php
 	 */
 	public function __construct() {
 
-		if ( ! current_user_can( '_debug_objects' ) ) {
+		parent::__construct();
+
+		if ( ! $this->get_capability() ) {
 			return;
 		}
 
@@ -247,7 +247,7 @@ class Debug_Objects_Php {
 	 *
 	 * @return Array $classes
 	 */
-	public function get_css_classes( $classes = '' ) {
+	public function get_css_classes( $classes = array() ) {
 
 		if ( count( $this->warnings ) ) {
 			$classes[ ] = ' debug_objects_php_warning';

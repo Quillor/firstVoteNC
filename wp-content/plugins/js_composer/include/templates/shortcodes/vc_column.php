@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $content - shortcode content
  * @var $css_animation
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Column
+ * @var WPBakeryShortCode_Vc_Column $this
  */
 $el_class = $el_id = $width = $parallax_speed_bg = $parallax_speed_video = $parallax = $parallax_image = $video_bg = $video_bg_url = $video_bg_parallax = $css = $offset = $css_animation = '';
 $output = '';
@@ -34,9 +34,9 @@ $css_classes = array(
 );
 
 if ( vc_shortcode_custom_css_has_property( $css, array(
-		'border',
-		'background',
-	) ) || $video_bg || $parallax
+	'border',
+	'background',
+) ) || $video_bg || $parallax
 ) {
 	$css_classes[] = 'vc_col-has-fill';
 }
@@ -88,11 +88,12 @@ if ( ! empty( $el_id ) ) {
 	$wrapper_attributes[] = 'id="' . esc_attr( $el_id ) . '"';
 }
 $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
-$output .= '<div class="vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) ) . '">';
+$innerColumnClass = 'vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) );
+$output .= '<div class="' . trim( $innerColumnClass ) . '">';
 $output .= '<div class="wpb_wrapper">';
 $output .= wpb_js_remove_wpautop( $content );
 $output .= '</div>';
 $output .= '</div>';
 $output .= '</div>';
 
-echo $output;
+return $output;

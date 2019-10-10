@@ -166,6 +166,7 @@ implements
 	public function flush()
 	{
 		$this->items = [];
+		return $this;
 	}
 
 	/**
@@ -177,6 +178,7 @@ implements
 	public function forget( $key )
 	{
 		unset( $this->items[ $key ] );
+		return $this;
 	}
 
 	/**
@@ -238,6 +240,15 @@ implements
 		if ( is_null( $glue ) ) return implode( $this->lists( $value ) );
 
 		return implode( $glue, $this->lists( $value ) );
+	}
+
+	/**
+		@brief		Import this array.
+		@since		2018-07-08 09:49:39
+	**/
+	public function import_array( $array )
+	{
+		$this->items = $array;
 	}
 
 	public function insert_after( $key, $item )
@@ -437,6 +448,7 @@ implements
 			$this->items[] = $value;
 		else
 			$this->items[ $key ] = $value;
+		return $this;
 	}
 
 	/**
@@ -469,6 +481,7 @@ implements
 	public function push( $value )
 	{
 		array_unshift( $this->items, $value );
+		return $this;
 	}
 
 	/**
@@ -602,7 +615,15 @@ implements
 	 */
 	public function toArray()
 	{
-		return $this->items;
+		$items = $this->items;
+		foreach( $items as $index => $item )
+		{
+			if ( ! is_object( $item ) )
+				continue;
+			if ( get_class( $item ) == get_class( $this ) )
+				$items[ $index ] = $item->to_array();
+		}
+		return $items;
 	}
 
 	/**
