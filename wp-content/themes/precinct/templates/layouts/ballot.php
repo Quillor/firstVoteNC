@@ -11,13 +11,13 @@ $precinct_id = substr( strrchr( get_bloginfo('url'), '/nc-' ), 4 );
 // Dates when polls are open
 $early_voting = new DateTime();
 $early_voting->setTimestamp(strtotime(get_post_meta(get_the_id(), '_cmb_early_voting', true)));
-$early_voting->setTime(07, 30, 00);
+$early_voting->setTime(07, 00, 00);
 
 $voting_start = $early_voting->getTimestamp();
 
 $election_day = new DateTime();
 $election_day->setTimestamp(strtotime(get_post_meta(get_the_id(), '_cmb_voting_day', true)));
-$election_day->setTime(24, 30, 00);
+$election_day->setTime(21, 00, 00);
 
 $voting_end = $election_day->getTimestamp();
 
@@ -33,14 +33,16 @@ $now = current_time('timestamp');
 $today = new DateTime();
 $today->setTimestamp($now);
 $today->setTimeZone(new DateTimeZone('America/New_York'));
- 
+
 // // Check if today is during voting period
 if ($voting_start <= $now && $now <= $voting_end) {
   // Is it between 7:30am and 7:30pm?
   $open = clone $today;
-  $open->setTime(07, 30, 00);
+  $open->setTime(07, 00, 00);
   $close = clone $today;
-  $close->setTime(24, 30, 00);
+  $close->setTime(21, 00, 00);
+  
+  echo 'in';
 
   if ($open->getTimestamp() <= $now && $now <= $close->getTimestamp()) {
     $canvote = true;
@@ -48,8 +50,9 @@ if ($voting_start <= $now && $now <= $voting_end) {
     $canvote = true;
   }
 } else {
-  $canvote = true;
+  $canvote = false;
 }
+
 
 // CLOSE POLLS
 //$canvote = false;
@@ -128,7 +131,7 @@ if ($voting_start <= $now && $now <= $voting_end) {
   }
 
   // Display metabox on page (changing save button text)
-  $output .= cmb2_get_metabox_form( $ballot, 'fake-oject-id', array( 'save_button' => 'Cast Ballot' ) );
+  $output .= cmb2_get_metabox_form( $ballot, 'fake-oject-id', array( 'save_button' => 'Continue' ) );
 
   echo $output;
   ?>

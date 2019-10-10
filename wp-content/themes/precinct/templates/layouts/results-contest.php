@@ -46,9 +46,16 @@ $election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);
 
 //$contests = json_decode(get_option('precinct_contests'), true);
-  $pattern = '/\\\\("[^"]+")/'; 
+ /* $pattern = '/\\\\("[^"]+")/'; 
   $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
   $array_cont = preg_replace($pattern, '' ,$contests1);
+  $contests = json_decode( $array_cont, true );*/
+$pattern = '/\\\\("[^"]+")/'; 
+  $contests1 = html_entity_decode($votes_contest[0]->post_excerpt);  
+  $contests2 = str_replace(['"Bob"', '"Buck"',  '"Tank"', ' "Toby" ', '"Rick"', '"Bill"', '"Buddy"', '"Randy"', '"Pat"', '"Al"', '"Phil"', '"Kathy"', '"Kirk"', '"Tony"'],
+  [ '\"Bob\"', '\"Buck\"',  '\"Tank\"', ' \"Toby\" ',  '\"Rick\"','\"Bill\"','\"Buddy\"', '\"Randy\"', '\"Pat\"', '\"Al\"', '\"Phil\"', '\"Kathy\"', '\"Kirk\"', '\"Tony\"'] , $contests1);
+ 
+  $array_cont = preg_replace($pattern, '' ,$contests2);
   $contests = json_decode( $array_cont, true );
 
 $match = Extras\array_find_deep($contests, $race);

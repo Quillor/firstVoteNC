@@ -41,26 +41,26 @@ trait debug
 		$instance = self::instance();
 
 		$fs = $form->fieldset( 'fs_debug' );
-		$fs->legend->label_( 'Debugging' );
+		$fs->legend->label( 'Debugging' );
 
 		// You are currently NOT in debug mode.
 		$not = $this->_( 'not' );
 
 		$fs->markup( 'debug_info' )
-			->p_( "According to the settings below, you are currently%s in debug mode. Don't forget to reload this page after saving the settings.", $this->debugging() ? '' : " <strong>$not</strong>" );
+			->p( "According to the settings below, you are currently%s in debug mode. Don't forget to reload this page after saving the settings.", $this->debugging() ? '' : " <strong>$not</strong>" );
 
 		$debug = $fs->checkbox( 'debug' )
-			->description_( 'Show debugging information in various places.' )
-			->label_( 'Enable debugging' )
+			->description( 'Show debugging information in various places.' )
+			->label( 'Enable debugging' )
 			->checked( $instance->get_site_option( 'debug', false ) );
 
 		$fs->checkbox( 'debug_to_browser' )
-			->description_( 'Show the debugging information in the browser.' )
-			->label_( 'Show debug in the browser' )
+			->description( 'Show the debugging information in the browser.' )
+			->label( 'Show debug in the browser' )
 			->checked( $instance->get_site_option( 'debug_to_browser', false ) );
 
 		$debug_to_file = $fs->checkbox( 'debug_to_file' )
-			->label_( 'Save debug to file' )
+			->label( 'Save debug to file' )
 			->checked( $instance->get_site_option( 'debug_to_file', false ) );
 
 		// We need to set the description unescaped due to the link.
@@ -76,13 +76,13 @@ trait debug
 			->content = $description;
 
 		$fs->checkbox( 'delete_debug_file' )
-			->description_( 'Delete the contents of the debug file now after saving the settings.' )
-			->label_( 'Delete debug file' )
+			->description( 'Delete the contents of the debug file now after saving the settings.' )
+			->label( 'Delete debug file' )
 			->checked( false );
 
 		$fs->textarea( 'debug_ips' )
-			->description_( 'Only show debugging info to specific IP addresses. Use spaces between IPs. You can also specify part of an IP address. Your address is %s', $_SERVER[ 'REMOTE_ADDR' ] )
-			->label_( 'Debug IPs' )
+			->description( 'Only show debugging info to specific IP addresses. Use spaces between IPs. You can also specify part of an IP address. Your address is %s', $_SERVER[ 'REMOTE_ADDR' ] )
+			->label( 'Debug IPs' )
 			->rows( 5, 16 )
 			->trim()
 			->value( $instance->get_site_option( 'debug_ips', '' ) );
@@ -109,7 +109,7 @@ trait debug
 		}
 
 		// Put all of the arguments into one string.
-		$text = call_user_func_array( 'sprintf', $args );
+		$text = @ call_user_func_array( 'sprintf', $args );
 		if ( $text == '' )
 			$text = $string;
 
@@ -118,8 +118,25 @@ trait debug
 		// But without the namespace
 		$class_name = preg_replace( '/.*\\\/', '', $class_name );
 
-		// Date class: string
-		$text = sprintf( '%s.%s <em>%s</em>: %s<br/>', $this->now(), microtime( true ), $class_name, $text, "\n" );
+		$microtime = substr( microtime( true ), 11 );
+		if ( strlen( $microtime ) < 4 )
+			$microtime = '0' . $microtime;
+
+		// Assemble the debug text.
+		$data = [
+			'timestamp' => date( 'Y-m-d H:i:s' ) . '.' . $microtime,
+			'class_name' => $this->get_debug_class_name( $class_name ),
+			'text' => $text . "<br/>\n",
+		];
+		$data = (object) $data;
+		// Allow other classes to modify the text. Or decide not to log it at all.
+		$filter = $class_name . '_debug_text';
+		$data = apply_filters( $filter, $data );
+		// Empty text = do not log.
+		if ( $data->text == '' )
+			return;
+
+		$text = sprintf( "%s %s: %s", $data->timestamp, $data->class_name, $data->text );
 
 		$plugin = self::instance();
 
@@ -202,6 +219,15 @@ trait debug
 		$hash = md5( $this->paths( '__FILE__' ) . AUTH_KEY );
 		$hash = substr( $hash, 0, 8 );
 		return $this->paths( '__FILE__' ) . ".$hash.debug.html";
+	}
+
+	/**
+		@brief		Modify the debug class name, if necessary.
+		@since		2017-10-28 18:11:53
+	**/
+	public function get_debug_class_name( $class_name )
+	{
+		return $class_name;
 	}
 
 	/**

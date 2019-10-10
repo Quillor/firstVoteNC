@@ -1,11 +1,10 @@
-
 === Plainview Activity Monitor ===
 Contributors: edward_plainview
 License: GPLv3
 Requires at least: 3.9
-Stable tag: trunk
-Tags: actions, activities, activity, admin, administrator, analytics, audit, ban, bbPress, brute force, business, cloudflare, comments, contact form 7, content, custom post types, dashboard, DDoS, easy digital downloads, employee, events, gravity forms, honeypot, http post, IP, log, logger, login, monitor, multisite, network, ninja forms, notifications, pdf, plugin, prevention, protect, protection, reporting, reports, secure, security, stats, time, tracking, troubleshooting, updates, user, username wordpress, wpms, xmlrpc
-Tested up to: 4.7
+Stable tag: 20180826
+Tags: activities, activity, logging
+Tested up to: 4.9.8
 
 Real-time monitoring of users, content, functionality, appearance, security, and updates.
 
@@ -36,52 +35,6 @@ The logged information consists of:
 * Timestamp
 * Hook that was triggered
 * User ID
-
-= Premium pack =
-
-The <a href="https://pvactivitymonitor.com/">Activity Monitor Premium Pack</a> is a collection of plugins that greatly expand the monitoring and notification capabilities of the activity monitor. The pack current includes the following plugins:
-
-Detection
----------
-
-* <a href="https://pvactivitymonitor.com/plugin/brute-force-detect/">Bruteforce Detect</a> Detect a bruteforce login attempts.
-* <a href="https://pvactivitymonitor.com/plugin/comment-honeypot/">Comment Honeypot</a> Detect and prevents spambots from writing comments.
-* <a href="https://pvactivitymonitor.com/plugin/content-watch/">Content Watch</a> Monitor post content for specific words and phrases.
-* <a href="https://pvactivitymonitor.com/plugin/http-post/">HTTP POST</a> Hook into HTTP POST requests.
-* <a href="https://pvactivitymonitor.com/plugin/ip-too-often/">IP Too Often</a> Produce a hook when an IP occurs too often doing something.
-* <a href="https://pvactivitymonitor.com/plugin/login-failed-username/">Login Failed Username</a> Look for specific usernames on login failures.
-* <a href="https://pvactivitymonitor.com/plugin/login-honeypot/">Login Honeypot</a> Detect brute forcing of login form using hidden honeypot inputs.
-
-Notifications
--------------
-
-* <a href="https://pvactivitymonitor.com/plugin/hook-groups/">Hook Groups</a> Easily manage several hooks by grouping them together.
-* <a href="https://pvactivitymonitor.com/plugin/pdf-reports/">PDF Reports</a> Create PDF activity reports and send them regularly via e-mail.
-* <a href="https://pvactivitymonitor.com/plugin/send-to-cloudflare/">Send To Cloudflare</a> Send actions to Cloudflare ban / whitelist / null commands.
-* <a href="https://pvactivitymonitor.com/plugin/send-to-e-mail/">Send To Email</a> Send chosen hooks to various recipients via e-mail.
-* <a href="https://pvactivitymonitor.com/plugin/send-to-exec/">Send To Exec</a> Send chosen hooks to a shell command.
-* <a href="https://pvactivitymonitor.com/plugin/send-to-htaccess/">Send To Htaccess</a> Send chosen IPs to an htaccess file.
-* <a href="https://pvactivitymonitor.com/plugin/send-to-log/">Send To Log</a> Send chosen hooks to a log file.
-* <a href="https://pvactivitymonitor.com/plugin/shortcodes/">Shortcodes</a> Allow use of shortcodes to display the activity table.
-
-Prevention
-----------
-
-* <a href="https://pvactivitymonitor.com/plugin/disable-gravatar/">Disable Gravatar</a> Disable Gravatar icons in the backend.
-* <a href="https://pvactivitymonitor.com/plugin/disable-google-fonts/">Disable Google Fonts</a> Disable Google Font loading in the backend.
-* <a href="https://pvactivitymonitor.com/plugin/force-login/">Force Login</a> Force visitors to login before visiting the whole site or single blog.
-* <a href="https://pvactivitymonitor.com/plugin/ignore-ip/">Ignore IP</a> Ignore IPs after having encountered them in another hook.
-* <a href="https://pvactivitymonitor.com/plugin/protect-passwords/">Protect Passwords</a> Selectively protect passwords from being reset or modified.
-* <a href="https://pvactivitymonitor.com/plugin/xml-rpc-disable/">XMLRPC Disable</a> Disable Wordpress' XML RPC function to mitigate DDOS attacks.
-
-Integrations
-------------
-
-* <a href="https://pvactivitymonitor.com/plugin/bbpress/">bbPress</a> Adds support for bbPress forum / topic / reply actions.
-* <a href="https://pvactivitymonitor.com/plugin/contact-form-7/">Contact Form 7</a> Adds support for Contact Form 7.
-* <a href="https://pvactivitymonitor.com/plugin/easy-digital-downloads/">Easy Digital Downloads</a> Adds support for Easy Digital Downloads.
-* <a href="https://pvactivitymonitor.com/plugin/gravity-forms/">Gravity Forms</a> Adds support for Gravity Forms.
-* <a href="https://pvactivitymonitor.com/plugin/ninja-forms/">Ninja Forms</a> Adds support for Ninja Forms.
 
 = git =
 
@@ -131,6 +84,11 @@ Use the Wordpress support forum.
 No. PHP 5.4 not even supported officially anymore. It is time for your web host to upgrade.
 
 == Changelog ==
+
+= 20180826 =
+
+* Fix IP filter on tools tab
+* SDK update
 
 = 20161228 =
 

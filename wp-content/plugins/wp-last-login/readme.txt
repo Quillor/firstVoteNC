@@ -3,8 +3,8 @@ Contributors: obenland
 Tags: admin, user, login, last login, plugin
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K32M878XHREQC
 Requires at least: 3.1
-Tested up to: 4.3
-Stable tag: 1.4.0
+Tested up to: 5.0
+Stable tag: 2
 
 Make the last login for each user visibile in the user overview.
 
@@ -50,6 +50,11 @@ None asked yet.
 
 
 == Changelog ==
+
+= 2 =
+* Maintenance release.
+* Updated code to adhere to WordPress Coding Standards.
+* Tested with WordPress 5.0.
 
 = 1.4.0 =
 * Fixed a long standing bug, where sorting users by last login didn't work.

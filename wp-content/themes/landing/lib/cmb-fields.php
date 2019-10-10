@@ -123,6 +123,12 @@ add_action( 'cmb2_init', function() {
 	]);
 
 	$cmb_election_box->add_field([
+		'name' => 'Map Url',
+		'id' => $prefix . 'map_url',
+		'type' => 'text'
+	]);
+
+	$cmb_election_box->add_field([
 		'name' => 'Statewide Ballot XML File',
 		'id' => $prefix . 'ballot_xml_file',
 		'type' => 'file'

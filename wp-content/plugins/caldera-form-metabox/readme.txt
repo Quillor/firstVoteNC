@@ -1,9 +1,9 @@
 === Caldera Custom Fields ===
-Contributors: Desertsnowman, Shelob9
+Contributors: Desertsnowman, Shelob9, nahuelmahe
 Tags: Custom metabox, caldera forms, form as metabox, custom metaboxes, custom fields, custom field, form custom field, form to post type, calderawp, front-end editor, front end editor
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 2.2.0
+Tested up to: 4.8.3
+Stable tag: 2.2.1
 License: GPLv2
 
 Caldera Forms to post types and custom fields: front-end or back-end
@@ -30,6 +30,10 @@ none yet.
 2. Using conditional logic to make great progressive metaboxes.
 
 == Changelog ==
+
+= 2.2.1 =
+FIXED: Save simple file field file as Pods custom field and use magic tags as pods custom field ( along the Paypal Processor )
+
 = 2.2.0 =
 SEE: [https://calderaforms.com/updates/caldera-custom-fields-2-2-0/]*https://calderaforms.com/updates/caldera-custom-fields-2-2-0/)
 ADDED: Better support for Pods file fields

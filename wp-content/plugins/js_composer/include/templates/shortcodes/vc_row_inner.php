@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $content_placement
  * @var $content - shortcode content
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Row_Inner
+ * @var WPBakeryShortCode_Vc_Row_Inner $this
  */
 $el_class = $equal_height = $content_placement = $css = $el_id = '';
 $disable_element = '';
@@ -25,7 +25,7 @@ $el_class = $this->getExtraClass( $el_class );
 $css_classes = array(
 	'vc_row',
 	'wpb_row',
-	//deprecated
+	// deprecated
 	'vc_inner',
 	'vc_row-fluid',
 	$el_class,
@@ -55,6 +55,10 @@ if ( ! empty( $equal_height ) ) {
 	$css_classes[] = 'vc_row-o-equal-height';
 }
 
+if ( ! empty( $atts['rtl_reverse'] ) ) {
+	$css_classes[] = 'vc_rtl-columns-reverse';
+}
+
 if ( ! empty( $content_placement ) ) {
 	$flex_row = true;
 	$css_classes[] = 'vc_row-o-content-' . $content_placement;
@@ -78,4 +82,4 @@ $output .= wpb_js_remove_wpautop( $content );
 $output .= '</div>';
 $output .= $after_output;
 
-echo $output;
+return $output;

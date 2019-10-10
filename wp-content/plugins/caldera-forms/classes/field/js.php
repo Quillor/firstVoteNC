@@ -40,7 +40,23 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 	protected $form_count;
 
 
+	/**
+	 * Form field
+	 *
+	 * @since unknown
+	 *
+	 * @var array
+	 */
 	protected $fields;
+
+	/**
+	 * Field type lookup cache
+	 *
+	 * @since 1.5.7
+	 *
+	 * @var array
+	 */
+	protected $types;
 
 	/**
 	 * Caldera_Forms_Render_FieldsJS constructor.
@@ -50,14 +66,17 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 	 * @param array $form Form config
 	 * @param int $form_count Form instance count
 	 */
-	public function __construct( array $form, $form_count ) {
-		$this->form = $form;
+	public function __construct( array $form, $form_count )
+	{
+		$this->form       = $form;
 		$this->form_count = $form_count;
-		$this->data = array();
-		$this->fields = array(
-			'ids'    => array(),
-			'inputs' => array(),
-			'groups' => array()
+		$this->data       = array();
+		$this->fields     = array(
+			'ids'          => array(),
+			'inputs'       => array(),
+			'groups'       => array(),
+			'defaults'     => array(),
+			'calcDefaults' => array()
 		);
 	}
 
@@ -71,7 +90,7 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 		if( ! empty( $this->form[ 'fields' ] ) ){
 			foreach( $this->form[ 'fields' ] as  $field ){
 				$this->fields[ 'ids' ][] = $this->field_id( $field[ 'ID' ] );
-				$type = Caldera_Forms_Field_Util::get_type( $field, $this->form );
+				$type = $this->get_field_type( $field );
 				$this->map_field( $type, $field );
 				if( 'summary' == $type ){
 					$type = 'html';
@@ -86,7 +105,7 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 			}
 
 			foreach( $this->fields[ 'defaults' ] as &$default ){
-				if( 0 === strpos( $default, '%' ) ){
+				if( !is_array( $default ) && 0 === strpos( $default, '%' ) ){
 					$default = $this->get_field_default(
 						Caldera_Forms_Field_Util::get_field_by_slug( str_replace( '%', '', $default ), $this->form )
 					);
@@ -460,8 +479,8 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 		$syncer->can_sync();
 		$formula = $syncer->get_formula( true );
 
-		$target_id = Caldera_Forms_Field_Util::get_base_id( $field, $this->form_count, $this->form );
-
+		$target_id = $this->calc_target_id( $field );
+		
 		$args = array(
 			'binds' => $syncer->get_binds(),
 			'decimalSeparator' => $decimal_separator,
@@ -469,7 +488,7 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 			'moneyFormat' => ! empty( $field[ 'config' ][ 'fixed' ] ) ? true : false,
 			'fixed' => false,
 			'fieldBinds' => $syncer->get_bind_fields(),
-			'targetId' => esc_attr( $target_id . '-value' ),
+			'targetId' => esc_attr( $this->calc_value_id( $field ) ),
 			'displayId' => esc_attr( $target_id ),
 			'callback' => Caldera_Forms_Field_Calculation::js_function_name( $target_id )
 		);
@@ -658,11 +677,11 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 		$default = $this->get_field_default( $field );
 
 		$_field = array(
-			'type'    => $type,
-			'fieldId' => $field[ 'ID' ],
-			'id'      => $this->field_id( $field[ 'ID' ] ),
-			'options' => array(),
-			'default' => $default
+			'type'        => $type,
+			'fieldId'     => $field[ 'ID' ],
+			'id'          => $this->field_id( $field[ 'ID' ] ),
+			'options'     => array(),
+			'default'     => $default,
 		);
 
 		$group = false;
@@ -691,8 +710,7 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 
 		}
 
-
-		$this->fields[ 'defaults' ][ $this->field_id( $field[ 'ID' ] ) ] = $default;
+		$this->map_default( $field, $default );
 
 	}
 
@@ -707,8 +725,100 @@ class Caldera_Forms_Field_JS implements JsonSerializable {
 	 */
 	protected function get_field_default( $field ){
 		$default = Caldera_Forms_Field_Util::get_default( $field, $this->form, true );
+		if( is_bool( $default ) ){
+			$default = '';
+		}
+
+		$type = $this->get_field_type( $field );
+		switch ( $type ){
+			case 'radio':
+			case 'dropdown':
+			case 'filtered_select2':
+			case 'toggle_switch' :
+				$default = Caldera_Forms_Field_Util::find_select_field_value( $field, $default );
+				break;
+
+		}
 
 		return $default;
+
+	}
+
+	/**
+	 * Map default values for field
+	 *
+	 * @since 1.5.6.2
+	 *
+	 * @param array $field Field config
+	 * @param mixed $default Currently identified default
+	 */
+	protected function map_default( $field, $default ){
+		$id_attr = $this->field_id( $field[ 'ID' ] );
+		$this->fields[ 'defaults' ][ $id_attr ]     = $default;
+		if ( 'calculation' != $this->get_field_type( $field ) ) {
+			$calc_default = Caldera_Forms_Field_Util::get_default_calc_value( $field, $this->form );
+
+            if ( ! is_numeric( $calc_default ) ) {
+                if (is_bool($calc_default)) {
+                    $calc_default = (bool)$calc_default;
+                } elseif (!is_numeric($default)) {
+                    $calc_default = 0;
+                } else {
+                    $calc_default = $default;
+                }
+            }
+
+			$this->fields[ 'calcDefaults' ][ $id_attr ] = (float) $calc_default;
+		}else{
+			$this->fields[ 'calcDefaults' ][ $id_attr ] = array(
+				'type'      => 'calculation',
+				'target'    => $this->calc_value_id( $field )
+			);
+		}
+	}
+
+	/**
+	 * The ID attribute of HTML span  for a calculation field
+	 *
+	 * @since 1.5.6.2
+	 *
+	 * @param array $field Field config
+	 *
+	 * @return string
+	 */
+	protected function calc_target_id( array  $field ){
+		return Caldera_Forms_Field_Util::get_base_id( $field, $this->form_count, $this->form );
+
+	}
+
+	/**
+	 * The ID attribute of hidden field for a calculation field
+	 *
+	 * @since 1.5.6.2
+	 *
+	 * @param array $field Field config
+	 *
+	 * @return string
+	 */
+	protected function calc_value_id( array $field ){
+		return $this->calc_target_id( $field ) . '-value';
+	}
+
+	/**
+	 * Find type of field with caching
+	 *
+	 * @since 1.5.7
+	 *
+	 * @param array $field Field config
+	 *
+	 * @return string
+	 */
+	protected function get_field_type( $field ){
+		if( ! isset( $this->types[ $field[ 'ID' ] ] ) ){
+			$this->types[ $field[ 'ID' ] ] = Caldera_Forms_Field_Util::get_type( $field, $this->form );
+		}
+
+		return $this->types[ $field[ 'ID' ] ];
 	}
 
 }

@@ -1,5 +1,5 @@
 PROJECT_NAME		= Plainview&nbsp;SDK
-INPUT			= *php drupal form2 html wordpress table
+INPUT			= *php form2 html wordpress table
 
 EXTRACT_ALL		= YES
 EXTRACT_PRIVATE		= YES

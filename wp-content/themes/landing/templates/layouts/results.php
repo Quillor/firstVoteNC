@@ -1,7 +1,7 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 
 <script type="text/javascript">
   Highcharts.setOptions({
@@ -35,6 +35,9 @@ if(!isset($_GET['results'])){
 $partisan = false;
 $non_partisan = false;
 $non_partisan_tally = '';
+
+
+
  
 if( ($contests == null || $contests == ' ') || ($results[0] == null || $results[0] == ' ') ){
 	echo '<h2 class="text-center">No results yet Or Please recount the VOTE in the main page.</h2>';  
@@ -125,7 +128,7 @@ else{
 		}
 		?>
 
-		<div class="row extra-bottom-margin pie-counts">
+		<div class="row extra-bottom-margin">
 		  <div class="col-sm-4">
 			<h2 class="h3"><?php echo $contests[$race]['title']; ?></h2>
 			<?php if (!empty($contests[$race]['question'])) { ?>
@@ -167,21 +170,35 @@ else{
 		<?php
 	  }
 	}
+	
+	
 	if($type != 'issues' && $type != 'participation' && $type != 'precincts'){
-		if($partisan == false && $type == 'partisan' ) {	
-			echo "
-				<h2 class='text-center'>No partisan results for this election.</h2>
-				<p class='text-center lead'>					
-					Check issue-based question and exit-poll data links for state-wide results. <br/>
-					Check link for your individual school's results.
-				</p>
-			";?>
+		if($partisan == false && $type == 'partisan' ) {
+			if ($_GET['election-option'] == '2018 General Election' ) { 
+				echo "
+					<h2 class='text-center'>No national/statewide partisan results for this election.</h2>
+					<p class='text-center lead'>					
+						Check judicial and nonpartisan contest results, referenda and issue-based question, and exit-poll data links for state-wide results. <br/>
+						Check link for your individual school's results.
+					</p>
+				";
+			}
+			else{
+				echo "
+					<h2 class='text-center'>No partisan results for this election.</h2>
+					<p class='text-center lead'>					
+						Check issue-based question and exit-poll data links for state-wide results. <br/>
+						Check link for your individual school's results.
+					</p>
+				";
+			}?>
+			
 			<style>
 				.container .row.extra-bottom-margin{display:none}
 			</style>
 	<?php	
 		}
-		if($non_partisan_tally == '' && $type == 'nonpartisan' ) {	
+		if(($non_partisan_tally == '' && $type == 'nonpartisan') && $_GET['election-option'] != '2018 General Election' ) {	
 			echo "	
 				<h2 class='text-center'>No non-partisan results for this election.</h2>
 				<p class='text-center lead'>					
@@ -194,5 +211,6 @@ else{
 			</style>
 	<?php	
 		}
+		
 	}
 }

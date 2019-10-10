@@ -150,6 +150,9 @@
 }
 
 @media (max-width: 766px) {
+	  .entry-content-asset:not(.instagram):not(.twitter):not(.wp-embed){
+		    padding-bottom: 70%;
+	  }
       body:not(.page-results) .page-header.photo-overlay{
 		height: 225px;
 	  }

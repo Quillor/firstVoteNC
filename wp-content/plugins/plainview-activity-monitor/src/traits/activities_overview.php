@@ -353,6 +353,9 @@ trait activities_overview
 				$address = gethostbyaddr( $ip );
 				$message = $this->p_( 'The IP address %s resolves to <strong>%s</strong>.', $ip, $address );
 
+				// Filter the IP.
+				$ip = preg_replace('/[^0-9.]/', '', $ip);
+
 				$output = '';
 				exec( 'dig -x ' . $ip, $output );
 				if ( count( $output ) > 0 )

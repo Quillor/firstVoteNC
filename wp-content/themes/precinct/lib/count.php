@@ -88,7 +88,7 @@ function do_count() {
 		  include(locate_template('/lib/fields-exit-poll.php'));
 		  $election_results = array();
 
-		  $precinct_contests = precinct_contests($ballot_data, $included_races, $custom, $issues);
+		  $precinct_contests = precinct_contests($ballot_data, $included_races, $custom, $referenda, $issues);
 		  $election_results = precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, $election_results);
 
 		  $uploads = wp_upload_dir();
@@ -238,8 +238,8 @@ function precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, 
     $row_votes = array('blog_id' => $blog_id);
     foreach ($columns_contests as $contest) {
       if (isset($ballot_responses[$contest])) {
-        //$row_votes[$contest] = str_replace(['&lt;br /&gt;', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $ballot_responses[$contest][0]);
         $row_votes[$contest] = str_replace(['&lt;br /&gt;', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $ballot_responses[$contest][0]);
+        //$row_votes[$contest] = str_replace(['&lt;br /&gt;', '(', ')', ', Jr'], [' & ', '(', ')', ' Jr'], $ballot_responses[$contest][0]);
       } else {
         $row_votes[$contest] = NULL;
       }
@@ -287,7 +287,7 @@ function precinct_votes($blog_id, $election_id, $precinct_contests, $ep_fields, 
  *
  */
  
-function precinct_contests($ballot_data, $included_races, $custom, $issues) {
+function precinct_contests($ballot_data, $included_races, $custom, $referenda, $issues) {
   $precinct_contests = array();
 
   // Loop through contests
@@ -312,11 +312,13 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
         foreach ($race->candidates as $can) {
           if ($ballot_section->section == 'Partisan Offices') {
             $details = [
-              'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], [ "\'", ' & ', '\"', '\"', ' Jr'], $can->ballotName),
+              //'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], [ "\'", ' & ', '\(', '\)', ' Jr'], $can->ballotName),
+              'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], [ "\'", ' & ', '"', '"', ' Jr'], $can->ballotName),
               'party' => str_replace(['"', ' Party', 'Democratic'], ["\'", '', 'Democrat'], $can->party)
             ];
           } else {
             $details = [
+              //'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], ["\'",' & ', '\(', '\)', ' Jr'], $can->ballotName)
               'name' => str_replace(['"', '<br />', '(', ')', ', Jr'], ["\'",' & ', '\"', '\"', ' Jr'], $can->ballotName)
             ];
           }
@@ -346,11 +348,31 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
           $precinct_contests[$contest['section']][$sanitized_title]['candidates'][$c_key]['party'] = $party[1];
 
           $candidate = str_replace($party[0], '', $candidate);
-          $candidate = str_replace('"', '', $candidate);
+          $candidate = str_replace(['"',', Jr'], ['',' Jr'], $candidate);
         }
 
         $precinct_contests[$contest['section']][$sanitized_title]['candidates'][$c_key]['name'] = $candidate;
       }
+    }
+  }
+  
+    // Loop through referenda
+  $k = 0;
+  foreach ($referenda as $question) {
+    if (!empty($question)) {
+      $sanitized_title = '_cmb_ballot_' . sanitize_title($question['title']) . '-' . $k;
+      $precinct_contests['Issues'][$sanitized_title] = [
+        'title' => $question['title'],
+        'sanitized_title' => $sanitized_title,
+        'question' =>  str_replace(['"', '(', ')',], ["'", '\"', '\"',], $question['question']),
+      ]; 
+
+      if (empty($question['options'])) {
+        $precinct_contests['Issues'][$sanitized_title]['options'] = ['For', 'Against'];
+      } else {
+        $precinct_contests['Issues'][$sanitized_title]['options'] = $question['options'];
+      }
+      $k++;
     }
   }
 
@@ -373,6 +395,8 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
       $k++;
     }
   }
+  
+
   
   wp_cache_delete ( 'alloptions', 'options' );
   

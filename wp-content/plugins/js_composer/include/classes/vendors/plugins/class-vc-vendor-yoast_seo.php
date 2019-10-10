@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Vc_Vendor_YoastSeo
  * @since 4.4
  */
-class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
+class Vc_Vendor_YoastSeo {
 
 	/**
 	 * Created to improve yoast multiply calling wpseo_pre_analysis_post_content filter.
@@ -21,6 +21,10 @@ class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 			$this,
 			'enqueueJs',
 		) );
+		add_filter( 'wpseo_sitemap_urlimages', array(
+			$this,
+			'filterSitemapUrlImages',
+		), 10, 2 );
 	}
 
 	/**
@@ -38,11 +42,11 @@ class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 
 	/**
 	 * Properly parse content to detect images/text keywords.
-	 * @since 4.4
-	 *
 	 * @param $content
 	 *
 	 * @return string
+	 * @since 4.4
+	 *
 	 */
 	public function filterResults( $content ) {
 		if ( empty( $this->parsedContent ) ) {
@@ -64,6 +68,10 @@ class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 	 * @since 4.4
 	 */
 	public function enqueueJs() {
+		require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/class-vc-grid-item-editor.php' );
+		if ( get_post_type() === Vc_Grid_Item_Editor::postType() ) {
+			return;
+		}
 		wp_enqueue_script( 'vc_vendor_yoast_js', vc_asset_url( 'js/vendors/yoast.js' ), array( 'yoast-seo-post-scraper' ), WPB_VC_VERSION, true );
 	}
 
@@ -110,5 +118,32 @@ class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 			$vc_yoast_meta_box,
 			'template_keyword_tab',
 		) );
+	}
+
+	/**
+	 * @param $images
+	 * @param $id
+	 * @return array
+	 */
+	public function filterSitemapUrlImages( $images, $id ) {
+		if ( empty( $images ) ) {
+			$post = get_post( $id );
+			if ( $post && strpos( $post->post_content, '[vc_row' ) !== false ) {
+				preg_match_all( '/(?:image|images|ids|include)\=\"([^\"]+)\"/', $post->post_content, $matches );
+				foreach ( $matches[1] as $m ) {
+					$ids = explode( ',', $m );
+					foreach ( $ids as $id ) {
+						if ( (int) $id ) {
+							$images[] = array(
+								'src' => wp_get_attachment_url( $id ),
+								'title' => get_the_title( $id ),
+							);
+						}
+					}
+				}
+			}
+		}
+
+		return $images;
 	}
 }

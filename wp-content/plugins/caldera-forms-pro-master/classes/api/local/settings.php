@@ -63,7 +63,10 @@ class settings implements \Caldera_Forms_API_Route {
 				'methods'         => 'GET',
 				'callback'        => array( $this, 'get_settings' ),
 				'args'            => array(
-
+					'form' => array(
+						'type'                  => 'string',
+						'required'              => false,
+					)
 				),
 				'permissions_callback' => array( $this, 'permissions' )
 			)
@@ -96,11 +99,11 @@ class settings implements \Caldera_Forms_API_Route {
 			$settings->set_account_id(  $request[ 'accountId' ] );
 		}
 
-		if( ! empty( $request[ 'apiKey' ] ) ){
+		if( isset( $request[ 'apiKey' ] ) ){
 			$settings->set_api_public( $request[ 'apiKey' ] );
 		}
 
-		if( ! empty( $request[ 'apiSecret' ] ) ){
+		if( isset( $request[ 'apiSecret' ] ) ){
 			$settings->set_api_secret( $request[ 'apiSecret' ] );
 		}
 
@@ -114,20 +117,12 @@ class settings implements \Caldera_Forms_API_Route {
 			$settings->set_plan( $request[ 'plan' ] );
 		}
 
-		if( false === $request[ 'enhancedDelivery' ]  ){
-			$settings->set_enhanced_delivery( 'false' );
+		if( false === $request[ 'enhancedDelivery' ] || 'false' === $request[ 'enhancedDelivery' ]  ){
+			$settings->set_enhanced_delivery( false );
 		}
 
 		if( true === $request[ 'enhancedDelivery' ]  ){
 			$settings->set_enhanced_delivery( 'true' );
-		}
-
-		if( true === $request[ 'activate' ] ){
-			active::change_status( true );
-		}
-
-		if( false === $request[ 'activate' ] ){
-			active::change_status( false );
 		}
 
 		$settings->save();
@@ -165,6 +160,9 @@ class settings implements \Caldera_Forms_API_Route {
 	 * @return mixed|\WP_REST_Response
 	 */
 	public function get_settings( \WP_REST_Request $request ){
+		if( $request->get_param( 'form' ) ){
+
+		}
 		return rest_ensure_response( container::get_instance()->get_settings()->toArray() );
 
 	}

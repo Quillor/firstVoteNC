@@ -12,25 +12,29 @@ class Vc_Grid_Item {
 	protected $post = false;
 	protected $grid_atts = array();
 	protected $is_end = false;
-	protected static $templates_added = false;
 	protected $shortcodes = false;
 	protected $found_variables = false;
 	protected static $predefined_templates = false;
 	protected $template_id = false;
-	protected static $custom_fields_meta_data = false;
 
 	/**
 	 * Get shortcodes to build vc grid item templates.
 	 *
-	 * @return bool|mixed|void
+	 * @return bool|mixed
 	 */
 	public function shortcodes() {
 		if ( false === $this->shortcodes ) {
 			$this->shortcodes = include vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/shortcodes.php' );
 			$this->shortcodes = apply_filters( 'vc_grid_item_shortcodes', $this->shortcodes );
 		}
-		add_filter( 'vc_shortcode_set_template_vc_icon', array( $this, 'addVcIconShortcodesTemplates' ) );
-		add_filter( 'vc_shortcode_set_template_vc_button2', array( $this, 'addVcButton2ShortcodesTemplates' ) );
+		add_filter( 'vc_shortcode_set_template_vc_icon', array(
+			$this,
+			'addVcIconShortcodesTemplates',
+		) );
+		add_filter( 'vc_shortcode_set_template_vc_button2', array(
+			$this,
+			'addVcButton2ShortcodesTemplates',
+		) );
 		add_filter( 'vc_shortcode_set_template_vc_single_image', array(
 			$this,
 			'addVcSingleImageShortcodesTemplates',
@@ -39,7 +43,10 @@ class Vc_Grid_Item {
 			$this,
 			'addVcCustomHeadingShortcodesTemplates',
 		) );
-		add_filter( 'vc_shortcode_set_template_vc_btn', array( $this, 'addVcBtnShortcodesTemplates' ) );
+		add_filter( 'vc_shortcode_set_template_vc_btn', array(
+			$this,
+			'addVcBtnShortcodesTemplates',
+		) );
 
 		return $this->shortcodes;
 	}
@@ -52,9 +59,11 @@ class Vc_Grid_Item {
 	 * @return string
 	 */
 	public function addVcIconShortcodesTemplates( $template ) {
-		$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_icon.php' );
-		if ( is_file( $file ) ) {
-			return $file;
+		if ( Vc_Grid_Item_Editor::postType() === WPBMap::getScope() ) {
+			$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_icon.php' );
+			if ( is_file( $file ) ) {
+				return $file;
+			}
 		}
 
 		return $template;
@@ -68,9 +77,11 @@ class Vc_Grid_Item {
 	 * @return string
 	 */
 	public function addVcButton2ShortcodesTemplates( $template ) {
-		$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_button2.php' );
-		if ( is_file( $file ) ) {
-			return $file;
+		if ( Vc_Grid_Item_Editor::postType() === WPBMap::getScope() ) {
+			$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_button2.php' );
+			if ( is_file( $file ) ) {
+				return $file;
+			}
 		}
 
 		return $template;
@@ -84,9 +95,11 @@ class Vc_Grid_Item {
 	 * @return string
 	 */
 	public function addVcSingleImageShortcodesTemplates( $template ) {
-		$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_single_image.php' );
-		if ( is_file( $file ) ) {
-			return $file;
+		if ( Vc_Grid_Item_Editor::postType() === WPBMap::getScope() ) {
+			$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_single_image.php' );
+			if ( is_file( $file ) ) {
+				return $file;
+			}
 		}
 
 		return $template;
@@ -101,9 +114,11 @@ class Vc_Grid_Item {
 	 * @return string
 	 */
 	public function addVcCustomHeadingShortcodesTemplates( $template ) {
-		$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_custom_heading.php' );
-		if ( is_file( $file ) ) {
-			return $file;
+		if ( Vc_Grid_Item_Editor::postType() === WPBMap::getScope() ) {
+			$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_custom_heading.php' );
+			if ( is_file( $file ) ) {
+				return $file;
+			}
 		}
 
 		return $template;
@@ -117,9 +132,11 @@ class Vc_Grid_Item {
 	 * @return string
 	 */
 	public function addVcBtnShortcodesTemplates( $template ) {
-		$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_btn.php' );
-		if ( is_file( $file ) ) {
-			return $file;
+		if ( Vc_Grid_Item_Editor::postType() === WPBMap::getScope() ) {
+			$file = vc_path_dir( 'TEMPLATES_DIR', 'params/vc_grid_item/shortcodes/vc_btn.php' );
+			if ( is_file( $file ) ) {
+				return $file;
+			}
 		}
 
 		return $template;
@@ -127,6 +144,7 @@ class Vc_Grid_Item {
 
 	/**
 	 * Map shortcodes for vc_grid_item param type.
+	 * @throws \Exception
 	 */
 	public function mapShortcodes() {
 		// @kludge
@@ -145,8 +163,7 @@ class Vc_Grid_Item {
 	 */
 	public static function predefinedTemplates() {
 		if ( false === self::$predefined_templates ) {
-			self::$predefined_templates = apply_filters( 'vc_grid_item_predefined_templates',
-			include vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/templates.php' ) );
+			self::$predefined_templates = apply_filters( 'vc_grid_item_predefined_templates', include vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/templates.php' ) );
 		}
 
 		return self::$predefined_templates;
@@ -172,6 +189,7 @@ class Vc_Grid_Item {
 	 * @param $id
 	 *
 	 * @return bool
+	 * @throws \Exception
 	 */
 	public function setTemplateById( $id ) {
 		require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/templates.php' );
@@ -180,13 +198,18 @@ class Vc_Grid_Item {
 		}
 		if ( preg_match( '/^\d+$/', $id ) ) {
 			$post = get_post( (int) $id );
-			$post && $this->setTemplate( $post->post_content, $post->ID );
+			if ( $post ) {
+				$this->setTemplate( $post->post_content, $post->ID );
+			}
 
 			return true;
-		} elseif ( false !== ( $predefined_template = $this->predefinedTemplate( $id ) ) ) {
-			$this->setTemplate( $predefined_template['template'], $id );
+		} else {
+			$predefined_template = $this->predefinedTemplate( $id );
+			if ( $predefined_template ) {
+				$this->setTemplate( $predefined_template['template'], $id );
 
-			return true;
+				return true;
+			}
 		}
 
 		return false;
@@ -197,6 +220,7 @@ class Vc_Grid_Item {
 	 *
 	 * @param $template
 	 * @param $template_id
+	 * @throws \Exception
 	 */
 	public function setTemplate( $template, $template_id ) {
 		$this->template = $template;
@@ -208,27 +232,32 @@ class Vc_Grid_Item {
 	 * Getter for template attribute.
 	 * @return string
 	 */
-	function template() {
+	public function template() {
 		return $this->template;
 	}
 
 	/**
 	 * Add custom css from shortcodes that were mapped for vc grid item.
 	 * @return string
+	 * @throws \Exception
 	 */
 	public function addShortcodesCustomCss() {
 		$output = $shortcodes_custom_css = '';
 		$id = $this->template_id;
 		if ( preg_match( '/^\d+$/', $id ) ) {
 			$shortcodes_custom_css = get_post_meta( $id, '_wpb_shortcodes_custom_css', true );
-		} elseif ( false !== ( $predefined_template = $this->predefinedTemplate( $id ) ) ) {
-			$shortcodes_custom_css = visual_composer()->parseShortcodesCustomCss( $predefined_template['template'] );
+		} else {
+			$predefined_template = $this->predefinedTemplate( $id );
+			if ( $predefined_template ) {
+				$shortcodes_custom_css = visual_composer()->parseShortcodesCustomCss( $predefined_template['template'] );
+			}
 		}
 		if ( ! empty( $shortcodes_custom_css ) ) {
-			$shortcodes_custom_css = strip_tags( $shortcodes_custom_css );
-			$output .= '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+			$shortcodes_custom_css = wp_strip_all_tags( $shortcodes_custom_css );
+			$first_tag = 'style';
+			$output .= '<' . $first_tag . ' data-type="vc_shortcodes-custom-css">';
 			$output .= $shortcodes_custom_css;
-			$output .= '</style>';
+			$output .= '</' . $first_tag . '>';
 		}
 
 		return $output;
@@ -238,14 +267,21 @@ class Vc_Grid_Item {
 	 * Generates html with template's variables for rendering new project.
 	 *
 	 * @param $template
+	 * @throws \Exception
 	 */
 	public function parseTemplate( $template ) {
 		$this->mapShortcodes();
 		WPBMap::addAllMappedShortcodes();
-		$attr = ' width="' . $this->gridAttribute( 'element_width', 12 ) . '"'
-		        . ' is_end="' . ( 'true' === $this->isEnd() ? 'true' : '' ) . '"';
+		$attr = ' width="' . $this->gridAttribute( 'element_width', 12 ) . '"' . ' is_end="' . ( 'true' === $this->isEnd() ? 'true' : '' ) . '"';
 		$template = preg_replace( '/(\[(\[?)vc_gitem\b)/', '$1' . $attr, $template );
-		$this->html_template .= do_shortcode( $template );
+		$template = str_replace( array(
+			'<p>[vc_gitem',
+			'[/vc_gitem]</p>',
+		), array(
+			'[vc_gitem',
+			'[/vc_gitem]',
+		), $template );
+		$this->html_template .= do_shortcode( trim( $template ) );
 	}
 
 	/**
@@ -276,7 +312,7 @@ class Vc_Grid_Item {
 	 *
 	 * @return mixed
 	 */
-	function renderItem( WP_Post $post ) {
+	public function renderItem( WP_Post $post ) {
 		$pattern = array();
 		$replacement = array();
 		$this->addAttributesFilters();
@@ -323,15 +359,15 @@ class Vc_Grid_Item {
 	 * @param $post
 	 * @param string $data
 	 *
-	 * @return mixed|void
+	 * @return mixed
 	 */
 	public function attribute( $name, $post, $data = '' ) {
 		$data = html_entity_decode( $data );
-		return apply_filters( 'vc_gitem_template_attribute_' . trim( $name ),
-			( isset( $post->$name ) ? $post->$name : '' ), array(
-				'post' => $post,
-				'data' => $data,
-			) );
+
+		return apply_filters( 'vc_gitem_template_attribute_' . trim( $name ), ( isset( $post->$name ) ? $post->$name : '' ), array(
+			'post' => $post,
+			'data' => $data,
+		) );
 	}
 
 	/**
@@ -350,14 +386,4 @@ class Vc_Grid_Item {
 	public function isEnd() {
 		return $this->is_end;
 	}
-
-	/**
-	 * Set elements templates.
-	 */
-	protected function setShortcodes() {
-		foreach ( $this->shortcodes() as $tag => $settings ) {
-			add_shortcode( $tag, array( $this, vc_camel_case( $tag . '_shortcode' ) ) );
-		}
-	}
-	// }}
 }

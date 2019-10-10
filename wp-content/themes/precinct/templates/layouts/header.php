@@ -26,6 +26,7 @@ $class = '';
 			<li class="<?php echo $class; ?>">
               <a href="<?php echo home_url(); ?>">Voting</a>
             </li>
+           
             <?php
             $navs = array(
               array(
@@ -33,10 +34,14 @@ $class = '';
                 'type' => 'home'
               ),
               array(
-                'title' => 'Lesson Plans',
+                'title' => 'Participate',
                 'type' => 'page',
-                'slug' => 'lesson-plans'
-              )
+                'slug' => 'participate'
+              ),
+              array(
+             'title' => 'Tech Help?',
+                'type' => 'page',
+                'slug' => 'techhelp' )
             );
 
             foreach ($navs as $nav) {
@@ -52,7 +57,7 @@ $class = '';
                   break;
 
                 case 'page':
-                  $url = '/' . $nav['slug'];
+                  $url = '../' . $nav['slug'];
                   if (is_page($nav['slug'])) {
                     $class = 'active';
                   }
@@ -64,9 +69,12 @@ $class = '';
                   <?php echo $nav['title']; ?>
                 </a>
               </li>
+
               <?php
             }
             ?>
+
+            
             <li class="dropdown">
               <?php $current_user = wp_get_current_user();  ?>
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

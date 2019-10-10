@@ -1,7 +1,7 @@
 {
     "name": "plainview/sdk",
     "description": "Plainview SDK",
-    "license" : "GPL-3.0",
+    "license" : "GPL-3.0-only",
     "authors": [
         {
             "name": "Edward Plainview",
@@ -11,9 +11,6 @@
     "require": {
         "php": ">=5.4.0"
     },
-    "require-dev": {
-        "php": ">=5.4.0"
-    },
     "autoload":
     {
     	"psr-4":
@@ -21,7 +18,7 @@
     		"plainview\\sdk_pvam\\" : "."
     	}
     },
-    "minimum-stability": "dev",
+    "minimum-stability" : "dev",
 	"repositories": [
 		{
 			"type": "package",

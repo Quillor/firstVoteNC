@@ -18,7 +18,7 @@ if ( class_exists( 'Debug_Objects_Memory' ) ) {
 	return;
 }
 
-class Debug_Objects_Memory {
+class Debug_Objects_Memory extends Debug_Objects {
 
 	private static $start_time;
 
@@ -36,9 +36,14 @@ class Debug_Objects_Memory {
 		return self::$classobj;
 	}
 
+	/**
+	 * Debug_Objects_Memory constructor.
+	 */
 	public function __construct() {
 
-		if ( ! current_user_can( '_debug_objects' ) ) {
+		parent::__construct();
+
+		if ( ! $this->get_capability() ) {
 			return;
 		}
 
@@ -70,7 +75,8 @@ class Debug_Objects_Memory {
 		}
 		$output .= '<ul>' . $mem_speed . '</ul>';
 
-		$output .= '<h4>' . esc_attr__( 'Included Files, without' ) . ' <code>wp-admin</code>, <code>wp-includes</code></h4>';
+		$output .= '<h4>' . esc_attr__( 'Included Files, without' )
+		           . ' <code>wp-admin</code>, <code>wp-includes</code></h4>';
 		$file_data   = $this->get_file_data();
 		$file_totals = '';
 		foreach ( (array) $file_data[ 'file_totals' ] as $key => $value ) {
@@ -79,16 +85,22 @@ class Debug_Objects_Memory {
 		$output .= '<ul>' . $file_totals . '</ul>';
 
 		$output .= '<h4>' . esc_attr__( 'Files' ) . ' </h4>';
+
 		$files = '';
 		foreach ( (array) $file_data[ 'files' ] as $key => $value ) {
-			$files .= '<tr><td>' . ucwords(
+			$files .= '<tr>';
+			$files .= '<td>' . ucwords(
 					str_replace( '_', ' ', $key )
-				) . '</td><td>' . $value[ 'name' ] . '</td><td>(' . $value[ 'size' ] . ')</td></tr>';
+				) . '</td><td>' . $value[ 'name' ] . '</td><td>(' . $value[ 'size' ] . ')</td>';
+			$files .= '</tr>';
 		}
-		$output .= '<table class="tablesorter"><thead><tr><th>' . esc_attr__( 'No' )
+
+		$output .= '<table class="tablesorter">';
+		$output .= '<thead><tr><th>' . esc_attr__( 'No' )
 		           . '</th><th>' . esc_attr__( 'Path' ) . '</th><th>'
-		           . esc_attr__( 'Size' ) . '</th></tr></thead>'
-		           . $files . '</table>';
+		           . esc_attr__( 'Size' ) . '</th></tr></thead>';
+		$output .= $files;
+		$output .= '</table>';
 
 		if ( $echo ) {
 			echo $output;

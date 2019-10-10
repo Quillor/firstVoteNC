@@ -1,23 +1,15 @@
 <?php
-/*
-Copyright 2009-2016 John Blackbourn
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-*/
+/**
+ * Abstract plugin wrapper.
+ *
+ * @package query-monitor
+ */
 
 if ( ! class_exists( 'QM_Plugin' ) ) {
 abstract class QM_Plugin {
 
 	private $plugin = array();
+	public static $minimum_php_version = '5.3.6';
 
 	/**
 	 * Class constructor
@@ -91,6 +83,36 @@ abstract class QM_Plugin {
 			}
 		}
 		return $this->plugin[ $item ] . ltrim( $file, '/' );
+	}
+
+	public static function php_version_met() {
+		static $met = null;
+
+		if ( null === $met ) {
+			$met = version_compare( PHP_VERSION, self::$minimum_php_version, '>=' );
+		}
+
+		return $met;
+	}
+
+	public static function php_version_nope() {
+		printf(
+			'<div id="qm-php-nope" class="notice notice-error is-dismissible"><p>%s</p></div>',
+			wp_kses(
+				sprintf(
+					/* translators: 1: Required PHP version number, 2: Current PHP version number, 3: URL of PHP update help page */
+					__( 'The Query Monitor plugin requires PHP version %1$s or higher. This site is running PHP version %2$s. <a href="%3$s">Learn about updating PHP</a>.', 'query-monitor' ),
+					self::$minimum_php_version,
+					PHP_VERSION,
+					'https://wordpress.org/support/update-php/'
+				),
+				array(
+					'a' => array(
+						'href' => array(),
+					),
+				)
+			)
+		);
 	}
 
 }

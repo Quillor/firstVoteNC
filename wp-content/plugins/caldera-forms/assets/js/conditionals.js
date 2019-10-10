@@ -10,6 +10,15 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
      */
 	var fieldVals = {};
 
+    /**
+	 * Tracks fields that are set to "unsync" and have been hidden
+	 *
+	 * @since 1.6.0
+	 *
+     * @type {{}}
+     */
+	var unsynced = {};
+
 	// IE8 compatibility
 	if (!Array.prototype.indexOf){
 		Array.prototype.indexOf = function(elt /*, from*/){
@@ -80,26 +89,23 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 				}
 			}
 
-			if( ! $field ){
-				$field = $field = $( document.getElementById( field ) );
-			}
-
-			//put back in state
-
-			if ( null !== state ) {
-				if( 'object' === typeof  val ){
-					var _val = [];
-					jQuery.each(val, function( inputId, value ){
-						if( value ){
-							_val.push( $( '#' + inputId ).val() );
-						}
-					});
-
-					val = _val;
-				}
+			if( null !== state ){
 				state.rebind(field);
-				state.mutateState(field, val);
+				if( undefined === $field ){
+                    $field = $( '#' + field );
+				}
+
+				if( unsynced.hasOwnProperty( field ) ){
+                    $field.attr( 'data-unsync', '1' );
+                    $field.removeAttr( 'data-sync' );
+                    $field.removeAttr( 'data-binds' );
+				}
+
+                if ( undefined !== $field && $field.data( 'sync' ) ) {
+                    new CalderaFormsFieldSync($field, $field.data('binds'), $form, $, state);
+                }
 			}
+
 		}
 
 
@@ -110,6 +116,8 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 		 *
 		 * @param field Field ID
 		 * @param state {CFState} @since 1.5.3
+		 *
+		 * @return mixed saved value @since 1.8.0
 		 */
 		function saveFieldValue(field,state) {
 			var $field = $( document.getElementById( field ) );
@@ -135,11 +143,16 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 				});
 			}
 
+			if( $field.data( 'unsync' ) ){
+				unsynced[ field ] = true;
+			}
 
 			//remove from state
 			if ( null !== state ) {
 				state.unbind(field);
 			}
+
+			return fieldVals[ field ];
 
 		}
 
@@ -306,6 +319,9 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 					resetValue( field, state );
 
 				}
+
+				emitConditionalEvent('show', field, inst_id );
+
 			}else if (action === 'hide'){
 				if(target.html().length){
 					saveFieldValue(  field, state  );
@@ -313,10 +329,13 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 					target.empty().trigger('cf.remove',{
 						field: field,
 					});
-					jQuery(document).trigger('cf.remove',{
+						jQuery(document).trigger('cf.remove',{
 						field: field,
 					});
 				}
+
+				emitConditionalEvent('hide', field, inst_id );
+
 			}else if ('enable' === action || 'disable' === action ){
 				var dField = jQuery( '#' + field );
 				if( 'enable' == action ){
@@ -331,6 +350,10 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 					}else{
 						dField.prop('disabled', false);
 					}
+
+
+					emitConditionalEvent('enable', field, inst_id );
+
 
 				}else {
 					if (!target.html().length) {
@@ -349,6 +372,8 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 							field: field,
 						});
 					}
+					emitConditionalEvent('disable', field, inst_id );
+
 
 				}
 
@@ -372,6 +397,20 @@ var calders_forms_check_conditions, calders_forms_init_conditions;
 			return null;
 		}
 
+		function emitConditionalEvent(eventName,field,formId){
+			function createEventName(){
+				return 'cf.conditionals.' + eventName;
+			}
+			var state = getStateObj(formId);
+			if( state ){
+				state.events().emit(createEventName(), {
+					fieldIdAttr: field,
+					formIdAttr: formId,
+					eventType: eventName,
+					fieldValue: getSavedFieldValue(field)
+				} );
+			}
+		}
 
 	};
 

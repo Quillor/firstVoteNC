@@ -10,6 +10,7 @@
     white-space: nowrap;
     font-size: 0 !important; //remove bottom extra space from display: inline-block
     > .vc_parent {
+      vertical-align: top;
       display: inline-block;
     }
     > .vc_element {
@@ -254,6 +255,7 @@
     line-height: 16px !important;
     padding: 7px 12px !important;
     cursor: auto !important;
+    // height: 30px;
     &:hover {
       text-decoration: none !important;
     }
@@ -315,8 +317,9 @@
 
 
 .vc_control-btn-switcher {
-  overflow-x: hidden;
+  overflow: hidden;
   width: 24px;
+  height: 30px;
   .transition(width 0.5s);
   display: inline-block;
   &-disable-switcher {

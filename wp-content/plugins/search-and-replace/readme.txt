@@ -1,14 +1,28 @@
 === Search & Replace ===
-Contributors: inpsyde, Bueltge, derpixler, ChriCo, s-hinse, Giede
+Contributors: inpsyde, Bueltge, derpixler, ChriCo, s-hinse
 Tags: search, replace, backup, import, sql, migrate, multisite
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 3.1.1
+Tested up to: 5.1
+Requires PHP: 5.6
+Stable tag: 3.2.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Search & Replace data in your database with WordPress admin, replace domains/URLs of your WordPress installation.
 
 == Description ==
 With Search & Replace you can search for everything and replace this with everything **but before** you do this you can easily **create** a simple **database backup** and restore it.
+
+For avoiding problem please keep in mind that this plugin search and replace strictly what is specified in "Replace With".
+Common error example:
+Search For: http://web.com/wordpress/
+Replace With: http://neuweb.com/wordpress
+The url become something like: http://neuweb.com/wordpresscontent/...
+
+Correct "Replace with":
+Search For: http://web.com/wordpress/
+Replace With: http://neuweb.com/wordpress/
+The url become something like: http://neuweb.com/wordpress/content/...
 
 **We have implements special features!**
 The first one is "Replace a Domain / Url" that is useful for a quick and simple transfer or a migration of an WordPress.
@@ -16,7 +30,7 @@ The second is a full support for serialized data but there are a lot more featur
 
 Our goal with this plugin is to give you a good solution for both Developers and Users of WordPress.
 
-> **Note:** This plugin requires PHP 5.4 or higher to be activated.
+> **Note:** This plugin requires PHP 5.6 or higher to be activated.
 
 [**Checkout our GitHub Repository**](https://github.com/inpsyde/search-and-replace)
 
@@ -39,7 +53,7 @@ You want to donate - we prefer a [positive review](https://wordpress.org/support
 == Installation ==
 = Requirements =
 - WordPress 4.0 (Single and Multisite)
-- PHP 5.4, newer PHP versions will work faster.
+- PHP 5.6, newer PHP versions will work faster.
 
 == Screenshots ==
 1. Search and Replace
@@ -49,8 +63,14 @@ You want to donate - we prefer a [positive review](https://wordpress.org/support
 5. Result screen after search or search and replace
 
 == Changelog ==
+= 3.2.0 (2019-01-17) =
+* Added CSV format alternative for search/replace [#82](https://github.com/inpsyde/search-and-replace/issues/82).
+* Improve code structure, preparation for more solid UnitTests.
+* Improve Modal Table UI.
+* Added Multiline searching [#119](https://github.com/inpsyde/search-and-replace/issues/119).
+* Fix several issues to run always with php 5.6 to 7.2.
 
-= v3.1.1 (2016-12-31) =
+= v3.1.2 (2016-12-31) =
 * hotfix: prevent declaration error with Requisite
 
 = v3.1.1 (2016-12-24) =

@@ -31,7 +31,8 @@
   .vc_navbar-brand {
     .navbar-brand();
     font-size: 0;
-    background: transparent url(../vc/fe/visual_composer_32.png) center center no-repeat;
+    background: transparent url(@vcui_navbar_logo) center center no-repeat;
+    background-size: 36px;
     display: block;
     width: 42px;
     height: 42px;
@@ -40,7 +41,7 @@
       background-image: none;
     }
   }
-  &.vc_navgar-frontend {
+  &.vc_navbar-frontend {
     .vc_navbar-brand {
       &.vc_ui-wp-spinner {
         &::before {
@@ -66,14 +67,17 @@
     transition: background-color @vcui-navbar-transition-duration @vcui-navbar-transition-function;
     position: relative;
     font-size: 22px;
-    &:hover {
+    &[disabled] {
+      .opacity(0.2);
+    }
+    &:not([disabled]):hover {
       background-color: @vc_navbar_icon_btn_color_hover;
     }
-    &:focus {
+    &:not([disabled]):focus {
       background-color: transparent;
     }
 
-    .vc-composer-icon {
+    .vc-composer-icon, .vc_navbar-icon {
       color: @vc_navbar_icon_color;
       position: absolute;
       left: 50%;
@@ -301,4 +305,8 @@
 
 .vc_select-navbar {
   margin: 12.5px 21px;
+}
+
+#vc_navbar-redo, #vc_navbar-undo {
+  transition: all 0.2s ease-in-out;
 }

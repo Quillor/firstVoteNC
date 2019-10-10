@@ -23,13 +23,13 @@ if (empty($early_voting)) {
 }
 
 // District data from Google
-if ( false === ($district_data = get_transient('districts_' . $election_id))) {
+//if ( false === ($district_data = get_transient('districts_' . $election_id))) {
+if ( true ) {
   $query = 'address=' . urlencode($master['address']);
   $result = get_civic_data('representatives', $query);
   $district_data = $result->divisions;
   set_transient('district_data_' . $election_id, $district_data, 7 * DAY_IN_SECONDS);
 }
-print_r($district_data);
 
 // // Election data from Google
 // if ( false === ($election_data = get_transient('election_' . $election_id))) {
@@ -39,7 +39,8 @@ print_r($district_data);
 // }
 
 // Construct ballot
-if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
+//if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
+if ( true ) {
   // $file = dirname(__FILE__) . '/north_carolina.xml';
   $file = $master['ballot_xml_file'];
 
@@ -60,8 +61,9 @@ if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
       if (!empty($districtNumber = $master['congressional_district'])) {
         $ocd = substr_replace($ocd, $districtNumber, $pos+7);
       }
-    }
 
+    }
+	
     $electoralDistrict = $ballot_xml->xpath("//ElectoralDistrict/ExternalIdentifiers/ExternalIdentifier/Value[text() = '$ocd']");
     if (count($electoralDistrict) > 0) {
       $contest_data[$i]['ocd'] = $ocd;
@@ -335,6 +337,7 @@ if ( false === ($ballot_json = get_transient('ballot_' . $election_id))) {
   }
 
   $ballot_json = json_encode($ballot);
+  
 
   set_transient('ballot_' . $election_id, $ballot_json, 7 * DAY_IN_SECONDS);
 }

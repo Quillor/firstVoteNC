@@ -19,7 +19,7 @@
 		
         ?>
 		
-		<div class="alert-scarlet pt-2 text-center img-rounded">
+		<div class="alert-scarlet pt-2 text-center img-rounded hidden">
 			<h2 class="text-center">Coming Soon</h2>
 			<p>The current simulation election will be available in late October. Until then how about viewing lessons plans for this year?</p>
 			 <a class="btn btn-white text-center" href="<?php echo $actual_link;?>">View Lessons Plans</a>
@@ -180,10 +180,10 @@
 			
 			if($ctr>1){ ?> 
                 <div class="well well-sm">
-                  <p><em>You have already a simulation elections in your precinct.</em></p>
+                  <p><em>You already have a simulation election in your precinct.</em></p>
 
                   <?php if ( current_user_can( 'editor' ) ) { ?>
-                    <a class="btn btn-default" href="?add">Add More Simulation Election</a>
+                    <a class="btn btn-default" href="?add">Add Another Simulation Election</a>
                   <?php } ?>
 
                 </div>
@@ -212,7 +212,7 @@
 		
         <?php if (is_super_admin()) { ?>
           <p class="text-center extra-padding" style="">
-			  <label style="display:initial;"> Select Election to be count/recount.<br/>
+			  <label style="display:initial;"> Select Election to count/recount.<br/>
 				<select id="election-option" style="height: 45px;" >
 				<option>Select</option>
 				<?php

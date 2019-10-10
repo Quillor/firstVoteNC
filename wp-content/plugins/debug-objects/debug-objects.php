@@ -4,16 +4,13 @@
  * Plugin URI:  http://bueltge.de/debug-objects-wordpress-plugin/966/
  * Text Domain: debug_objects
  * Domain Path: /languages
- * Description: List filter and action-hooks, cache data, defined constants, queries, included scripts and styles, php
- * and memory information and return of conditional tags only for admins; for debug, information or learning purposes.
- * Setting output in the settings of the plugin and use output via link in Admin Bar, via setting, via url-param
- * '<code>debug</code>' or set a cookie via url param '<code>debugcookie</code>' in days.
- * Version:     2.4.1
+ * Description: List filter and action-hooks, cache data, defined constants, queries, included scripts and styles, php and memory information and return of conditional tags only for admins; for debug, information or learning purposes. Setting output in the settings of the plugin and use output via link in Admin Bar, via setting, via url-param '<code>debug</code>' or set a cookie via url param '<code>debugcookie</code>' in days.
+ * Version:     2.5.0
  * License:     GPL-3+
  * Author:      Frank Bültge
- * Author URI:  http://bueltge.de/
+ * Author URI:  https://bueltge.de/
  *
- * @version 2017-03-16
+ * @version 2017-11-02
  * @package Debug_Objects
  */
 
@@ -114,7 +111,7 @@ if ( ! class_exists( 'Debug_Objects' ) ) {
 			self::$file_base = __DIR__ . '/inc/autoload';
 
 			// Load 5.4 improvements
-			if ( version_compare( phpversion(), '5.4.0', '>=' ) ) {
+			if ( version_compare( PHP_VERSION, '5.4.0', '>=' ) ) {
 				require_once __DIR__ . '/inc/class-php-54-improvements.php';
 			}
 
@@ -125,7 +122,6 @@ if ( ! class_exists( 'Debug_Objects' ) ) {
 			add_action( 'admin_init', array( $this, 'add_capabilities' ) );
 
 			add_action( 'init', array( $this, 'init_classes' ) );
-			//$this->init_classes();
 		}
 
 		/**
@@ -299,31 +295,65 @@ if ( ! class_exists( 'Debug_Objects' ) ) {
 		 *
 		 * @access  public
 		 * @since   2.0.1
-		 * @return  void
+		 * @version 2017-04-10
+		 * @return  bool
 		 */
 		public function set_cookie_control() {
 
-			if ( ! isset( $_GET[ 'debugcookie' ] ) ) { // Input var okay.
-				return;
+			$user_value = filter_input(
+				INPUT_GET,
+				'debugcookie',
+				FILTER_VALIDATE_INT,
+				[ 'default' => 0, 'min_range' => 0 ]
+			);
+
+			if ( NULL === $user_value ) { // No date value, return.
+				return FALSE;
 			}
 
-			if ( absint( $_GET[ 'debugcookie' ] ) ) { // Input var okay.
-				$cookie_live = new DateTime( 'now' );
-				$user_value = (int) $_GET[ 'debugcookie' ]; // Input var okay.
-				$cookie_live->add( new DateInterval( 'P' . $user_value . 'D' ) );
-				setcookie(
-					static::get_plugin_data() . '_cookie',
-					'Debug_Objects_True',
-					$cookie_live, COOKIEPATH, COOKIE_DOMAIN
-				);
+			try {
+				$dateintval = new \DateInterval( 'P' . $user_value . 'D' );
+				if ( 0 !== $dateintval->format( 'd' ) ) {
+					$cookie_live = new \DateTime( 'now' );
+					$cookie_live->add( $dateintval );
+					$cookie_live = $cookie_live->getTimestamp();
+					// COOKIE_DOMAIN ist not always set, especially in WP Multisites.
+					$cookie_domain = COOKIE_DOMAIN;
+					if ( FALSE === $cookie_domain ) {
+						$cookie_domain = get_admin_url();
+					}
+
+					setcookie(
+						static::get_plugin_data() . '_cookie',
+						'Debug_Objects_True',
+						$cookie_live,
+						COOKIEPATH,
+						$cookie_domain
+					);
+
+					return TRUE;
+				}
+			} catch ( \Exception $e ) {
+				$msg = $e->getMessage();
+				die( 'Not possible to set cookie date interval.' . esc_html( $msg ) );
+			}
+			return FALSE;
+		}
+
+		/**
+		 * Check the rights of the current logged in user.
+		 * Use the hook to change the return bool to use it also for non logged in users.
+		 *
+		 * @return bool
+		 */
+		public function get_capability() {
+
+			$view = false;
+			if ( current_user_can( '_debug_objects' ) ) {
+				$view = true;
 			}
 
-			if ( 0 === (int) $_GET[ 'debugcookie' ] ) { // Input var okay.
-				setcookie(
-					static::get_plugin_data() . '_cookie',
-					'',
-					time() - 3600, COOKIEPATH, COOKIE_DOMAIN );
-			}
+			return apply_filters( 'debug_objects_view', $view );
 		}
 
 		/**
@@ -591,7 +621,7 @@ if ( ! class_exists( 'Debug_Objects' ) ) {
 						$val = normalize_whitespace( $val );
 
 						if ( is_serialized_string( $val ) ) {
-							$obj = unserialize( $val );
+							$obj = unserialize( $val, false );
 						} else {
 							$obj = normalize_whitespace( $val );
 						}

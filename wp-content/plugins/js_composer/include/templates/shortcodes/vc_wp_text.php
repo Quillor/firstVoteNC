@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $el_id
  * @var $content - shortcode content
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Wp_Text
+ * @var WPBakeryShortCode_Vc_Wp_Text $this
  */
 $el_class = $el_id = '';
 $output = '';
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-$atts['filter'] = true; //Hack to make sure that <p> added
+$atts['filter'] = true; // Hack to make sure that <p> added
 extract( $atts );
 
 $el_class = $this->getExtraClass( $el_class );
@@ -26,6 +26,7 @@ if ( ! empty( $el_id ) ) {
 $output = '<div ' . implode( ' ', $wrapper_attributes ) . ' class="vc_wp_text wpb_content_element' . esc_attr( $el_class ) . '">';
 $type = 'WP_Widget_Text';
 $args = array();
+$content = apply_filters( 'vc_wp_text_widget_shortcode', $content );
 if ( strlen( $content ) > 0 ) {
 	$atts['text'] = $content;
 }
@@ -38,7 +39,5 @@ if ( is_object( $wp_widget_factory ) && isset( $wp_widget_factory->widgets, $wp_
 
 	$output .= '</div>';
 
-	echo $output;
-} else {
-	echo $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found in : vc_wp_text' );
+	return $output;
 }

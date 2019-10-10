@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $offset
  * @var $content - shortcode content
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Column_Inner
+ * @var WPBakeryShortCode_Vc_Column_Inner $this
  */
 $el_class = $width = $el_id = $css = $offset = '';
 $output = '';
@@ -45,11 +45,12 @@ if ( ! empty( $el_id ) ) {
 	$wrapper_attributes[] = 'id="' . esc_attr( $el_id ) . '"';
 }
 $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
-$output .= '<div class="vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) ) . '">';
+$innerColumnClass = 'vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) );
+$output .= '<div class="' . trim( $innerColumnClass ) . '">';
 $output .= '<div class="wpb_wrapper">';
 $output .= wpb_js_remove_wpautop( $content );
 $output .= '</div>';
 $output .= '</div>';
 $output .= '</div>';
 
-echo $output;
+return $output;

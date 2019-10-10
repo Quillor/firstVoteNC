@@ -65,11 +65,24 @@ ksort($sites);
   <div class="panel-heading"><h2 class="h3">Map of participating schools</h2></div>
   <div class="panel-body">
     <div class="entry-content-asset">
+	<?php
+	
+	  switch_to_blog(1);
+		$q = new WP_Query(['posts_per_page' => 1, 'post_type' => 'election', 'post_title_like' => $election]);
+		if($q->have_posts()): while($q->have_posts()): $q->the_post();
+			//print_r($q);
+			echo '<iframe src="'.get_post_meta(get_the_id(), '_cmb_map_url', true).'" width="640" height="480"></iframe>';
+		endwhile; endif; wp_reset_postdata();
+	  restore_current_blog();
+	?>
+	
+	
       <!-- This is the 2016 Map -->
       <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1erNunewLx3L_Z4bBNmPAjXC8Pa0" width="640" height="480"></iframe> -->
       <!-- This is the 2017 Map -->
+	  <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1qD7CBHvvzhvc1mqda0tXxYrtyEg" width="640" height="480"></iframe> -->
       <!-- <h3>2017</h3> -->
-      <iframe src="https://www.google.com/maps/d/embed?mid=1qD7CBHvvzhvc1mqda0tXxYrtyEg" width="640" height="480"></iframe>
+    
     </div>
   </div>
 </div>

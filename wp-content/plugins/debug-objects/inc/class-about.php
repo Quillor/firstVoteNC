@@ -38,7 +38,7 @@ class Debug_Objects_About extends Debug_Objects {
 
 		Debug_Objects::__construct();
 
-		if ( ! current_user_can( '_debug_objects' ) ) {
+		if ( ! $this->get_capability() ) {
 			return;
 		}
 
@@ -65,7 +65,7 @@ class Debug_Objects_About extends Debug_Objects {
 	/**
 	 * Get information from plugin to easy red on the tab content
 	 *
-	 * @param   bool $echo
+	 * @param   bool   $echo
 	 *
 	 * @return  string $output
 	 */

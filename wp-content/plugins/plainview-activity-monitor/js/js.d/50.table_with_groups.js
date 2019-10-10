@@ -116,10 +116,6 @@
 							$control.set_html();
 							$row.set_collapsed_class( false );
 						}
-
-						// It's a good idea to have an active / inactive counter.
-						var $active = $( 'tr.plugin.active[data-group="' + group + '"]' );
-						$( 'th.name', $row ).append( ' <small>' + $active.length + ' / ' + $rows.length + '</small>');
 					} );
 				}
 
@@ -200,32 +196,10 @@
 					// end: Add expanders and collapsers for the entire table.
                 }
 
-                /**
-                	@brief		Steal the color from the adminmenu and use it as a group background.
-                	@since		2015-12-04 22:56:32
-                **/
-                $$.steal_colors = function()
-                {
-                	// Extract the colors of the active menu item.
-                	var color = $( '#adminmenu a.wp-menu-open' ).css( 'color' );
-                	var background_color = $( '#adminmenu a.wp-menu-open' ).css( 'background-color' );
-
-                	// Assemble the style text.
-                	var text = 'table.with_groups tr.group.uncollapsed { background-color : ' + background_color + '; }';
-                	text += 'table.with_groups tr.group.uncollapsed th { color: ' + color + '; }';
-
-                	// Create the style element and put it before the table.
-                	var $style = $( '<style>' )
-                		.text( text )
-                		.prependTo( $$.parent() );
-                }
-
                 // The group cb adds the name class, which is required for the collapsers.
                 $$.add_group_cb();
                 $$.add_collapsers();
                 $$.add_table_collapsers();
-                $$.steal_colors();
-
             } ); // return this.each( function()
         } // plugin: function()
     } ); // $.fn.extend({

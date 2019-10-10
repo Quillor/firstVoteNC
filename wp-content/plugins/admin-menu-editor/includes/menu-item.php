@@ -26,6 +26,7 @@ abstract class ameMenuItem {
 		'options-general.php' => true, 'options-media.php' => true, 'options-permalink.php' => true,
 		'options-reading.php' => true, 'options-writing.php' => true, 'plugin-editor.php' => true,
 		'plugin-install.php' => true, 'plugins.php' => true, 'post-new.php' => true, 'profile.php' => true,
+		'privacy.php' => true,
 		'theme-editor.php' => true, 'themes.php' => true, 'tools.php' => true, 'update-core.php' => true,
 		'upload.php' => true, 'user-new.php' => true, 'users.php' => true, 'widgets.php' => true,
 	);
@@ -34,7 +35,7 @@ abstract class ameMenuItem {
 	 * Convert a WP menu structure to an associative array.
 	 *
 	 * @param array $item An menu item.
-	 * @param int $position The position (index) of the the menu item.
+	 * @param int|string $position The position (index) of the the menu item.
 	 * @param string|null $parent The slug of the parent menu that owns this item. Null for top level menus.
 	 * @return array
 	 */
@@ -70,10 +71,11 @@ abstract class ameMenuItem {
 		}
 
 		//Flag plugin pages
-		$item['is_plugin_page'] = (get_plugin_page_hook($item['file'], strval($parent)) != null);
+		$has_hook = (get_plugin_page_hook($item['file'], strval($parent)) != null);
+		$item['is_plugin_page'] = $has_hook;
 
 		if ( !$item['separator'] ) {
-			$item['url'] = self::generate_url($item['file'], strval($parent));
+			$item['url'] = self::generate_url($item['file'], strval($parent), $has_hook);
 		}
 
 		$item['template_id'] = self::template_id($item, $parent);
@@ -212,7 +214,7 @@ abstract class ameMenuItem {
 			return strval($parent_file) . '>' . $item;
 		}
 
-		if ( self::get($item, 'custom') ) {
+		if ( !empty($item['custom']) ) {
 			return '';
 		}
 
@@ -475,7 +477,7 @@ abstract class ameMenuItem {
    * @return int
    */
 	public static function compare_position($a, $b){
-		$result = self::get($a, 'position', 0) - self::get($b, 'position', 0);
+		$result = floatval(self::get($a, 'position', 0)) - floatval(self::get($b, 'position', 0));
 		//Support for non-integer positions.
 		if ($result > 0) {
 			return 1;
@@ -490,9 +492,10 @@ abstract class ameMenuItem {
 	 *
 	 * @param string $item_slug
 	 * @param string $parent_slug
+	 * @param bool|null $has_hook
 	 * @return string An URL relative to the /wp-admin/ directory.
 	 */
-	public static function generate_url($item_slug, $parent_slug = '') {
+	public static function generate_url($item_slug, $parent_slug = '', $has_hook = null) {
 		$menu_url = is_array($item_slug) ? self::get($item_slug, 'file') : $item_slug;
 		$parent_url = !empty($parent_slug) ? $parent_slug : 'admin.php';
 
@@ -505,30 +508,35 @@ abstract class ameMenuItem {
 			return $menu_url;
 		}
 
-		if ( self::is_hook_or_plugin_page($menu_url, $parent_url) ) {
+		if ( self::is_hook_or_plugin_page($menu_url, $parent_url, $has_hook) ) {
 			$parent_file = self::remove_query_from($parent_url);
 			$base_file = self::is_wp_admin_file($parent_file) ? $parent_url : 'admin.php';
-			$url = add_query_arg(array('page' => $menu_url), $base_file);
+			//add_query_arg() might be more robust, but it's significantly slower.
+			$url = $base_file
+				. ((strpos($base_file, '?') === false) ? '?' : '&')
+				. 'page=' . urlencode($menu_url);
 		} else {
 			$url = $menu_url;
 		}
 		return $url;
 	}
 
-	private static function is_hook_or_plugin_page($page_url, $parent_page_url = '') {
+	private static function is_hook_or_plugin_page($page_url, $parent_page_url = '', $hasHook = null) {
 		if ( empty($parent_page_url) ) {
 			$parent_page_url = 'admin.php';
 		}
 		$pageFile = self::remove_query_from($page_url);
 
+		if ( $hasHook === null ) {
+			$hasHook = (get_plugin_page_hook($page_url, $parent_page_url) !== null);
+		}
+		if ( $hasHook ) {
+			return true;
+		}
+
 		//Files in /wp-admin are part of WP core so they're not plugin pages.
 		if ( self::is_wp_admin_file($pageFile) ) {
 			return false;
-		}
-
-		$hasHook = (get_plugin_page_hook($page_url, $parent_page_url) !== null);
-		if ( $hasHook ) {
-			return true;
 		}
 
 		/*

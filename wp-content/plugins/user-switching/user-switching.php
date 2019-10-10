@@ -5,18 +5,19 @@
  * @package   user-switching
  * @link      https://github.com/johnbillion/user-switching
  * @author    John Blackbourn <john@johnblackbourn.com>
- * @copyright 2009-2017 John Blackbourn
+ * @copyright 2009-2019 John Blackbourn
  * @license   GPL v2 or later
  *
- * Plugin Name: User Switching
- * Description: Instant switching between user accounts in WordPress
- * Version:     1.1.0
- * Plugin URI:  https://johnblackbourn.com/wordpress-plugin-user-switching/
- * Author:      John Blackbourn
- * Author URI:  https://johnblackbourn.com/
- * Text Domain: user-switching
- * Domain Path: /languages/
- * Network:     true
+ * Plugin Name:  User Switching
+ * Description:  Instant switching between user accounts in WordPress
+ * Version:      1.5.0
+ * Plugin URI:   https://johnblackbourn.com/wordpress-plugin-user-switching/
+ * Author:       John Blackbourn & contributors
+ * Author URI:   https://github.com/johnbillion/user-switching/graphs/contributors
+ * Text Domain:  user-switching
+ * Domain Path:  /languages/
+ * Network:      true
+ * Requires PHP: 5.3
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,10 +36,16 @@
 class user_switching {
 
 	/**
-	 * Class constructor. Set up some filters and actions.
+	 * The name used to identify the application during a WordPress redirect.
+	 *
+	 * @var string
 	 */
-	private function __construct() {
+	public static $application = 'WordPress/User Switching';
 
+	/**
+	 * Sets up all the filters and actions.
+	 */
+	public function init_hooks() {
 		// Required functionality:
 		add_filter( 'user_has_cap',                    array( $this, 'filter_user_has_cap' ), 10, 4 );
 		add_filter( 'map_meta_cap',                    array( $this, 'filter_map_meta_cap' ), 10, 4 );
@@ -60,14 +67,12 @@ class user_switching {
 		add_action( 'bp_member_header_actions',        array( $this, 'action_bp_button' ), 11 );
 		add_action( 'bp_directory_members_actions',    array( $this, 'action_bp_button' ), 11 );
 		add_action( 'bbp_template_after_user_details', array( $this, 'action_bbpress_button' ) );
-
 	}
 
 	/**
-	 * Define the names of our cookies.
+	 * Defines the names of the cookies used by User Switching.
 	 */
 	public function action_plugins_loaded() {
-
 		// User Switching's auth_cookie
 		if ( ! defined( 'USER_SWITCHING_COOKIE' ) ) {
 			define( 'USER_SWITCHING_COOKIE', 'wordpress_user_sw_' . COOKIEHASH );
@@ -82,11 +87,10 @@ class user_switching {
 		if ( ! defined( 'USER_SWITCHING_OLDUSER_COOKIE' ) ) {
 			define( 'USER_SWITCHING_OLDUSER_COOKIE', 'wordpress_user_sw_olduser_' . COOKIEHASH );
 		}
-
 	}
 
 	/**
-	 * Output the 'Switch To' link on the user editing screen if we have permission to switch to this user.
+	 * Outputs the 'Switch To' link on the user editing screen if the current user has permission to switch to them.
 	 *
 	 * @param WP_User $user User object for this screen.
 	 */
@@ -106,39 +110,26 @@ class user_switching {
 	}
 
 	/**
-	 * Return whether or not the current logged in user is being remembered in the form of a persistent browser cookie
+	 * Returns whether or not the current logged in user is being remembered in the form of a persistent browser cookie
 	 * (ie. they checked the 'Remember Me' check box when they logged in). This is used to persist the 'remember me'
 	 * value when the user switches to another user.
 	 *
 	 * @return bool Whether the current user is being 'remembered' or not.
 	 */
 	public static function remember() {
-
-		/**
-		 * Filter the duration of the authentication cookie expiration period.
-		 *
-		 * This matches the WordPress core filter in `wp_set_auth_cookie()`.
-		 *
-		 * @since 0.2.2
-		 *
-		 * @param int  $length   Duration of the expiration period in seconds.
-		 * @param int  $user_id  User ID.
-		 * @param bool $remember Whether to remember the user login. Default false.
-		 */
+		/** This filter is documented in wp-includes/pluggable.php */
 		$cookie_life = apply_filters( 'auth_cookie_expiration', 172800, get_current_user_id(), false );
 		$current     = wp_parse_auth_cookie( '', 'logged_in' );
 
 		// Here we calculate the expiration length of the current auth cookie and compare it to the default expiration.
 		// If it's greater than this, then we know the user checked 'Remember Me' when they logged in.
 		return ( ( $current['expiration'] - time() ) > $cookie_life );
-
 	}
 
 	/**
-	 * Load localisation files and route actions depending on the 'action' query var.
+	 * Loads localisation files and routes actions depending on the 'action' query var.
 	 */
 	public function action_init() {
-
 		load_plugin_textdomain( 'user-switching', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		if ( ! isset( $_REQUEST['action'] ) ) {
@@ -168,22 +159,21 @@ class user_switching {
 				// Switch user:
 				$user = switch_to_user( $user_id, self::remember() );
 				if ( $user ) {
-
 					$redirect_to = self::get_redirect( $user, $current_user );
 
 					// Redirect to the dashboard or the home URL depending on capabilities:
 					$args = array(
 						'user_switched' => 'true',
 					);
-					if ( $redirect_to ) {
-						wp_safe_redirect( add_query_arg( $args, $redirect_to ) );
-					} elseif ( ! current_user_can( 'read' ) ) {
-						wp_safe_redirect( add_query_arg( $args, home_url() ) );
-					} else {
-						wp_safe_redirect( add_query_arg( $args, admin_url() ) );
-					}
-					die();
 
+					if ( $redirect_to ) {
+						wp_safe_redirect( add_query_arg( $args, $redirect_to ), 302, self::$application );
+					} elseif ( ! current_user_can( 'read' ) ) {
+						wp_safe_redirect( add_query_arg( $args, home_url() ), 302, self::$application );
+					} else {
+						wp_safe_redirect( add_query_arg( $args, admin_url() ), 302, self::$application );
+					}
+					exit;
 				} else {
 					wp_die( esc_html__( 'Could not switch users.', 'user-switching' ) );
 				}
@@ -208,17 +198,24 @@ class user_switching {
 				// Switch user:
 				if ( switch_to_user( $old_user->ID, self::remember(), false ) ) {
 
+					if ( ! empty( $_REQUEST['interim-login'] ) ) {
+						$GLOBALS['interim_login'] = 'success'; // @codingStandardsIgnoreLine
+						login_header( '', '' );
+						exit;
+					}
+
 					$redirect_to = self::get_redirect( $old_user, $current_user );
-					$args = array(
+					$args        = array(
 						'user_switched' => 'true',
 						'switched_back' => 'true',
 					);
+
 					if ( $redirect_to ) {
-						wp_safe_redirect( add_query_arg( $args, $redirect_to ) );
+						wp_safe_redirect( add_query_arg( $args, $redirect_to ), 302, self::$application );
 					} else {
-						wp_safe_redirect( add_query_arg( $args, admin_url( 'users.php' ) ) );
+						wp_safe_redirect( add_query_arg( $args, admin_url( 'users.php' ) ), 302, self::$application );
 					}
-					die();
+					exit;
 				} else {
 					wp_die( esc_html__( 'Could not switch users.', 'user-switching' ) );
 				}
@@ -238,15 +235,16 @@ class user_switching {
 				// Switch off:
 				if ( switch_off_user() ) {
 					$redirect_to = self::get_redirect( null, $current_user );
-					$args = array(
+					$args        = array(
 						'switched_off' => 'true',
 					);
+
 					if ( $redirect_to ) {
-						wp_safe_redirect( add_query_arg( $args, $redirect_to ) );
+						wp_safe_redirect( add_query_arg( $args, $redirect_to ), 302, self::$application );
 					} else {
-						wp_safe_redirect( add_query_arg( $args, home_url() ) );
+						wp_safe_redirect( add_query_arg( $args, home_url() ), 302, self::$application );
 					}
-					die();
+					exit;
 				} else {
 					/* Translators: "switch off" means to temporarily log out */
 					wp_die( esc_html__( 'Could not switch off.', 'user-switching' ) );
@@ -254,72 +252,48 @@ class user_switching {
 				break;
 
 		}
-
 	}
 
 	/**
-	 * Fetch the URL to redirect to for a given user (used after switching).
+	 * Fetches the URL to redirect to for a given user (used after switching).
 	 *
 	 * @param  WP_User $new_user Optional. The new user's WP_User object.
 	 * @param  WP_User $old_user Optional. The old user's WP_User object.
 	 * @return string The URL to redirect to.
 	 */
 	protected static function get_redirect( WP_User $new_user = null, WP_User $old_user = null ) {
-
 		if ( ! empty( $_REQUEST['redirect_to'] ) ) {
-			$redirect_to = self::remove_query_args( wp_unslash( $_REQUEST['redirect_to'] ) ); // WPCS: sanitization ok
-			$requested_redirect_to = wp_unslash( $_REQUEST['redirect_to'] ); // WPCS: sanitization ok
+			$redirect_to           = self::remove_query_args( wp_unslash( $_REQUEST['redirect_to'] ) );
+			$requested_redirect_to = wp_unslash( $_REQUEST['redirect_to'] );
 		} else {
-			$redirect_to = '';
+			$redirect_to           = '';
 			$requested_redirect_to = '';
 		}
 
 		if ( ! $new_user ) {
-			/**
-			 * Filter the redirect URL when a user switches off.
-			 *
-			 * This matches the WordPress core filter in wp-login.php.
-			 *
-			 * @since 1.0.4
-			 *
-			 * @param string  $redirect_to           The redirect destination URL.
-			 * @param string  $requested_redirect_to The requested redirect destination URL passed as a parameter.
-			 * @param WP_User $old_user              The WP_User object for the user that's switching off.
-			 */
+			/** This filter is documented in wp-login.php */
 			$redirect_to = apply_filters( 'logout_redirect', $redirect_to, $requested_redirect_to, $old_user );
 		} else {
-			/**
-			 * Filter the redirect URL when a user switches to another user or switches back.
-			 *
-			 * This matches the WordPress core filter in wp-login.php.
-			 *
-			 * @since 0.8.7
-			 *
-			 * @param string  $redirect_to           The redirect destination URL.
-			 * @param string  $requested_redirect_to The requested redirect destination URL passed as a parameter.
-			 * @param WP_User $new_user              The WP_User object for the user that's being switched to.
-			 */
+			/** This filter is documented in wp-login.php */
 			$redirect_to = apply_filters( 'login_redirect', $redirect_to, $requested_redirect_to, $new_user );
 		}
 
 		return $redirect_to;
-
 	}
 
 	/**
-	 * Display the 'Switched to {user}' and 'Switch back to {user}' messages in the admin area.
+	 * Displays the 'Switched to {user}' and 'Switch back to {user}' messages in the admin area.
 	 */
 	public function action_admin_notices() {
 		$user     = wp_get_current_user();
 		$old_user = self::get_old_user();
 
 		if ( $old_user ) {
-
 			?>
-			<div id="user_switching" class="updated">
-				<p><span class="dashicons dashicons-admin-users" style="color:#56c234"></span>
+			<div id="user_switching" class="updated notice is-dismissible">
+				<p><span class="dashicons dashicons-admin-users" style="color:#56c234" aria-hidden="true"></span>
 				<?php
-					$message = '';
+					$message       = '';
 					$just_switched = isset( $_GET['user_switched'] );
 					if ( $just_switched ) {
 						$message = esc_html( sprintf(
@@ -332,6 +306,7 @@ class user_switching {
 					$switch_back_url = add_query_arg( array(
 						'redirect_to' => urlencode( self::current_url() ),
 					), self::switch_back_url( $old_user ) );
+
 					$message .= sprintf(
 						' <a href="%s">%s</a>.',
 						esc_url( $switch_back_url ),
@@ -344,7 +319,7 @@ class user_switching {
 					);
 
 					/**
-					 * Filter the contents of the message that's displayed to switched users in the admin area.
+					 * Filters the contents of the message that's displayed to switched users in the admin area.
 					 *
 					 * @since 1.1.0
 					 *
@@ -355,16 +330,15 @@ class user_switching {
 					 * @param bool    $just_switched   Whether the user made the switch on this page request.
 					 */
 					$message = apply_filters( 'user_switching_switched_message', $message, $user, $old_user, $switch_back_url, $just_switched );
-					echo $message; // WPCS: XSS ok.
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $message;
 				?>
 				</p>
 			</div>
 			<?php
-
 		} elseif ( isset( $_GET['user_switched'] ) ) {
-
 			?>
-			<div id="user_switching" class="updated">
+			<div id="user_switching" class="updated notice is-dismissible">
 				<p>
 				<?php
 					if ( isset( $_GET['switched_back'] ) ) {
@@ -386,14 +360,13 @@ class user_switching {
 				</p>
 			</div>
 			<?php
-
 		}
 	}
 
 	/**
-	 * Validate the old user cookie and return its user data.
+	 * Validates the old user cookie and returns its user data.
 	 *
-	 * @return bool|WP_User False if there's no old user cookie or it's invalid, WP_User object if it's present and valid.
+	 * @return false|WP_User False if there's no old user cookie or it's invalid, WP_User object if it's present and valid.
 	 */
 	public static function get_old_user() {
 		$cookie = user_switching_get_olduser_cookie();
@@ -408,16 +381,15 @@ class user_switching {
 	}
 
 	/**
-	 * Authenticate an old user by verifying the latest entry in the auth cookie.
+	 * Authenticates an old user by verifying the latest entry in the auth cookie.
 	 *
-	 * @param  WP_User $user A WP_User object (usually from the logged_in cookie).
+	 * @param WP_User $user A WP_User object (usually from the logged_in cookie).
 	 * @return bool Whether verification with the auth cookie passed.
 	 */
 	public static function authenticate_old_user( WP_User $user ) {
 		$cookie = user_switching_get_auth_cookie();
 		if ( ! empty( $cookie ) ) {
-
-			if ( user_switching::secure_auth_cookie() ) {
+			if ( self::secure_auth_cookie() ) {
 				$scheme = 'secure_auth';
 			} else {
 				$scheme = 'auth';
@@ -433,15 +405,11 @@ class user_switching {
 	}
 
 	/**
-	 * Adds a 'Switch back to {user}' link to the account menu in WordPress' admin bar.
+	 * Adds a 'Switch back to {user}' link to the account menu, and a `Switch To` link to the user edit menu.
 	 *
 	 * @param WP_Admin_Bar $wp_admin_bar The admin bar object.
 	 */
 	public function action_admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
-
-		if ( ! function_exists( 'is_admin_bar_showing' ) ) {
-			return;
-		}
 		if ( ! is_admin_bar_showing() ) {
 			return;
 		}
@@ -461,7 +429,6 @@ class user_switching {
 		$old_user = self::get_old_user();
 
 		if ( $old_user ) {
-
 			$wp_admin_bar->add_menu( array(
 				'parent' => $parent,
 				'id'     => 'switch-back',
@@ -475,11 +442,9 @@ class user_switching {
 					'redirect_to' => urlencode( self::current_url() ),
 				), self::switch_back_url( $old_user ) ),
 			) );
-
 		}
 
 		if ( current_user_can( 'switch_off' ) ) {
-
 			$url = self::switch_off_url( wp_get_current_user() );
 			if ( ! is_admin() ) {
 				$url = add_query_arg( array(
@@ -494,19 +459,40 @@ class user_switching {
 				'title'  => esc_html__( 'Switch Off', 'user-switching' ),
 				'href'   => $url,
 			) );
-
 		}
 
+		if ( ! is_admin() && is_author() ) {
+			if ( $old_user ) {
+				$wp_admin_bar->add_menu( array(
+					'parent' => 'edit',
+					'id'     => 'author-switch-back',
+					'title'  => esc_html( sprintf(
+						/* Translators: 1: user display name; 2: username; */
+						__( 'Switch back to %1$s (%2$s)', 'user-switching' ),
+						$old_user->display_name,
+						$old_user->user_login
+					) ),
+					'href'   => add_query_arg( array(
+						'redirect_to' => urlencode( self::current_url() ),
+					), self::switch_back_url( $old_user ) ),
+				) );
+			} elseif ( current_user_can( 'switch_to_user', get_queried_object_id() ) ) {
+				$wp_admin_bar->add_menu( array(
+					'parent' => 'edit',
+					'id'     => 'author-switch-to',
+					'title'  => esc_html__( 'Switch&nbsp;To', 'user-switching' ),
+					'href'   => add_query_arg( array(
+						'redirect_to' => urlencode( self::current_url() ),
+					), self::switch_to_url( get_queried_object() ) ),
+				) );
+			}
+		}
 	}
 
 	/**
-	 * Adds a 'Switch back to {user}' link to the Meta sidebar widget if the admin toolbar isn't showing.
+	 * Adds a 'Switch back to {user}' link to the Meta sidebar widget.
 	 */
 	public function action_wp_meta() {
-		if ( is_admin_bar_showing() ) {
-			return;
-		}
-
 		$old_user = self::get_old_user();
 
 		if ( $old_user instanceof WP_User ) {
@@ -521,7 +507,6 @@ class user_switching {
 			), self::switch_back_url( $old_user ) );
 			echo '<li id="user_switching_switch_on"><a href="' . esc_url( $url ) . '">' . esc_html( $link ) . '</a></li>';
 		}
-
 	}
 
 	/**
@@ -546,7 +531,6 @@ class user_switching {
 			), self::switch_back_url( $old_user ) );
 			echo '<p id="user_switching_switch_on"><a href="' . esc_url( $url ) . '">' . esc_html( $link ) . '</a></p>';
 		}
-
 	}
 
 	/**
@@ -566,16 +550,24 @@ class user_switching {
 				$old_user->user_login
 			);
 			$url = self::switch_back_url( $old_user );
-			if ( ! empty( $_REQUEST['redirect_to'] ) ) {
+
+			if ( ! empty( $_REQUEST['interim-login'] ) ) {
 				$url = add_query_arg( array(
-					'redirect_to' => urlencode( wp_unslash( $_REQUEST['redirect_to'] ) ), // WPCS: sanitization ok
+					'interim-login' => '1',
+				), $url );
+			} elseif ( ! empty( $_REQUEST['redirect_to'] ) ) {
+				$url = add_query_arg( array(
+					'redirect_to' => urlencode( wp_unslash( $_REQUEST['redirect_to'] ) ),
 				), $url );
 			}
-			$message .= '<p class="message" id="user_switching_switch_on"><span class="dashicons dashicons-admin-users" style="color:#56c234"></span> <a href="' . esc_url( $url ) . '">' . esc_html( $link ) . '</a></p>';
+
+			$message .= '<p class="message" id="user_switching_switch_on">';
+			$message .= '<span class="dashicons dashicons-admin-users" style="color:#56c234" aria-hidden="true"></span> ';
+			$message .= '<a href="' . esc_url( $url ) . '" onclick="window.location.href=\'' . esc_url( $url ) . '\';return false;">' . esc_html( $link ) . '</a>';
+			$message .= '</p>';
 		}
 
 		return $message;
-
 	}
 
 	/**
@@ -601,12 +593,12 @@ class user_switching {
 	 * Adds a 'Switch To' link to each member's profile page and profile listings in BuddyPress.
 	 */
 	public function action_bp_button() {
-		global $bp, $members_template;
+		$user = null;
 
-		if ( ! empty( $members_template ) && empty( $bp->displayed_user->id ) ) {
-			$user = get_userdata( $members_template->member->id );
-		} else {
-			$user = get_userdata( $bp->displayed_user->id );
+		if ( bp_is_user() ) {
+			$user = get_userdata( bp_displayed_user_id() );
+		} elseif ( bp_is_members_directory() ) {
+			$user = get_userdata( bp_get_member_user_id() );
 		}
 
 		if ( ! $user ) {
@@ -623,24 +615,15 @@ class user_switching {
 			'redirect_to' => urlencode( bp_core_get_user_domain( $user->ID ) ),
 		), $link );
 
-		// Workaround for https://buddypress.trac.wordpress.org/ticket/4212
-		$components = array_keys( $bp->active_components );
-		if ( ! empty( $components ) ) {
-			$component = reset( $components );
-		} else {
-			$component = 'core';
-		}
+		$components = array_keys( buddypress()->active_components );
 
-		// @codingStandardsIgnoreStart
 		echo bp_get_button( array(
 			'id'         => 'user_switching',
-			'component'  => $component,
+			'component'  => reset( $components ),
 			'link_href'  => esc_url( $link ),
 			'link_text'  => esc_html__( 'Switch&nbsp;To', 'user-switching' ),
 			'wrapper_id' => 'user_switching_switch_to',
 		) );
-		// @codingStandardsIgnoreEnd
-
 	}
 
 	/**
@@ -668,11 +651,10 @@ class user_switching {
 			<li><a href="<?php echo esc_url( $link ); ?>"><?php esc_html_e( 'Switch&nbsp;To', 'user-switching' ); ?></a></li>
 		</ul>
 		<?php
-
 	}
 
 	/**
-	 * Filter the list of query arguments which get removed from admin area URLs in WordPress.
+	 * Filters the list of query arguments which get removed from admin area URLs in WordPress.
 	 *
 	 * @link https://core.trac.wordpress.org/ticket/23367
 	 *
@@ -688,13 +670,12 @@ class user_switching {
 	}
 
 	/**
-	 * Helper function. Returns the switch to or switch back URL for a given user.
+	 * Returns the switch to or switch back URL for a given user.
 	 *
 	 * @param  WP_User $user The user to be switched to.
-	 * @return string|bool The required URL, or false if there's no old user or the user doesn't have the required capability.
+	 * @return string|false The required URL, or false if there's no old user or the user doesn't have the required capability.
 	 */
 	public static function maybe_switch_url( WP_User $user ) {
-
 		$old_user = self::get_old_user();
 
 		if ( $old_user && ( $old_user->ID === $user->ID ) ) {
@@ -704,11 +685,10 @@ class user_switching {
 		} else {
 			return false;
 		}
-
 	}
 
 	/**
-	 * Helper function. Returns the nonce-secured URL needed to switch to a given user ID.
+	 * Returns the nonce-secured URL needed to switch to a given user ID.
 	 *
 	 * @param  WP_User $user The user to be switched to.
 	 * @return string The required URL.
@@ -717,11 +697,12 @@ class user_switching {
 		return wp_nonce_url( add_query_arg( array(
 			'action'  => 'switch_to_user',
 			'user_id' => $user->ID,
+			'nr'      => 1,
 		), wp_login_url() ), "switch_to_user_{$user->ID}" );
 	}
 
 	/**
-	 * Helper function. Returns the nonce-secured URL needed to switch back to the originating user.
+	 * Returns the nonce-secured URL needed to switch back to the originating user.
 	 *
 	 * @param  WP_User $user The old user.
 	 * @return string        The required URL.
@@ -729,11 +710,12 @@ class user_switching {
 	public static function switch_back_url( WP_User $user ) {
 		return wp_nonce_url( add_query_arg( array(
 			'action' => 'switch_to_olduser',
+			'nr'     => 1,
 		), wp_login_url() ), "switch_to_olduser_{$user->ID}" );
 	}
 
 	/**
-	 * Helper function. Returns the nonce-secured URL needed to switch off the current user.
+	 * Returns the nonce-secured URL needed to switch off the current user.
 	 *
 	 * @param  WP_User $user The user to be switched off.
 	 * @return string        The required URL.
@@ -741,11 +723,12 @@ class user_switching {
 	public static function switch_off_url( WP_User $user ) {
 		return wp_nonce_url( add_query_arg( array(
 			'action' => 'switch_off',
+			'nr'     => 1,
 		), wp_login_url() ), "switch_off_{$user->ID}" );
 	}
 
 	/**
-	 * Helper function. Returns the current URL.
+	 * Returns the current URL.
 	 *
 	 * @return string The current URL.
 	 */
@@ -754,7 +737,7 @@ class user_switching {
 	}
 
 	/**
-	 * Helper function. Removes a list of common confirmation-style query args from a URL.
+	 * Removes a list of common confirmation-style query args from a URL.
 	 *
 	 * @param  string $url A URL.
 	 * @return string The URL with query args removed.
@@ -768,7 +751,7 @@ class user_switching {
 	}
 
 	/**
-	 * Helper function. Should User Switching's equivalent of the 'logged_in' cookie be secure?
+	 * Returns whether or not User Switching's equivalent of the 'logged_in' cookie should be secure.
 	 *
 	 * This is used to set the 'secure' flag on the old user cookie, for enhanced security.
 	 *
@@ -781,7 +764,7 @@ class user_switching {
 	}
 
 	/**
-	 * Helper function. Should User Switching's equivalent of the 'auth' cookie be secure?
+	 * Returns whether or not User Switching's equivalent of the 'auth' cookie should be secure.
 	 *
 	 * This is used to determine whether to set a secure auth cookie or not.
 	 *
@@ -792,7 +775,24 @@ class user_switching {
 	}
 
 	/**
-	 * Filter a user's capabilities so they can be altered at runtime.
+	 * Instructs WooCommerce to forget the session for the current user, without deleting it.
+	 *
+	 * @param WooCommerce $wc The WooCommerce instance.
+	 */
+	public static function forget_woocommerce_session( WooCommerce $wc ) {
+		if ( ! property_exists( $wc, 'session' ) ) {
+			return false;
+		}
+
+		if ( ! method_exists( $wc->session, 'forget_session' ) ) {
+			return false;
+		}
+
+		$wc->session->forget_session();
+	}
+
+	/**
+	 * Filters a user's capabilities so they can be altered at runtime.
 	 *
 	 * This is used to:
 	 *  - Grant the 'switch_to_user' capability to the user if they have the ability to edit the user they're trying to
@@ -801,29 +801,41 @@ class user_switching {
 	 *
 	 * Important: This does not get called for Super Admins. See filter_map_meta_cap() below.
 	 *
-	 * @param bool[]   $user_caps     Concerned user's capabilities.
+	 * @param bool[]   $user_caps     Array of key/value pairs where keys represent a capability name and boolean values
+	 *                                represent whether the user has that capability.
 	 * @param string[] $required_caps Required primitive capabilities for the requested capability.
 	 * @param array    $args {
 	 *     Arguments that accompany the requested capability check.
 	 *
-	 *     @type string $0 Requested capability.
-	 *     @type int    $1 Concerned user ID.
-	 *     @type mixed  $2 Optional second parameter.
+	 *     @type string    $0 Requested capability.
+	 *     @type int       $1 Concerned user ID.
+	 *     @type mixed  ...$2 Optional second and further parameters.
 	 * }
 	 * @param WP_User  $user          Concerned user object.
 	 * @return bool[] Concerned user's capabilities.
 	 */
 	public function filter_user_has_cap( array $user_caps, array $required_caps, array $args, WP_User $user ) {
 		if ( 'switch_to_user' === $args[0] ) {
+			if ( array_key_exists( 'switch_users', $user_caps ) ) {
+				$user_caps['switch_to_user'] = $user_caps['switch_users'];
+				return $user_caps;
+			}
+
 			$user_caps['switch_to_user'] = ( user_can( $user->ID, 'edit_user', $args[2] ) && ( $args[2] !== $user->ID ) );
 		} elseif ( 'switch_off' === $args[0] ) {
+			if ( array_key_exists( 'switch_users', $user_caps ) ) {
+				$user_caps['switch_off'] = $user_caps['switch_users'];
+				return $user_caps;
+			}
+
 			$user_caps['switch_off'] = user_can( $user->ID, 'edit_users' );
 		}
+
 		return $user_caps;
 	}
 
 	/**
-	 * Filter the required primitive capabilities for the given primitive or meta capability.
+	 * Filters the required primitive capabilities for the given primitive or meta capability.
 	 *
 	 * This is used to:
 	 *  - Add the 'do_not_allow' capability to the list of required capabilities when a Super Admin is trying to switch
@@ -833,8 +845,12 @@ class user_switching {
 	 *
 	 * @param string[] $required_caps Required primitive capabilities for the requested capability.
 	 * @param string   $cap           Capability or meta capability being checked.
-	 * @param int      $user_id       Current user ID.
-	 * @param array    $args          Arguments that accompany this capability check.
+	 * @param int      $user_id       Concerned user ID.
+	 * @param array    $args {
+	 *     Arguments that accompany the requested capability check.
+	 *
+	 *     @type mixed ...$0 Optional second and further parameters.
+	 * }
 	 * @return string[] Required capabilities for the requested action.
 	 */
 	public function filter_map_meta_cap( array $required_caps, $cap, $user_id, array $args ) {
@@ -853,217 +869,322 @@ class user_switching {
 		static $instance;
 
 		if ( ! isset( $instance ) ) {
-			$instance = new user_switching;
+			$instance = new user_switching();
 		}
 
 		return $instance;
 	}
 
+	/**
+	 * Private class constructor. Use `get_instance()` to get the instance.
+	 */
+	final private function __construct() {}
+
 }
 
 if ( ! function_exists( 'user_switching_set_olduser_cookie' ) ) {
-/**
- * Sets authorisation cookies containing the originating user information.
- *
- * @param int  $old_user_id The ID of the originating user, usually the current logged in user.
- * @param bool $pop         Optional. Pop the latest user off the auth cookie, instead of appending the new one. Default false.
- */
-function user_switching_set_olduser_cookie( $old_user_id, $pop = false ) {
-	$secure_auth_cookie    = user_switching::secure_auth_cookie();
-	$secure_olduser_cookie = user_switching::secure_olduser_cookie();
-	$expiration            = time() + 172800; // 48 hours
-	$auth_cookie           = user_switching_get_auth_cookie();
-	$olduser_cookie        = wp_generate_auth_cookie( $old_user_id, $expiration, 'logged_in' );
+	/**
+	 * Sets authorisation cookies containing the originating user information.
+	 *
+	 * @since 1.4.0 The `$token` parameter was added.
+	 *
+	 * @param int    $old_user_id The ID of the originating user, usually the current logged in user.
+	 * @param bool   $pop         Optional. Pop the latest user off the auth cookie, instead of appending the new one. Default false.
+	 * @param string $token       Optional. The old user's session token to store for later reuse. Default empty string.
+	 */
+	function user_switching_set_olduser_cookie( $old_user_id, $pop = false, $token = '' ) {
+		$secure_auth_cookie    = user_switching::secure_auth_cookie();
+		$secure_olduser_cookie = user_switching::secure_olduser_cookie();
+		$expiration            = time() + 172800; // 48 hours
+		$auth_cookie           = user_switching_get_auth_cookie();
+		$olduser_cookie        = wp_generate_auth_cookie( $old_user_id, $expiration, 'logged_in', $token );
 
-	if ( $secure_auth_cookie ) {
-		$auth_cookie_name = USER_SWITCHING_SECURE_COOKIE;
-		$scheme = 'secure_auth';
-	} else {
-		$auth_cookie_name = USER_SWITCHING_COOKIE;
-		$scheme = 'auth';
+		if ( $secure_auth_cookie ) {
+			$auth_cookie_name = USER_SWITCHING_SECURE_COOKIE;
+			$scheme           = 'secure_auth';
+		} else {
+			$auth_cookie_name = USER_SWITCHING_COOKIE;
+			$scheme           = 'auth';
+		}
+
+		if ( $pop ) {
+			array_pop( $auth_cookie );
+		} else {
+			array_push( $auth_cookie, wp_generate_auth_cookie( $old_user_id, $expiration, $scheme, $token ) );
+		}
+
+		$auth_cookie = json_encode( $auth_cookie );
+
+		/**
+		 * Fires immediately before the User Switching authentication cookie is set.
+		 *
+		 * @since 1.4.0
+		 *
+		 * @param string $auth_cookie JSON-encoded array of authentication cookie values.
+		 * @param int    $expiration  The time when the authentication cookie expires as a UNIX timestamp.
+		 *                            Default is 48 hours from now.
+		 * @param int    $old_user_id User ID.
+		 * @param string $scheme      Authentication scheme. Values include 'auth' or 'secure_auth'.
+		 * @param string $token       User's session token to use for the latest cookie.
+		 */
+		do_action( 'set_user_switching_cookie', $auth_cookie, $expiration, $old_user_id, $scheme, $token );
+
+		/**
+		 * Fires immediately before the User Switching old user cookie is set.
+		 *
+		 * @since 1.4.0
+		 *
+		 * @param string $olduser_cookie The old user cookie value.
+		 * @param int    $expiration     The time when the logged-in authentication cookie expires as a UNIX timestamp.
+		 *                               Default is 48 hours from now.
+		 * @param int    $old_user_id    User ID.
+		 * @param string $scheme         Authentication scheme. Default 'logged_in'.
+		 * @param string $token          User's session token to use for this cookie.
+		 */
+		do_action( 'set_olduser_cookie', $olduser_cookie, $expiration, $old_user_id, 'logged_in', $token );
+
+		/** This filter is documented in wp-includes/pluggable.php */
+		if ( ! apply_filters( 'send_auth_cookies', true ) ) {
+			return;
+		}
+
+		setcookie( $auth_cookie_name, $auth_cookie, $expiration, SITECOOKIEPATH, COOKIE_DOMAIN, $secure_auth_cookie, true );
+		setcookie( USER_SWITCHING_OLDUSER_COOKIE, $olduser_cookie, $expiration, COOKIEPATH, COOKIE_DOMAIN, $secure_olduser_cookie, true );
 	}
-
-	if ( $pop ) {
-		array_pop( $auth_cookie );
-	} else {
-		array_push( $auth_cookie, wp_generate_auth_cookie( $old_user_id, $expiration, $scheme ) );
-	}
-
-	setcookie( $auth_cookie_name, json_encode( $auth_cookie ), $expiration, SITECOOKIEPATH, COOKIE_DOMAIN, $secure_auth_cookie, true );
-	setcookie( USER_SWITCHING_OLDUSER_COOKIE, $olduser_cookie, $expiration, COOKIEPATH, COOKIE_DOMAIN, $secure_olduser_cookie, true );
-}
 }
 
 if ( ! function_exists( 'user_switching_clear_olduser_cookie' ) ) {
-/**
- * Clears the cookies containing the originating user, or pops the latest item off the end if there's more than one.
- *
- * @param bool $clear_all Optional. Whether to clear the cookies (as opposed to just popping the last user off the end). Default true.
- */
-function user_switching_clear_olduser_cookie( $clear_all = true ) {
-	$auth_cookie = user_switching_get_auth_cookie();
-	if ( ! empty( $auth_cookie ) ) {
-		array_pop( $auth_cookie );
-	}
-	if ( $clear_all || empty( $auth_cookie ) ) {
-		$expire = time() - 31536000;
-		setcookie( USER_SWITCHING_COOKIE,         ' ', $expire, SITECOOKIEPATH, COOKIE_DOMAIN );
-		setcookie( USER_SWITCHING_SECURE_COOKIE,  ' ', $expire, SITECOOKIEPATH, COOKIE_DOMAIN );
-		setcookie( USER_SWITCHING_OLDUSER_COOKIE, ' ', $expire, COOKIEPATH, COOKIE_DOMAIN );
-	} else {
+	/**
+	 * Clears the cookies containing the originating user, or pops the latest item off the end if there's more than one.
+	 *
+	 * @param bool $clear_all Optional. Whether to clear the cookies (as opposed to just popping the last user off the end). Default true.
+	 */
+	function user_switching_clear_olduser_cookie( $clear_all = true ) {
+		$auth_cookie = user_switching_get_auth_cookie();
+		if ( ! empty( $auth_cookie ) ) {
+			array_pop( $auth_cookie );
+		}
+		if ( $clear_all || empty( $auth_cookie ) ) {
+			/**
+			 * Fires just before the user switching cookies are cleared.
+			 *
+			 * @since 1.4.0
+			 */
+			do_action( 'clear_olduser_cookie' );
 
-		if ( user_switching::secure_auth_cookie() ) {
-			$scheme = 'secure_auth';
+			/** This filter is documented in wp-includes/pluggable.php */
+			if ( ! apply_filters( 'send_auth_cookies', true ) ) {
+				return;
+			}
+
+			$expire = time() - 31536000;
+			setcookie( USER_SWITCHING_COOKIE,         ' ', $expire, SITECOOKIEPATH, COOKIE_DOMAIN );
+			setcookie( USER_SWITCHING_SECURE_COOKIE,  ' ', $expire, SITECOOKIEPATH, COOKIE_DOMAIN );
+			setcookie( USER_SWITCHING_OLDUSER_COOKIE, ' ', $expire, COOKIEPATH, COOKIE_DOMAIN );
 		} else {
-			$scheme = 'auth';
-		}
+			if ( user_switching::secure_auth_cookie() ) {
+				$scheme = 'secure_auth';
+			} else {
+				$scheme = 'auth';
+			}
 
-		$old_user_id = wp_validate_auth_cookie( end( $auth_cookie ), $scheme );
-		if ( $old_user_id ) {
-			user_switching_set_olduser_cookie( $old_user_id, true );
+			$old_cookie = end( $auth_cookie );
+
+			$old_user_id = wp_validate_auth_cookie( $old_cookie, $scheme );
+			if ( $old_user_id ) {
+				$parts = wp_parse_auth_cookie( $old_cookie, $scheme );
+				user_switching_set_olduser_cookie( $old_user_id, true, $parts['token'] );
+			}
 		}
 	}
-}
 }
 
 if ( ! function_exists( 'user_switching_get_olduser_cookie' ) ) {
-/**
- * Gets the value of the cookie containing the originating user.
- *
- * @return string|bool The old user cookie, or boolean false if there isn't one.
- */
-function user_switching_get_olduser_cookie() {
-	if ( isset( $_COOKIE[ USER_SWITCHING_OLDUSER_COOKIE ] ) ) {
-		return wp_unslash( $_COOKIE[ USER_SWITCHING_OLDUSER_COOKIE ] ); // WPCS: sanitization ok
-	} else {
-		return false;
+	/**
+	 * Gets the value of the cookie containing the originating user.
+	 *
+	 * @return string|false The old user cookie, or boolean false if there isn't one.
+	 */
+	function user_switching_get_olduser_cookie() {
+		if ( isset( $_COOKIE[ USER_SWITCHING_OLDUSER_COOKIE ] ) ) {
+			return wp_unslash( $_COOKIE[ USER_SWITCHING_OLDUSER_COOKIE ] );
+		} else {
+			return false;
+		}
 	}
-}
 }
 
 if ( ! function_exists( 'user_switching_get_auth_cookie' ) ) {
-/**
- * Gets the value of the auth cookie containing the list of originating users.
- *
- * @return string[] Array of originating user authentication cookie values. Empty array if there are none.
- */
-function user_switching_get_auth_cookie() {
-	if ( user_switching::secure_auth_cookie() ) {
-		$auth_cookie_name = USER_SWITCHING_SECURE_COOKIE;
-	} else {
-		$auth_cookie_name = USER_SWITCHING_COOKIE;
-	}
+	/**
+	 * Gets the value of the auth cookie containing the list of originating users.
+	 *
+	 * @return string[] Array of originating user authentication cookie values. Empty array if there are none.
+	 */
+	function user_switching_get_auth_cookie() {
+		if ( user_switching::secure_auth_cookie() ) {
+			$auth_cookie_name = USER_SWITCHING_SECURE_COOKIE;
+		} else {
+			$auth_cookie_name = USER_SWITCHING_COOKIE;
+		}
 
-	if ( isset( $_COOKIE[ $auth_cookie_name ] ) ) {
-		$cookie = json_decode( wp_unslash( $_COOKIE[ $auth_cookie_name ] ) ); // WPCS: sanitization ok
+		if ( isset( $_COOKIE[ $auth_cookie_name ] ) && is_string( $_COOKIE[ $auth_cookie_name ] ) ) {
+			$cookie = json_decode( wp_unslash( $_COOKIE[ $auth_cookie_name ] ) );
+		}
+		if ( ! isset( $cookie ) || ! is_array( $cookie ) ) {
+			$cookie = array();
+		}
+		return $cookie;
 	}
-	if ( ! isset( $cookie ) || ! is_array( $cookie ) ) {
-		$cookie = array();
-	}
-	return $cookie;
-}
 }
 
 if ( ! function_exists( 'switch_to_user' ) ) {
-/**
- * Switches the current logged in user to the specified user.
- *
- * @param  int  $user_id      The ID of the user to switch to.
- * @param  bool $remember     Optional. Whether to 'remember' the user in the form of a persistent browser cookie. Default false.
- * @param  bool $set_old_user Optional. Whether to set the old user cookie. Default true.
- * @return bool|WP_User WP_User object on success, false on failure.
- */
-function switch_to_user( $user_id, $remember = false, $set_old_user = true ) {
-	$user = get_userdata( $user_id );
+	/**
+	 * Switches the current logged in user to the specified user.
+	 *
+	 * @param  int  $user_id      The ID of the user to switch to.
+	 * @param  bool $remember     Optional. Whether to 'remember' the user in the form of a persistent browser cookie. Default false.
+	 * @param  bool $set_old_user Optional. Whether to set the old user cookie. Default true.
+	 * @return false|WP_User WP_User object on success, false on failure.
+	 */
+	function switch_to_user( $user_id, $remember = false, $set_old_user = true ) {
+		$user = get_userdata( $user_id );
 
-	if ( ! $user ) {
-		return false;
-	}
+		if ( ! $user ) {
+			return false;
+		}
 
-	$old_user_id = ( is_user_logged_in() ) ? get_current_user_id() : false;
+		$old_user_id  = ( is_user_logged_in() ) ? get_current_user_id() : false;
+		$old_token    = function_exists( 'wp_get_session_token' ) ? wp_get_session_token() : '';
+		$auth_cookie  = user_switching_get_auth_cookie();
+		$cookie_parts = wp_parse_auth_cookie( end( $auth_cookie ) );
 
-	if ( $set_old_user && $old_user_id ) {
-		user_switching_set_olduser_cookie( $old_user_id );
-	} else {
-		user_switching_clear_olduser_cookie( false );
-	}
+		if ( $set_old_user && $old_user_id ) {
+			// Switching to another user
+			$new_token = '';
+			user_switching_set_olduser_cookie( $old_user_id, false, $old_token );
+		} else {
+			// Switching back, either after being switched off or after being switched to another user
+			$new_token = isset( $cookie_parts['token'] ) ? $cookie_parts['token'] : '';
+			user_switching_clear_olduser_cookie( false );
+		}
 
-	wp_clear_auth_cookie();
-	wp_set_auth_cookie( $user_id, $remember );
-	wp_set_current_user( $user_id );
-
-	if ( $set_old_user ) {
 		/**
-		 * Fires when a user switches to another user account.
+		 * Attaches the original user ID and session token to the new session when a user switches to another user.
 		 *
-		 * @since 0.6.0
-		 *
-		 * @param int $user_id     The ID of the user being switched to.
-		 * @param int $old_user_id The ID of the user being switched from.
+		 * @param array $session Array of extra data.
+		 * @param int   $user_id User ID.
+		 * @return array Array of extra data.
 		 */
-		do_action( 'switch_to_user', $user_id, $old_user_id );
-	} else {
-		/**
-		 * Fires when a user switches back to their originating account.
-		 *
-		 * @since 0.6.0
-		 *
-		 * @param int       $user_id     The ID of the user being switched back to.
-		 * @param int|false $old_user_id The ID of the user being switched from, or false if the user is switching back
-		 *                               after having been switched off.
-		 */
-		do_action( 'switch_back_user', $user_id, $old_user_id );
-	}
+		$session_filter = function( array $session, $user_id ) use ( $old_user_id, $old_token ) {
+			$session['switched_from_id']      = $old_user_id;
+			$session['switched_from_session'] = $old_token;
+			return $session;
+		};
 
-	return $user;
-}
+		add_filter( 'attach_session_information', $session_filter, 99, 2 );
+
+		wp_clear_auth_cookie();
+		wp_set_auth_cookie( $user_id, $remember, '', $new_token );
+		wp_set_current_user( $user_id );
+
+		remove_filter( 'attach_session_information', $session_filter, 99 );
+
+		if ( $set_old_user ) {
+			/**
+			 * Fires when a user switches to another user account.
+			 *
+			 * @since 0.6.0
+			 * @since 1.4.0 The `$new_token` and `$old_token` parameters were added.
+			 *
+			 * @param int    $user_id     The ID of the user being switched to.
+			 * @param int    $old_user_id The ID of the user being switched from.
+			 * @param string $new_token   The token of the session of the user being switched to. Can be an empty string
+			 *                            or a token for a session that may or may not still be valid.
+			 * @param string $old_token   The token of the session of the user being switched from.
+			 */
+			do_action( 'switch_to_user', $user_id, $old_user_id, $new_token, $old_token );
+		} else {
+			/**
+			 * Fires when a user switches back to their originating account.
+			 *
+			 * @since 0.6.0
+			 * @since 1.4.0 The `$new_token` and `$old_token` parameters were added.
+			 *
+			 * @param int       $user_id     The ID of the user being switched back to.
+			 * @param int|false $old_user_id The ID of the user being switched from, or false if the user is switching back
+			 *                               after having been switched off.
+			 * @param string    $new_token   The token of the session of the user being switched to. Can be an empty string
+			 *                               or a token for a session that may or may not still be valid.
+			 * @param string    $old_token   The token of the session of the user being switched from.
+			 */
+			do_action( 'switch_back_user', $user_id, $old_user_id, $new_token, $old_token );
+		}
+
+		if ( $old_token && $old_user_id && ! $set_old_user ) {
+			// When switching back, destroy the session for the old user
+			$manager = WP_Session_Tokens::get_instance( $old_user_id );
+			$manager->destroy( $old_token );
+		}
+
+		// When switching, instruct WooCommerce to forget about the current user's session
+		if ( function_exists( 'WC' ) ) {
+			user_switching::forget_woocommerce_session( WC() );
+		}
+
+		return $user;
+	}
 }
 
 if ( ! function_exists( 'switch_off_user' ) ) {
-/**
- * Switches off the current logged in user. This logs the current user out while retaining a cookie allowing them to log
- * straight back in using the 'Switch back to {user}' system.
- *
- * @return bool True on success, false on failure.
- */
-function switch_off_user() {
-	$old_user_id = get_current_user_id();
-
-	if ( ! $old_user_id ) {
-		return false;
-	}
-
-	user_switching_set_olduser_cookie( $old_user_id );
-	wp_clear_auth_cookie();
-	wp_set_current_user( 0 );
-
 	/**
-	 * Fires when a user switches off.
+	 * Switches off the current logged in user. This logs the current user out while retaining a cookie allowing them to log
+	 * straight back in using the 'Switch back to {user}' system.
 	 *
-	 * @since 0.6.0
-	 *
-	 * @param int $old_user_id The ID of the user switching off.
+	 * @return bool True on success, false on failure.
 	 */
-	do_action( 'switch_off_user', $old_user_id );
+	function switch_off_user() {
+		$old_user_id = get_current_user_id();
 
-	return true;
-}
+		if ( ! $old_user_id ) {
+			return false;
+		}
+
+		$old_token = function_exists( 'wp_get_session_token' ) ? wp_get_session_token() : '';
+
+		user_switching_set_olduser_cookie( $old_user_id, false, $old_token );
+		wp_clear_auth_cookie();
+		wp_set_current_user( 0 );
+
+		/**
+		 * Fires when a user switches off.
+		 *
+		 * @since 0.6.0
+		 * @since 1.4.0 The `$old_token` parameter was added.
+		 *
+		 * @param int    $old_user_id The ID of the user switching off.
+		 * @param string $old_token   The token of the session of the user switching off.
+		 */
+		do_action( 'switch_off_user', $old_user_id, $old_token );
+
+		return true;
+	}
 }
 
 if ( ! function_exists( 'current_user_switched' ) ) {
-/**
- * Helper function. Did the current user switch into their account?
- *
- * @return bool|WP_User False if the user isn't logged in or they didn't switch in; old user object (which evaluates to
- *                      true) if the user switched into the current user account.
- */
-function current_user_switched() {
-	if ( ! is_user_logged_in() ) {
-		return false;
-	}
+	/**
+	 * Returns whether or not the current user switched into their account.
+	 *
+	 * @return false|WP_User False if the user isn't logged in or they didn't switch in; old user object (which evaluates to
+	 *                       true) if the user switched into the current user account.
+	 */
+	function current_user_switched() {
+		if ( ! is_user_logged_in() ) {
+			return false;
+		}
 
-	return user_switching::get_old_user();
-}
+		return user_switching::get_old_user();
+	}
 }
 
 $GLOBALS['user_switching'] = user_switching::get_instance();
+$GLOBALS['user_switching']->init_hooks();

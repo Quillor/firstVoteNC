@@ -19,7 +19,8 @@
 
      var $submits = $form.find(':submit, .cf-page-btn-next' );
 
-     /**
+
+    /**
       * Start system
       *
       * @since 1.5.0
@@ -28,7 +29,10 @@
          $.each( configs, function( i, config ){
              fields[ config.id ] = self[config.type]( config );
          } );
-     };
+         
+         setupInputMasks();
+		 $( document ).on( 'cf.add', setupInputMasks );
+	 };
 
      /**
       * Validation handler for adding/removing errors for field types
@@ -48,7 +52,7 @@
          if( ! valid ){
              $parent.addClass( 'has-error' ).append( '<span id="cf-error-'+ $field.attr('id') +'" class="help-block ' + extraClass +'">' + message  + '</span>' );
              if ( $field.prop( 'required' ) ) {
-                 disableAdvance();
+                 disableAdvance($field);
              }
              $field.addClass( 'parsely-error' );
              return false;
@@ -59,13 +63,43 @@
          }
      }
 
-     /**
+    /**
+     * Check if field is on the current page of a multi-page form.
+     *
+     * @since 1.5.8
+     *
+     * @param {jQuery} $field jQuery object of field to test.
+     *
+     * @return {Bool}
+     */
+    function fieldIsOnCurrentPage($field) {
+        return ! $field.closest('.caldera-form-page').attr('aria-hidden');
+    }
+
+
+    /**
+     * Get field of page field is on if on a multi-page form.
+     *
+     * @since 1.5.8
+     *
+     * @param {jQuery} $field jQuery object of field to test.
+     *
+     * @return {Bool}
+     */
+    function getFieldPage($field) {
+        return $field.closest( '.caldera-form-page' ).data( 'formpage' );
+    }
+
+    /**
       * Utility method for preventing advance (next page/submit)
       *
       * @since 1.5.0
       */
-     function disableAdvance(){
-         $submits.prop( 'disabled',true).attr( 'aria-disabled', true  );
+     function disableAdvance($field){
+         if( fieldIsOnCurrentPage($field) ){
+             $submits.prop( 'disabled',true).attr( 'aria-disabled', true  );
+         }
+
      }
 
      /**
@@ -142,11 +176,12 @@
 
 			 var value;
 			 for (var i = 0; i <= bindMap.length; i++) {
-			 	if( 'object' === typeof   bindMap[i] &&  bindMap[i].hasOwnProperty( 'to' ) && bindMap[i].hasOwnProperty( 'tag' )){
-
+			 	if( 'object' === typeof   bindMap[i] &&  bindMap[i].hasOwnProperty( 'to' ) && bindMap[i].hasOwnProperty( 'tag' ) ){
 
 					value = state.getState(bindMap[i].to);
-                    if( ! isNaN( value ) ){
+					if( 0 !== value && '0' !== value && ! value ){
+						value = '';
+                    }else if( ! isNaN( value ) ){
                         value = value.toString();
                     } else if( 'string' === typeof  value ){
 						value = value.replace(/(?:\r\n|\r|\n)/g, '<br />');
@@ -233,8 +268,12 @@
              };
 
              rangeSliders[field.id].init = init;
-             state.events().subscribe(field.id, function (value) {
-                 $('#' + field.id + '_value').html(value);
+             state.events().subscribe(field.id, function ( eventFieldIdArray, value ) {
+                 if( value.length <= 0 ){
+					 value = field.default;
+                 }
+				 $('#' + field.id + '_value').html( value );
+
              });
 
              if( ! $el.is( ':visible') ){
@@ -245,10 +284,6 @@
 
 
          }
-
-
-
-
 
 
          $(document).on('cf.pagenav cf.add cf.disable cf.modal', function () {
@@ -348,20 +383,22 @@
       */
      this.phone_better = function( field ){
 
-         var $field = $( document.getElementById( field.id ) );
-
-
+         var fieldId = field.id;
+         var isValid = true;
          var reset = function(){
-             var error = document.getElementById( 'cf-error-'+ field.id );
-             if(  null != error ){
+             var error = document.getElementById( 'cf-error-'+ fieldId );
+			 isValid = true;
+             if( null != error ){
                  error.remove();
              }
          };
 
          var validation = function () {
+             var $field = $( document.getElementById( fieldId ) );
              reset();
              var valid;
-             if ($.trim($field.val())) {
+             var value = $.trim($field.val());
+             if (value) {
                  if ($field.intlTelInput("isValidNumber")) {
                      valid = true;
                  } else {
@@ -371,7 +408,15 @@
 
              var message;
              var errorCode = $field.intlTelInput("getValidationError");
+             var selectedCountryData = $field.intlTelInput("getSelectedCountryData");
+
              if (0 == errorCode) {
+                 valid = true;
+                 message = '';
+             } else if (value ==  "+" + selectedCountryData.dialCode){
+                 valid = true;
+                 message = '';
+             } else if (!value) {
                  valid = true;
                  message = '';
              } else {
@@ -382,25 +427,22 @@
                  }
              }
 
-
+			 isValid = valid;
              handleValidationMarkup(valid, $field, message, 'help-block-phone_better');
              return valid;
          };
 
          var init = function() {
-             if( ! $field.length ){
-                 $field = $( document.getElementById( field.id ) );
-             }
+             $field = $( document.getElementById( fieldId ) );
 
              $field.intlTelInput( field.options );
              $field.on( 'keyup change', reset );
-
              $field.blur(function() {
                  reset();
                  validation();
              });
 
-             $field.on( 'change', validation );
+             $field.on( 'keyup change', validation );
              $form.on( 'submit', function(){
                  validation();
              })
@@ -408,10 +450,31 @@
          };
 
          $(document).on('cf.pagenav cf.add cf.disable cf.modal', init );
+         $(document).on('cf.add', function(){
+           reset();
+           validation();
+         });
+
+        //Run Phone_better field validation when a submit or next page button is clicked
+       $('#' + field.form_id_attr + ' [data-page="next"], #' + field.form_id_attr + ' form.caldera_forms_form [type="submit"]').click( function(e){
+         var valid = validation();
+         if( valid === false ){
+           e.preventDefault();
+           e.stopPropagation();
+         }
+       });
+
+
+
+		 $(document).on('cf.remove', function(event,obj){
+			 if( obj.hasOwnProperty('field') && fieldId === obj.field ){
+			     if( ! isValid ){
+			         allowAdvance();
+                 }
+             }
+		 } );
 
          init();
-
-
 
      };
 
@@ -430,9 +493,9 @@
              $field.trumbowyg(field.options);
              var $editor = $field.parent().find( '.trumbowyg-editor');
 
-             $editor.html( $field.html() );
+             $editor.html( $field.val() );
              $editor.bind('input propertychange', function(){
-                 $field.html( $editor.html() );
+                 $field.val( $editor.html() );
              });
          }
 
@@ -472,7 +535,7 @@
           *
           */
          function setupLink(){
-             disableAdvance();
+             disableAdvance($field);
              var $cvcField = $( document.getElementById( fieldConfig.cvc ) ),
                  $expField = $( document.getElementById( fieldConfig.exp ) );
              $cvcField.blur( function(){
@@ -597,7 +660,26 @@
 	 * @param fieldConfig
 	 */
 	this.calculation = function (fieldConfig) {
-		var lastValue = null;
+		var lastValue = null,
+			/**
+			 * Debounced version of the run() function below
+			 *
+			 * @since 1.5.6
+			 */
+            debouncedRunner = debounce(
+                function(){
+                    run(state)
+                }, 250
+            );
+
+		/**
+		 * Adds commas or whatever to the display fo value
+		 *
+		 * @since 1.5.6
+		 *
+		 * @param {string} nStr
+		 * @returns {string}
+		 */
 		function addCommas(nStr){
 			nStr += '';
 			var x = nStr.split('.'),
@@ -612,8 +694,14 @@
 		}
 
 
+		/**
+         * Function that triggers calculation and updates state/DOM if it changed
+         * NOTE: Don't use directly, use debounced version
+         *
+         * @since 1.5.6
+         */
+        var run = function(){
 
-		var run = function(){
 			var result = window[fieldConfig.callback].apply(null, [state] );
 			if( ! isFinite( result ) ){
 				result = 0;
@@ -630,28 +718,61 @@
                     result = result.toFixed(2);
                 }
 
-				$('#' + fieldConfig.id ).html(addCommas( result ) );
-				$('#' + fieldConfig.targetId ).val( result );
+				$( '#' + fieldConfig.id ).html( addCommas( result ) ).data( 'calc-value', result );
+				$('#' + fieldConfig.targetId ).val( result ).trigger( 'change' );
 			}
 		};
 
+		//Update when any field that is part of the formula changes
 		$.each( fieldConfig.fieldBinds,  function (feild,feildId) {
-			state.events().subscribe( feildId, debounce(run,250) );
+			state.events().subscribe( feildId, debouncedRunner );
 		});
 
+		//Run on CF page change, field added, field removed or modal opened.
 		$(document).on('cf.pagenav cf.add cf.remove cf.modal', function (e,obj) {
 		    if( 'cf' == e.type && 'remove' === e.namespace && 'object' === typeof  obj && obj.hasOwnProperty('field' ) && obj.field === fieldConfig.id ){
-                    lastValue = null;
+		    	//If calculation field is removed, make sure if it comes back, an update to DOM/state will be triggered.
+				lastValue = null;
             }else{
-                run(state);
+            	//If trigger wasn't being removed, run.
+                debouncedRunner();
 
             }
 		});
 
-		run(state);
+		debouncedRunner();
 
-	}
+	};
 
+    /**
+     * Init color picker fields
+     *
+     * @since 1.6.2
+     */
+	this.color_picker = function(){
+        function color_picker_init(){
+            jQuery('.minicolor-picker').miniColors();
+        }
+
+        document.addEventListener('load', color_picker_init , false);
+
+        jQuery( document ).ajaxComplete(function() {
+            color_picker_init();
+        });
+    };
+
+
+    /**
+     * Add input mask to any field that has the data attributes for it
+     *
+     * @since 1.6.2
+     */
+    function setupInputMasks() {
+        if (!$.prototype.inputmask){
+            return;
+        }
+        $form.find('[data-inputmask]').inputmask();
+    }
 
  }
 

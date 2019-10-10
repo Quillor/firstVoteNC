@@ -1,7 +1,7 @@
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 
 <script type="text/javascript">
   Highcharts.setOptions({
@@ -47,8 +47,8 @@ $votes_contest = $votes_contests->posts;
 //$contests = json_decode(get_option('precinct_contests'), true);
   $pattern = '/\\\\("[^"]+")/'; 
   $contests1 = html_entity_decode($votes_contest[0]->post_excerpt); 
-  $array_cont = preg_replace($pattern, '' ,$contests1);
-  $contests = json_decode( $array_cont, true );
+  $contests2 = str_replace(' Jr', ', Jr' , $contests1);
+  $contests = json_decode($contests2, true );
   
 $election_name = str_replace(' ', '_', $masterelection);
 $election_name = strtolower($election_name);
@@ -57,23 +57,22 @@ $election_name = strtolower($election_name);
 $uploads = wp_upload_dir();
 $uploads_global = network_site_url('wp-content/uploads');
 $results_json = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
-/*
-if ( false === ( $results_json = get_option( 'precinct_votes' ) ) ) {
-  $results_file = wp_remote_get($uploads['baseurl'] . '/elections/precinct_results_'.$election_name.'.json');
-  $results_json = $results_file['body'];
-  //echo "IN";
-}else{
-//echo "not";
-}
-$results = json_decode($results_json, true);
-*/
-  $results1 = ($votes_contest[0]->post_content);
+
+
+   /*$results1 = ($votes_contest[0]->post_content);
   $array_cont = preg_replace($pattern, '',$results1);
-  $results = json_decode( $array_cont, true );
+  $results = json_decode( $results1, true );
+  
+ $statewide1 = file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json');
+  $array_cont = preg_replace($pattern, '',$statewide1);
+  $statewide = json_decode( $array_cont, true); */
+  
+  $results1 = ($votes_contest[0]->post_content);
+  $results2 = str_replace(["\'", ' Jr'], ["'", ', Jr'], $results1);
+  $results = json_decode($results2, true );
   
   $statewide1 = file_get_contents($uploads_global . '/elections/election_results_'.$election_name.'.json');
-  $array_cont = preg_replace($pattern, '',$statewide1);
-  $statewide = json_decode( $array_cont, true);
+  $statewide = json_decode( $statewide1, true);
 
 $total = count($results);
 //$total_state = count($statewide) - count(array_keys(array_column($statewide, '_cmb_ballot_president-and-vice-president-of-the-united-states'), NULL));
@@ -192,14 +191,19 @@ foreach ($ep_fields as $ep_field) {
       title: { text: "<?php echo $ep_field['name']; ?><br />(Your Precinct)", useHTML: true },
       plotOptions: {
         pie: {
+		  allowPointSelect: true,
+		  cursor: 'pointer',
           dataLabels: {
-            softConnector: true,
+            //softConnector: true,
             enabled: true,
             format: '{point.name}:<br />{point.y:,.0f} ({point.percent:.2f}%)',
-            useHTML: true,
-            connectorColor: 'black'
+			style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                } 
+            //useHTML: true,
+            //connectorColor: 'black'
           },
-          size: '75%'
+          size: '50%'
         }
       },
       // legend: { enabled: false },
@@ -223,6 +227,8 @@ foreach ($ep_fields as $ep_field) {
       title: { text: "<?php echo $ep_field['name']; ?><br />(Statewide)", useHTML: true },
       plotOptions: {
         pie: {
+		  allowPointSelect: true,
+		  cursor: 'pointer',
           dataLabels: {
             softConnector: true,
             enabled: true,
@@ -230,7 +236,7 @@ foreach ($ep_fields as $ep_field) {
             useHTML: true,
             connectorColor: 'black'
           },
-          size: '75%'
+          size: '50%'
         }
       },
       // legend: { enabled: false },

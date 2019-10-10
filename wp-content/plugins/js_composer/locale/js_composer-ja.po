@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Visual Composer\n"
+"Project-Id-Version: WPBakery Page Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 17:42+0200\n"
-"PO-Revision-Date: 2017-08-22 17:42+0200\n"
+"POT-Creation-Date: 2018-05-14 16:19+0300\n"
+"PO-Revision-Date: 2018-05-14 16:19+0300\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: evange <info@evange.co.jp>\n"
 "Language: ja\n"
@@ -12,701 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
-
-#: config/./lean-map.php:121
-msgid "Same window"
-msgstr "同じウィンドウ"
-
-#: config/./lean-map.php:122
-msgid "New window"
-msgstr "新しいウィンドウ"
-
-#: config/./lean-map.php:130 config/./content/shortcode-vc-posts-slider.php:90
-#: config/./deprecated/shortcode-vc-posts-grid.php:9
-#: include/./params/sorted_list/sorted_list.php:100
-msgid "Link to post"
-msgstr "投稿へのリンク"
-
-#: config/./lean-map.php:134 config/./content/shortcode-vc-posts-slider.php:93
-#: config/./deprecated/shortcode-vc-posts-grid.php:13
-#: include/./params/sorted_list/sorted_list.php:99
-#: include/./templates/teaser.html.php:22
-#: include/./templates/teaser.html.php:43
-msgid "No link"
-msgstr "リンクなし"
-
-#: config/./lean-map.php:138 config/./content/shortcode-vc-posts-slider.php:91
-#: config/./deprecated/shortcode-vc-posts-grid.php:17
-msgid "Link to bigger image"
-msgstr "大きな画像へのリンク"
-
-#: config/./lean-map.php:145
-msgid "Alert"
-msgstr "アラート"
-
-#: config/./lean-map.php:146
-msgid "Info"
-msgstr "インフォ"
-
-#: config/./lean-map.php:147
-msgid "Tick"
-msgstr "チェック"
-
-#: config/./lean-map.php:148
-msgid "Explanation"
-msgstr "解説"
-
-#: config/./lean-map.php:149
-msgid "Address book"
-msgstr "アドレス帳"
-
-#: config/./lean-map.php:150
-msgid "Alarm clock"
-msgstr "目覚まし時計"
-
-#: config/./lean-map.php:151
-msgid "Anchor"
-msgstr "アンカー"
-
-#: config/./lean-map.php:152
-msgid "Application Image"
-msgstr "アプリケーションイメージ"
-
-#: config/./lean-map.php:153
-msgid "Arrow"
-msgstr "矢印"
-
-#: config/./lean-map.php:154
-msgid "Asterisk"
-msgstr "アスタリスク"
-
-#: config/./lean-map.php:155
-msgid "Hammer"
-msgstr "ハマー"
-
-#: config/./lean-map.php:156
-msgid "Balloon"
-msgstr "バルーン"
-
-#: config/./lean-map.php:157
-msgid "Balloon Buzz"
-msgstr "バルーンバズ"
-
-#: config/./lean-map.php:158
-msgid "Balloon Facebook"
-msgstr "バルーンFacebook"
-
-#: config/./lean-map.php:159
-msgid "Balloon Twitter"
-msgstr "バルーンTwitter"
-
-#: config/./lean-map.php:160
-msgid "Battery"
-msgstr "バッテリー"
-
-#: config/./lean-map.php:161
-msgid "Binocular"
-msgstr "双眼鏡"
-
-#: config/./lean-map.php:162
-msgid "Document Excel"
-msgstr "エクセル"
-
-#: config/./lean-map.php:163
-msgid "Document Image"
-msgstr "画像"
-
-#: config/./lean-map.php:164
-msgid "Document Music"
-msgstr "音楽"
-
-#: config/./lean-map.php:165
-msgid "Document Office"
-msgstr "Office"
-
-#: config/./lean-map.php:166
-msgid "Document PDF"
-msgstr "PDF"
-
-#: config/./lean-map.php:167
-msgid "Document Powerpoint"
-msgstr "パワポ"
-
-#: config/./lean-map.php:168
-msgid "Document Word"
-msgstr "ワード"
-
-#: config/./lean-map.php:169
-msgid "Bookmark"
-msgstr "ブックマーク"
-
-#: config/./lean-map.php:170
-msgid "Camcorder"
-msgstr "ビデオカメラ"
-
-#: config/./lean-map.php:171
-msgid "Camera"
-msgstr "毛ミスター亜"
-
-#: config/./lean-map.php:172
-msgid "Chart"
-msgstr "図表"
-
-#: config/./lean-map.php:173
-msgid "Chart pie"
-msgstr "円図表"
-
-#: config/./lean-map.php:174
-msgid "Clock"
-msgstr "時計"
-
-#: config/./lean-map.php:175
-msgid "Fire"
-msgstr "炎"
-
-#: config/./lean-map.php:176
-msgid "Heart"
-msgstr "ハート"
-
-#: config/./lean-map.php:177
-msgid "Mail"
-msgstr "メール"
-
-#: config/./lean-map.php:178
-msgid "Play"
-msgstr "再生"
-
-#: config/./lean-map.php:179
-msgid "Shield"
-msgstr "盾"
-
-#: config/./lean-map.php:180
-msgid "Video"
-msgstr "ビデオ"
-
-#: config/./lean-map.php:186
-#: include/./classes/core/class-vc-shared-library.php:335
-msgid "Grey"
-msgstr "グレイ"
-
-#: config/./lean-map.php:187
-#: include/./classes/core/class-vc-shared-library.php:326
-msgid "Blue"
-msgstr "青"
-
-#: config/./lean-map.php:188
-#: include/./classes/core/class-vc-shared-library.php:327
-msgid "Turquoise"
-msgstr "ターコイズ"
-
-#: config/./lean-map.php:189
-#: include/./classes/core/class-vc-shared-library.php:338
-msgid "Green"
-msgstr "緑"
-
-#: config/./lean-map.php:190
-#: include/./classes/core/class-vc-shared-library.php:336
-msgid "Orange"
-msgstr "オレンジ"
-
-#: config/./lean-map.php:191
-msgid "Red"
-msgstr "赤"
-
-#: config/./lean-map.php:192
-#: include/./classes/core/class-vc-shared-library.php:334
-msgid "Black"
-msgstr "黒"
-
-#: config/./lean-map.php:199
-msgid "Regular"
-msgstr ""
-
-#: config/./lean-map.php:200 config/./content/shortcode-vc-zigzag.php:70
-#: config/./tta/shortcode-vc-tta-tour.php:130
-msgid "Large"
-msgstr "大"
-
-#: config/./lean-map.php:201 config/./content/shortcode-vc-zigzag.php:68
-#: config/./social/shortcode-vc-googleplus.php:20
-#: config/./tta/shortcode-vc-tta-tour.php:132
-msgid "Small"
-msgstr "小"
-
-#: config/./lean-map.php:202
-msgid "Mini"
-msgstr "最小"
-
-#: config/./lean-map.php:208 config/./containers/shortcode-vc-column.php:40
-#: config/./containers/shortcode-vc-column.php:55
-#: config/./containers/shortcode-vc-row.php:114
-#: config/./containers/shortcode-vc-row.php:129
-#: config/./containers/shortcode-vc-section.php:75
-#: config/./containers/shortcode-vc-section.php:90
-#: config/./content/shortcode-vc-gallery.php:111
-#: config/./content/shortcode-vc-images-carousel.php:39
-#: config/./content/shortcode-vc-single-image.php:182
-#: config/./content/vc-icon-element.php:184
-#: config/./grids/class-vc-grids-common.php:490
-#: config/./grids/class-vc-grids-common.php:547
-#: config/./grids/class-vc-grids-common.php:861
-#: config/./grids/class-vc-grids-common.php:918
-#: config/./grids/class-vc-grids-common.php:1125
-#: config/./grids/class-vc-grids-common.php:1174
-#: config/./social/shortcode-vc-googleplus.php:34
-#: config/./tta/shortcode-vc-tta-accordion.php:66
-#: config/./tta/shortcode-vc-tta-accordion.php:86
-#: config/./tta/shortcode-vc-tta-accordion.php:117
-#: config/./tta/shortcode-vc-tta-accordion.php:145
-#: config/./tta/shortcode-vc-tta-pageable.php:33
-#: config/./tta/shortcode-vc-tta-pageable.php:61
-#: config/./tta/shortcode-vc-tta-tabs.php:66
-#: config/./tta/shortcode-vc-tta-tabs.php:87
-#: config/./tta/shortcode-vc-tta-tabs.php:128
-#: config/./tta/shortcode-vc-tta-tabs.php:156
-#: config/./tta/shortcode-vc-tta-tour.php:66
-#: config/./tta/shortcode-vc-tta-tour.php:87
-#: config/./tta/shortcode-vc-tta-tour.php:142
-#: config/./tta/shortcode-vc-tta-tour.php:170
-#: include/./autoload/vc-image-filters.php:56
-#: include/./params/animation_style/animation_style.php:41
-#: include/./params/css_editor/css_editor.php:134
-#: include/./params/vc_grid_item/shortcodes.php:14
-#: include/./params/vc_grid_item/shortcodes.php:495
-#: include/./templates/pages/vc-settings/default-template-post-type.tpl.php:27
-msgid "None"
-msgstr "なし"
-
-#: config/./lean-map.php:209
-msgid "Address book icon"
-msgstr "アドレス帳のアイコン"
-
-#: config/./lean-map.php:210
-msgid "Alarm clock icon"
-msgstr "目覚まし時計のアイコン"
-
-#: config/./lean-map.php:211
-msgid "Anchor icon"
-msgstr "アンカーアイコン"
-
-#: config/./lean-map.php:212
-msgid "Application Image icon"
-msgstr "アプリケーション画像アイコン"
-
-#: config/./lean-map.php:213
-msgid "Arrow icon"
-msgstr "矢印アイコン"
-
-#: config/./lean-map.php:214
-msgid "Asterisk icon"
-msgstr "アスタリスクのアイコン"
-
-#: config/./lean-map.php:215
-msgid "Hammer icon"
-msgstr "ハンマーのアイコン"
-
-#: config/./lean-map.php:216
-msgid "Balloon icon"
-msgstr "バルーンアイコン"
-
-#: config/./lean-map.php:217
-msgid "Balloon Buzz icon"
-msgstr "バルーンBuzzアイコン"
-
-#: config/./lean-map.php:218
-msgid "Balloon Facebook icon"
-msgstr "バルーンFacebookアイコン"
-
-#: config/./lean-map.php:219
-msgid "Balloon Twitter icon"
-msgstr "バルーンTwitterアイコン"
-
-#: config/./lean-map.php:220
-msgid "Battery icon"
-msgstr "バッテリーアイコン"
-
-#: config/./lean-map.php:221
-msgid "Binocular icon"
-msgstr "双眼鏡アイコン"
-
-#: config/./lean-map.php:222
-msgid "Document Excel icon"
-msgstr "エクセルアイコン"
-
-#: config/./lean-map.php:223
-msgid "Document Image icon"
-msgstr "画像アイコン"
-
-#: config/./lean-map.php:224
-msgid "Document Music icon"
-msgstr "音楽アイコン"
-
-#: config/./lean-map.php:225
-msgid "Document Office icon"
-msgstr "Officeアイコン"
-
-#: config/./lean-map.php:226
-msgid "Document PDF icon"
-msgstr "PDFアイコン"
-
-#: config/./lean-map.php:227
-msgid "Document Powerpoint icon"
-msgstr "パワポアイコン"
-
-#: config/./lean-map.php:228
-msgid "Document Word icon"
-msgstr "ワードアイコン"
-
-#: config/./lean-map.php:229
-msgid "Bookmark icon"
-msgstr "ブックマークアイコン"
-
-#: config/./lean-map.php:230
-msgid "Camcorder icon"
-msgstr "ビデオカメラアイコン"
-
-#: config/./lean-map.php:231
-msgid "Camera icon"
-msgstr "カメラアイコン"
-
-#: config/./lean-map.php:232
-msgid "Chart icon"
-msgstr "図表アイコン"
-
-#: config/./lean-map.php:233
-msgid "Chart pie icon"
-msgstr "円図表アイコン"
-
-#: config/./lean-map.php:234
-msgid "Clock icon"
-msgstr "時計アイコン"
-
-#: config/./lean-map.php:235
-msgid "Fire icon"
-msgstr "炎アイコ"
-
-#: config/./lean-map.php:236
-msgid "Heart icon"
-msgstr "ハートアイコン"
-
-#: config/./lean-map.php:237
-msgid "Mail icon"
-msgstr "メールアイコン"
-
-#: config/./lean-map.php:238
-msgid "Play icon"
-msgstr "再生アイコン"
-
-#: config/./lean-map.php:239
-msgid "Shield icon"
-msgstr "盾アイコン"
-
-#: config/./lean-map.php:240
-msgid "Video icon"
-msgstr "ビデオアイコン"
-
-#: config/./templates.php:13
-msgid "Landing Page"
-msgstr "ランディングページ"
-
-#: config/./templates.php:23
-msgid "Call to Action Page"
-msgstr "ページの呼び出しアクション"
-
-#: config/./templates.php:33
-msgid "Feature List"
-msgstr "機能一覧"
-
-#: config/./templates.php:43
-msgid "Description Page"
-msgstr "説明ページ"
-
-#: config/./templates.php:53
-msgid "Service List"
-msgstr "サービス一覧"
-
-#: config/./templates.php:63
-msgid "Product Page"
-msgstr "製品ページ"
-
-#: config/./templates.php:72
-msgid "FAQ section"
-msgstr "FAQセクション"
-
-#: config/./templates.php:82
-msgid "About section"
-msgstr "セクションについて"
-
-#: config/./templates.php:92
-msgid "About with features"
-msgstr "機能を持つについて"
-
-#: config/./templates.php:102
-msgid "Three image description"
-msgstr "三つの画像の説明"
-
-#: config/./templates.php:112
-msgid "News list"
-msgstr "ニュース一覧"
-
-#: config/./templates.php:122
-msgid "Product description"
-msgstr "製品説明"
-
-#: config/./templates.php:132
-msgid "Description with accordion"
-msgstr "アコーディオンと説明"
-
-#: config/./templates.php:144
-msgid "Two column list"
-msgstr "2つの列リスト"
-
-#: config/./templates.php:154
-msgid "About with tour section"
-msgstr "ツアーセクションについて"
-
-#: config/./templates.php:168
-msgid "Rounded image description"
-msgstr "角丸画像の説明"
-
-#: config/./templates.php:178
-msgid "Description with success message"
-msgstr "成功メッセージと説明"
-
-#: config/./templates.php:188
-msgid "Images with tab description"
-msgstr "タブ説明と画像"
-
-#: config/./templates.php:198
-msgid "Square on background"
-msgstr "背景上の正方形"
-
-#: config/./templates.php:208
-msgid "Product description with tabs"
-msgstr "タブ付きの製品説明"
-
-#: config/./templates.php:218
-msgid "Description with headings"
-msgstr "見出しと説明"
-
-#: config/./templates.php:228
-msgid "Video with description"
-msgstr "説明とビデオ"
-
-#: config/./templates.php:238
-msgid "Description with buttons"
-msgstr "ボタン付きの説明"
-
-#: config/./templates.php:248
-msgid "Map and Contacts"
-msgstr "地図と問い合わせ"
-
-#: config/./templates.php:258
-msgid "Help section"
-msgstr "ヘルプセクション"
-
-#: config/./templates.php:268
-msgid "Screen description"
-msgstr "画面説明"
-
-#: config/./templates.php:278
-msgid "Description with round images"
-msgstr "丸い画像を説明"
-
-#: config/./templates.php:288
-msgid "FAQ in three columns"
-msgstr "3列のFAQ"
-
-#: config/./templates.php:298
-msgid "Centre description"
-msgstr "センターの説明"
-
-#: config/./templates.php:308
-msgid "Description with gallery"
-msgstr "ギャラリーと説明"
-
-#: config/./templates.php:318
-msgid "Centre description with image"
-msgstr "画像とセンターの説明"
-
-#: config/./templates.php:328
-msgid "Description with thumbnails"
-msgstr "サムネイルと説明"
-
-#: config/./templates.php:338
-msgid "About with left gallery"
-msgstr "左のギャラリーについて"
-
-#: config/./templates.php:348
-msgid "Five image layout"
-msgstr "5つの画像レイアウト"
-
-#: config/./templates.php:358
-msgid "Accordion news list"
-msgstr "アコーディオンニュース一覧"
-
-#: config/./templates.php:368
-msgid "Product with social icons"
-msgstr "ソーシャルアイコンを持つ製品"
-
-#: config/./templates.php:378
-msgid "Complex news layout"
-msgstr "複雑なニュースのレイアウト"
-
-#: config/./templates.php:388
-msgid "Product list with CTA"
-msgstr "CTAと製品一覧"
-
-#: config/./templates.php:398
-msgid "Intro with features"
-msgstr "機能を備えたイントロ"
-
-#: config/./templates.php:408
-msgid "Image gallery with description"
-msgstr "説明と画像ギャラリー"
-
-#: config/./templates.php:418
-msgid "Team members"
-msgstr "チームメンバー"
-
-#: config/./templates.php:428
-msgid "Large image with thumbnails"
-msgstr "サムネイルを持つ大きな画像"
-
-#: config/./templates.php:438
-msgid "Complex news layout II"
-msgstr "複雑なニュースのレイアウトII"
-
-#: config/./templates.php:448
-msgid "Service description layout"
-msgstr "サービスの説明レイアウト"
-
-#: config/./templates.php:458
-msgid "Articles with headings"
-msgstr ""
-
-#: config/./templates.php:476
-msgid "Call to Action section"
-msgstr ""
-
-#: config/./templates.php:488
-msgid "Charts section"
-msgstr ""
-
-#: config/./templates.php:506
-msgid "Chess Grid"
-msgstr ""
-
-#: config/./templates.php:528
-msgid "Features and articles"
-msgstr ""
-
-#: config/./templates.php:570
-msgid "Features and charts"
-msgstr ""
-
-#: config/./templates.php:604
-msgid "Features with video parallax"
-msgstr ""
-
-#: config/./templates.php:626
-msgid "Features with full width promo"
-msgstr ""
-
-#: config/./templates.php:664
-msgid "Full height hero section"
-msgstr ""
-
-#: config/./templates.php:678
-msgid "Full height with transparent block"
-msgstr ""
-
-#: config/./templates.php:692
-msgid "Full height parallax"
-msgstr ""
-
-#: config/./templates.php:702
-msgid "Header section with features"
-msgstr ""
-
-#: config/./templates.php:733
-msgid "Helps with icons"
-msgstr ""
-
-#: config/./templates.php:743
-msgid "Plain articles"
-msgstr ""
-
-#: config/./templates.php:757
-msgid "Post portfolio"
-msgstr ""
-
-#: config/./templates.php:767
-msgid "Product introduction"
-msgstr ""
-
-#: config/./templates.php:793
-msgid "Services with block buttons"
-msgstr ""
-
-#: config/./templates.php:815
-msgid "Tabs with features"
-msgstr ""
-
-#: config/./templates.php:837
-msgid "Video section"
-msgstr ""
-
-#: config/./templates.php:851
-msgid "Video promo"
-msgstr ""
-
-#: config/./templates.php:861
-msgid "Equal Feature List"
-msgstr ""
-
-#: config/./templates.php:871
-msgid "Parallax Introduction"
-msgstr ""
-
-#: config/./templates.php:881
-msgid "Three Informative Blocks"
-msgstr ""
-
-#: config/./templates.php:892
-msgid "Description Articles"
-msgstr ""
-
-#: config/./templates.php:902
-msgid "Full Height Features"
-msgstr ""
-
-#: config/./templates.php:912
-msgid "Business Description"
-msgstr ""
-
-#: config/./templates.php:922
-msgid "Article Hero Image"
-msgstr ""
-
-#: config/./templates.php:932
-msgid "My Team Members"
-msgstr ""
-
-#: config/./templates.php:942
-msgid "Hero Image With Description"
-msgstr ""
-
-#: config/./templates.php:952
-msgid "Description with Image on Background"
-msgstr ""
-
-#: config/./templates.php:962
-msgid "Three Image with Article"
-msgstr ""
 
 #: config/./buttons/shortcode-vc-btn.php:27
 #: config/./content/shortcode-vc-message.php:156
@@ -837,11 +145,11 @@ msgstr ""
 #: include/./params/sorted_list/sorted_list.php:97
 #: include/./params/vc_grid_item/shortcodes.php:19
 #: include/./params/vc_grid_item/shortcodes.php:246
-#: include/./templates/teaser.html.php:36
-#: include/./templates/teaser.html.php:60
 #: include/./templates/pages/partials/vc-roles-parts/_post_types.tpl.php:15
 #: include/./templates/pages/partials/vc-roles-parts/_settings.tpl.php:18
 #: include/./templates/pages/partials/vc-roles-parts/_shortcodes.tpl.php:33
+#: include/./templates/teaser.html.php:36
+#: include/./templates/teaser.html.php:60
 msgid "Custom"
 msgstr "カスタム"
 
@@ -1404,11 +712,11 @@ msgstr ""
 #: config/./wp/shortcode-vc-wp-search.php:29
 #: config/./wp/shortcode-vc-wp-tagcloud.php:52
 #: config/./wp/shortcode-vc-wp-text.php:35
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:71
+#: include/./classes/vendors/plugins/acf/shortcode.php:67
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:156
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:79
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:147
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:71
-#: include/./classes/vendors/plugins/acf/shortcode.php:67
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:94
 #: include/./params/vc_grid_item/shortcodes.php:61
 #: include/./params/vc_grid_item/shortcodes.php:180
@@ -1485,11 +793,11 @@ msgstr "特別なclass名"
 #: config/./wp/shortcode-vc-wp-search.php:31
 #: config/./wp/shortcode-vc-wp-tagcloud.php:54
 #: config/./wp/shortcode-vc-wp-text.php:37
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:73
+#: include/./classes/vendors/plugins/acf/shortcode.php:69
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:158
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:81
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:149
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:73
-#: include/./classes/vendors/plugins/acf/shortcode.php:69
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:96
 #: include/./params/vc_grid_item/shortcodes.php:63
 #: include/./params/vc_grid_item/shortcodes.php:182
@@ -1675,13 +983,13 @@ msgstr "ボタン"
 #: config/./tta/shortcode-vc-tta-tour.php:15
 #: include/./autoload/vendors/gravity_forms.php:35
 #: include/./classes/settings/class-vc-automapper.php:338
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:35
+#: include/./classes/vendors/plugins/acf/shortcode.php:34
 #: include/./classes/vendors/plugins/class-vc-vendor-contact-form7.php:56
 #: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:136
 #: include/./classes/vendors/plugins/class-vc-vendor-ninja-forms.php:40
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:59
 #: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:127
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:35
-#: include/./classes/vendors/plugins/acf/shortcode.php:34
 #: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:11
 #: include/./params/vc_grid_item/shortcodes.php:170
 #: include/./params/vc_grid_item/shortcodes.php:195
@@ -1811,7 +1119,7 @@ msgstr ""
 #: config/./deprecated/shortcode-vc-cta-button2.php:39
 #: config/./social/shortcode-vc-googleplus.php:41
 #: include/./params/vc_grid_item/shortcodes.php:339
-#: include/./templates/params/column_offset/template.tpl.php:30
+#: include/./templates/params/column_offset/template.tpl.php:37
 msgid "Width"
 msgstr "幅"
 
@@ -2096,6 +1404,46 @@ msgstr ""
 msgid "Parallax"
 msgstr ""
 
+#: config/./containers/shortcode-vc-column.php:40
+#: config/./containers/shortcode-vc-column.php:55
+#: config/./containers/shortcode-vc-row.php:114
+#: config/./containers/shortcode-vc-row.php:129
+#: config/./containers/shortcode-vc-section.php:75
+#: config/./containers/shortcode-vc-section.php:90
+#: config/./content/shortcode-vc-gallery.php:111
+#: config/./content/shortcode-vc-images-carousel.php:39
+#: config/./content/shortcode-vc-single-image.php:182
+#: config/./content/vc-icon-element.php:184
+#: config/./grids/class-vc-grids-common.php:490
+#: config/./grids/class-vc-grids-common.php:547
+#: config/./grids/class-vc-grids-common.php:861
+#: config/./grids/class-vc-grids-common.php:918
+#: config/./grids/class-vc-grids-common.php:1125
+#: config/./grids/class-vc-grids-common.php:1174 config/./lean-map.php:208
+#: config/./social/shortcode-vc-googleplus.php:34
+#: config/./tta/shortcode-vc-tta-accordion.php:66
+#: config/./tta/shortcode-vc-tta-accordion.php:86
+#: config/./tta/shortcode-vc-tta-accordion.php:117
+#: config/./tta/shortcode-vc-tta-accordion.php:145
+#: config/./tta/shortcode-vc-tta-pageable.php:33
+#: config/./tta/shortcode-vc-tta-pageable.php:61
+#: config/./tta/shortcode-vc-tta-tabs.php:66
+#: config/./tta/shortcode-vc-tta-tabs.php:87
+#: config/./tta/shortcode-vc-tta-tabs.php:128
+#: config/./tta/shortcode-vc-tta-tabs.php:156
+#: config/./tta/shortcode-vc-tta-tour.php:66
+#: config/./tta/shortcode-vc-tta-tour.php:87
+#: config/./tta/shortcode-vc-tta-tour.php:142
+#: config/./tta/shortcode-vc-tta-tour.php:170
+#: include/./autoload/vc-image-filters.php:56
+#: include/./params/animation_style/animation_style.php:41
+#: include/./params/css_editor/css_editor.php:134
+#: include/./params/vc_grid_item/shortcodes.php:14
+#: include/./params/vc_grid_item/shortcodes.php:495
+#: include/./templates/pages/vc-settings/default-template-post-type.tpl.php:27
+msgid "None"
+msgstr "なし"
+
 #: config/./containers/shortcode-vc-column.php:41
 #: config/./containers/shortcode-vc-column.php:56
 #: config/./containers/shortcode-vc-row.php:115
@@ -2217,7 +1565,7 @@ msgstr ""
 #: config/./content/shortcode-vc-toggle.php:57
 #: config/./grids/class-vc-grids-common.php:1126
 #: config/./grids/class-vc-grids-common.php:1175
-#: include/./helpers/helpers_api.php:500
+#: include/./helpers/helpers_api.php:498
 msgid "Default"
 msgstr "デフォルト"
 
@@ -3093,10 +2441,10 @@ msgstr ""
 #: config/./grids/class-vc-grids-common.php:277
 #: config/./tta/shortcode-vc-tta-section.php:48
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:109
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1272
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1335
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1449
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1280
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1343
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1457
 #: include/./params/loop/loop.php:446
 #: include/./params/sorted_list/sorted_list.php:91
 #: include/./params/vc_link/vc_link.php:18
@@ -3381,6 +2729,25 @@ msgstr "選択した場合は、タイトルがティザーテキストの前に
 msgid "Link"
 msgstr "リンク"
 
+#: config/./content/shortcode-vc-posts-slider.php:90
+#: config/./deprecated/shortcode-vc-posts-grid.php:9 config/./lean-map.php:130
+#: include/./params/sorted_list/sorted_list.php:100
+msgid "Link to post"
+msgstr "投稿へのリンク"
+
+#: config/./content/shortcode-vc-posts-slider.php:91
+#: config/./deprecated/shortcode-vc-posts-grid.php:17 config/./lean-map.php:138
+msgid "Link to bigger image"
+msgstr "大きな画像へのリンク"
+
+#: config/./content/shortcode-vc-posts-slider.php:93
+#: config/./deprecated/shortcode-vc-posts-grid.php:13 config/./lean-map.php:134
+#: include/./params/sorted_list/sorted_list.php:99
+#: include/./templates/teaser.html.php:22
+#: include/./templates/teaser.html.php:43
+msgid "No link"
+msgstr "リンクなし"
+
 #: config/./content/shortcode-vc-posts-slider.php:95
 msgid "Link type."
 msgstr "リンクタイプ"
@@ -3458,8 +2825,8 @@ msgstr "日付"
 
 #: config/./content/shortcode-vc-posts-slider.php:134
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:107
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1464
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1489
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1472
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1497
 msgid "ID"
 msgstr "ID"
 
@@ -4008,11 +3375,22 @@ msgstr "あなたの要素の色を選択"
 msgid "Extra small"
 msgstr ""
 
+#: config/./content/shortcode-vc-zigzag.php:68 config/./lean-map.php:201
+#: config/./social/shortcode-vc-googleplus.php:20
+#: config/./tta/shortcode-vc-tta-tour.php:132
+msgid "Small"
+msgstr "小"
+
 #: config/./content/shortcode-vc-zigzag.php:69
 #: config/./social/shortcode-vc-googleplus.php:21
 #: config/./tta/shortcode-vc-tta-tour.php:131
 msgid "Medium"
 msgstr "中"
+
+#: config/./content/shortcode-vc-zigzag.php:70 config/./lean-map.php:200
+#: config/./tta/shortcode-vc-tta-tour.php:130
+msgid "Large"
+msgstr "大"
 
 #: config/./content/shortcode-vc-zigzag.php:71
 #: config/./tta/shortcode-vc-tta-tour.php:129
@@ -4058,8 +3436,8 @@ msgid ""
 "Note: If you are using non-latin characters be sure to activate them under "
 "Settings/WPBakery Page Builder/General Settings."
 msgstr ""
-"あなたは非ラテン文字を使用している場合は設定/ Visual Composer/一般設定でそれ"
-"らをアクティブにしてください。"
+"あなたは非ラテン文字を使用している場合は設定/ WPBakery Page Builder/一般設定"
+"でそれらをアクティブにしてください。"
 
 #: config/./content/vc-custom-heading-element.php:42
 msgid "Add link to custom heading."
@@ -4497,8 +3875,8 @@ msgid "Load More Button"
 msgstr ""
 
 #: config/./grids/class-vc-grids-common.php:33
-#: include/./classes/shortcodes/vc-basic-grid.php:92
 #: include/./classes/shortcodes/paginator/class-vc-pageable.php:55
+#: include/./classes/shortcodes/vc-basic-grid.php:92
 msgid "Load more"
 msgstr "もっと読み込む"
 
@@ -4697,7 +4075,7 @@ msgid "Input meta key for grid ordering."
 msgstr "グリッド順序の入力メタキー"
 
 #: config/./grids/class-vc-grids-common.php:333
-#: include/./templates/params/column_offset/template.tpl.php:27
+#: include/./templates/params/column_offset/template.tpl.php:34
 msgid "Offset"
 msgstr "オフセット"
 
@@ -5184,6 +4562,328 @@ msgstr "メディアグリッド"
 msgid "Media grid from Media Library"
 msgstr ""
 
+#: config/./lean-map.php:121
+msgid "Same window"
+msgstr "同じウィンドウ"
+
+#: config/./lean-map.php:122
+msgid "New window"
+msgstr "新しいウィンドウ"
+
+#: config/./lean-map.php:145
+msgid "Alert"
+msgstr "アラート"
+
+#: config/./lean-map.php:146
+msgid "Info"
+msgstr "インフォ"
+
+#: config/./lean-map.php:147
+msgid "Tick"
+msgstr "チェック"
+
+#: config/./lean-map.php:148
+msgid "Explanation"
+msgstr "解説"
+
+#: config/./lean-map.php:149
+msgid "Address book"
+msgstr "アドレス帳"
+
+#: config/./lean-map.php:150
+msgid "Alarm clock"
+msgstr "目覚まし時計"
+
+#: config/./lean-map.php:151
+msgid "Anchor"
+msgstr "アンカー"
+
+#: config/./lean-map.php:152
+msgid "Application Image"
+msgstr "アプリケーションイメージ"
+
+#: config/./lean-map.php:153
+msgid "Arrow"
+msgstr "矢印"
+
+#: config/./lean-map.php:154
+msgid "Asterisk"
+msgstr "アスタリスク"
+
+#: config/./lean-map.php:155
+msgid "Hammer"
+msgstr "ハマー"
+
+#: config/./lean-map.php:156
+msgid "Balloon"
+msgstr "バルーン"
+
+#: config/./lean-map.php:157
+msgid "Balloon Buzz"
+msgstr "バルーンバズ"
+
+#: config/./lean-map.php:158
+msgid "Balloon Facebook"
+msgstr "バルーンFacebook"
+
+#: config/./lean-map.php:159
+msgid "Balloon Twitter"
+msgstr "バルーンTwitter"
+
+#: config/./lean-map.php:160
+msgid "Battery"
+msgstr "バッテリー"
+
+#: config/./lean-map.php:161
+msgid "Binocular"
+msgstr "双眼鏡"
+
+#: config/./lean-map.php:162
+msgid "Document Excel"
+msgstr "エクセル"
+
+#: config/./lean-map.php:163
+msgid "Document Image"
+msgstr "画像"
+
+#: config/./lean-map.php:164
+msgid "Document Music"
+msgstr "音楽"
+
+#: config/./lean-map.php:165
+msgid "Document Office"
+msgstr "Office"
+
+#: config/./lean-map.php:166
+msgid "Document PDF"
+msgstr "PDF"
+
+#: config/./lean-map.php:167
+msgid "Document Powerpoint"
+msgstr "パワポ"
+
+#: config/./lean-map.php:168
+msgid "Document Word"
+msgstr "ワード"
+
+#: config/./lean-map.php:169
+msgid "Bookmark"
+msgstr "ブックマーク"
+
+#: config/./lean-map.php:170
+msgid "Camcorder"
+msgstr "ビデオカメラ"
+
+#: config/./lean-map.php:171
+msgid "Camera"
+msgstr "毛ミスター亜"
+
+#: config/./lean-map.php:172
+msgid "Chart"
+msgstr "図表"
+
+#: config/./lean-map.php:173
+msgid "Chart pie"
+msgstr "円図表"
+
+#: config/./lean-map.php:174
+msgid "Clock"
+msgstr "時計"
+
+#: config/./lean-map.php:175
+msgid "Fire"
+msgstr "炎"
+
+#: config/./lean-map.php:176
+msgid "Heart"
+msgstr "ハート"
+
+#: config/./lean-map.php:177
+msgid "Mail"
+msgstr "メール"
+
+#: config/./lean-map.php:178
+msgid "Play"
+msgstr "再生"
+
+#: config/./lean-map.php:179
+msgid "Shield"
+msgstr "盾"
+
+#: config/./lean-map.php:180
+msgid "Video"
+msgstr "ビデオ"
+
+#: config/./lean-map.php:186
+#: include/./classes/core/class-vc-shared-library.php:335
+msgid "Grey"
+msgstr "グレイ"
+
+#: config/./lean-map.php:187
+#: include/./classes/core/class-vc-shared-library.php:326
+msgid "Blue"
+msgstr "青"
+
+#: config/./lean-map.php:188
+#: include/./classes/core/class-vc-shared-library.php:327
+msgid "Turquoise"
+msgstr "ターコイズ"
+
+#: config/./lean-map.php:189
+#: include/./classes/core/class-vc-shared-library.php:338
+msgid "Green"
+msgstr "緑"
+
+#: config/./lean-map.php:190
+#: include/./classes/core/class-vc-shared-library.php:336
+msgid "Orange"
+msgstr "オレンジ"
+
+#: config/./lean-map.php:191
+msgid "Red"
+msgstr "赤"
+
+#: config/./lean-map.php:192
+#: include/./classes/core/class-vc-shared-library.php:334
+msgid "Black"
+msgstr "黒"
+
+#: config/./lean-map.php:199
+msgid "Regular"
+msgstr ""
+
+#: config/./lean-map.php:202
+msgid "Mini"
+msgstr "最小"
+
+#: config/./lean-map.php:209
+msgid "Address book icon"
+msgstr "アドレス帳のアイコン"
+
+#: config/./lean-map.php:210
+msgid "Alarm clock icon"
+msgstr "目覚まし時計のアイコン"
+
+#: config/./lean-map.php:211
+msgid "Anchor icon"
+msgstr "アンカーアイコン"
+
+#: config/./lean-map.php:212
+msgid "Application Image icon"
+msgstr "アプリケーション画像アイコン"
+
+#: config/./lean-map.php:213
+msgid "Arrow icon"
+msgstr "矢印アイコン"
+
+#: config/./lean-map.php:214
+msgid "Asterisk icon"
+msgstr "アスタリスクのアイコン"
+
+#: config/./lean-map.php:215
+msgid "Hammer icon"
+msgstr "ハンマーのアイコン"
+
+#: config/./lean-map.php:216
+msgid "Balloon icon"
+msgstr "バルーンアイコン"
+
+#: config/./lean-map.php:217
+msgid "Balloon Buzz icon"
+msgstr "バルーンBuzzアイコン"
+
+#: config/./lean-map.php:218
+msgid "Balloon Facebook icon"
+msgstr "バルーンFacebookアイコン"
+
+#: config/./lean-map.php:219
+msgid "Balloon Twitter icon"
+msgstr "バルーンTwitterアイコン"
+
+#: config/./lean-map.php:220
+msgid "Battery icon"
+msgstr "バッテリーアイコン"
+
+#: config/./lean-map.php:221
+msgid "Binocular icon"
+msgstr "双眼鏡アイコン"
+
+#: config/./lean-map.php:222
+msgid "Document Excel icon"
+msgstr "エクセルアイコン"
+
+#: config/./lean-map.php:223
+msgid "Document Image icon"
+msgstr "画像アイコン"
+
+#: config/./lean-map.php:224
+msgid "Document Music icon"
+msgstr "音楽アイコン"
+
+#: config/./lean-map.php:225
+msgid "Document Office icon"
+msgstr "Officeアイコン"
+
+#: config/./lean-map.php:226
+msgid "Document PDF icon"
+msgstr "PDFアイコン"
+
+#: config/./lean-map.php:227
+msgid "Document Powerpoint icon"
+msgstr "パワポアイコン"
+
+#: config/./lean-map.php:228
+msgid "Document Word icon"
+msgstr "ワードアイコン"
+
+#: config/./lean-map.php:229
+msgid "Bookmark icon"
+msgstr "ブックマークアイコン"
+
+#: config/./lean-map.php:230
+msgid "Camcorder icon"
+msgstr "ビデオカメラアイコン"
+
+#: config/./lean-map.php:231
+msgid "Camera icon"
+msgstr "カメラアイコン"
+
+#: config/./lean-map.php:232
+msgid "Chart icon"
+msgstr "図表アイコン"
+
+#: config/./lean-map.php:233
+msgid "Chart pie icon"
+msgstr "円図表アイコン"
+
+#: config/./lean-map.php:234
+msgid "Clock icon"
+msgstr "時計アイコン"
+
+#: config/./lean-map.php:235
+msgid "Fire icon"
+msgstr "炎アイコ"
+
+#: config/./lean-map.php:236
+msgid "Heart icon"
+msgstr "ハートアイコン"
+
+#: config/./lean-map.php:237
+msgid "Mail icon"
+msgstr "メールアイコン"
+
+#: config/./lean-map.php:238
+msgid "Play icon"
+msgstr "再生アイコン"
+
+#: config/./lean-map.php:239
+msgid "Shield icon"
+msgstr "盾アイコン"
+
+#: config/./lean-map.php:240
+msgid "Video icon"
+msgstr "ビデオアイコン"
+
 #: config/./social/shortcode-vc-facebook.php:7
 msgid "Facebook Like"
 msgstr "Facebook いいね"
@@ -5528,6 +5228,306 @@ msgstr "サイドバー"
 
 #: config/./structure/shortcode-vc-widget-sidebar.php:25
 msgid "Select widget area to display."
+msgstr ""
+
+#: config/./templates.php:13
+msgid "Landing Page"
+msgstr "ランディングページ"
+
+#: config/./templates.php:23
+msgid "Call to Action Page"
+msgstr "ページの呼び出しアクション"
+
+#: config/./templates.php:33
+msgid "Feature List"
+msgstr "機能一覧"
+
+#: config/./templates.php:43
+msgid "Description Page"
+msgstr "説明ページ"
+
+#: config/./templates.php:53
+msgid "Service List"
+msgstr "サービス一覧"
+
+#: config/./templates.php:63
+msgid "Product Page"
+msgstr "製品ページ"
+
+#: config/./templates.php:72
+msgid "FAQ section"
+msgstr "FAQセクション"
+
+#: config/./templates.php:82
+msgid "About section"
+msgstr "セクションについて"
+
+#: config/./templates.php:92
+msgid "About with features"
+msgstr "機能を持つについて"
+
+#: config/./templates.php:102
+msgid "Three image description"
+msgstr "三つの画像の説明"
+
+#: config/./templates.php:112
+msgid "News list"
+msgstr "ニュース一覧"
+
+#: config/./templates.php:122
+msgid "Product description"
+msgstr "製品説明"
+
+#: config/./templates.php:132
+msgid "Description with accordion"
+msgstr "アコーディオンと説明"
+
+#: config/./templates.php:144
+msgid "Two column list"
+msgstr "2つの列リスト"
+
+#: config/./templates.php:154
+msgid "About with tour section"
+msgstr "ツアーセクションについて"
+
+#: config/./templates.php:168
+msgid "Rounded image description"
+msgstr "角丸画像の説明"
+
+#: config/./templates.php:178
+msgid "Description with success message"
+msgstr "成功メッセージと説明"
+
+#: config/./templates.php:188
+msgid "Images with tab description"
+msgstr "タブ説明と画像"
+
+#: config/./templates.php:198
+msgid "Square on background"
+msgstr "背景上の正方形"
+
+#: config/./templates.php:208
+msgid "Product description with tabs"
+msgstr "タブ付きの製品説明"
+
+#: config/./templates.php:218
+msgid "Description with headings"
+msgstr "見出しと説明"
+
+#: config/./templates.php:228
+msgid "Video with description"
+msgstr "説明とビデオ"
+
+#: config/./templates.php:238
+msgid "Description with buttons"
+msgstr "ボタン付きの説明"
+
+#: config/./templates.php:248
+msgid "Map and Contacts"
+msgstr "地図と問い合わせ"
+
+#: config/./templates.php:258
+msgid "Help section"
+msgstr "ヘルプセクション"
+
+#: config/./templates.php:268
+msgid "Screen description"
+msgstr "画面説明"
+
+#: config/./templates.php:278
+msgid "Description with round images"
+msgstr "丸い画像を説明"
+
+#: config/./templates.php:288
+msgid "FAQ in three columns"
+msgstr "3列のFAQ"
+
+#: config/./templates.php:298
+msgid "Centre description"
+msgstr "センターの説明"
+
+#: config/./templates.php:308
+msgid "Description with gallery"
+msgstr "ギャラリーと説明"
+
+#: config/./templates.php:318
+msgid "Centre description with image"
+msgstr "画像とセンターの説明"
+
+#: config/./templates.php:328
+msgid "Description with thumbnails"
+msgstr "サムネイルと説明"
+
+#: config/./templates.php:338
+msgid "About with left gallery"
+msgstr "左のギャラリーについて"
+
+#: config/./templates.php:348
+msgid "Five image layout"
+msgstr "5つの画像レイアウト"
+
+#: config/./templates.php:358
+msgid "Accordion news list"
+msgstr "アコーディオンニュース一覧"
+
+#: config/./templates.php:368
+msgid "Product with social icons"
+msgstr "ソーシャルアイコンを持つ製品"
+
+#: config/./templates.php:378
+msgid "Complex news layout"
+msgstr "複雑なニュースのレイアウト"
+
+#: config/./templates.php:388
+msgid "Product list with CTA"
+msgstr "CTAと製品一覧"
+
+#: config/./templates.php:398
+msgid "Intro with features"
+msgstr "機能を備えたイントロ"
+
+#: config/./templates.php:408
+msgid "Image gallery with description"
+msgstr "説明と画像ギャラリー"
+
+#: config/./templates.php:418
+msgid "Team members"
+msgstr "チームメンバー"
+
+#: config/./templates.php:428
+msgid "Large image with thumbnails"
+msgstr "サムネイルを持つ大きな画像"
+
+#: config/./templates.php:438
+msgid "Complex news layout II"
+msgstr "複雑なニュースのレイアウトII"
+
+#: config/./templates.php:448
+msgid "Service description layout"
+msgstr "サービスの説明レイアウト"
+
+#: config/./templates.php:458
+msgid "Articles with headings"
+msgstr ""
+
+#: config/./templates.php:476
+msgid "Call to Action section"
+msgstr ""
+
+#: config/./templates.php:488
+msgid "Charts section"
+msgstr ""
+
+#: config/./templates.php:506
+msgid "Chess Grid"
+msgstr ""
+
+#: config/./templates.php:528
+msgid "Features and articles"
+msgstr ""
+
+#: config/./templates.php:570
+msgid "Features and charts"
+msgstr ""
+
+#: config/./templates.php:604
+msgid "Features with video parallax"
+msgstr ""
+
+#: config/./templates.php:626
+msgid "Features with full width promo"
+msgstr ""
+
+#: config/./templates.php:664
+msgid "Full height hero section"
+msgstr ""
+
+#: config/./templates.php:678
+msgid "Full height with transparent block"
+msgstr ""
+
+#: config/./templates.php:692
+msgid "Full height parallax"
+msgstr ""
+
+#: config/./templates.php:702
+msgid "Header section with features"
+msgstr ""
+
+#: config/./templates.php:733
+msgid "Helps with icons"
+msgstr ""
+
+#: config/./templates.php:743
+msgid "Plain articles"
+msgstr ""
+
+#: config/./templates.php:757
+msgid "Post portfolio"
+msgstr ""
+
+#: config/./templates.php:767
+msgid "Product introduction"
+msgstr ""
+
+#: config/./templates.php:793
+msgid "Services with block buttons"
+msgstr ""
+
+#: config/./templates.php:815
+msgid "Tabs with features"
+msgstr ""
+
+#: config/./templates.php:837
+msgid "Video section"
+msgstr ""
+
+#: config/./templates.php:851
+msgid "Video promo"
+msgstr ""
+
+#: config/./templates.php:861
+msgid "Equal Feature List"
+msgstr ""
+
+#: config/./templates.php:871
+msgid "Parallax Introduction"
+msgstr ""
+
+#: config/./templates.php:881
+msgid "Three Informative Blocks"
+msgstr ""
+
+#: config/./templates.php:892
+msgid "Description Articles"
+msgstr ""
+
+#: config/./templates.php:902
+msgid "Full Height Features"
+msgstr ""
+
+#: config/./templates.php:912
+msgid "Business Description"
+msgstr ""
+
+#: config/./templates.php:922
+msgid "Article Hero Image"
+msgstr ""
+
+#: config/./templates.php:932
+msgid "My Team Members"
+msgstr ""
+
+#: config/./templates.php:942
+msgid "Hero Image With Description"
+msgstr ""
+
+#: config/./templates.php:952
+msgid "Description with Image on Background"
+msgstr ""
+
+#: config/./templates.php:962
+msgid "Three Image with Article"
 msgstr ""
 
 #: config/./tta/shortcode-vc-tta-accordion.php:7
@@ -6261,6 +6261,51 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
+#: include/./autoload/vc-pages/page-design-options.php:40
+msgid "Important notice"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-design-options.php:42
+#: include/./autoload/vc-pages/page-design-options.php:45
+msgid ""
+"You have an outdated version of WPBakery Page Builder Design Options. It is "
+"required to review and save it."
+msgstr ""
+
+#: include/./autoload/vc-pages/page-design-options.php:56
+msgid "Open Design Options"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-role-manager.php:12
+msgid "Role Manager"
+msgstr ""
+
+#: include/./autoload/vc-pages/page-role-manager.php:17
+msgid "Roles Manager"
+msgstr ""
+
+#: include/./autoload/vc-pages/pages.php:60
+#: include/./autoload/vc-pages/pages.php:78
+#: include/./classes/core/class-vc-base.php:761
+#: include/./classes/editors/class-vc-backend-editor.php:81
+#: include/./classes/editors/navbar/class-vc-navbar.php:93
+#: include/./classes/editors/navbar/class-vc-navbar.php:95
+msgid "WPBakery Page Builder"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:38
+msgid "About"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:92
+msgid "What's New"
+msgstr ""
+
+#: include/./autoload/vc-pages/welcome-screen.php:94
+#: include/./templates/pages/vc-welcome/vc-resources.php:9
+msgid "Resources"
+msgstr ""
+
 #: include/./autoload/vc-pointers-backend-editor.php:29
 msgid "Welcome to WPBakery Page Builder"
 msgstr ""
@@ -6306,51 +6351,6 @@ msgstr ""
 #, php-format
 msgid ""
 "P.S. Learn more at our <a href=\"%s\" target=\"_blank\">Knowledge Base</a>."
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:40
-msgid "Important notice"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:42
-#: include/./autoload/vc-pages/page-design-options.php:45
-msgid ""
-"You have an outdated version of WPBakery Page Builder Design Options. It is "
-"required to review and save it."
-msgstr ""
-
-#: include/./autoload/vc-pages/page-design-options.php:56
-msgid "Open Design Options"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-role-manager.php:12
-msgid "Role Manager"
-msgstr ""
-
-#: include/./autoload/vc-pages/page-role-manager.php:17
-msgid "Roles Manager"
-msgstr ""
-
-#: include/./autoload/vc-pages/pages.php:60
-#: include/./autoload/vc-pages/pages.php:78
-#: include/./classes/core/class-vc-base.php:761
-#: include/./classes/editors/class-vc-backend-editor.php:81
-#: include/./classes/editors/navbar/class-vc-navbar.php:93
-#: include/./classes/editors/navbar/class-vc-navbar.php:95
-msgid "WPBakery Page Builder"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:38
-msgid "About"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:92
-msgid "What's New"
-msgstr ""
-
-#: include/./autoload/vc-pages/welcome-screen.php:94
-#: include/./templates/pages/vc-welcome/vc-resources.php:9
-msgid "Resources"
 msgstr ""
 
 #: include/./autoload/vendors/gravity_forms.php:21
@@ -6964,7 +6964,6 @@ msgid "Templates"
 msgstr "テンプレート"
 
 #: include/./classes/editors/navbar/class-vc-navbar.php:175
-#: include/./templates/editors/partials/backend_editor_footer.tpl.php:44
 msgid "Frontend"
 msgstr "フロントエンド"
 
@@ -7051,10 +7050,10 @@ msgid ""
 "shortcodes to the list of WPBakery Page Builder content elements menu (Note: "
 "to map shortcode it needs to be installed on site)."
 msgstr ""
-"お使いのカスタムまたはサードパーティは、Visual Composerの要素メニューの一覧に"
-"ショートコードのベンダーに追加するために、Visual Composerのショートコードマッ"
-"パーを使用してください。ショートコードを登録するためには、それをWordPressのサ"
-"イトにインストールする必要があります。"
+"お使いのカスタムまたはサードパーティは、WPBakery Page Builderの要素メニューの"
+"一覧にショートコードのベンダーに追加するために、WPBakery Page Builderのショー"
+"トコードマッパーを使用してください。ショートコードを登録するためには、それを"
+"WordPressのサイトにインストールする必要があります。"
 
 #: include/./classes/settings/class-vc-automapper.php:221
 msgid "Map Shortcode"
@@ -7453,10 +7452,11 @@ msgid ""
 "theme. Changing \"Main accent color\" will affect all content elements if no "
 "specific \"content block\" related color is set."
 msgstr ""
-"ここではVisual Composerのコンテンツ要素を視覚的な外観をデフォルト微調整するこ"
-"とができます。既定のVisual Composerでニュートラルライトグレーのテーマを使用し"
-"ています。具体的な \"content block\" に関連する色が設定されていない場合"
-"は、\"Main accent color\" を変更するとすべてのコンテンツ要素に影響します。"
+"ここではWPBakery Page Builderのコンテンツ要素を視覚的な外観をデフォルト微調整"
+"することができます。既定のWPBakery Page Builderでニュートラルライトグレーの"
+"テーマを使用しています。具体的な \"content block\" に関連する色が設定されてい"
+"ない場合は、\"Main accent color\" を変更するとすべてのコンテンツ要素に影響し"
+"ます。"
 
 #: include/./classes/settings/class-vc-settings.php:748
 msgid "Invalid Margin value."
@@ -7599,32 +7599,32 @@ msgstr "%s 複製"
 msgid "Delete %s"
 msgstr "%s 削除"
 
-#: include/./classes/shortcodes/shortcodes.php:1133
+#: include/./classes/shortcodes/shortcodes.php:1136
 #, php-format
 msgid "Append to this %s"
 msgstr "%s に追加"
 
-#: include/./classes/shortcodes/shortcodes.php:1135
+#: include/./classes/shortcodes/shortcodes.php:1138
 #, php-format
 msgid "Prepend to this %s"
 msgstr "%s の前に追加"
 
-#: include/./classes/shortcodes/shortcodes.php:1138
+#: include/./classes/shortcodes/shortcodes.php:1141
 #, php-format
 msgid "Move this %s"
 msgstr "%s を移動"
 
-#: include/./classes/shortcodes/shortcodes.php:1144
+#: include/./classes/shortcodes/shortcodes.php:1147
 #, php-format
 msgid "Edit this %s"
 msgstr "%sを編集"
 
-#: include/./classes/shortcodes/shortcodes.php:1145
+#: include/./classes/shortcodes/shortcodes.php:1148
 #, php-format
 msgid "Clone this %s"
 msgstr "%s を複製"
 
-#: include/./classes/shortcodes/shortcodes.php:1146
+#: include/./classes/shortcodes/shortcodes.php:1149
 #, php-format
 msgid "Delete this %s"
 msgstr "%s を削除"
@@ -7730,8 +7730,8 @@ msgid "Delete this grid item "
 msgstr "このグリッド項目を削除"
 
 #: include/./classes/shortcodes/vc-posts-grid.php:135
-#: include/./templates/shortcodes/vc_posts_slider.php:167
 #: include/./templates/shortcodes/post_block/_item.php:22
+#: include/./templates/shortcodes/vc_posts_slider.php:167
 #, php-format
 msgid "Permalink to %s"
 msgstr "%s への固定リンク"
@@ -7768,8 +7768,8 @@ msgid "Toggle row"
 msgstr "トルグ行"
 
 #: include/./classes/shortcodes/vc-single-image.php:61
-#: include/./params/default_params.php:309
 #: include/./params/css_editor/css_editor.php:126
+#: include/./params/default_params.php:309
 msgid "Add image"
 msgstr "画像追加"
 
@@ -7814,6 +7814,87 @@ msgid ""
 msgstr ""
 "ライセンスアクティベーションが必要な場合の自動アップデータを取得する。<a "
 "href=\""
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:18
+#: include/./classes/vendors/plugins/acf/shortcode.php:18
+msgid "Field name"
+msgstr "項目名"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:22
+#: include/./classes/vendors/plugins/acf/shortcode.php:22
+msgid "Select field from group."
+msgstr "グループから項目選択"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:32
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:36
+#: include/./classes/vendors/plugins/acf/shortcode.php:31
+#: include/./classes/vendors/plugins/acf/shortcode.php:35
+msgid "Advanced Custom Field"
+msgstr "高度なカスタムフィールド"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:42
+#: include/./classes/vendors/plugins/acf/shortcode.php:39
+msgid "Field group"
+msgstr "項目グループ"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:46
+#: include/./classes/vendors/plugins/acf/shortcode.php:43
+msgid "Select field group."
+msgstr "項目グループ選択"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:52
+#: include/./classes/vendors/plugins/acf/shortcode.php:48
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:73
+msgid "Show label"
+msgstr "ラベル表示"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:55
+#: include/./classes/vendors/plugins/acf/shortcode.php:51
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:77
+#: include/./params/vc_grid_item/shortcodes.php:652
+msgid "Enter label to display before key value."
+msgstr "キー値の前に表示するラベルを入力します。"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:59
+#: include/./classes/vendors/plugins/acf/shortcode.php:55
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:81
+msgid "Align"
+msgstr "整列"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:62
+#: include/./classes/vendors/plugins/acf/shortcode.php:58
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:84
+#: include/./params/font_container/font_container.php:91
+msgid "left"
+msgstr "左"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:63
+#: include/./classes/vendors/plugins/acf/shortcode.php:59
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:85
+#: include/./params/font_container/font_container.php:92
+msgid "right"
+msgstr "右"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:64
+#: include/./classes/vendors/plugins/acf/shortcode.php:60
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:86
+#: include/./params/font_container/font_container.php:93
+msgid "center"
+msgstr "中央"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:65
+#: include/./classes/vendors/plugins/acf/shortcode.php:61
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:87
+#: include/./params/font_container/font_container.php:94
+msgid "justify"
+msgstr "ジャストフィット"
+
+#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:67
+#: include/./classes/vendors/plugins/acf/shortcode.php:63
+#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:90
+#: include/./params/vc_grid_item/shortcodes.php:664
+msgid "Select alignment."
+msgstr "整列選択"
 
 #: include/./classes/vendors/plugins/class-vc-vendor-contact-form7.php:49
 msgid "No contact forms found"
@@ -8232,202 +8313,121 @@ msgstr ""
 "ご注意：\"per_page\" ショートコード引数がページに表示されるいくつかの製品を決"
 "定します。これはショートコードを改ページを追加しません。"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1275
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1338
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1452
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1283
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1346
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1460
 msgid "Id"
 msgstr "ID"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1239
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1267
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1330
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1444
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1247
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1275
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1338
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1452
 msgid "Sku"
 msgstr "SKU"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
 msgid "Name"
 msgstr "名前"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1375
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1383
 msgid "Slug"
 msgstr "スラッグ"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1463
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1471
 msgid "SKU"
 msgstr "SKU"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1465
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1473
 msgid "Price"
 msgstr "価格"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1466
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1474
 msgid "Regular Price"
 msgstr "定価"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1467
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1475
 msgid "Sale Price"
 msgstr "セール価格"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1468
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1476
 msgid "Price html"
 msgstr "価格HTML"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1469
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1477
 msgid "Reviews count"
 msgstr "レビュー数"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1470
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1478
 msgid "Short description"
 msgstr "簡単な説明"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1471
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1479
 msgid "Dimensions"
 msgstr "大きさ"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1472
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1480
 msgid "Rating count"
 msgstr "評価数"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1473
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1481
 msgid "Weight"
 msgstr "重量"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1474
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1482
 msgid "Is on sale"
 msgstr "発売中"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1475
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1501
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1483
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1509
 msgid "Custom field"
 msgstr "カスタムフィールド"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1490
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1498
 msgid "Order number"
 msgstr "申し込み番号"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1491
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1499
 msgid "Currency"
 msgstr "通貨"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1492
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1500
 msgid "Total"
 msgstr "合計"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1493
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1501
 msgid "Status"
 msgstr "状態"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1494
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1502
 msgid "Payment method"
 msgstr "支払方法"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1495
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1503
 msgid "Billing address city"
 msgstr "お支払いの都市"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1496
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1504
 msgid "Billing address country"
 msgstr "お支払いの国"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1497
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1505
 msgid "Shipping address city"
 msgstr "配送先住所の市"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1498
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1506
 msgid "Shipping address country"
 msgstr "配送先住所の国"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1499
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1507
 msgid "Customer Note"
 msgstr "顧客メモ"
 
-#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1500
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1508
 msgid "Customer API"
 msgstr "顧客API"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:18
-#: include/./classes/vendors/plugins/acf/shortcode.php:18
-msgid "Field name"
-msgstr "項目名"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:22
-#: include/./classes/vendors/plugins/acf/shortcode.php:22
-msgid "Select field from group."
-msgstr "グループから項目選択"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:32
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:36
-#: include/./classes/vendors/plugins/acf/shortcode.php:31
-#: include/./classes/vendors/plugins/acf/shortcode.php:35
-msgid "Advanced Custom Field"
-msgstr "高度なカスタムフィールド"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:42
-#: include/./classes/vendors/plugins/acf/shortcode.php:39
-msgid "Field group"
-msgstr "項目グループ"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:46
-#: include/./classes/vendors/plugins/acf/shortcode.php:43
-msgid "Select field group."
-msgstr "項目グループ選択"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:52
-#: include/./classes/vendors/plugins/acf/shortcode.php:48
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:73
-msgid "Show label"
-msgstr "ラベル表示"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:55
-#: include/./classes/vendors/plugins/acf/shortcode.php:51
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:77
-#: include/./params/vc_grid_item/shortcodes.php:652
-msgid "Enter label to display before key value."
-msgstr "キー値の前に表示するラベルを入力します。"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:59
-#: include/./classes/vendors/plugins/acf/shortcode.php:55
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:81
-msgid "Align"
-msgstr "整列"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:62
-#: include/./classes/vendors/plugins/acf/shortcode.php:58
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:84
-#: include/./params/font_container/font_container.php:91
-msgid "left"
-msgstr "左"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:63
-#: include/./classes/vendors/plugins/acf/shortcode.php:59
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:85
-#: include/./params/font_container/font_container.php:92
-msgid "right"
-msgstr "右"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:64
-#: include/./classes/vendors/plugins/acf/shortcode.php:60
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:86
-#: include/./params/font_container/font_container.php:93
-msgid "center"
-msgstr "中央"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:65
-#: include/./classes/vendors/plugins/acf/shortcode.php:61
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:87
-#: include/./params/font_container/font_container.php:94
-msgid "justify"
-msgstr "ジャストフィット"
-
-#: include/./classes/vendors/plugins/acf/grid-item-shortcodes.php:67
-#: include/./classes/vendors/plugins/acf/shortcode.php:63
-#: include/./classes/vendors/plugins/woocommerce/grid-item-shortcodes.php:90
-#: include/./params/vc_grid_item/shortcodes.php:664
-msgid "Select alignment."
-msgstr "整列選択"
 
 #: include/./classes/vendors/plugins/woocommerce/grid-item-filters.php:16
 msgid "WooCommerce add to card link"
@@ -8494,31 +8494,31 @@ msgstr "分類"
 msgid "Wrong vc_map object. Base attribute is required"
 msgstr "間違ったvc_map object. 基本属性は必須です"
 
-#: include/./helpers/helpers_api.php:492
+#: include/./helpers/helpers_api.php:490
 msgid "CSS Animation"
 msgstr "CSSアニメーション"
 
-#: include/./helpers/helpers_api.php:502
+#: include/./helpers/helpers_api.php:500
 msgid "Top to bottom"
 msgstr "上から下"
 
-#: include/./helpers/helpers_api.php:503
+#: include/./helpers/helpers_api.php:501
 msgid "Bottom to top"
 msgstr "下から上"
 
-#: include/./helpers/helpers_api.php:504
+#: include/./helpers/helpers_api.php:502
 msgid "Left to right"
 msgstr "左から右"
 
-#: include/./helpers/helpers_api.php:505
+#: include/./helpers/helpers_api.php:503
 msgid "Right to left"
 msgstr "右から左"
 
-#: include/./helpers/helpers_api.php:506
+#: include/./helpers/helpers_api.php:504
 msgid "Appear from center"
 msgstr "中心から現れる"
 
-#: include/./helpers/helpers_api.php:511
+#: include/./helpers/helpers_api.php:509
 msgid ""
 "Select type of animation for element to be animated when it \"enters\" the "
 "browsers viewport (Note: works only in modern browsers)."
@@ -9058,6 +9058,82 @@ msgstr "行追加"
 msgid "Drag to reorder"
 msgstr "ドラッグで順序を変更する"
 
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:97
+msgid "Add Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:98
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:137
+#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:14
+#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:15
+msgid "Grid Builder"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:99
+msgid "Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:100
+msgid "Edit Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:101
+msgid "View Grid template"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:102
+msgid "Search Grid templates"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:103
+msgid "No Grid templates found"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:104
+msgid "No Grid templates found in Trash"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:221
+msgid "Builder"
+msgstr "ビルダー"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:222
+msgid ""
+"If you add this template, all your current changes will be removed. Are you "
+"sure you want to add template?"
+msgstr ""
+"このテンプレートを追加した場合にすべての現在の変更が削除されます。テンプレー"
+"トを追加してもよろしいでしょ？"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:112
+msgid "Post title"
+msgstr "投稿タイトル"
+
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:113
+#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:114
+msgid ""
+"The WordPress Excerpt is an optional summary or description of a post; in "
+"short, a post summary."
+msgstr ""
+"WordPressの抜粋はオプションの要約または投稿の記述である。要するに投稿の要約。"
+
+#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:38
+msgid "Grid element settings"
+msgstr "グリッド要素の設定"
+
+#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:58
+#, php-format
+msgid "%s/12 width"
+msgstr ""
+
+#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:147
+msgid "Grid Templates"
+msgstr "グリッドテンプレート"
+
+#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:166
+msgid "Custom Grid Templates"
+msgstr ""
+
 #: include/./params/vc_grid_item/shortcodes.php:11
 #: include/./params/vc_grid_item/shortcodes.php:455
 #: include/./params/vc_grid_item/shortcodes.php:485
@@ -9304,8 +9380,8 @@ msgstr "基本グリッド: デフォルト"
 #: include/./params/vc_grid_item/templates.php:57
 #: include/./params/vc_grid_item/templates.php:77
 #: include/./params/vc_grid_item/templates.php:85
-#: include/./templates/teaser.html.php:69
 #: include/./templates/shortcodes/post_block/_item.php:22
+#: include/./templates/teaser.html.php:69
 msgid "Read more"
 msgstr "もっと見る"
 
@@ -9465,82 +9541,6 @@ msgstr "メーソンリメディア: 上へスライド"
 msgid "Masonry media: Simple blur with scale"
 msgstr "メーソンリメディア: スケールを使用した単純なぼかし"
 
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:97
-msgid "Add Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:98
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:137
-#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:14
-#: include/./templates/pages/partials/vc-roles-parts/_grid_builder.tpl.php:15
-msgid "Grid Builder"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:99
-msgid "Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:100
-msgid "Edit Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:101
-msgid "View Grid template"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:102
-msgid "Search Grid templates"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:103
-msgid "No Grid templates found"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:104
-msgid "No Grid templates found in Trash"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:221
-msgid "Builder"
-msgstr "ビルダー"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-editor.php:222
-msgid ""
-"If you add this template, all your current changes will be removed. Are you "
-"sure you want to add template?"
-msgstr ""
-"このテンプレートを追加した場合にすべての現在の変更が削除されます。テンプレー"
-"トを追加してもよろしいでしょ？"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:112
-msgid "Post title"
-msgstr "投稿タイトル"
-
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:113
-#: include/./params/vc_grid_item/editor/class-vc-grid-item-preview.php:114
-msgid ""
-"The WordPress Excerpt is an optional summary or description of a post; in "
-"short, a post summary."
-msgstr ""
-"WordPressの抜粋はオプションの要約または投稿の記述である。要するに投稿の要約。"
-
-#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:38
-msgid "Grid element settings"
-msgstr "グリッド要素の設定"
-
-#: include/./params/vc_grid_item/editor/navbar/class-vc-navbar-grid-item.php:58
-#, php-format
-msgid "%s/12 width"
-msgstr ""
-
-#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:147
-msgid "Grid Templates"
-msgstr "グリッドテンプレート"
-
-#: include/./params/vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php:166
-msgid "Custom Grid Templates"
-msgstr ""
-
 #: include/./params/vc_link/vc_link.php:18
 msgid "Select URL"
 msgstr "URL選択"
@@ -9548,25 +9548,6 @@ msgstr "URL選択"
 #: include/./params/vc_link/vc_link.php:18
 msgid "URL"
 msgstr "URL"
-
-#: include/./templates/teaser.html.php:20
-#: include/./templates/teaser.html.php:41
-msgid "Link to"
-msgstr "へのリンク"
-
-#: include/./templates/teaser.html.php:24
-#: include/./templates/teaser.html.php:45
-msgid "On post"
-msgstr "投稿に"
-
-#: include/./templates/teaser.html.php:26
-#: include/./templates/teaser.html.php:47
-msgid "Big image"
-msgstr "大きな画像"
-
-#: include/./templates/teaser.html.php:35
-msgid "Featured"
-msgstr "注目"
 
 #: include/./templates/editors/partials/add_element_search.tpl.php:11
 msgid "Search element by name"
@@ -9582,7 +9563,6 @@ msgstr ""
 
 #: include/./templates/editors/partials/add_element_tabs.tpl.php:30
 #: include/./templates/editors/popups/vc_ui-panel-preset.tpl.php:10
-#: include/./templates/pages/vc-welcome/vc-welcome.php:29
 #, fuzzy
 msgid "My Elements"
 msgstr "要素"
@@ -9739,6 +9719,53 @@ msgstr "パネルを非表示"
 msgid "Edit Elements"
 msgstr "要素編集"
 
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:32
+#: include/./templates/pages/vc-settings/tab.php:112
+msgid "Activate WPBakery Page Builder"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:33
+msgid ""
+"WPBakery Page Builder Template Library downloads are available for activated"
+"\tversions only. Activate WPBakery Page Builder direct license to access "
+"Template Library and receive other benefits."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:35
+#, fuzzy
+msgid "Activate License"
+msgstr "ライセンスをアクティブ化"
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:69
+msgid "Download Template"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:81
+msgid "Downloading template ... please wait!"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:82
+msgid ""
+"Don't close this window until download is complete - you will\n"
+"\t\t\t\tbe redirected back to Template Library automatically."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:108
+msgid "Download Templates"
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:109
+msgid ""
+"Access WPBakery Page Builder Template Library for unique layout\n"
+"\t\ttemplates. Download chosen templates and discover new layouts with "
+"regular template\n"
+"\t\tupdates from WPBakery Page Builder team."
+msgstr ""
+
+#: include/./templates/editors/popups/shared-templates/category.tpl.php:113
+msgid "Access Library"
+msgstr ""
+
 #: include/./templates/editors/popups/vc_ui-panel-add-element.tpl.php:25
 msgid ""
 "Elements within this list are deprecated and are no longer supported in "
@@ -9818,53 +9845,6 @@ msgid ""
 msgstr ""
 "手動で列の数とそれらのサイズの値を指定することで、特定の行のレイアウトを変更"
 "します。"
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:32
-#: include/./templates/pages/vc-settings/tab.php:112
-msgid "Activate WPBakery Page Builder"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:33
-msgid ""
-"WPBakery Page Builder Template Library downloads are available for activated"
-"\tversions only. Activate WPBakery Page Builder direct license to access "
-"Template Library and receive other benefits."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:35
-#, fuzzy
-msgid "Activate License"
-msgstr "ライセンスをアクティブ化"
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:69
-msgid "Download Template"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:81
-msgid "Downloading template ... please wait!"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:82
-msgid ""
-"Don't close this window until download is complete - you will\n"
-"\t\t\t\tbe redirected back to Template Library automatically."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:108
-msgid "Download Templates"
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:109
-msgid ""
-"Access WPBakery Page Builder Template Library for unique layout\n"
-"\t\ttemplates. Download chosen templates and discover new layouts with "
-"regular template\n"
-"\t\tupdates from WPBakery Page Builder team."
-msgstr ""
-
-#: include/./templates/editors/popups/shared-templates/category.tpl.php:113
-msgid "Access Library"
-msgstr ""
 
 #: include/./templates/pages/partials/vc-roles-parts/_backend_editor.tpl.php:12
 msgid "Disable Classic editor"
@@ -10090,21 +10070,21 @@ msgid ""
 "you to get around plugin:"
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:26
+#: include/./templates/pages/vc-welcome/vc-resources.php:23
 msgid "Official Support"
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:28
+#: include/./templates/pages/vc-welcome/vc-resources.php:25
 #, php-format
 msgid ""
 "To get your support related question answered in the fastest timing, please "
 "head over to our <a href=\"%s\" target=\"_blank\">support page</a> and open "
 "Support ticket. To open a support ticket you should have a valid support "
 "subscription in case if your support has expired you can <a href=\"%s\" "
-"target=\"_blank\">purchase support extension</a> on CodeCanyon."
+"target=\"_blank\">purchase support extension</a> on support.wpbakery.com."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-resources.php:30
+#: include/./templates/pages/vc-welcome/vc-resources.php:27
 #, php-format
 msgid ""
 "Before applying for support please make sure you understand the rules of "
@@ -10114,48 +10094,47 @@ msgid ""
 msgstr ""
 
 #: include/./templates/pages/vc-welcome/vc-welcome.php:11
-msgid "User-Friendly and RTL Compatible"
+msgid "New Interface, Native Colors"
 msgstr ""
 
 #: include/./templates/pages/vc-welcome/vc-welcome.php:13
 msgid ""
-"Enjoy full RTL compatibility of WPBakery Page Builder Page Builder with "
-"fully automatic text and grid adjustments."
+"A new slim interface of WPBakery Page Builder with native WordPress colors "
+"will become your best companion. Enjoy editing your website hassle free via "
+"desktop or mobile."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:14
+#: include/./templates/pages/vc-welcome/vc-welcome.php:21
+msgid "Native Colors"
+msgstr ""
+
+#: include/./templates/pages/vc-welcome/vc-welcome.php:23
 msgid ""
-"Receive even more control over access rights and create your own elements "
-"with a single click. Access completely new elements with completely new "
-"WPBakery Page Builder Page Builder."
+"Default WordPress colors will blend your WordPress and page builder "
+"experience in no time."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:22
-msgid "RTL Compatible"
-msgstr ""
+#: include/./templates/pages/vc-welcome/vc-welcome.php:28
+#, fuzzy
+msgid "New Icons"
+msgstr "アイコン"
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:24
+#: include/./templates/pages/vc-welcome/vc-welcome.php:30
 msgid ""
-"Develop RTL friendly layout with WPBakery Page Builder Page Builder "
-"automatically."
+"Simple and beautiful SVG icons for all our content elements and controls "
+"tailored for mobile devices."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:31
-msgid ""
-"Create elements like a presets and add them to the Add Element window for "
-"quick access."
+#: include/./templates/pages/vc-welcome/vc-welcome.php:35
+#, fuzzy
+msgid "Icon Library Updates"
+msgstr "アイコンライブラリ"
+
+#: include/./templates/pages/vc-welcome/vc-welcome.php:37
+msgid "Add even more icons to your website with our updated icon libraries."
 msgstr ""
 
-#: include/./templates/pages/vc-welcome/vc-welcome.php:36
-msgid "Column Parallax"
-msgstr ""
-
-#: include/./templates/pages/vc-welcome/vc-welcome.php:38
-msgid ""
-"Apply parallax effect to a single column and create even better layouts."
-msgstr ""
-
-#: include/./templates/params/column_offset/template.tpl.php:14
+#: include/./templates/params/column_offset/template.tpl.php:21
 #, fuzzy, php-format
 msgid ""
 "Responsive design settings are currently disabled. You can enable them in "
@@ -10163,22 +10142,22 @@ msgid ""
 "\"Disable responsive content elements\"."
 msgstr ""
 "レスポンシブデザインの設定は現在無効になっています。あなたがこのチェックを外"
-"すことでVisual Composerの<a href=\"%s\">設定ページ</a>で\"Disable responsive "
-"content elements\"からそれらを有効にすることができます "
+"すことでWPBakery Page Builderの<a href=\"%s\">設定ページ</a>で\"Disable "
+"responsive content elements\"からそれらを有効にすることができます "
 
-#: include/./templates/params/column_offset/template.tpl.php:24
+#: include/./templates/params/column_offset/template.tpl.php:31
 msgid "Device"
 msgstr "デバイス"
 
-#: include/./templates/params/column_offset/template.tpl.php:33
+#: include/./templates/params/column_offset/template.tpl.php:40
 msgid "Hide on device?"
 msgstr "デバイス上で非表示にするには？"
 
-#: include/./templates/params/column_offset/template.tpl.php:60
+#: include/./templates/params/column_offset/template.tpl.php:69
 msgid "Inherit: "
 msgstr "継承："
 
-#: include/./templates/params/column_offset/template.tpl.php:61
+#: include/./templates/params/column_offset/template.tpl.php:70
 msgid "Inherit from default"
 msgstr "デフォルトを継承"
 
@@ -10237,4055 +10216,21 @@ msgstr ""
 msgid "Tweet"
 msgstr "つぶやき"
 
-#~ msgid "Visual Composer"
-#~ msgstr "ビジュアルコンポザー"
-
-#~ msgid "Visual Composer Settings"
-#~ msgstr "ビジュアルコンポザー設定"
-
-#~ msgid "BACKEND EDITOR"
-#~ msgstr "管理画面エディタ"
-
-#~ msgid "FRONTEND EDITOR"
-#~ msgstr "フロントエディタ"
-
-#~ msgid "CLASSIC MODE"
-#~ msgstr "クラッシックモード"
-
-#~ msgid "Edit %s with Visual Composer"
-#~ msgstr "ビジュアルコンポザーの %s で編集"
-
-#~ msgid "Edit with Visual Composer"
-#~ msgstr "ビジュアルコンポーザーで編集"
-
-#~ msgid "Exit Visual Composer edit mode"
-#~ msgstr "ビジュアルコンポザーの編集モードを終了"
-
-#~ msgid "Save current page as a Template"
-#~ msgstr "テンプレートとして現在のページを保存"
-
-#~ msgid "Load Template"
-#~ msgstr "テンプレート読み込み"
-
-#~ msgid "No custom templates yet."
-#~ msgstr "まだテンプレートのカスタムはない"
-
-#~ msgid "Show Visual Composer & default editor"
-#~ msgstr "ビジュアルコンポーザー & デフォルトのエディタを表示"
-
-#~ msgid "Show only Visual Composer"
-#~ msgstr "ビジュアルコンポーザーのみを表示"
-
-#~ msgid "Don't allow to use Visual Composer"
-#~ msgstr "ビジュアルコンポーザーの使用を許可しないでください"
-
-#~ msgid "Visual Composer access"
-#~ msgstr "ビジュアルコンポーザーアクセス"
-
-#~ msgid "Enabled shortcodes"
-#~ msgstr "ショートコード有効化"
-
-#~ msgid "Select All"
-#~ msgstr "すべて選択"
-
-#~ msgid "Select none"
-#~ msgstr "選択なし"
-
-#~ msgid "Empty value"
-#~ msgstr "空の値"
-
-#~ msgid "This is required to enable file writing for js_composer"
-#~ msgstr "これは、js_composerのために書いたファイルを有効にするために必要です"
-
-#~ msgid "Downloading package from envato market..."
-#~ msgstr "envato市場からパッケージをダウンロードしています"
-
-#~ msgid "Error! Envato API error"
-#~ msgstr "エラー！Envato APIエラー"
-
-#~ msgid "Error on unzipping package"
-#~ msgstr "解凍パッケージのエラー"
-
-#~ msgid "My templates"
-#~ msgstr "マイテンプレート"
-
-#~ msgid "Default templates"
-#~ msgstr "デフォルトのテンプレート"
-
-#~ msgid "Append previosly saved template to the current layout"
-#~ msgstr "現在のレイアウトに以前保存したテンプレートを追加"
-
-#~ msgid "Append default template to the current layout"
-#~ msgstr "現在のレイアウトに既定のテンプレートを追加"
-
-#~ msgid "Post Carousel"
-#~ msgstr "投稿カルーセル"
-
-#~ msgid "Call to Action Button"
-#~ msgstr "アクション呼び出しボタン"
-
-#~ msgid "Posts Grid"
-#~ msgstr "投稿グリッド"
-
-#~ msgid "Please activate your license in Product License tab!"
-#~ msgstr "製品ライセンスのタブでライセンスを有効にしてください！"
-
-#~ msgid "Download new version from CodeCanyon."
-#~ msgstr "CodeCanyonから新しいバージョンをダウンロードしてください。"
-
-#~ msgid "Update Visual Composer now."
-#~ msgstr "Visual Composerを更新します"
-
-#~ msgid "What text use as form title. Leave blank if no title is needed."
-#~ msgstr ""
-#~ "フォームのタイトルとしてどのようなテキストを使用する。タイトルが必要ない場"
-#~ "合は空白のままにします。"
-
-#~ msgid "Regular size"
-#~ msgstr "標準サイズ"
-
-#~ msgid ""
-#~ "Select type of animation if you want this element to be animated when it "
-#~ "enters into the browsers viewport. Note: Works only in modern browsers."
-#~ msgstr ""
-#~ "あなたはそれがブラウザの表示場所に入ったときに、この要素がアニメーションす"
-#~ "る場合は、アニメーションの種類を選択します。注：最新のみでブラウザ動作しま"
-#~ "す。"
-
-#~ msgid "Stretch row and content without spaces"
-#~ msgstr "スペースなし伸縮行と内容"
-
-#~ msgid ""
-#~ "Select stretching options for row and content. Stretched row overlay "
-#~ "sidebar and may not work if parent container has overflow: hidden css "
-#~ "property."
-#~ msgstr ""
-#~ "行とコンテンツの伸縮のオプションを選択します。伸縮行の上書きでサイドバーと"
-#~ "親コンテナに上書きがあれば動作しない場合があります。隠されたCSSプロパ"
-#~ "ティ。"
-
-#~ msgid "Css"
-#~ msgstr "CSS"
-
-#~ msgid "Design options"
-#~ msgstr "デザインオプション"
-
-#~ msgid "Width & Responsiveness"
-#~ msgstr "幅 & レスポンシブ"
-
-#~ msgid "Separator color."
-#~ msgstr "区切り色"
-
-#~ msgid "Separator style."
-#~ msgstr "区切りスタイル"
-
-#~ msgid "Border width in pixels."
-#~ msgstr "境界線の幅のピクセル値"
-
-#~ msgid "Separator title."
-#~ msgstr "区切りタイトル"
-
-#~ msgid "Align center"
-#~ msgstr "中央寄せ"
-
-#~ msgid "Align left"
-#~ msgstr "左寄せ"
-
-#~ msgid "Align right"
-#~ msgstr "右寄せ"
-
-#~ msgid "Select message box style."
-#~ msgstr "選択したメッセージボックスのスタイル"
-
-#~ msgid "Facebook like button"
-#~ msgstr "Facebook いいねボタン"
-
-#~ msgid "Button count"
-#~ msgstr "ボタン数"
-
-#~ msgid "Box count"
-#~ msgstr "ボックス数"
-
-#~ msgid "Share on twitter button"
-#~ msgstr "Twitterのシェアボタン"
-
-#~ msgid "Select type of annotation"
-#~ msgstr "注釈の種類を選択"
-
-#~ msgid "Button layout"
-#~ msgstr "ボタンレイアウト"
-
-#~ msgid "Toggle block title."
-#~ msgstr "トグルブロックのタイトル"
-
-#~ msgid "Toggle style."
-#~ msgstr "トルグスタイル"
-
-#~ msgid "Icon color."
-#~ msgstr "アイコン色"
-
-#~ msgid "Toggle size."
-#~ msgstr "トルグサイズ"
-
-#~ msgid ""
-#~ "Enter text which will be used as widget title. Leave blank if no title is "
-#~ "needed."
-#~ msgstr ""
-#~ "ウィジェットのタイトルとして使用されるテキストを入力します。タイトルが必要"
-#~ "ない場合は空白のままにします。"
-
-#~ msgid ""
-#~ "Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" "
-#~ "or other sizes defined by current theme. Alternatively enter image size "
-#~ "in pixels: 200x100 (Width x Height). Leave empty to use \"thumbnail\" "
-#~ "size."
-#~ msgstr ""
-#~ "画像サイズを入力します。例： \"thumbnail\", \"medium\", \"large\", \"full"
-#~ "\" または現在のテーマで定義された他のサイズ。 200x100（幅X高さ）：またはピ"
-#~ "クセル単位で画像サイズを入力してください。 \"thumbnail\" サイズを使用する"
-#~ "場合は空白のまま。"
-
-#~ msgid "Select display style."
-#~ msgstr "表示スタイル選択"
-
-#~ msgid "Link to large image?"
-#~ msgstr "大画像へのリンク？"
-
-#~ msgid "If selected, image will be linked to the larger image."
-#~ msgstr "選択した場合、画像は大きな画像にリンクされます。"
-
-#~ msgid "Yes, please"
-#~ msgstr "はい！"
-
-#~ msgid "Enter URL if you want this image to have a link."
-#~ msgstr "あなたがハイパーリンクをこの画像にご希望の場合はURLを入力します。"
-
-#~ msgid "On click"
-#~ msgstr "クリックする"
-
-#~ msgid "Do nothing"
-#~ msgstr "何もしない"
-
-#~ msgid "Define action for onclick event if needed."
-#~ msgstr "必要に応じてのクリックでのイベントのアクションを定義します"
-
-#~ msgid ""
-#~ "Enter links for each slide here. Divide links with linebreaks (Enter) . "
-#~ msgstr ""
-#~ "ここで各スライドのリンクを入力します。改行（Enter）で連携を分割します。"
-
-#~ msgid "What to do when slide is clicked?"
-#~ msgstr "スライドがクリックされたときに何をするか？"
-
-#~ msgid "Slider mode"
-#~ msgstr "スライダーモード"
-
-#~ msgid ""
-#~ "Slides will be positioned horizontally (for horizontal swipes) or "
-#~ "vertically (for vertical swipes)"
-#~ msgstr ""
-#~ "スライドは、水平（水平スワイプ）または垂直（垂直スワイプ）に配置されます"
-
-#~ msgid "Duration of animation between slides (in ms)"
-#~ msgstr "スライド間のアニメーションの再生時間（ミリ秒）"
-
-#~ msgid ""
-#~ "Set numbers of slides you want to display at the same time on slider's "
-#~ "container for carousel mode."
-#~ msgstr ""
-#~ "スライドの番号セットは、あなたがカルーセルモード用のスライダーのコンテナ上"
-#~ "で同時に表示したい数を設定。"
-
-#~ msgid "Enables autoplay mode."
-#~ msgstr "自動再生モードを有効にします"
-
-#~ msgid "If YES pagination control will be removed."
-#~ msgstr "YESの場合に改ページコントロールが削除されます。"
-
-#~ msgid "If \"YES\" prev/next control will be removed."
-#~ msgstr "もし \"YES\" 前へ/次へのコントロールが削除されます。"
-
-#~ msgid "If \"YES\" part of the next slide will be visible on the right side."
-#~ msgstr "次のスライドは \"YES\" の場合はその部分は右側に表示されます。"
-
-#~ msgid "Enables loop mode."
-#~ msgstr "ループモードを有効にします"
-
-#~ msgid "Auto rotate tabs"
-#~ msgstr "自動でタブを回転させる"
-
-#~ msgid "Tab title."
-#~ msgstr "タブタイトル"
-
-#~ msgid ""
-#~ "Enter section number to be active on load or enter false to collapse all "
-#~ "sections."
-#~ msgstr ""
-#~ "読み込み時にアクティブにするセクション番号を入力するか、すべてのセクション"
-#~ "を折りたたむには無効を入力します。"
-
-#~ msgid "Allow collapsible all"
-#~ msgstr "折りたたみ可能なすべての許可"
-
-#~ msgid "Select checkbox to allow all sections to be collapsible."
-#~ msgstr ""
-#~ "折り畳みできるようにするにはすべてのセクションのチェックボックスを選択"
-
-#~ msgid "Allow"
-#~ msgstr "許可する"
-
-#~ msgid "Disable keyboard interactions"
-#~ msgstr "無効にするキーボードの相互作用"
-
-#~ msgid ""
-#~ "Disables keyboard arrows interactions LEFT/UP/RIGHT/DOWN/SPACES keys."
-#~ msgstr "左 / 上 / 右 / 下 / スペースキーの矢印の相互作用を無効にします。"
-
-#~ msgid "Accordion section title."
-#~ msgstr "アコーディオンセクションのタイトル"
-
-#~ msgid "Teaser (posts) Grid"
-#~ msgstr "ティーザー（投稿）グリッド"
-
-#~ msgid "Select post types to populate posts from."
-#~ msgstr "投稿を取り込むために投稿タイプから選択"
-
-#~ msgid "Teasers count"
-#~ msgstr "ティーザーは数える"
-
-#~ msgid "How many teasers to show? Enter number or word \"All\"."
-#~ msgstr ""
-#~ "複数のティーザーを表示するには？ 数または単語 \"All\" を入力します。"
-
-#~ msgid "Full Content"
-#~ msgstr "全コンテンツ"
-
-#~ msgid "Layout"
-#~ msgstr "レイアウト"
-
-#~ msgid "Title + Thumbnail + Text"
-#~ msgstr "タイトル + サムネイル + テキスト"
-
-#~ msgid "Thumbnail + Title + Text"
-#~ msgstr "サムネイル + タイトル + テキスト"
-
-#~ msgid "Thumbnail + Text"
-#~ msgstr "サムネイル + テキスト"
-
-#~ msgid "Thumbnail + Title"
-#~ msgstr "サムネイル + タイトル"
-
-#~ msgid "Thumbnail only"
-#~ msgstr "サムネイルのみ"
-
-#~ msgid "Title + Text"
-#~ msgstr "タイトル + テキスト"
-
-#~ msgid "Teaser layout."
-#~ msgstr "ティーザーのレイアウト"
-
-#~ msgid "Thumbnail to bigger image, title to post"
-#~ msgstr "大きな画像にサムネイル、タイトルは投稿する"
-
-#~ msgid "Teaser grid layout"
-#~ msgstr "ティーザーグリッドレイアウト"
-
-#~ msgid "Grid"
-#~ msgstr "グリッド"
-
-#~ msgid "Grid with filter"
-#~ msgstr "フィルター付きグリッド"
-
-#~ msgid "Carousel"
-#~ msgstr "カルーセル"
-
-#~ msgid "Select taxonomies."
-#~ msgstr "分類選択"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,) to retrieve "
-#~ "only them. Use this in conjunction with \"Post types\" field."
-#~ msgstr ""
-#~ " (,) カンマで区切ってページ / 投稿IDを持つこのフィールドだけを取得する。 "
-#~ "\"Post types\" フィールドと組み合わせて使用します。"
-
-#~ msgid "Exclude Post/Page IDs"
-#~ msgstr "除外する投稿 / ページID"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,) to exclude "
-#~ "them from query."
-#~ msgstr ""
-#~ " (,) カンマで区切ってページ / 投稿IDを持つこのフィールドをクエリからそれら"
-#~ "を除外します。"
-
-#~ msgid ""
-#~ "If you want to narrow output, enter category names here. Note: Only "
-#~ "listed categories will be included. Divide categories with linebreaks "
-#~ "(Enter) . "
-#~ msgstr ""
-#~ "出力を絞り込みたい場合は、ここにカテゴリ名を入力してください。注：記載され"
-#~ "ているカテゴリのみが含まれます。改行（Enter）をしてカテゴリを分割します。"
-
-#~ msgid "Order way"
-#~ msgstr "ご注文方法"
-
-#~ msgid "Slides count"
-#~ msgstr "スライド·カウント"
-
-#~ msgid "How many slides to show? Enter number or word \"All\"."
-#~ msgstr "いくつのスライドを表示するには数または単語\"All\"を入力"
-
-#~ msgid "Some sliders support description text, what content use for it?"
-#~ msgstr ""
-#~ "そのためのいくつかのスライダーサポートの説明テキストをどのようなコンテンツ"
-#~ "の利用しますか？"
-
-#~ msgid ""
-#~ "Fill this field with page/posts IDs separated by commas (,), to retrieve "
-#~ "only them. Use this in conjunction with \"Post types\" field."
-#~ msgstr ""
-#~ "それらを取得するためにカンマ (,) で区切ってページ/投稿IDを、このフィールド"
-#~ "に入力する。\"Post types\"フィールドと組み合わせて使用します。"
-
-#~ msgid "Place widgetised sidebar"
-#~ msgstr "ウィジェット化サイドバーを配置"
-
-#~ msgid "Select which widget area output."
-#~ msgstr "そのウィジェットエリアの出力を選択します"
-
-#~ msgid "Text on the button."
-#~ msgstr "ボタンのテキスト"
-
-#~ msgid "Button link."
-#~ msgstr "ボタンのリンク"
-
-#~ msgid "Button color."
-#~ msgstr "ボタン色"
-
-#~ msgid "Button icon."
-#~ msgstr "ボタンアイコン"
-
-#~ msgid "Button size."
-#~ msgstr "ボタンサイズ"
-
-#~ msgid "Button alignment"
-#~ msgstr "ボタン配置"
-
-#~ msgid "Button style."
-#~ msgstr "ボタンスタイル"
-
-#~ msgid "Align bottom"
-#~ msgstr "ボトムを合わせ"
-
-#~ msgid "Heading first line"
-#~ msgstr "最初の行を見出し"
-
-#~ msgid "Text for the first heading line."
-#~ msgstr "最初の見出し行のテキスト"
-
-#~ msgid "Heading second line"
-#~ msgstr "二行目を見出し"
-
-#~ msgid "Optional text for the second heading line."
-#~ msgstr "第二見出し行のためのオプションのテキスト"
-
-#~ msgid "CTA style"
-#~ msgstr "CTAのスタイル"
-
-#~ msgid "Call to action style."
-#~ msgstr "アクションの呼び出しスタイル"
-
-#~ msgid "Call to action element width in percents."
-#~ msgstr "パーセントの横幅で要素のアクションを呼び出します"
-
-#~ msgid "Text align in call to action block."
-#~ msgstr "ブロックへのアクションの呼び出しでテキスト整列をする。"
-
-#~ msgid "Custom Background Color"
-#~ msgstr "カスタム背景色"
-
-#~ msgid "Select background color for your element."
-#~ msgstr "あなたの要素の背景色を選択"
-
-#~ msgid "Promotional text"
-#~ msgstr "宣伝テキスト"
-
-#~ msgid "Link to the video. More about supported formats at %s."
-#~ msgstr ""
-#~ "動画へのリンク。 %s のサポートされているフォーマットについての詳細。"
-
-#~ msgid ""
-#~ "Visit %s to create your map. 1) Find location 2) Click \"Share\" and make "
-#~ "sure map is public on the web 3) Click folder icon to reveal \"Embed on "
-#~ "my site\" link 4) Copy iframe code and paste it here."
-#~ msgstr ""
-#~ "あなたのマップを作成するためには %s をご覧ください。 1) 場所を探す 2) "
-#~ "\"Share\" をクリックしてくださいマップがウェブ上で公開されて作る 3） "
-#~ "\"Embed on my site\" のリンクを表示するためにフォルダアイコンをクリック　"
-#~ "4）iframeコードをコピーしそれをここに貼り付けます。"
-
-#~ msgid ""
-#~ "Enter map height in pixels. Example: 200 or leave it empty to make map "
-#~ "responsive."
-#~ msgstr ""
-#~ "ピクセル単位でマップの高さを入力します。例：200またはそれは空のマップが応"
-#~ "答するために残す。"
-
-#~ msgid "Output raw html code on your page"
-#~ msgstr "あなたのページのHTMLコードをそのまま表示する"
-
-#~ msgid "Output raw javascript code on your page"
-#~ msgstr "あなたのページの生のJavaScriptコードをそのまま表示"
-
-#~ msgid "Raw js"
-#~ msgstr "JSコード"
-
-#~ msgid "Enter your JS code."
-#~ msgstr "JSコードを入力してください。"
-
-#~ msgid "Image feed from your flickr account"
-#~ msgstr "Flickrアカウントから画像表示"
-
-#~ msgid "Number of photos."
-#~ msgstr "写真の枚数"
-
-#~ msgid "Photo stream type."
-#~ msgstr "フォトストリームタイプ"
-
-#~ msgid "Display"
-#~ msgstr "表示"
-
-#~ msgid "Latest"
-#~ msgstr "最新"
-
-#~ msgid "Photo order."
-#~ msgstr "写真の順番"
-
-#~ msgid "Graphic values"
-#~ msgstr "グラフィック値"
-
-#~ msgid ""
-#~ "Input graph values, titles and color here. Divide values with linebreaks "
-#~ "(Enter). Example: 90|Development|#e75956"
-#~ msgstr ""
-#~ "ここで入力されたグラフの値はタイトルと色 など。改行（Enter）を使用して値を"
-#~ "分割。例：90|Development|#e75956"
-
-#~ msgid ""
-#~ "Enter measurement units (if needed) Eg. %, px, points, etc. Graph value "
-#~ "and unit will be appended to the graph title."
-#~ msgstr ""
-#~ "単位を入力例えば（必要な場合）例： %, px, points, etc.をグラフの値と単位や"
-#~ "グラフのタイトルが追加されます。"
-
-#~ msgid "Bar color"
-#~ msgstr "バーの色"
-
-#~ msgid "Bar custom color"
-#~ msgstr "バーのカスタムカラー"
-
-#~ msgid "Add Stripes?"
-#~ msgstr "ストライプを追加しますか？"
-
-#~ msgid "Add animation? Will be visible with striped bars."
-#~ msgstr "アニメーションを追加しますか？縞模様のバーが表示されます。"
-
-#~ msgid "Pie value"
-#~ msgstr "円グラフ値"
-
-#~ msgid "Input graph value here. Choose range between 0 and 100."
-#~ msgstr "ここで入力しグラフの値。 0〜100の範囲を選択します。"
-
-#~ msgid "Pie label value"
-#~ msgstr "円グラフラベル値"
-
-#~ msgid "Input integer value for label. If empty \"Pie value\" will be used."
-#~ msgstr "ラベルの入力整数値。空の \"Pie value\" は使用される場合。"
-
-#~ msgid "Number of comments to show"
-#~ msgstr "コメントの数が表示する"
-
-#~ msgid "Sort by"
-#~ msgstr "並び替え"
-
-#~ msgid "Page IDs, separated by commas."
-#~ msgstr "ページID（,）カンマで区切る。"
-
-#~ msgid "Select menu"
-#~ msgstr "メニュー選択"
-
-#~ msgid "Number of posts to show"
-#~ msgstr "投稿の数を表示する"
-
-#~ msgid "Display as dropdown"
-#~ msgstr "ドロップダウンとして表示"
-
-#~ msgid "How many items would you like to display?"
-#~ msgstr "いくつのアイテムを表示したい？"
-
-#~ msgid "Display item content?"
-#~ msgstr "項目の内容を表示します？"
-
-#~ msgid "Enter empty space height."
-#~ msgstr "空のスペースの高さを入力します"
-
-#~ msgid "This is custom heading element with Google Fonts"
-#~ msgstr "Googleフォントでこのカスタム見出しの要素"
-
-#~ msgid "0px"
-#~ msgstr "0px"
-
-#~ msgid "1px"
-#~ msgstr "1px"
-
-#~ msgid "2px"
-#~ msgstr "2px"
-
-#~ msgid "3px"
-#~ msgstr "3px"
-
-#~ msgid "4px"
-#~ msgstr "4px"
-
-#~ msgid "5px"
-#~ msgstr "5px"
-
-#~ msgid "10px"
-#~ msgstr "10px"
-
-#~ msgid "15px"
-#~ msgstr "15px"
-
-#~ msgid "20px"
-#~ msgstr "20px"
-
-#~ msgid "25px"
-#~ msgstr "25px"
-
-#~ msgid "30px"
-#~ msgstr "30px"
-
-#~ msgid "35px"
-#~ msgstr "35px"
-
-#~ msgid "Data settings"
-#~ msgstr "日付設定"
-
-#~ msgid "Sorting"
-#~ msgstr "選別"
-
-#~ msgid "Item design"
-#~ msgstr "項目のデザイン"
-
-#~ msgid "Grid with media from library"
-#~ msgstr "ライブラリからメディアとグリッド"
-
-#~ msgid "Masonry grid with media from library"
-#~ msgstr "ライブラリからメディアとのメーソンリグリッド"
-
-#~ msgid "Icon from icon library"
-#~ msgstr "アイコンライブラリからアイコン"
-
-#~ msgid "Custom Icon Color"
-#~ msgstr "カスタムアイコンの色"
-
-#~ msgid "Background Style"
-#~ msgstr "背景スタイル"
-
-#~ msgid "Background style for icon."
-#~ msgstr "アイコンの背景スタイル"
-
-#~ msgid "Background Color."
-#~ msgstr "背景色"
-
-#~ msgid "Please enter template name"
-#~ msgstr "テンプレート名を入力してください"
-
-#~ msgid "Enter custom layout for your row:"
-#~ msgstr "行のためにカスタムレイアウトを入力します："
-
-#~ msgid "New template successfully saved!"
-#~ msgstr "新しいテンプレートが保存されました！"
-
-#~ msgid "Nothing to save. Template is empty."
-#~ msgstr "何も保存しない。テンプレートは空です。"
-
-#~ msgid "Save draft"
-#~ msgstr "下書き保存"
-
-#~ msgid "Append previously saved template to the current layout"
-#~ msgstr "現在のレイアウトに、以前に保存したテンプレートを追加"
-
-#~ msgid "Map shortcode"
-#~ msgstr "ショートコード登録"
-
-#~ msgid "Please enter shortcode string"
-#~ msgstr "ショートコードの文字列を入力してください"
-
-#~ msgid "Parse shortcode"
-#~ msgstr "ショートコードの解析"
-
-#~ msgid ""
-#~ "Please enter valid shortcode like [my_shortcode first_param="
-#~ "\"first_param_value\"]My shortcode content[/my_shortcode]"
-#~ msgstr ""
-#~ "[my_shortcode first_param=\"first_param_value\"]マイショートコードコンテン"
-#~ "ツ[/my_shortcode] のような有効なショートコードを入力してください"
-
-#~ msgid "General information"
-#~ msgstr "一般情報"
-
-#~ msgid "Shortcode parameters"
-#~ msgstr "ショートコードパラメータ"
-
-#~ msgid ""
-#~ "Default value or list of values for dropdown type(separate by comma)."
-#~ msgstr "デフォルト値またはドロップダウン型の値の一覧（カンマ区切り）"
-
-#~ msgid "Explain param."
-#~ msgstr "パラメータを説明する"
-
-#~ msgid ""
-#~ "Hola! Please <a href=\"%s\">activate your copy</a> of Visual Composer to "
-#~ "receive automatic updates."
-#~ msgstr ""
-#~ "ようこそ！ 自動更新を受け取るためにVisual Composerの<a href=\"%s\">コピー"
-#~ "をアクティブ</a> にする。 "
-
-#~ msgid "Content types"
-#~ msgstr "コンテンツの種類"
-
-#~ msgid "User groups access rules"
-#~ msgstr "ユーザグループのアクセスルール"
-
-#~ msgid "Envato Username"
-#~ msgstr "Envatoユーザー名"
-
-#~ msgid "Secret API Key"
-#~ msgstr "シークレットAPIキー"
-
-#~ msgid "Visual Composer License Key"
-#~ msgstr "ビジュアルコンポーザーライセンスキー"
-
-#~ msgid "Something went wrong! Please try again later."
-#~ msgstr "何かが間違っていた！後ほどお試ください。"
-
-#~ msgid "License successfully activated. Thank you!"
-#~ msgstr "ライセンスが正常に有効化。ありがとう！"
-
-#~ msgid "Your license key is deactivated."
-#~ msgstr "あなたのライセンスキーは無効になります"
-
-#~ msgid "Envato username and license key are required."
-#~ msgstr "Envatoのユーザー名とライセンスキーが必要です"
-
-#~ msgid "Invalid liense key. Please check information in your envato profile."
-#~ msgstr ""
-#~ "無効なライセンスキー。あなたのenvatoプロフィール内の情報をご確認ください。"
-
-#~ msgid "Wrong data. Please check your information or ask support for help."
-#~ msgstr ""
-#~ "間違ったデータ。あなたの情報を確認するか、ヘルプのサポートを依頼してくださ"
-#~ "い。"
-
-#~ msgid "License successfully activated. Thank you! (401)"
-#~ msgstr "ライセンスが正常にアクティブ。ありがとう！（401）"
-
-#~ msgid ""
-#~ "Your license key is already activated on another website ({site}), you "
-#~ "should deactivate it first or <a href=\"%s\" target=\"_blank\">obtain new "
-#~ "license key</a>."
-#~ msgstr ""
-#~ "あなたのライセンスキーが既に別のウェブサイト ({site}) で有効になっている。"
-#~ "あなたは最初にそれを非アクティブにするか、<a href=\"%s\" target=\"_blank"
-#~ "\">新しいライセンスキー</a>のを取得する必要があります。"
-
-#~ msgid "Deactivate license"
-#~ msgstr "ライセンスを非アクティブ化"
-
-#~ msgid ""
-#~ "Select for which content types Visual Composer should be available during "
-#~ "post creation/editing."
-#~ msgstr ""
-#~ "そのためにコンテンツタイプのビジュアルコンポーザーは、投稿の作成/編集時に"
-#~ "使用できる必要がありを選択します。"
-
-#~ msgid ""
-#~ "If you want to add some custom CSS code to the plugin and don't want to "
-#~ "modify any files, then it's a good place to enter your code at this field."
-#~ msgstr ""
-#~ "あなたはプラグインにいくつかのカスタムCSSコードを追加したいと任意のファイ"
-#~ "ルを変更したくないなら、それはこの分野であなたのコードを入力するには良い場"
-#~ "所です。"
-
-#~ msgid ""
-#~ "Check this checkbox to prevent content elements from \"stacking\" one on "
-#~ "top other (on small media screens, eg. mobile)."
-#~ msgstr ""
-#~ "トップ上の1つの他に \"stacking\" からコンテンツ要素を防止するために、この"
-#~ "チェックボックスをオンにします"
-
-#~ msgid "Select subsets for google fonts."
-#~ msgstr "Googleフォントを選択したサブセット。"
-
-#~ msgid ""
-#~ "Enable the use of custom design options for your site. When checked, "
-#~ "custom css file will be used."
-#~ msgstr ""
-#~ "あなたのサイトのためのカスタムデザインオプションの使用を有効にします。"
-#~ "チェックすると、カスタムCSSファイルが使用されます。"
-
-#~ msgid ""
-#~ "To change default vertical spacing between content elements, enter new "
-#~ "value here. Example: 20px"
-#~ msgstr ""
-#~ "コンテンツ要素間のデフォルトの垂直間隔を変更するには、ここに新しい値を入力"
-#~ "します。例：20px"
-
-#~ msgid ""
-#~ "To change default horizontal spacing between columns, enter new value in "
-#~ "pixels here."
-#~ msgstr ""
-#~ "列の間のデフォルト水平方向の間隔を変更するには、ここにピクセル単位で新しい"
-#~ "値を入力します。"
-
-#~ msgid ""
-#~ "By default content elements \"stack\" one on top other when screen size "
-#~ "is smaller then 768px. Here you can change that value if needed."
-#~ msgstr ""
-#~ "デフォルトでは、コンテンツ要素は、 \"stack\" の画面サイズは768px次に小さ"
-#~ "い。必要に応じてここではその値を変更することができます。"
-
-#~ msgid "Your Envato username."
-#~ msgstr "あなたのEnvatoのユーザ名"
-
-#~ msgid ""
-#~ "Please enter your CodeCanyon Visual Composer license key, you can find "
-#~ "your key by following the instructions on <a href=\"%s\" target=\"_blank"
-#~ "\">this page</a>. License key looks similar to this: bjg759fk-"
-#~ "kvta-6584-94h6-75jg8vblatftq."
-#~ msgstr ""
-#~ "あなたのCodeCanyon Visual Composerのライセンスキーを入力してください。あな"
-#~ "たは<a href=\"%s\" target=\"_blank\">このページ</a>の指示に従って、あなた"
-#~ "の鍵を見つけることができます。ライセンスキーは次のようになります。"
-#~ "bjg759fk-kvta-6584-94h6-75jg8vblatftq。"
-
-#~ msgid ""
-#~ "You can find API key by visiting your Envato Account page, then clicking "
-#~ "the My Settings tab. At the bottom of the page you'll find your account's "
-#~ "API key. <a href='%s' target='_blank'>Need help?</a>"
-#~ msgstr ""
-#~ "あなたは私の設定タブをクリックし、次に、あなたのEnvatoアカウントページにア"
-#~ "クセスして、APIキーを見つけることができます。ページの下部に、あなたのアカ"
-#~ "ウントのAPIキーを見つけることができます。 <aのhref='%s'のtarget='_blank'>"
-#~ "お困りですか</a>"
-
-#~ msgid ""
-#~ "A valid license key qualifies you for support and enables automatic "
-#~ "updates. <strong>A license key may only be used for one Visual Composer "
-#~ "installation on one WordPress site at a time.</strong> If you previosly "
-#~ "activated your license key on another site, then you should deactivate it "
-#~ "first or <a href=\"%s\" target=\"_blank\">obtain new license key</a>."
-#~ msgstr ""
-#~ "有効なライセンスキーがサポートのためにあなたを修飾し、自動更新を可能にしま"
-#~ "す。 <strong>ライセンスキーは一度に1つのWordPressサイトで1つだけ Visual "
-#~ "Composerのインストールのために使用することができる。</strong>あなたは以前"
-#~ "に別のサイト上でライセンスキーをアクティブにしている場合、あなたが先にそれ"
-#~ "を非アクティブにするか、<a href=\"%s\" target=\"_blank\">新しいライセンス"
-#~ "キー</a>を得る。"
-
-#~ msgid ""
-#~ "Visual Composer: Your css class names settings are deprecated. <a href="
-#~ "\"%s\">Click here to resolve</a>."
-#~ msgstr ""
-#~ "ビジュアルコンポーザー：あなたのCSSクラス名の設定が推奨されません。 解決す"
-#~ "るには、<a href=\"%s\">ここをクリック</a>してください"
-
-#~ msgid ""
-#~ "<strong>Deprecated:</strong> To override class names that are applied to "
-#~ "Visual Composer content elements you should use WordPress add_filter"
-#~ "('vc_shortcodes_css_class') function. <a class='vc_show_example'>See "
-#~ "Example</a>."
-#~ msgstr ""
-#~ "<strong>非推奨</strong>：あなたはWordPressのADD_FILTER"
-#~ "（ 'vc_shortcodes_css_class'）関数を使用する必要がありますVisual Composer"
-#~ "のコンテンツ要素に適用されるクラス名を上書きするには <a "
-#~ "class='vc_show_example'>例を参照してください</a>"
-
-#~ msgid ""
-#~ "You have used element class names settings to replace row and column css "
-#~ "classes."
-#~ msgstr ""
-#~ "あなたは行と列のCSSクラスを置き換える要素クラス名の設定を使用している。"
-
-#~ msgid ""
-#~ "Below is code snippet which you should add to your functions.php file in "
-#~ "your theme, to replace row and column classes with custom classes saved "
-#~ "by you earlier."
-#~ msgstr ""
-#~ "以下は、以前のあなたによって保存されたカスタムクラスの行と列のクラスを置き"
-#~ "換えるために、あなたのテーマであなたのfunctions.phpファイルに追加する必要"
-#~ "があるコードスニペットです。"
-
-#~ msgid "Remove all saved"
-#~ msgstr "保存されたすべてを削除"
-
-#~ msgid "Restore to defaults"
-#~ msgstr "デフォルトに復元"
-
-#~ msgid "Single block"
-#~ msgstr "シングルブロック"
-
-#~ msgid "No animation"
-#~ msgstr "アニメーションなし"
-
-#~ msgid " Add to this grid item"
-#~ msgstr "このグリッド項目に追加"
-
-#~ msgid "View all posts filed under %s"
-#~ msgstr "%s の下に提出しすべての記事を見る"
-
-#~ msgid "Feed for all posts filed under %s"
-#~ msgstr "%s の下に提出すべての投稿のフィード"
-
-#~ msgid "Adjust"
-#~ msgstr "調整する"
-
-#~ msgid "Archive"
-#~ msgstr "アーカイブ"
-
-#~ msgid "Area Chart"
-#~ msgstr "面グラフ"
-
-#~ msgid "Arrows"
-#~ msgstr "矢印"
-
-#~ msgid "Arrows Horizontal"
-#~ msgstr "水平矢印"
-
-#~ msgid "Arrows Vertical"
-#~ msgstr "垂直矢印"
-
-#~ msgid "At"
-#~ msgstr " "
-
-#~ msgid "Ban"
-#~ msgstr "禁止"
-
-#~ msgid "Bar Chart"
-#~ msgstr "棒グラフ"
-
-#~ msgid "Barcode"
-#~ msgstr "バーコード"
-
-#~ msgid "Bars"
-#~ msgstr "バー"
-
-#~ msgid "Beer"
-#~ msgstr "ビール"
-
-#~ msgid "Bell"
-#~ msgstr "ベル"
-
-#~ msgid "Bell Outlined"
-#~ msgstr "ベル輪郭"
-
-#~ msgid "Bell Slash"
-#~ msgstr "ベルスラッシュ"
-
-#~ msgid "Bell Slash Outlined"
-#~ msgstr "ベルスラッシュ概説"
-
-#~ msgid "Bicycle"
-#~ msgstr "自転車"
-
-#~ msgid "Binoculars"
-#~ msgstr "双眼鏡"
-
-#~ msgid "Birthday Cake"
-#~ msgstr "バースデーケーキ"
-
-#~ msgid "Lightning Bolt"
-#~ msgstr "稲妻"
-
-#~ msgid "Bomb"
-#~ msgstr "爆弾"
-
-#~ msgid "Book"
-#~ msgstr "本"
-
-#~ msgid "Bookmark Outlined"
-#~ msgstr "ブックマーク輪郭"
-
-#~ msgid "Briefcase"
-#~ msgstr "ブリーフケース"
-
-#~ msgid "Bug"
-#~ msgstr "バック"
-
-#~ msgid "Building"
-#~ msgstr "建物"
-
-#~ msgid "Building Outlined"
-#~ msgstr "ビル輪郭"
-
-#~ msgid "bullhorn"
-#~ msgstr "拡声器"
-
-#~ msgid "Bullseye"
-#~ msgstr "ブルズアイ"
-
-#~ msgid "Bus"
-#~ msgstr "バス"
-
-#~ msgid "Calculator"
-#~ msgstr "電卓"
-
-#~ msgid "Calendar-o"
-#~ msgstr "カレンダー-O"
-
-#~ msgid "Camera-retro"
-#~ msgstr "レトロカレンダー"
-
-#~ msgid "Car"
-#~ msgstr "車"
-
-#~ msgid "Caret Square Outlined Down"
-#~ msgstr "キャレットスクエア輪郭下"
-
-#~ msgid "Caret Square Outlined Left"
-#~ msgstr "キャレットスクエア輪郭左"
-
-#~ msgid "Caret Square Outlined Right"
-#~ msgstr "キャレットスクエア輪郭右"
-
-#~ msgid "Caret Square Outlined Up"
-#~ msgstr "キャレットスクエア輪郭上"
-
-#~ msgid "Closed Captions"
-#~ msgstr "クローズドキャプション"
-
-#~ msgid "Certificate"
-#~ msgstr "証明書"
-
-#~ msgid "Check"
-#~ msgstr "チェック"
-
-#~ msgid "Check Circle"
-#~ msgstr "チェックサークル"
-
-#~ msgid "Check Circle Outlined"
-#~ msgstr "チェックサークル輪郭"
-
-#~ msgid "Check Square"
-#~ msgstr "チェックスクエア"
-
-#~ msgid "Check Square Outlined"
-#~ msgstr "チェックスクエア輪郭"
-
-#~ msgid "Child"
-#~ msgstr "チャイルド"
-
-#~ msgid "Circle Outlined"
-#~ msgstr "チャイルド輪郭"
-
-#~ msgid "Circle Outlined Notched"
-#~ msgstr "チャイルド輪郭切り欠き"
-
-#~ msgid "Circle Outlined Thin"
-#~ msgstr "サークル輪郭薄型"
-
-#~ msgid "Clock Outlined"
-#~ msgstr "時計輪郭"
-
-#~ msgid "Cloud"
-#~ msgstr "雲"
-
-#~ msgid "Cloud Download"
-#~ msgstr "雲ダウンロード"
-
-#~ msgid "Cloud Upload"
-#~ msgstr "雲アップロード"
-
-#~ msgid "Code"
-#~ msgstr "コード"
-
-#~ msgid "Code-fork"
-#~ msgstr "音叉コード"
-
-#~ msgid "Coffee"
-#~ msgstr "コーヒー"
-
-#~ msgid "Cog"
-#~ msgstr "歯"
-
-#~ msgid "Cogs"
-#~ msgstr "歯車"
-
-#~ msgid "Comment"
-#~ msgstr "コメント"
-
-#~ msgid "Comment-o"
-#~ msgstr "コメント-o"
-
-#~ msgid "Comments"
-#~ msgstr "コメント"
-
-#~ msgid "Comments-o"
-#~ msgstr "コメント-o"
-
-#~ msgid "Compass"
-#~ msgstr "コンパス"
-
-#~ msgid "Copyright"
-#~ msgstr "コピーライト"
-
-#~ msgid "credit-card"
-#~ msgstr "クレジットカード"
-
-#~ msgid "Crop"
-#~ msgstr "切り抜き"
-
-#~ msgid "Crosshairs"
-#~ msgstr "十字線"
-
-#~ msgid "Cube"
-#~ msgstr "単立方体"
-
-#~ msgid "Cubes"
-#~ msgstr "複数立方体"
-
-#~ msgid "Cutlery"
-#~ msgstr "刃物"
-
-#~ msgid "Database"
-#~ msgstr "データベース"
-
-#~ msgid "Dot Circle O"
-#~ msgstr "ドットサークル O"
-
-#~ msgid "Download"
-#~ msgstr "ダウンロード"
-
-#~ msgid "Ellipsis Horizontal"
-#~ msgstr "水平省略記号"
-
-#~ msgid "Ellipsis Vertical"
-#~ msgstr "垂直省略記号"
-
-#~ msgid "Envelope"
-#~ msgstr "封筒"
-
-#~ msgid "Envelope Outlined"
-#~ msgstr "封筒輪郭"
-
-#~ msgid "Envelope Square"
-#~ msgstr "正方形封筒"
-
-#~ msgid "Eraser"
-#~ msgstr "消しゴム"
-
-#~ msgid "Exchange"
-#~ msgstr "交換"
-
-#~ msgid "Exclamation"
-#~ msgstr "感嘆符"
-
-#~ msgid "Exclamation Circle"
-#~ msgstr "サークル感嘆符"
-
-#~ msgid "Exclamation Triangle"
-#~ msgstr "トライアングル感嘆符"
-
-#~ msgid "External Link"
-#~ msgstr "外部リンク"
-
-#~ msgid "External Link Square"
-#~ msgstr "正方形外部リンク"
-
-#~ msgid "Eye"
-#~ msgstr "目"
-
-#~ msgid "Eye Slash"
-#~ msgstr "目スラッシュ"
-
-#~ msgid "Eyedropper"
-#~ msgstr "スポイトツール"
-
-#~ msgid "Fax"
-#~ msgstr "Fax"
-
-#~ msgid "Female"
-#~ msgstr "女性"
-
-#~ msgid "Fighter-jet"
-#~ msgstr "戦闘機噴射"
-
-#~ msgid "Archive File Outlined"
-#~ msgstr "アーカイブファイル輪郭"
-
-#~ msgid "Audio File Outlined"
-#~ msgstr "オーディオファイル輪郭"
-
-#~ msgid "Code File Outlined"
-#~ msgstr "コードファイル輪郭"
-
-#~ msgid "Excel File Outlined"
-#~ msgstr "Excelファイル輪郭"
-
-#~ msgid "Image File Outlined"
-#~ msgstr "画像ファイル輪郭"
-
-#~ msgid "PDF File Outlined"
-#~ msgstr "PDFファイル輪郭"
-
-#~ msgid "Powerpoint File Outlined"
-#~ msgstr "PowerPointファイル輪郭"
-
-#~ msgid "Video File Outlined"
-#~ msgstr "ビデオファイル輪郭"
-
-#~ msgid "Word File Outlined"
-#~ msgstr "Wordファイル輪郭"
-
-#~ msgid "Film"
-#~ msgstr "フィルム"
-
-#~ msgid "Fire-extinguisher"
-#~ msgstr "消火器"
-
-#~ msgid "Flag"
-#~ msgstr "フラグ"
-
-#~ msgid "Flag-checkered"
-#~ msgstr "チェッカーフラグ"
-
-#~ msgid "Flag Outlined"
-#~ msgstr "フラグ輪郭"
-
-#~ msgid "Flask"
-#~ msgstr "フラスコ"
-
-#~ msgid "Folder"
-#~ msgstr "フォルダ"
-
-#~ msgid "Folder Outlined"
-#~ msgstr "フォルダ輪郭"
-
-#~ msgid "Folder Open"
-#~ msgstr "フォルダオープン"
-
-#~ msgid "Folder Open Outlined"
-#~ msgstr "フォルダオープン輪郭"
-
-#~ msgid "Frown Outlined"
-#~ msgstr "眉間輪郭"
-
-#~ msgid "Futbol Outlined"
-#~ msgstr "フットボール輪郭"
-
-#~ msgid "Gamepad"
-#~ msgstr "ゲームパッド"
-
-#~ msgid "Gavel"
-#~ msgstr "小槌"
-
-#~ msgid "Gift"
-#~ msgstr "ギフト"
-
-#~ msgid "Glass"
-#~ msgstr "グラス"
-
-#~ msgid "Globe"
-#~ msgstr "グローブ"
-
-#~ msgid "Graduation Cap"
-#~ msgstr "卒業帽子"
-
-#~ msgid "HDD"
-#~ msgstr "HDD"
-
-#~ msgid "Headphones"
-#~ msgstr "ヘッドフォン"
-
-#~ msgid "Heart Outlined"
-#~ msgstr "ハート輪郭"
-
-#~ msgid "History"
-#~ msgstr "歴史"
-
-#~ msgid "Home"
-#~ msgstr "ホーム"
-
-#~ msgid "Inbox"
-#~ msgstr "受信トレイ"
-
-#~ msgid "Info Circle"
-#~ msgstr "情報サークル"
-
-#~ msgid "Key"
-#~ msgstr "鍵"
-
-#~ msgid "Keyboard Outlined"
-#~ msgstr "キーボード輪郭"
-
-#~ msgid "Laptop"
-#~ msgstr "ノートパソコン"
-
-#~ msgid "Leaf"
-#~ msgstr "葉"
-
-#~ msgid "Lemon Outlined"
-#~ msgstr "レモン輪郭"
-
-#~ msgid "Level Down"
-#~ msgstr "レベルダウン"
-
-#~ msgid "Level Up"
-#~ msgstr "レベルアップ"
-
-#~ msgid "Life Ring"
-#~ msgstr "指輪"
-
-#~ msgid "Lightbulb Outlined"
-#~ msgstr "電球輪郭"
-
-#~ msgid "Location-arrow"
-#~ msgstr "場所矢印"
-
-#~ msgid "Lock"
-#~ msgstr "ロック"
-
-#~ msgid "Magic"
-#~ msgstr "魔法"
-
-#~ msgid "Magnet"
-#~ msgstr "マグネット"
-
-#~ msgid "Male"
-#~ msgstr "男性"
-
-#~ msgid "Map-marker"
-#~ msgstr "地図マーカー"
-
-#~ msgid "Meh Outlined"
-#~ msgstr "まあ表情"
-
-#~ msgid "Microphone"
-#~ msgstr "マイク"
-
-#~ msgid "Microphone Slash"
-#~ msgstr "マイクスラッシュ"
-
-#~ msgid "Minus"
-#~ msgstr "マイナス"
-
-#~ msgid "Minus Circle"
-#~ msgstr "マイナスサークル"
-
-#~ msgid "Minus Square"
-#~ msgstr "正方形マイナス"
-
-#~ msgid "Minus Square Outlined"
-#~ msgstr "正方形マイナス輪郭"
-
-#~ msgid "Mobile Phone"
-#~ msgstr "携帯電話"
-
-#~ msgid "Money"
-#~ msgstr "お金"
-
-#~ msgid "Moon Outlined"
-#~ msgstr "月輪郭"
-
-#~ msgid "Music"
-#~ msgstr "音楽"
-
-#~ msgid "Newspaper Outlined"
-#~ msgstr "新聞輪郭"
-
-#~ msgid "Paint Brush"
-#~ msgstr "ペイントブラシ"
-
-#~ msgid "Paper Plane"
-#~ msgstr "紙飛行機"
-
-#~ msgid "Paper Plane Outlined"
-#~ msgstr "紙飛行機郭"
-
-#~ msgid "Paw"
-#~ msgstr "足"
-
-#~ msgid "Pencil"
-#~ msgstr "鉛筆"
-
-#~ msgid "Pencil Square"
-#~ msgstr "正方形鉛筆"
-
-#~ msgid "Pencil Square Outlined"
-#~ msgstr "正方形鉛筆輪郭"
-
-#~ msgid "Phone"
-#~ msgstr "電話"
-
-#~ msgid "Phone Square"
-#~ msgstr "正方形電話"
-
-#~ msgid "Picture Outlined"
-#~ msgstr "絵輪郭"
-
-#~ msgid "Plane"
-#~ msgstr "飛行機"
-
-#~ msgid "Plug"
-#~ msgstr "プラグ"
-
-#~ msgid "Plus Circle"
-#~ msgstr "サークルプラス"
-
-#~ msgid "Plus Square"
-#~ msgstr "正方形プラス"
-
-#~ msgid "Plus Square Outlined"
-#~ msgstr "正方形プラス輪郭"
-
-#~ msgid "Power Off"
-#~ msgstr "パワーオフ"
-
-#~ msgid "Print"
-#~ msgstr "印刷"
-
-#~ msgid "Puzzle Piece"
-#~ msgstr "パズルピース"
-
-#~ msgid "QRcode"
-#~ msgstr "QRコード"
-
-#~ msgid "Question"
-#~ msgstr "疑問"
-
-#~ msgid "Question Circle"
-#~ msgstr "サークル疑問"
-
-#~ msgid "Quote-left"
-#~ msgstr "引用左"
-
-#~ msgid "Quote-right"
-#~ msgstr "引用右"
-
-#~ msgid "Recycle"
-#~ msgstr "リサイクル"
-
-#~ msgid "Refresh"
-#~ msgstr "リフレッシュ"
-
-#~ msgid "Reply"
-#~ msgstr "返信"
-
-#~ msgid "Reply-all"
-#~ msgstr "すべて返信"
-
-#~ msgid "Retweet"
-#~ msgstr "リツイート"
-
-#~ msgid "Road"
-#~ msgstr "道路"
-
-#~ msgid "Rocket"
-#~ msgstr "ロケット"
-
-#~ msgid "RSS Square"
-#~ msgstr "正方形RSS"
-
-#~ msgid "Search Minus"
-#~ msgstr "検索マイナス"
-
-#~ msgid "Search Plus"
-#~ msgstr "検索プラス"
-
-#~ msgid "Share"
-#~ msgstr "シェア"
-
-#~ msgid "Share Alt"
-#~ msgstr "シェアAlt"
-
-#~ msgid "Share Alt Square"
-#~ msgstr "正方形シェアAlt"
-
-#~ msgid "Share Square"
-#~ msgstr "正方形シェア"
-
-#~ msgid "Share Square Outlined"
-#~ msgstr "正方形シェア輪郭"
-
-#~ msgid "shield"
-#~ msgstr "盾"
-
-#~ msgid "shopping-cart"
-#~ msgstr "ショッピングカート"
-
-#~ msgid "Sign In"
-#~ msgstr "ログイン"
-
-#~ msgid "Sign Out"
-#~ msgstr "ログアウト"
-
-#~ msgid "signal"
-#~ msgstr "信号"
-
-#~ msgid "Sitemap"
-#~ msgstr "サイトマップ"
-
-#~ msgid "Sliders"
-#~ msgstr "スライダー"
-
-#~ msgid "Smile Outlined"
-#~ msgstr "スマイル輪郭"
-
-#~ msgid "Sort"
-#~ msgstr "並べ替え"
-
-#~ msgid "Sort Alpha Ascending"
-#~ msgstr "アルファ昇順並べ替え"
-
-#~ msgid "Sort Alpha Descending"
-#~ msgstr "アルファ降順並べ替え"
-
-#~ msgid "Sort Amount Ascending"
-#~ msgstr "金額昇順並べ替え"
-
-#~ msgid "Sort Amount Descending"
-#~ msgstr "金額降順並べ替え"
-
-#~ msgid "Sort Ascending"
-#~ msgstr "昇順並べ替え"
-
-#~ msgid "Sort Descending"
-#~ msgstr "降順並べ替え"
-
-#~ msgid "Sort Numeric Ascending"
-#~ msgstr "数値昇順並べ替え"
-
-#~ msgid "Sort Numeric Descending"
-#~ msgstr "数値降順並び替え"
-
-#~ msgid "Space Shuttle"
-#~ msgstr "スペースシャトル"
-
-#~ msgid "Spinner"
-#~ msgstr "スピナー"
-
-#~ msgid "spoon"
-#~ msgstr "スプーン"
-
-#~ msgid "Square Outlined"
-#~ msgstr "正方形輪郭"
-
-#~ msgid "Star"
-#~ msgstr "星"
-
-#~ msgid "star-half"
-#~ msgstr "星半分"
-
-#~ msgid "Star Half Outlined"
-#~ msgstr "星半分輪郭"
-
-#~ msgid "Star Outlined"
-#~ msgstr "星輪郭"
-
-#~ msgid "Suitcase"
-#~ msgstr "スーツケース"
-
-#~ msgid "Sun Outlined"
-#~ msgstr "太陽輪郭"
-
-#~ msgid "tablet"
-#~ msgstr "タブレット"
-
-#~ msgid "Tachometer"
-#~ msgstr "回転計"
-
-#~ msgid "tag"
-#~ msgstr "タグ"
-
-#~ msgid "tags"
-#~ msgstr "タグ"
-
-#~ msgid "Tasks"
-#~ msgstr "タスク"
-
-#~ msgid "Taxi"
-#~ msgstr "タクシー"
-
-#~ msgid "Terminal"
-#~ msgstr "Terminal"
-
-#~ msgid "Thumb Tack"
-#~ msgstr "画鋲"
-
-#~ msgid "thumbs-down"
-#~ msgstr "親指ダウン"
-
-#~ msgid "Thumbs Down Outlined"
-#~ msgstr "親指ダウン輪郭"
-
-#~ msgid "Thumbs Up Outlined"
-#~ msgstr "親指UP輪郭"
-
-#~ msgid "thumbs-up"
-#~ msgstr "親指UP"
-
-#~ msgid "Ticket"
-#~ msgstr "Ticket"
-
-#~ msgid "Times"
-#~ msgstr "×"
-
-#~ msgid "Times Circle"
-#~ msgstr "サークル×"
-
-#~ msgid "Times Circle Outlined"
-#~ msgstr "サークル×輪郭"
-
-#~ msgid "tint"
-#~ msgstr "涙"
-
-#~ msgid "Toggle Off"
-#~ msgstr "トルグオフ"
-
-#~ msgid "Toggle On"
-#~ msgstr "トルグオン"
-
-#~ msgid "Trash"
-#~ msgstr "ゴミ箱"
-
-#~ msgid "Trash Outlined"
-#~ msgstr "ゴミ箱輪郭"
-
-#~ msgid "Tree"
-#~ msgstr "木"
-
-#~ msgid "trophy"
-#~ msgstr "トロフィー"
-
-#~ msgid "truck"
-#~ msgstr "truck"
-
-#~ msgid "TTY"
-#~ msgstr "電話タイプ"
-
-#~ msgid "Umbrella"
-#~ msgstr "傘"
-
-#~ msgid "University"
-#~ msgstr "大学"
-
-#~ msgid "unlock"
-#~ msgstr "アンロック"
-
-#~ msgid "Unlock Alt"
-#~ msgstr "アンロックALT"
-
-#~ msgid "Upload"
-#~ msgstr "アップロード"
-
-#~ msgid "Users"
-#~ msgstr "複数ユーザー"
-
-#~ msgid "Video Camera"
-#~ msgstr "ビデオカメラ"
-
-#~ msgid "volume-down"
-#~ msgstr "音量ダウン"
-
-#~ msgid "volume-off"
-#~ msgstr "消音"
-
-#~ msgid "volume-up"
-#~ msgstr "音量アップ"
-
-#~ msgid "Wheelchair"
-#~ msgstr "車椅子"
-
-#~ msgid "WiFi"
-#~ msgstr "WiFi"
-
-#~ msgid "Wrench"
-#~ msgstr "レンチ"
-
-#~ msgid "File"
-#~ msgstr "ファイル"
-
-#~ msgid "File Outlined"
-#~ msgstr "ファイル輪郭"
-
-#~ msgid "File Text"
-#~ msgstr "テキストファイル"
-
-#~ msgid "File Text Outlined"
-#~ msgstr "テキストファイル輪郭"
-
-#~ msgid "cog"
-#~ msgstr "cog"
-
-#~ msgid "refresh"
-#~ msgstr "更新"
-
-#~ msgid "American Express Credit Card"
-#~ msgstr "アメリカンエキスプレスのクレジットカード"
-
-#~ msgid "Discover Credit Card"
-#~ msgstr "Discoverのクレジットカード"
-
-#~ msgid "MasterCard Credit Card"
-#~ msgstr "MasterCardのクレジットカード"
-
-#~ msgid "Paypal Credit Card"
-#~ msgstr "Paypalのクレジットカード"
-
-#~ msgid "Stripe Credit Card"
-#~ msgstr "ストライプのクレジットカード"
-
-#~ msgid "Visa Credit Card"
-#~ msgstr "VISAのクレジットカード"
-
-#~ msgid "Goole Wallet"
-#~ msgstr "Googleウォレット"
-
-#~ msgid "Paypal"
-#~ msgstr "Paypal"
-
-#~ msgid "Bitcoin (BTC)"
-#~ msgstr "Bitcoin (BTC)"
-
-#~ msgid "Euro (EUR)"
-#~ msgstr "ユーロ(EUR)"
-
-#~ msgid "GBP"
-#~ msgstr "英ポンド"
-
-#~ msgid "Shekel (ILS)"
-#~ msgstr "シェケル（ILS）"
-
-#~ msgid "Indian Rupee (INR)"
-#~ msgstr "インドルピー（INR）"
-
-#~ msgid "Japanese Yen (JPY)"
-#~ msgstr "日本円 (JPY)"
-
-#~ msgid "Korean Won (KRW)"
-#~ msgstr "韓国ウォン（KRW）"
-
-#~ msgid "Russian Ruble (RUB)"
-#~ msgstr "ロシアルーブル（RUB）"
-
-#~ msgid "Turkish Lira (TRY)"
-#~ msgstr "トルコリラ（TRY）"
-
-#~ msgid "US Dollar"
-#~ msgstr "ドル"
-
-#~ msgid "Align Center"
-#~ msgstr "中央揃え"
-
-#~ msgid "Align Justify"
-#~ msgstr "両端揃えに合わせ"
-
-#~ msgid "Align Left"
-#~ msgstr "左揃え"
-
-#~ msgid "Align Right"
-#~ msgstr "右揃え"
-
-#~ msgid "Bold"
-#~ msgstr "強調"
-
-#~ msgid "Chain Broken"
-#~ msgstr "リンク切れ"
-
-#~ msgid "Clipboard"
-#~ msgstr "クリップボード"
-
-#~ msgid "Files Outlined"
-#~ msgstr "ファイル輪郭"
-
-#~ msgid "Floppy Outlined"
-#~ msgstr "フロッピー輪郭"
-
-#~ msgid "Font"
-#~ msgstr "フォント"
-
-#~ msgid "Header"
-#~ msgstr "見出し"
-
-#~ msgid "Indent"
-#~ msgstr "挿入"
-
-#~ msgid "Italic"
-#~ msgstr "斜形"
-
-#~ msgid "List"
-#~ msgstr "一覧"
-
-#~ msgid "List alt"
-#~ msgstr "一覧ALT"
-
-#~ msgid "List ol"
-#~ msgstr "数値一覧"
-
-#~ msgid "List ul"
-#~ msgstr "黒丸一覧"
-
-#~ msgid "Outdent"
-#~ msgstr "インデント解除"
-
-#~ msgid "Paperclip"
-#~ msgstr "ペーパークリップ"
-
-#~ msgid "paragraph"
-#~ msgstr "段落"
-
-#~ msgid "Scissors"
-#~ msgstr "はさみ"
-
-#~ msgid "Strikethrough"
-#~ msgstr "取り消し線"
-
-#~ msgid "Subscript"
-#~ msgstr "添字"
-
-#~ msgid "Superscript"
-#~ msgstr "上付き文字"
-
-#~ msgid "Table"
-#~ msgstr "テーブル"
-
-#~ msgid "Text-height"
-#~ msgstr "テキストの高さ"
-
-#~ msgid "Text-width"
-#~ msgstr "テキスト幅"
-
-#~ msgid "Th"
-#~ msgstr "Th"
-
-#~ msgid "Th-large"
-#~ msgstr "Th-大"
-
-#~ msgid "Th-list"
-#~ msgstr "Th-一覧"
-
-#~ msgid "Underline"
-#~ msgstr "下線"
-
-#~ msgid "Undo"
-#~ msgstr "取り消す"
-
-#~ msgid "Angle Double Down"
-#~ msgstr "角度ダブルダウン"
-
-#~ msgid "Angle Double Left"
-#~ msgstr "角度ダブル左"
-
-#~ msgid "Angle Double Right"
-#~ msgstr "角度ダブル右"
-
-#~ msgid "Angle Double Up"
-#~ msgstr "角度ダブルアップ"
-
-#~ msgid "Angle Down"
-#~ msgstr "角度ダウン"
-
-#~ msgid "Angle Left"
-#~ msgstr "角度左"
-
-#~ msgid "Angle Right"
-#~ msgstr "角度右"
-
-#~ msgid "Angle Up"
-#~ msgstr "角度アップ"
-
-#~ msgid "Arrow Circle Down"
-#~ msgstr "矢印円下"
-
-#~ msgid "Arrow Circle Left"
-#~ msgstr "矢印円左"
-
-#~ msgid "Arrow Circle Outlined Down"
-#~ msgstr "矢印円輪郭下"
-
-#~ msgid "Arrow Circle Outlined Left"
-#~ msgstr "矢印円輪郭左"
-
-#~ msgid "Arrow Circle Outlined Right"
-#~ msgstr "矢印円輪郭右"
-
-#~ msgid "Arrow Circle Outlined Up"
-#~ msgstr "矢印円輪郭上"
-
-#~ msgid "Arrow Circle Right"
-#~ msgstr "矢印円上"
-
-#~ msgid "Arrow Circle Up"
-#~ msgstr "矢印円下"
-
-#~ msgid "Arrow Down"
-#~ msgstr "矢印下"
-
-#~ msgid "Arrow Left"
-#~ msgstr "矢印左"
-
-#~ msgid "Arrow Right"
-#~ msgstr "矢印右"
-
-#~ msgid "Arrow Up"
-#~ msgstr "矢印上"
-
-#~ msgid "Arrows Alt"
-#~ msgstr "矢印ALT"
-
-#~ msgid "Caret Down"
-#~ msgstr "下向き"
-
-#~ msgid "Caret Left"
-#~ msgstr "左向き"
-
-#~ msgid "Caret Right"
-#~ msgstr "右向き"
-
-#~ msgid "Caret Up"
-#~ msgstr "上向き"
-
-#~ msgid "Chevron Circle Down"
-#~ msgstr "円下向き"
-
-#~ msgid "Chevron Circle Left"
-#~ msgstr "円左向き"
-
-#~ msgid "Chevron Circle Right"
-#~ msgstr "円右向き"
-
-#~ msgid "Chevron Circle Up"
-#~ msgstr "円上向き"
-
-#~ msgid "Chevron Down"
-#~ msgstr "角丸下向き"
-
-#~ msgid "Chevron Left"
-#~ msgstr "角丸左向き"
-
-#~ msgid "Chevron Right"
-#~ msgstr "角丸右向き"
-
-#~ msgid "Chevron Up"
-#~ msgstr "角丸上向き"
-
-#~ msgid "Hand Outlined Down"
-#~ msgstr "手輪郭下"
-
-#~ msgid "Hand Outlined Left"
-#~ msgstr "手輪郭左"
-
-#~ msgid "Hand Outlined Right"
-#~ msgstr "手輪郭右"
-
-#~ msgid "Hand Outlined Up"
-#~ msgstr "手輪郭上"
-
-#~ msgid "Long Arrow Down"
-#~ msgstr "長矢印下"
-
-#~ msgid "Long Arrow Left"
-#~ msgstr "長矢印左"
-
-#~ msgid "Long Arrow Right"
-#~ msgstr "長矢印右"
-
-#~ msgid "Long Arrow Up"
-#~ msgstr "長矢印上"
-
-#~ msgid "Backward"
-#~ msgstr "後方矢印"
-
-#~ msgid "Compress"
-#~ msgstr "圧縮"
-
-#~ msgid "Eject"
-#~ msgstr "取り出し"
-
-#~ msgid "Expand"
-#~ msgstr "拡大"
-
-#~ msgid "Fast Backward"
-#~ msgstr "巻戻し"
-
-#~ msgid "Fast Forward"
-#~ msgstr "早送り"
-
-#~ msgid "Forward"
-#~ msgstr "順送り"
-
-#~ msgid "Pause"
-#~ msgstr "一時停止"
-
-#~ msgid "Play Circle"
-#~ msgstr "再生"
-
-#~ msgid "Play Circle Outlined"
-#~ msgstr "再生輪郭"
-
-#~ msgid "Step Backward"
-#~ msgstr "後方戻り"
-
-#~ msgid "Step Forward"
-#~ msgstr "前方送り"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
-
-#~ msgid "YouTube Play"
-#~ msgstr "YouTube 再生"
-
-#~ msgid "App.net"
-#~ msgstr "App.net"
-
-#~ msgid "Android"
-#~ msgstr "Android"
-
-#~ msgid "AngelList"
-#~ msgstr "AngelList"
-
-#~ msgid "Apple"
-#~ msgstr "Apple"
-
-#~ msgid "Behance"
-#~ msgstr "Behance"
-
-#~ msgid "Behance Square"
-#~ msgstr "正方形Behance"
-
-#~ msgid "Bitbucket"
-#~ msgstr "Bitbucket"
-
-#~ msgid "Bitbucket Square"
-#~ msgstr "正方形Bitbucket"
-
-#~ msgid "Codepen"
-#~ msgstr "Codepen"
-
-#~ msgid "CSS 3 Logo"
-#~ msgstr "CSS3ロゴ"
-
-#~ msgid "Delicious Logo"
-#~ msgstr "Delicious"
-
-#~ msgid "deviantART"
-#~ msgstr "deviantART"
-
-#~ msgid "Digg Logo"
-#~ msgstr "Digg"
-
-#~ msgid "Dribbble"
-#~ msgstr "Dribbble"
-
-#~ msgid "Dropbox"
-#~ msgstr "Dropbox"
-
-#~ msgid "Drupal Logo"
-#~ msgstr "Dropboxロゴ"
-
-#~ msgid "Galactic Empire"
-#~ msgstr "銀河帝国"
-
-#~ msgid "Facebook"
-#~ msgstr "Facebook"
-
-#~ msgid "Facebook Square"
-#~ msgstr "正方形Facebook"
-
-#~ msgid "Flickr"
-#~ msgstr "Flickr"
-
-#~ msgid "Foursquare"
-#~ msgstr "Foursquare"
-
-#~ msgid "Git"
-#~ msgstr "Git"
-
-#~ msgid "Git Square"
-#~ msgstr "正方形Git"
-
-#~ msgid "GitHub"
-#~ msgstr "GitHub"
-
-#~ msgid "GitHub Alt"
-#~ msgstr "GitHub Alt"
-
-#~ msgid "GitHub Square"
-#~ msgstr "正方形GitHub"
-
-#~ msgid "Gittip"
-#~ msgstr "Gittip"
-
-#~ msgid "Google Logo"
-#~ msgstr "Google"
-
-#~ msgid "Google Plus"
-#~ msgstr "Google+"
-
-#~ msgid "Google Plus Square"
-#~ msgstr "正方形Google+"
-
-#~ msgid "Hacker News"
-#~ msgstr "Hacker News"
-
-#~ msgid "HTML 5 Logo"
-#~ msgstr "HTML5ロゴ"
-
-#~ msgid "Instagram"
-#~ msgstr "Instagram"
-
-#~ msgid "ioxhost"
-#~ msgstr "ioxhost"
-
-#~ msgid "Joomla Logo"
-#~ msgstr "Joomla"
-
-#~ msgid "jsFiddle"
-#~ msgstr "jsFiddle"
-
-#~ msgid "last.fm"
-#~ msgstr "last.fm"
-
-#~ msgid "last.fm Square"
-#~ msgstr "正方形last.fm"
-
-#~ msgid "LinkedIn"
-#~ msgstr "LinkedIn"
-
-#~ msgid "LinkedIn Square"
-#~ msgstr "正方形LinkedIn"
-
-#~ msgid "Linux"
-#~ msgstr "Linux"
-
-#~ msgid "MaxCDN"
-#~ msgstr "MaxCDN"
-
-#~ msgid "meanpath"
-#~ msgstr "meanpath"
-
-#~ msgid "OpenID"
-#~ msgstr "OpenID"
-
-#~ msgid "Pagelines"
-#~ msgstr "Pagelines"
-
-#~ msgid "Pied Piper Logo"
-#~ msgstr "Pied Piper"
-
-#~ msgid "Pied Piper Alternate Logo"
-#~ msgstr "笛吹き男"
-
-#~ msgid "Pinterest Square"
-#~ msgstr "正方形ピンタレスト"
-
-#~ msgid "QQ"
-#~ msgstr "QQ"
-
-#~ msgid "Rebel Alliance"
-#~ msgstr "Rebel Alliance"
-
-#~ msgid "reddit Logo"
-#~ msgstr "reddit"
-
-#~ msgid "reddit Square"
-#~ msgstr "正方形reddit"
-
-#~ msgid "Renren"
-#~ msgstr "Renren"
-
-#~ msgid "Skype"
-#~ msgstr "Skype"
-
-#~ msgid "Slack Logo"
-#~ msgstr "Slack"
-
-#~ msgid "Slideshare"
-#~ msgstr "Slideshare"
-
-#~ msgid "SoundCloud"
-#~ msgstr "SoundCloud"
-
-#~ msgid "Spotify"
-#~ msgstr "Spotify"
-
-#~ msgid "Stack Exchange"
-#~ msgstr "Stack Exchange"
-
-#~ msgid "Stack Overflow"
-#~ msgstr "Stack Overflow"
-
-#~ msgid "Steam"
-#~ msgstr "Steam"
-
-#~ msgid "Steam Square"
-#~ msgstr "正方形Steam"
-
-#~ msgid "StumbleUpon Logo"
-#~ msgstr "StumbleUpon"
-
-#~ msgid "StumbleUpon Circle"
-#~ msgstr "円形StumbleUpon"
-
-#~ msgid "Tencent Weibo"
-#~ msgstr "Weibo"
-
-#~ msgid "Trello"
-#~ msgstr "Trello"
-
-#~ msgid "Tumblr"
-#~ msgstr "Tumblr"
-
-#~ msgid "Tumblr Square"
-#~ msgstr "正方形Tumblr"
-
-#~ msgid "Twitch"
-#~ msgstr "Twitch"
-
-#~ msgid "Twitter"
-#~ msgstr "Twitter"
-
-#~ msgid "Twitter Square"
-#~ msgstr "正方形Twitter"
-
-#~ msgid "Vimeo Square"
-#~ msgstr "正方形Vimeo"
-
-#~ msgid "Vine"
-#~ msgstr "Vine"
-
-#~ msgid "VK"
-#~ msgstr "VK"
-
-#~ msgid "Weibo"
-#~ msgstr "Weibo"
-
-#~ msgid "Weixin (WeChat)"
-#~ msgstr "WeChat"
-
-#~ msgid "Windows"
-#~ msgstr "Windows"
-
-#~ msgid "Wordpress Logo"
-#~ msgstr "Wordpress"
-
-#~ msgid "Xing"
-#~ msgstr "Xing"
-
-#~ msgid "Xing Square"
-#~ msgstr "正方形Xing"
-
-#~ msgid "Yahoo Logo"
-#~ msgstr "Yahoo"
-
-#~ msgid "Yelp"
-#~ msgstr "Yelp"
-
-#~ msgid "YouTube"
-#~ msgstr "YouTube"
-
-#~ msgid "YouTube Square"
-#~ msgstr "正方形YouTube"
-
-#~ msgid "Ambulance"
-#~ msgstr "Ambulance"
-
-#~ msgid "H Square"
-#~ msgstr "正方形 H"
-
-#~ msgid "Hospital Outlined"
-#~ msgstr "病院輪郭"
-
-#~ msgid "Medkit"
-#~ msgstr "救急かばん"
-
-#~ msgid "Stethoscope"
-#~ msgstr "聴診器"
-
-#~ msgid "User-md"
-#~ msgstr "医者"
-
-#~ msgid "Dial"
-#~ msgstr "受話器"
-
-#~ msgid "Pilcrow"
-#~ msgstr "段落記号"
-
-#~ msgid "Hash"
-#~ msgstr "＃"
-
-#~ msgid "Key-inv"
-#~ msgstr "鍵"
-
-#~ msgid "Chart-pie-alt"
-#~ msgstr "円図形ALT"
-
-#~ msgid "Chart-pie"
-#~ msgstr "円図形"
-
-#~ msgid "Chart-bar"
-#~ msgstr "棒図形"
-
-#~ msgid "Moon-inv"
-#~ msgstr "月"
-
-#~ msgid "Mobile"
-#~ msgstr "スマホ"
-
-#~ msgid "Cd"
-#~ msgstr "CD"
-
-#~ msgid "Split"
-#~ msgstr "分割"
-
-#~ msgid "Block"
-#~ msgstr "進入禁止"
-
-#~ msgid "Resize-full"
-#~ msgstr "リサイズ"
-
-#~ msgid "Article-alt"
-#~ msgstr "記事-ALT"
-
-#~ msgid "Article"
-#~ msgstr "記事"
-
-#~ msgid "Pencil-alt"
-#~ msgstr "鉛筆-Alt"
-
-#~ msgid "Attach"
-#~ msgstr "添付"
-
-#~ msgid "Resize-full-alt"
-#~ msgstr "リサイズALT"
-
-#~ msgid "Book-open"
-#~ msgstr "本見開き"
-
-#~ msgid "Arrow-curved"
-#~ msgstr "矢印曲面"
-
-#~ msgid "Equalizer"
-#~ msgstr "イコライザー"
-
-#~ msgid "Heart-empty"
-#~ msgstr "中抜きハート"
-
-#~ msgid "Lock-empty"
-#~ msgstr "中抜きロック"
-
-#~ msgid "Comment-inv"
-#~ msgstr "吹き出し"
-
-#~ msgid "Resize-small"
-#~ msgstr "縮小"
-
-#~ msgid "Cursor"
-#~ msgstr "カーソル"
-
-#~ msgid "Aperture"
-#~ msgstr "シャッター"
-
-#~ msgid "Play-circle2"
-#~ msgstr "中抜き再生"
-
-#~ msgid "Resize-small-alt"
-#~ msgstr "縮小ALT"
-
-#~ msgid "Folder-empty"
-#~ msgstr "空フォルダ"
-
-#~ msgid "Comment-alt"
-#~ msgstr "吹き出しALT"
-
-#~ msgid "Lock-open"
-#~ msgstr "解錠"
-
-#~ msgid "Lock-open-empty"
-#~ msgstr "中抜き解錠"
-
-#~ msgid "Box"
-#~ msgstr "ボックス"
-
-#~ msgid "Resize-vertical"
-#~ msgstr "縦リサイズ"
-
-#~ msgid "Aperture-alt"
-#~ msgstr "シャッターALT"
-
-#~ msgid "Steering-wheel"
-#~ msgstr "ステアリング"
-
-#~ msgid "To-start"
-#~ msgstr "逆再生"
-
-#~ msgid "Move"
-#~ msgstr "ドラック移動"
-
-#~ msgid "Resize-horizontal"
-#~ msgstr "水平リサイズ"
-
-#~ msgid "Rss-alt"
-#~ msgstr "RSS-ALT"
-
-#~ msgid "Comment-alt2"
-#~ msgstr "円形吹き出しALT"
-
-#~ msgid "Rss"
-#~ msgstr "RSS"
-
-#~ msgid "Comment-inv-alt"
-#~ msgstr "吹き出し塗りALT"
-
-#~ msgid "Comment-inv-alt2"
-#~ msgstr "円形吹き出し塗りALT"
-
-#~ msgid "Pin"
-#~ msgstr "ピン"
-
-#~ msgid "Picture"
-#~ msgstr "絵画"
-
-#~ msgid "Tag"
-#~ msgstr "タグ"
-
-#~ msgid "Chat"
-#~ msgstr "チャット"
-
-#~ msgid "Popup"
-#~ msgstr "ポップアップ"
-
-#~ msgid "To-end"
-#~ msgstr "リサイクル"
-
-#~ msgid "Book-alt"
-#~ msgstr "塗り本"
-
-#~ msgid "Brush"
-#~ msgstr "ブラシ"
-
-#~ msgid "Down"
-#~ msgstr "下"
-
-#~ msgid "Chat-inv"
-#~ msgstr "塗りチャット"
-
-#~ msgid "Tag-empty"
-#~ msgstr "中抜きタグ"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "Ok-circle"
-#~ msgstr "円形OK"
-
-#~ msgid "Location"
-#~ msgstr "場所ピン"
-
-#~ msgid "Brush-alt"
-#~ msgstr "塗りブラシ"
-
-#~ msgid "Location-inv"
-#~ msgstr "場所ピン塗り"
-
-#~ msgid "Signal"
-#~ msgstr "電波"
-
-#~ msgid "Layers"
-#~ msgstr "レイヤー"
-
-#~ msgid "Award"
-#~ msgstr "受賞"
-
-#~ msgid "Up"
-#~ msgstr "アップ"
-
-#~ msgid "Calendar-inv"
-#~ msgstr "塗りカレンダー"
-
-#~ msgid "Location-alt"
-#~ msgstr "場所ALT"
-
-#~ msgid "Download-cloud"
-#~ msgstr "ダウンロード雲"
-
-#~ msgid "Cancel-circle"
-#~ msgstr "円形キャンセル"
-
-#~ msgid "Upload-cloud"
-#~ msgstr "アップロード雲"
-
-#~ msgid "Calendar-alt"
-#~ msgstr "カレンダーALT"
-
-#~ msgid "Down-circle"
-#~ msgstr "円形タウン"
-
-#~ msgid "Award-empty"
-#~ msgstr "中抜き受賞"
-
-#~ msgid "Layers-alt"
-#~ msgstr "レイヤーALT"
-
-#~ msgid "Sun"
-#~ msgstr "太陽"
-
-#~ msgid "Left-circle"
-#~ msgstr "円形左"
-
-#~ msgid "Mic"
-#~ msgstr "マイク"
-
-#~ msgid "Plus-circle"
-#~ msgstr "円形プラス"
-
-#~ msgid "Trash-empty"
-#~ msgstr "空ゴミ箱"
-
-#~ msgid "Volume-off"
-#~ msgstr "音量オフ"
-
-#~ msgid "Right-circle"
-#~ msgstr "円形右"
-
-#~ msgid "List-nested"
-#~ msgstr "ネスト一覧"
-
-#~ msgid "Sun-inv"
-#~ msgstr "塗り太陽"
-
-#~ msgid "Bat-empty"
-#~ msgstr "バッテリー"
-
-#~ msgid "Up-circle"
-#~ msgstr "円形上"
-
-#~ msgid "Volume-up"
-#~ msgstr "音量上昇"
-
-#~ msgid "Doc"
-#~ msgstr "ランチャーアイコン"
-
-#~ msgid "Quote-left-alt"
-#~ msgstr "ダブルクォーテーション左ALT"
-
-#~ msgid "Minus-circle"
-#~ msgstr "円形マイナス"
-
-#~ msgid "Bat-half"
-#~ msgstr "バッテリー半分"
-
-#~ msgid "Cw"
-#~ msgstr "CW"
-
-#~ msgid "Doc-inv"
-#~ msgstr "塗りドキュメント"
-
-#~ msgid "Quote-right-alt"
-#~ msgstr "ダブルクォーテーション右ALT"
-
-#~ msgid "Help"
-#~ msgstr "ヘルプ"
-
-#~ msgid "Doc-alt"
-#~ msgstr "中抜きドキュメント"
-
-#~ msgid "Loop"
-#~ msgstr "ループ"
-
-#~ msgid "Bat-full"
-#~ msgstr "フルバッテリー"
-
-#~ msgid "Flash"
-#~ msgstr "Flash"
-
-#~ msgid "Moon"
-#~ msgstr "月"
-
-#~ msgid "Bat-charge"
-#~ msgstr "バッテリー充電"
-
-#~ msgid "Loop-alt"
-#~ msgstr "ループALT"
-
-#~ msgid "Lamp"
-#~ msgstr "電球ひらめき"
-
-#~ msgid "Doc-inv-alt"
-#~ msgstr "塗りドキュメントALT"
-
-#~ msgid "Pencil-neg"
-#~ msgstr "鉛筆-NEG"
-
-#~ msgid "Adjust Brightness"
-#~ msgstr "明るさを調整"
-
-#~ msgid "Adjust Contrast"
-#~ msgstr "コントラストを調整"
-
-#~ msgid "Anchor Outline"
-#~ msgstr "アンカー外観"
-
-#~ msgid "Arrow Back Outline"
-#~ msgstr "戻る矢印輪郭"
-
-#~ msgid "Arrow Back"
-#~ msgstr "戻る矢印"
-
-#~ msgid "Arrow Down Outline"
-#~ msgstr "下へ矢印輪郭"
-
-#~ msgid "Arrow Down Thick"
-#~ msgstr "太い下矢印"
-
-#~ msgid "Arrow Forward Outline"
-#~ msgstr "順方向矢印輪郭"
-
-#~ msgid "Arrow Forward"
-#~ msgstr "順方向矢印"
-
-#~ msgid "Arrow Left Outline"
-#~ msgstr "左矢印輪郭"
-
-#~ msgid "Arrow Left Thick"
-#~ msgstr "左太い矢印"
-
-#~ msgid "Arrow Loop Outline"
-#~ msgstr "ループ矢印輪郭"
-
-#~ msgid "Arrow Loop"
-#~ msgstr "ループ矢印"
-
-#~ msgid "Arrow Maximise Outline"
-#~ msgstr "最大矢印輪郭"
-
-#~ msgid "Arrow Maximise"
-#~ msgstr "最大矢印"
-
-#~ msgid "Arrow Minimise Outline"
-#~ msgstr "最小矢印輪郭"
-
-#~ msgid "Arrow Minimise"
-#~ msgstr "最小矢印"
-
-#~ msgid "Arrow Move Outline"
-#~ msgstr "移動矢印輪郭"
-
-#~ msgid "Arrow Move"
-#~ msgstr "移動矢印"
-
-#~ msgid "Arrow Repeat Outline"
-#~ msgstr "リピート矢印輪郭"
-
-#~ msgid "Arrow Repeat"
-#~ msgstr "リピート矢印"
-
-#~ msgid "Arrow Right Outline"
-#~ msgstr "右矢印輪郭"
-
-#~ msgid "Arrow Right Thick"
-#~ msgstr "右太い矢印"
-
-#~ msgid "Arrow Shuffle"
-#~ msgstr "シャッフル矢印"
-
-#~ msgid "Arrow Sorted Down"
-#~ msgstr "並び替え矢印下"
-
-#~ msgid "Arrow Sorted Up"
-#~ msgstr "並び替え矢印上"
-
-#~ msgid "Arrow Sync Outline"
-#~ msgstr "同期矢印輪郭"
-
-#~ msgid "Arrow Sync"
-#~ msgstr "同期矢印"
-
-#~ msgid "Arrow Unsorted"
-#~ msgstr "未整理矢印"
-
-#~ msgid "Arrow Up Outline"
-#~ msgstr "上矢印輪郭"
-
-#~ msgid "Arrow Up Thick"
-#~ msgstr "上太い矢印"
-
-#~ msgid "Attachment Outline"
-#~ msgstr "添付ファイル輪郭"
-
-#~ msgid "Attachment"
-#~ msgstr "添付ファイル"
-
-#~ msgid "Backspace Outline"
-#~ msgstr "バックスペース輪郭"
-
-#~ msgid "Backspace"
-#~ msgstr "バックスペース"
-
-#~ msgid "Battery Charge"
-#~ msgstr "バッテリー充電"
-
-#~ msgid "Battery Full"
-#~ msgstr "バッテリーフル"
-
-#~ msgid "Battery High"
-#~ msgstr "バッテリーハイ"
-
-#~ msgid "Battery Low"
-#~ msgstr "バッテリーロー"
-
-#~ msgid "Battery Mid"
-#~ msgstr "バッテリー少"
-
-#~ msgid "Beaker"
-#~ msgstr "ビーカー"
-
-#~ msgid "Business Card"
-#~ msgstr "名刺"
-
-#~ msgid "Calendar Outline"
-#~ msgstr "カレンダー輪郭"
-
-#~ msgid "Camera Outline"
-#~ msgstr "カメラ輪郭"
-
-#~ msgid "Cancel Outline"
-#~ msgstr "キャンセル輪郭"
-
-#~ msgid "Chart Area Outline"
-#~ msgstr "グラフエリア輪郭"
-
-#~ msgid "Chart Area"
-#~ msgstr "グラフエリア"
-
-#~ msgid "Chart Bar Outline"
-#~ msgstr "棒チャート輪郭"
-
-#~ msgid "Chart Bar"
-#~ msgstr "棒チャート"
-
-#~ msgid "Chart Line Outline"
-#~ msgstr "線チャート輪郭"
-
-#~ msgid "Chart Line"
-#~ msgstr "線チャート"
-
-#~ msgid "Chart Pie Outline"
-#~ msgstr "円チャート輪郭"
-
-#~ msgid "Chart Pie"
-#~ msgstr "円チャート"
-
-#~ msgid "Chevron Left Outline"
-#~ msgstr "左戻り輪郭"
-
-#~ msgid "Chevron Right Outline"
-#~ msgstr "右戻り輪郭"
-
-#~ msgid "Cloud Storage"
-#~ msgstr "クラウドストレージ"
-
-#~ msgid "Cloud Storage Outline"
-#~ msgstr "クラウドストレージ輪郭"
-
-#~ msgid "Code Outline"
-#~ msgstr "コード輪郭"
-
-#~ msgid "Cog Outline"
-#~ msgstr "歯輪郭"
-
-#~ msgid "Contacts"
-#~ msgstr "コンタクト"
-
-#~ msgid "Credit Card"
-#~ msgstr "クレジットカード"
-
-#~ msgid "Css3"
-#~ msgstr "CSS3"
-
-#~ msgid "Delete Outline"
-#~ msgstr "削除輪郭"
-
-#~ msgid "Device Desktop"
-#~ msgstr "デスクトップデバイス"
-
-#~ msgid "Device Laptop"
-#~ msgstr "ノートパソコンデバイス"
-
-#~ msgid "Device Phone"
-#~ msgstr "電話デバイス"
-
-#~ msgid "Device Tablet"
-#~ msgstr "タブレットデバイス"
-
-#~ msgid "Directions"
-#~ msgstr "方向"
-
-#~ msgid "Divide Outline"
-#~ msgstr "割算輪郭"
-
-#~ msgid "Divide"
-#~ msgstr "割算"
-
-#~ msgid "Document Add"
-#~ msgstr "ドキュメント追加"
-
-#~ msgid "Document Delete"
-#~ msgstr "ドキュメント削除"
-
-#~ msgid "Document Text"
-#~ msgstr "ドキュメントテキスト"
-
-#~ msgid "Document"
-#~ msgstr "ドキュメント"
-
-#~ msgid "Download Outline"
-#~ msgstr "ダウンロード輪郭"
-
-#~ msgid "Eject Outline"
-#~ msgstr "取り出し輪郭"
-
-#~ msgid "Equals Outline"
-#~ msgstr "イコール輪郭"
-
-#~ msgid "Equals"
-#~ msgstr "イコール"
-
-#~ msgid "Export Outline"
-#~ msgstr "エクスポート輪郭"
-
-#~ msgid "Export"
-#~ msgstr "エクスポート"
-
-#~ msgid "Eye Outline"
-#~ msgstr "目輪郭"
-
-#~ msgid "Feather"
-#~ msgstr "羽"
-
-#~ msgid "Flag Outline"
-#~ msgstr "フラグ輪郭"
-
-#~ msgid "Flash Outline"
-#~ msgstr "Flash輪郭"
-
-#~ msgid "Flow Children"
-#~ msgstr "子フロー"
-
-#~ msgid "Flow Merge"
-#~ msgstr "ツリーフロー"
-
-#~ msgid "Flow Parallel"
-#~ msgstr "タイムラインフロー"
-
-#~ msgid "Flow Switch"
-#~ msgstr "スイッチフロー"
-
-#~ msgid "Folder Add"
-#~ msgstr "フォルダ追加"
-
-#~ msgid "Folder Delete"
-#~ msgstr "フォルダ削除"
-
-#~ msgid "Globe Outline"
-#~ msgstr "地球儀輪郭"
-
-#~ msgid "Group Outline"
-#~ msgstr "グループ輪郭"
-
-#~ msgid "Heart Full Outline"
-#~ msgstr "フルハート輪郭"
-
-#~ msgid "Heart Half Outline"
-#~ msgstr "ハーフハート輪郭"
-
-#~ msgid "Heart Outline"
-#~ msgstr "ハート輪郭"
-
-#~ msgid "Home Outline"
-#~ msgstr "ホーム輪郭"
-
-#~ msgid "Html5"
-#~ msgstr "HTML5"
-
-#~ msgid "Image Outline"
-#~ msgstr "画像輪郭"
-
-#~ msgid "Infinity Outline"
-#~ msgstr "無限輪郭"
-
-#~ msgid "Infinity"
-#~ msgstr "無限"
-
-#~ msgid "Info Large Outline"
-#~ msgstr "大情報輪郭"
-
-#~ msgid "Info Large"
-#~ msgstr "大情報"
-
-#~ msgid "Info Outline"
-#~ msgstr "情報輪郭"
-
-#~ msgid "Input Checked Outline"
-#~ msgstr "入力チェック輪郭"
-
-#~ msgid "Input Checked"
-#~ msgstr "入力チェック"
-
-#~ msgid "Key Outline"
-#~ msgstr "鍵輪郭"
-
-#~ msgid "Keyboard"
-#~ msgstr "キーボード"
-
-#~ msgid "Lightbulb"
-#~ msgstr "電球"
-
-#~ msgid "Link Outline"
-#~ msgstr "リンク輪郭"
-
-#~ msgid "Location Arrow Outline"
-#~ msgstr "場所矢印輪郭"
-
-#~ msgid "Location Arrow"
-#~ msgstr "場所矢印"
-
-#~ msgid "Location Outline"
-#~ msgstr "場所輪郭"
-
-#~ msgid "Lock Closed Outline"
-#~ msgstr "南京錠輪郭"
-
-#~ msgid "Lock Closed"
-#~ msgstr "南京錠"
-
-#~ msgid "Lock Open Outline"
-#~ msgstr "オープン南京錠輪郭"
-
-#~ msgid "Lock Open"
-#~ msgstr "オープン南京錠"
-
-#~ msgid "Map"
-#~ msgstr "地図"
-
-#~ msgid "Media Eject Outline"
-#~ msgstr "メディア取り出し輪郭"
-
-#~ msgid "Media Eject"
-#~ msgstr "メディア取り出し"
-
-#~ msgid "Media Fast Forward Outline"
-#~ msgstr "メディア早送り輪郭"
-
-#~ msgid "Media Fast Forward"
-#~ msgstr "メディア巻戻し輪郭"
-
-#~ msgid "Media Pause Outline"
-#~ msgstr "メディア一時停止輪郭"
-
-#~ msgid "Media Pause"
-#~ msgstr "メディア一時停止"
-
-#~ msgid "Media Play Outline"
-#~ msgstr "メディア再生輪郭"
-
-#~ msgid "Media Play Reverse Outline"
-#~ msgstr "メディア逆再生輪郭"
-
-#~ msgid "Media Play Reverse"
-#~ msgstr "メディア逆再生"
-
-#~ msgid "Media Play"
-#~ msgstr "メディア再生"
-
-#~ msgid "Media Record Outline"
-#~ msgstr "メディア録画輪郭"
-
-#~ msgid "Media Record"
-#~ msgstr "メディア録画"
-
-#~ msgid "Media Rewind Outline"
-#~ msgstr "メディア巻戻し輪郭"
-
-#~ msgid "Media Rewind"
-#~ msgstr "メディア巻戻し"
-
-#~ msgid "Media Stop Outline"
-#~ msgstr "メディア停止輪郭"
-
-#~ msgid "Media Stop"
-#~ msgstr "メディア停止"
-
-#~ msgid "Message Typing"
-#~ msgstr "メッセージ入力"
-
-#~ msgid "Message"
-#~ msgstr "メッセージ"
-
-#~ msgid "Messages"
-#~ msgstr "メッセージやり取り"
-
-#~ msgid "Microphone Outline"
-#~ msgstr "マイク輪郭"
-
-#~ msgid "Minus Outline"
-#~ msgstr "マイナス輪郭"
-
-#~ msgid "Mortar Board"
-#~ msgstr "卒業帽"
-
-#~ msgid "News"
-#~ msgstr "ニュース"
-
-#~ msgid "Notes Outline"
-#~ msgstr "ノート輪郭"
-
-#~ msgid "Notes"
-#~ msgstr "ノート"
-
-#~ msgid "Pen"
-#~ msgstr "ペン"
-
-#~ msgid "Phone Outline"
-#~ msgstr "電話輪郭"
-
-#~ msgid "Pi Outline"
-#~ msgstr "Π輪郭"
-
-#~ msgid "Pi"
-#~ msgstr "Π"
-
-#~ msgid "Pin Outline"
-#~ msgstr "ピン輪郭"
-
-#~ msgid "Pipette"
-#~ msgstr "スポイト"
-
-#~ msgid "Plane Outline"
-#~ msgstr "飛行機輪郭"
-
-#~ msgid "Plus Outline"
-#~ msgstr "プラス輪郭"
-
-#~ msgid "Point Of Interest Outline"
-#~ msgstr "興味のポイント輪郭"
-
-#~ msgid "Point Of Interest"
-#~ msgstr "興味のポイント"
-
-#~ msgid "Power Outline"
-#~ msgstr "パワー輪郭"
-
-#~ msgid "Power"
-#~ msgstr "パワー"
-
-#~ msgid "Printer"
-#~ msgstr "プリンタ"
-
-#~ msgid "Puzzle Outline"
-#~ msgstr "パズル輪郭"
-
-#~ msgid "Puzzle"
-#~ msgstr "パズル"
-
-#~ msgid "Radar Outline"
-#~ msgstr "レーダー輪郭"
-
-#~ msgid "Radar"
-#~ msgstr "レーダー"
-
-#~ msgid "Refresh Outline"
-#~ msgstr "リフレッシュ輪郭"
-
-#~ msgid "Rss Outline"
-#~ msgstr "RSS輪郭"
-
-#~ msgid "Scissors Outline"
-#~ msgstr "はさみ輪郭"
-
-#~ msgid "Shopping Bag"
-#~ msgstr "ショッピングバック"
-
-#~ msgid "Shopping Cart"
-#~ msgstr "ショッピングカート"
-
-#~ msgid "Social At Circular"
-#~ msgstr "円形ソーシャル"
-
-#~ msgid "Social Dribbble Circular"
-#~ msgstr "円形ソーシャルDribbble"
-
-#~ msgid "Social Dribbble"
-#~ msgstr "円形ソーシャルDribbble"
-
-#~ msgid "Social Facebook Circular"
-#~ msgstr "円形ソーシャルFacebook"
-
-#~ msgid "Social Facebook"
-#~ msgstr "ソーシャルFacebook"
-
-#~ msgid "Social Flickr Circular"
-#~ msgstr "円形ソーシャルFlickr "
-
-#~ msgid "Social Flickr"
-#~ msgstr "ソーシャルFlickr "
-
-#~ msgid "Social Github Circular"
-#~ msgstr "円形ソーシャルGithub"
-
-#~ msgid "Social Github"
-#~ msgstr "ソーシャルGithub"
-
-#~ msgid "Social Google Plus Circular"
-#~ msgstr "円形ソーシャルGoogle+"
-
-#~ msgid "Social Google Plus"
-#~ msgstr "ソーシャルGoogle+"
-
-#~ msgid "Social Instagram Circular"
-#~ msgstr "円形ソーシャルInstagram"
-
-#~ msgid "Social Instagram"
-#~ msgstr "ソーシャルInstagram"
-
-#~ msgid "Social Last Fm Circular"
-#~ msgstr "円形ソーシャルLast Fm"
-
-#~ msgid "Social Last Fm"
-#~ msgstr "ソーシャルLast Fm"
-
-#~ msgid "Social Linkedin Circular"
-#~ msgstr "円形ソーシャルLinkedin"
-
-#~ msgid "Social Linkedin"
-#~ msgstr "ソーシャルLinkedin"
-
-#~ msgid "Social Pinterest Circular"
-#~ msgstr "円形ソーシャルPinterest "
-
-#~ msgid "Social Pinterest"
-#~ msgstr "ソーシャルPinterest "
-
-#~ msgid "Social Skype Outline"
-#~ msgstr "円形ソーシャルSkype "
-
-#~ msgid "Social Skype"
-#~ msgstr "ソーシャルSkype "
-
-#~ msgid "Social Tumbler Circular"
-#~ msgstr "円形ソーシャルTumbler "
-
-#~ msgid "Social Tumbler"
-#~ msgstr "ソーシャルTumbler "
-
-#~ msgid "Social Twitter Circular"
-#~ msgstr "円形ソーシャルTwitter "
-
-#~ msgid "Social Twitter"
-#~ msgstr "ソーシャルTwitter "
-
-#~ msgid "Social Vimeo Circular"
-#~ msgstr "円形ソーシャルVimeo "
-
-#~ msgid "Social Vimeo"
-#~ msgstr "ソーシャルVimeo "
-
-#~ msgid "Social Youtube Circular"
-#~ msgstr "円形ソーシャルYoutube "
-
-#~ msgid "Social Youtube"
-#~ msgstr "ソーシャルYoutube "
-
-#~ msgid "Sort Alphabetically Outline"
-#~ msgstr "Alphabetically輪郭並び替え"
-
-#~ msgid "Sort Alphabetically"
-#~ msgstr "Alphabetically並び替え"
-
-#~ msgid "Sort Numerically Outline"
-#~ msgstr "数値並び替え輪郭"
-
-#~ msgid "Sort Numerically"
-#~ msgstr "数値並び替え"
-
-#~ msgid "Spanner Outline"
-#~ msgstr "スパナ輪郭"
-
-#~ msgid "Spanner"
-#~ msgstr "スパナ"
-
-#~ msgid "Spiral"
-#~ msgstr "スパイラル"
-
-#~ msgid "Star Full Outline"
-#~ msgstr "星フル輪郭"
-
-#~ msgid "Star Half Outline"
-#~ msgstr "星ハーフ輪郭"
-
-#~ msgid "Star Half"
-#~ msgstr "星ハーフ"
-
-#~ msgid "Star Outline"
-#~ msgstr "星輪郭"
-
-#~ msgid "Starburst Outline"
-#~ msgstr "星形輪郭"
-
-#~ msgid "Starburst"
-#~ msgstr "星形"
-
-#~ msgid "Stopwatch"
-#~ msgstr "ストップウォッチ"
-
-#~ msgid "Support"
-#~ msgstr "サポート"
-
-#~ msgid "Tabs Outline"
-#~ msgstr "タグ輪郭"
-
-#~ msgid "Th Large Outline"
-#~ msgstr "大Th輪郭"
-
-#~ msgid "Th Large"
-#~ msgstr "大Th"
-
-#~ msgid "Th List Outline"
-#~ msgstr "一覧Th輪郭"
-
-#~ msgid "Th List"
-#~ msgstr "一覧Th"
-
-#~ msgid "Th Menu Outline"
-#~ msgstr "Thメニュー輪郭"
-
-#~ msgid "Th Menu"
-#~ msgstr "Thメニュー"
-
-#~ msgid "Th Small Outline"
-#~ msgstr "小Th輪郭"
-
-#~ msgid "Th Small"
-#~ msgstr "小Th"
-
-#~ msgid "Thermometer"
-#~ msgstr "温度計"
-
-#~ msgid "Thumbs Down"
-#~ msgstr "拒絶"
-
-#~ msgid "Thumbs Ok"
-#~ msgstr "いいね"
-
-#~ msgid "Thumbs Up"
-#~ msgstr "いいぞ"
-
-#~ msgid "Tick Outline"
-#~ msgstr "チェックボックス輪郭"
-
-#~ msgid "Time"
-#~ msgstr "時間"
-
-#~ msgid "Times Outline"
-#~ msgstr "×輪郭"
-
-#~ msgid "Upload Outline"
-#~ msgstr "アップロード輪郭"
-
-#~ msgid "User Add Outline"
-#~ msgstr "ユーザー追加輪郭"
-
-#~ msgid "User Add"
-#~ msgstr "ユーザー追加"
-
-#~ msgid "User Delete Outline"
-#~ msgstr "ユーザー削除輪郭"
-
-#~ msgid "User Delete"
-#~ msgstr "ユーザー削除"
-
-#~ msgid "User Outline"
-#~ msgstr "ユーザー輪郭"
-
-#~ msgid "Vendor Android"
-#~ msgstr "Android代理店"
-
-#~ msgid "Vendor Apple"
-#~ msgstr "Apple代理店"
-
-#~ msgid "Vendor Microsoft"
-#~ msgstr "Microsoft代理店"
-
-#~ msgid "Video Outline"
-#~ msgstr "ビデオ輪郭"
-
-#~ msgid "Volume Down"
-#~ msgstr "ボリュームダウン"
-
-#~ msgid "Volume Mute"
-#~ msgstr "消音"
-
-#~ msgid "Volume Up"
-#~ msgstr "ボリュームアップ"
-
-#~ msgid "Volume"
-#~ msgstr "ボリューム"
-
-#~ msgid "Warning Outline"
-#~ msgstr "警告輪郭"
-
-#~ msgid "Watch"
-#~ msgstr "時計"
-
-#~ msgid "Waves Outline"
-#~ msgstr "波輪郭"
-
-#~ msgid "Waves"
-#~ msgstr "波"
-
-#~ msgid "Weather Cloudy"
-#~ msgstr "天気曇り"
-
-#~ msgid "Weather Downpour"
-#~ msgstr "天気豪雨"
-
-#~ msgid "Weather Night"
-#~ msgstr "ナイト天気"
-
-#~ msgid "Weather Partly Sunny"
-#~ msgstr "天気晴天"
-
-#~ msgid "Weather Shower"
-#~ msgstr "天気小雨"
-
-#~ msgid "Weather Snow"
-#~ msgstr "天気雪"
-
-#~ msgid "Weather Stormy"
-#~ msgstr "天気嵐"
-
-#~ msgid "Weather Sunny"
-#~ msgstr "天気晴れ"
-
-#~ msgid "Weather Windy Cloudy"
-#~ msgstr "天気強風曇り"
-
-#~ msgid "Weather Windy"
-#~ msgstr "天気強風"
-
-#~ msgid "Wi Fi Outline"
-#~ msgstr "WiFi輪郭"
-
-#~ msgid "Wi Fi"
-#~ msgstr "WiFi"
-
-#~ msgid "Wine"
-#~ msgstr "ワイン"
-
-#~ msgid "World Outline"
-#~ msgstr "世界輪郭"
-
-#~ msgid "World"
-#~ msgstr "世界"
-
-#~ msgid "Zoom In Outline"
-#~ msgstr "ズームイン輪郭"
-
-#~ msgid "Zoom In"
-#~ msgstr "ズームイン"
-
-#~ msgid "Zoom Out Outline"
-#~ msgstr "ズームアウト輪郭"
-
-#~ msgid "Zoom Out"
-#~ msgstr "ズームアウト"
-
-#~ msgid "Zoom Outline"
-#~ msgstr "ズーム輪郭"
-
-#~ msgid "Note"
-#~ msgstr "ノート"
-
-#~ msgid "Note Beamed"
-#~ msgstr "♫"
-
-#~ msgid "Flashlight"
-#~ msgstr "懐中電灯"
-
-#~ msgid "Heart Empty"
-#~ msgstr "空のハート"
-
-#~ msgid "Star Empty"
-#~ msgstr "空の星"
-
-#~ msgid "Cancel Circled"
-#~ msgstr "円形キャンセル"
-
-#~ msgid "Cancel Squared"
-#~ msgstr "正方形キャンセル"
-
-#~ msgid "Plus Circled"
-#~ msgstr "円形プラス"
-
-#~ msgid "Plus Squared"
-#~ msgstr "正方形プラス"
-
-#~ msgid "Minus Circled"
-#~ msgstr "円形マイナス"
-
-#~ msgid "Minus Squared"
-#~ msgstr "正方形マイナス"
-
-#~ msgid "Help Circled"
-#~ msgstr "円形ヘルプ"
-
-#~ msgid "Info Circled"
-#~ msgstr "円形情報"
-
-#~ msgid "Back"
-#~ msgstr "戻る"
-
-#~ msgid "Bookmarks"
-#~ msgstr "ブックマーク"
-
-#~ msgid "Upload Cloud"
-#~ msgstr "アップロード雲"
-
-#~ msgid "Reply All"
-#~ msgstr "すべて返信"
-
-#~ msgid "Quote"
-#~ msgstr "引用"
-
-#~ msgid "Attention"
-#~ msgstr "注目"
-
-#~ msgid "Vcard"
-#~ msgstr "VCard"
-
-#~ msgid "Address"
-#~ msgstr "アドレス"
-
-#~ msgid "Direction"
-#~ msgstr "方向"
-
-#~ msgid "Cup"
-#~ msgstr "カップ"
-
-#~ msgid "Docs"
-#~ msgstr "ドキュメント"
-
-#~ msgid "Doc Landscape"
-#~ msgstr "横書きドキュメント"
-
-#~ msgid "Doc Text"
-#~ msgstr "テキストドキュメント"
-
-#~ msgid "Doc Text Inv"
-#~ msgstr "塗りテキストドキュメント"
-
-#~ msgid "Newspaper"
-#~ msgstr "新聞"
-
-#~ msgid "Book Open"
-#~ msgstr "見開き本"
-
-#~ msgid "Tools"
-#~ msgstr "ツール"
-
-#~ msgid "Shareable"
-#~ msgstr "共有可能"
-
-#~ msgid "Basket"
-#~ msgstr "バスケット"
-
-#~ msgid "Bag"
-#~ msgstr "バッグ"
-
-#~ msgid "Login"
-#~ msgstr "ログイン"
-
-#~ msgid "Logout"
-#~ msgstr "ログアウト"
-
-#~ msgid "Mute"
-#~ msgstr "消音"
-
-#~ msgid "Sound"
-#~ msgstr "サウンド"
-
-#~ msgid "Hourglass"
-#~ msgstr "砂時計"
-
-#~ msgid "Light Down"
-#~ msgstr "ダウンライト"
-
-#~ msgid "Light Up"
-#~ msgstr "アップライト"
-
-#~ msgid "Resize Full"
-#~ msgstr "フルサイズ"
-
-#~ msgid "Resize Small"
-#~ msgstr "小サイズ"
-
-#~ msgid "Window"
-#~ msgstr "ウィンド"
-
-#~ msgid "Arrow Combo"
-#~ msgstr "矢印コンボ"
-
-#~ msgid "Down Circled"
-#~ msgstr "円形下"
-
-#~ msgid "Left Circled"
-#~ msgstr "円形左"
-
-#~ msgid "Right Circled"
-#~ msgstr "円形右"
-
-#~ msgid "Up Circled"
-#~ msgstr "円形上"
-
-#~ msgid "Down Open"
-#~ msgstr "オープン下"
-
-#~ msgid "Left Open"
-#~ msgstr "オープン左"
-
-#~ msgid "Right Open"
-#~ msgstr "オープン右"
-
-#~ msgid "Up Open"
-#~ msgstr "オープン上"
-
-#~ msgid "Down Open Mini"
-#~ msgstr "最小オープン下"
-
-#~ msgid "Left Open Mini"
-#~ msgstr "最小オープン左"
-
-#~ msgid "Right Open Mini"
-#~ msgstr "最小オープン右"
-
-#~ msgid "Up Open Mini"
-#~ msgstr "最小オープン上"
-
-#~ msgid "Down Open Big"
-#~ msgstr "大オープン下"
-
-#~ msgid "Left Open Big"
-#~ msgstr "大オープン左"
-
-#~ msgid "Right Open Big"
-#~ msgstr "大オープン右"
-
-#~ msgid "Up Open Big"
-#~ msgstr "上オープン大"
-
-#~ msgid "Down Dir"
-#~ msgstr "下三角"
-
-#~ msgid "Left Dir"
-#~ msgstr "左三角"
-
-#~ msgid "Right Dir"
-#~ msgstr "右三角"
-
-#~ msgid "Up Dir"
-#~ msgstr "上三角"
-
-#~ msgid "Down Bold"
-#~ msgstr "強調下"
-
-#~ msgid "Left Bold"
-#~ msgstr "強調左"
-
-#~ msgid "Right Bold"
-#~ msgstr "強調右"
-
-#~ msgid "Up Bold"
-#~ msgstr "強調上"
-
-#~ msgid "Down Thin"
-#~ msgstr "ティン下"
-
-#~ msgid "Left Thin"
-#~ msgstr "ティン左"
-
-#~ msgid "Right Thin"
-#~ msgstr "ティン右"
-
-#~ msgid "Up Thin"
-#~ msgstr "ティン上"
-
-#~ msgid "Ccw"
-#~ msgstr "ロールバック"
-
-#~ msgid "Arrows Ccw"
-#~ msgstr "ロールバック矢印"
-
-#~ msgid "Shuffle"
-#~ msgstr "シャッフル"
-
-#~ msgid "Switch"
-#~ msgstr "スイッチ"
-
-#~ msgid "Record"
-#~ msgstr "録音"
-
-#~ msgid "To End"
-#~ msgstr "リサイクル"
-
-#~ msgid "To Start"
-#~ msgstr "再生開始"
-
-#~ msgid "Progress 0"
-#~ msgstr "プログレス 0"
-
-#~ msgid "Progress 1"
-#~ msgstr "プログレス 1"
-
-#~ msgid "Progress 2"
-#~ msgstr "プログレス 2"
-
-#~ msgid "Progress 3"
-#~ msgstr "プログレス 3"
-
-#~ msgid "Palette"
-#~ msgstr "パレット"
-
-#~ msgid "List Add"
-#~ msgstr "一覧追加"
-
-#~ msgid "Trophy"
-#~ msgstr "トロフィー"
-
-#~ msgid "Back In Time"
-#~ msgstr "タイムマシーン"
-
-#~ msgid "Monitor"
-#~ msgstr "モニター"
-
-#~ msgid "Network"
-#~ msgstr "ネットワーク"
-
-#~ msgid "Install"
-#~ msgstr "インストール"
-
-#~ msgid "Cloud Thunder"
-#~ msgstr "雷雲"
-
-#~ msgid "Flight"
-#~ msgstr "フライト"
-
-#~ msgid "Lifebuoy"
-#~ msgstr "浮き輪"
-
-#~ msgid "Mouse"
-#~ msgstr "マウス"
-
-#~ msgid "Dot"
-#~ msgstr "ドット"
-
-#~ msgid "Dot 2"
-#~ msgstr "ドット2"
-
-#~ msgid "Dot 3"
-#~ msgstr "ドット3"
-
-#~ msgid "Erase"
-#~ msgstr "消す"
-
-#~ msgid "Tape"
-#~ msgstr "テープ"
-
-#~ msgid "Water"
-#~ msgstr "水"
-
-#~ msgid "Droplet"
-#~ msgstr "雫"
-
-#~ msgid "Air"
-#~ msgstr "空気"
-
-#~ msgid "Floppy"
-#~ msgstr "フロッピー"
-
-#~ msgid "Megaphone"
-#~ msgstr "メガホン"
-
-#~ msgid "Drive"
-#~ msgstr "ドライブ"
-
-#~ msgid "Bucket"
-#~ msgstr "バケツ"
-
-#~ msgid "Flow Cascade"
-#~ msgstr "フローカスケード"
-
-#~ msgid "Flow Branch"
-#~ msgstr "フローブランチ"
-
-#~ msgid "Flow Tree"
-#~ msgstr "フローツリー"
-
-#~ msgid "Flow Line"
-#~ msgstr "タイムライン"
-
-#~ msgid "Gauge"
-#~ msgstr "ダッシュボード"
-
-#~ msgid "Traffic Cone"
-#~ msgstr "トライコーン"
-
-#~ msgid "Cc"
-#~ msgstr "クリエイティブコモンズ"
-
-#~ msgid "Cc By"
-#~ msgstr "Byクリエイティブコモンズ"
-
-#~ msgid "Cc Nc"
-#~ msgstr "Ncクリエイティブコモンズ"
-
-#~ msgid "Cc Nc Eu"
-#~ msgstr "Nc Euクリエイティブコモンズ"
-
-#~ msgid "Cc Nc Jp"
-#~ msgstr "Nc Jpクリエイティブコモンズ"
-
-#~ msgid "Cc Sa"
-#~ msgstr "Saクリエイティブコモンズ"
-
-#~ msgid "Cc Nd"
-#~ msgstr "Ndクリエイティブコモンズ"
-
-#~ msgid "Cc Pd"
-#~ msgstr "Pdクリエイティブコモンズ"
-
-#~ msgid "Cc Zero"
-#~ msgstr "Zeroクリエイティブコモンズ"
-
-#~ msgid "Cc Share"
-#~ msgstr "Shareクリエイティブコモンズ"
-
-#~ msgid "Cc Remix"
-#~ msgstr "Remixクリエイティブコモンズ"
-
-#~ msgid "Github"
-#~ msgstr "Github"
-
-#~ msgid "Github Circled"
-#~ msgstr "円形Github"
-
-#~ msgid "Flickr Circled"
-#~ msgstr "円形Flickr"
-
-#~ msgid "Vimeo"
-#~ msgstr "Vimeo"
-
-#~ msgid "Vimeo Circled"
-#~ msgstr "円形Vimeo"
-
-#~ msgid "Twitter Circled"
-#~ msgstr "円形Twitter"
-
-#~ msgid "Facebook Circled"
-#~ msgstr "円形Facebook"
-
-#~ msgid "Facebook Squared"
-#~ msgstr "正方形Facebook"
-
-#~ msgid "Gplus"
-#~ msgstr "G+"
-
-#~ msgid "Gplus Circled"
-#~ msgstr "円形G+"
-
-#~ msgid "Pinterest Circled"
-#~ msgstr "円形Pinterest"
-
-#~ msgid "Tumblr Circled"
-#~ msgstr "円形Tumblr"
-
-#~ msgid "Linkedin"
-#~ msgstr "Linkedin"
-
-#~ msgid "Linkedin Circled"
-#~ msgstr "円形Linkedin"
-
-#~ msgid "Dribbble Circled"
-#~ msgstr "円形Dribbble"
-
-#~ msgid "Stumbleupon"
-#~ msgstr "Stumbleupon"
-
-#~ msgid "Stumbleupon Circled"
-#~ msgstr "円形Stumbleupon"
-
-#~ msgid "Lastfm"
-#~ msgstr "Lastfm"
-
-#~ msgid "Lastfm Circled"
-#~ msgstr "円形Lastfm"
-
-#~ msgid "Rdio"
-#~ msgstr "Rdio"
-
-#~ msgid "Rdio Circled"
-#~ msgstr "円形Rdio"
-
-#~ msgid "Spotify Circled"
-#~ msgstr "円形Spotify "
-
-#~ msgid "Qq"
-#~ msgstr "QQ"
-
-#~ msgid "Instagrem"
-#~ msgstr "Instagrem"
-
-#~ msgid "Evernote"
-#~ msgstr "Evernote"
-
-#~ msgid "Flattr"
-#~ msgstr "Flattr"
-
-#~ msgid "Skype Circled"
-#~ msgstr "円形Skype "
-
-#~ msgid "Sina Weibo"
-#~ msgstr "Weibo"
-
-#~ msgid "Picasa"
-#~ msgstr "Picasa"
-
-#~ msgid "Soundcloud"
-#~ msgstr "Soundcloud"
-
-#~ msgid "Mixi"
-#~ msgstr "mixi"
-
-#~ msgid "Google Circles"
-#~ msgstr "円形Google"
-
-#~ msgid "Vkontakte"
-#~ msgstr "Vk"
-
-#~ msgid "Smashing"
-#~ msgstr "粉砕"
-
-#~ msgid "Sweden"
-#~ msgstr "スウェーデン"
-
-#~ msgid "Db Shape"
-#~ msgstr "Db形状"
-
-#~ msgid "Logo Db"
-#~ msgstr "ロゴDb"
-
-#~ msgid "Tv"
-#~ msgstr "TV"
-
-#~ msgid "Bulb"
-#~ msgstr "電球"
-
-#~ msgid "Diamond"
-#~ msgstr "ダイヤモンド"
-
-#~ msgid "Stack"
-#~ msgstr "RAIDドライブ"
-
-#~ msgid "Like"
-#~ msgstr "いいね"
-
-#~ msgid "Photo"
-#~ msgstr "写真"
-
-#~ msgid "Paperplane"
-#~ msgstr "紙飛行機"
-
-#~ msgid "Params"
-#~ msgstr "パラメータ"
-
-#~ msgid "Banknote"
-#~ msgstr "紙幣"
-
-#~ msgid "Data"
-#~ msgstr "日付"
-
-#~ msgid "Study"
-#~ msgstr "調査"
-
-#~ msgid "Lab"
-#~ msgstr "研究室"
-
-#~ msgid "Food"
-#~ msgstr "食料"
-
-#~ msgid "T Shirt"
-#~ msgstr "Tシャツ"
-
-#~ msgid "Clip"
-#~ msgstr "クリップ"
-
-#~ msgid "Shop"
-#~ msgstr "ショップ"
-
-#~ msgid "Vallet"
-#~ msgstr "バレリーナ"
-
-#~ msgid "Vynil"
-#~ msgstr "レコード盤"
-
-#~ msgid "Truck"
-#~ msgstr "トラック"
-
-#~ msgid "Post Count"
-#~ msgstr "投稿数"
-
-#~ msgid "Order By"
-#~ msgstr "並び順"
-
-#~ msgid "Individual Posts/Pages"
-#~ msgstr "個々の投稿/ページ"
-
-#~ msgid ""
-#~ "Here you can customize teaser block design. It will be used instead of "
-#~ "default settings in \"Posts Grid\" or \"Carousel\" content elements."
-#~ msgstr ""
-#~ "ここでティザーブロックデザインをカスタマイズすることができます。 これは "
-#~ "\"Posts Grid\" や \"Carousel\" コンテンツ要素で代わりにデフォルトの設定を"
-#~ "使用されます。"
-
-#~ msgid ""
-#~ "Field type is changed from `textarea_html` to `textarea`, because it is "
-#~ "already used by `"
-#~ msgstr ""
-#~ "既にによって使用されるため、フィールドタイプは、 `textarea_html` を "
-#~ "`textarea`, に変更される `"
-
-#~ msgid "1/1"
-#~ msgstr "1/1"
-
-#~ msgid "1/2 + 1/2"
-#~ msgstr "1/2 + 1/2"
-
-#~ msgid "1/3 + 1/3 + 1/3"
-#~ msgstr "1/3 + 1/3 + 1/3"
-
-#~ msgid "Add Grid Element"
-#~ msgstr "グリッド要素を追加"
-
-#~ msgid "Grid Elements"
-#~ msgstr "グリッド要素"
-
-#~ msgid "Edit Grid Element"
-#~ msgstr "グリッド要素を編集"
-
-#~ msgid "View Grid Element"
-#~ msgstr "グリッド要素を表示"
-
-#~ msgid "Search Grid Elements"
-#~ msgstr "グリッド要素を検索"
-
-#~ msgid "No grid elements found"
-#~ msgstr "グリッド要素がみつかりません"
-
-#~ msgid "No grid elements found in Trash"
-#~ msgstr "ゴミ箱にグリッド要素がみつかりません"
-
-#~ msgid "Grid Element Builder"
-#~ msgstr "グリッド要素ビルダー"
-
-#~ msgid "/12 width"
-#~ msgstr "/12 横幅"
-
-#~ msgid ""
-#~ "Note: Featured image overwrites background image and color from \"Design "
-#~ "options\"."
-#~ msgstr ""
-#~ "注：注目のイメージは \"Design options\" から背景画像とカラーを上書きする。"
-
-#~ msgid "Grid item"
-#~ msgstr "グリッド項目"
-
-#~ msgid "1:1"
-#~ msgstr "1:1"
-
-#~ msgid "4:3"
-#~ msgstr "4:3"
-
-#~ msgid "3:4"
-#~ msgstr "3:4"
-
-#~ msgid "16:9"
-#~ msgstr "16:9"
-
-#~ msgid "9:16"
-#~ msgstr "9:16"
-
-#~ msgid "Post data"
-#~ msgstr "投稿日付"
-
-#~ msgid "Post data source"
-#~ msgstr "投稿日付ソース"
-
-#~ msgid "Custom field name to retrieve meta data value."
-#~ msgstr "カスタムフィールド名はメタデータ値を取得します"
-
-#~ msgid "Welcome to Blank Page, You Have No Content Yet!"
-#~ msgstr "空白のページへようこそ、あなたはまだコンテンツがありません！"
-
-#~ msgid " Add Some Content or Use Predefined Layouts..."
-#~ msgstr "一部のコンテンツまたは使用定義済みのレイアウトを追加･･･"
-
-#~ msgid "Choose Your Layout"
-#~ msgstr "レイアウトを選択"
-
-#~ msgid "More Layouts"
-#~ msgstr "詳細レイアウト"
-
-#~ msgid "Choose row layout from predefined options."
-#~ msgstr "事前に定義されたオプションから行のレイアウトを選択してください。"
-
-#~ msgid "Here you can change title of the current "
-#~ msgstr "ここで現在のタイトルを変更することができます"
-
-#~ msgid ""
-#~ "Enter custom CSS code here. Your custom CSS will be outputted only on "
-#~ "this particular page."
-#~ msgstr ""
-#~ "ここでカスタムCSSコードを入力してください。あなたのカスタムCSSだけ、この特"
-#~ "定のページに出力されます。"
-
-#~ msgid "Save template"
-#~ msgstr "テンプレート保存"
-
-#~ msgid "Save your layout and reuse it on different sections of your website"
-#~ msgstr ""
-#~ "あなたのレイアウトを保存して、あなたのウェブサイトのさまざまなセクションで"
-#~ "それを再利用する"
-
-#~ msgid "Hide"
-#~ msgstr "非表示"
-
-#~ msgid "Click to toggle"
-#~ msgstr "クリックして切り替える"
-
-#~ msgid "Follow us on twitter"
-#~ msgstr "Twitterでフォローする"
-
-#~ msgid "Paginator"
-#~ msgstr "ページ送り"
+#: include/./templates/teaser.html.php:20
+#: include/./templates/teaser.html.php:41
+msgid "Link to"
+msgstr "へのリンク"
+
+#: include/./templates/teaser.html.php:24
+#: include/./templates/teaser.html.php:45
+msgid "On post"
+msgstr "投稿に"
+
+#: include/./templates/teaser.html.php:26
+#: include/./templates/teaser.html.php:47
+msgid "Big image"
+msgstr "大きな画像"
+
+#: include/./templates/teaser.html.php:35
+msgid "Featured"
+msgstr "注目"

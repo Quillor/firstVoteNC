@@ -60,11 +60,15 @@ if( empty( $field['config']['color'] ) ){
 				if(!isset($option['value'])){
 					$option['value'] = htmlspecialchars( $option['label'] );
 				}
+				if( ! empty( $option['disabled'] ) ) {
+					$disabled[$option_key] = true;
+				}
 
 				?>
 				<option
 					data-calc-value="<?php echo esc_attr( Caldera_Forms_Field_Util::get_option_calculation_value( $option, $field, $form ) ); ?>"
 					value="<?php echo esc_attr( $option['value'] ); ?>"
+					<?php if ( isset( $disabled[$option_key] ) && $disabled[$option_key] === true ) { ?>disabled<?php } ?>
 					<?php if( in_array( $option['value'] , (array) $field_value ) ){ ?>selected="selected"<?php } ?>>
 					<?php echo $option['label']; ?>
 				</option>
@@ -131,9 +135,9 @@ jQuery( function($){
 	var opts = {};
 	<?php } ?>
 
-	$(document).on('cf.add', function(){
-		$('#<?php echo $field_id; ?>').select2( opts );
-	}).trigger('cf.add');
+	$(document).on('cf.bind', '#<?php echo $field_id; ?>', function() {
+		$(this).select2( opts );
+	});
 });
 </script>
 <?php

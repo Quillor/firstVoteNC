@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $el_class
  * @var $el_id
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Wp_Meta
+ * @var WPBakeryShortCode_Vc_Wp_Meta $this
  */
 $title = $el_class = $el_id = '';
 $output = '';
@@ -34,7 +34,5 @@ if ( is_object( $wp_widget_factory ) && isset( $wp_widget_factory->widgets, $wp_
 
 	$output .= '</div>';
 
-	echo $output;
-} else {
-	echo $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found in : vc_wp_meta' );
+	return $output;
 }

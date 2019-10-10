@@ -2,6 +2,7 @@
 
 
 namespace calderawp\calderaforms\pro;
+use calderawp\calderaforms\pro\api\client;
 use calderawp\calderaforms\pro\api\log;
 
 
@@ -52,7 +53,10 @@ class container extends repository{
 		if( ! $this->has( 'db' ) ){
 			global  $wpdb;
 			$table_name = $wpdb->prefix . 'cf_pro_messages';
-			$this->set( 'db',  new messages( $wpdb, $table_name ) );
+			$this->set(
+				'db',
+				new messages( $wpdb, $table_name )
+			);
 		}
 		return $this->get( 'db' );
 	}
@@ -66,7 +70,12 @@ class container extends repository{
 	 */
 	public function get_settings(){
 		if( ! $this->has( 'settings' ) ){
-			$this->set( 'settings', settings::from_saved() );
+
+			$this->set(
+
+				'settings',
+				settings::from_saved()
+			);
 		}
 		return $this->get( 'settings' );
 	}
@@ -80,7 +89,10 @@ class container extends repository{
 	 */
 	public function get_hooks(){
 		if( ! $this->get( 'hooks' ) ){
-			$this->set( 'hooks', new hooks() );
+			$this->set(
+				'hooks',
+				new hooks()
+			);
 		}
 
 		return $this->get( 'hooks' );
@@ -95,9 +107,79 @@ class container extends repository{
 	 */
 	public function get_logger(){
 		if( ! $this->get( 'logger' ) ){
-			$this->set( 'logger', new log( $this->get_settings()->get_api_keys() ) );
+			$this->set(
+				'logger',
+				new log( $this->get_settings()->get_api_keys() )
+			);
 		}
 
 		return $this->get( 'logger' );
+
+	}
+
+	/**
+	 * Get API client
+	 *
+	 * @since 0.10.0
+	 *
+	 * @return client
+	 */
+	public function get_api_client(){
+		if( ! $this->get( 'api_client' ) ){
+			$this->set(
+				'api_client',
+				new client( container::get_instance()->get_settings()->get_api_keys() )
+			);
+		}
+
+		return $this->get( 'api_client' );
+
+	}
+
+	/**
+	 * Get the HTML to be used in Caldera Forms Pro tab
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	public function get_tab_html(){
+		if( ! $this->has( 'tab_html' ) ){
+			return '';
+		}
+		return $this->get( 'tab_html' );
+	}
+
+	/**
+	 * Set the HTML to be used in Caldera Forms Pro tab
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $html
+	 */
+	public function set_tab_html($html){
+		$this->set( 'tab_html', $html );
+	}
+
+	/**
+	 * Set main instance of Caldera_Forms_DB_Tables class
+	 *
+	 * @since 0.5.0
+	 *
+	 * @param \Caldera_Forms_DB_Tables $DB_Tables
+	 */
+	public function set_tables( \Caldera_Forms_DB_Tables $DB_Tables ){
+		$this->set( 'tables' , $DB_Tables );
+	}
+
+	/**
+	 * Get main instance of Caldera_Forms_DB_Tables class
+	 *
+	 * @since 0.5.0
+	 *
+	 * @return \Caldera_Forms_DB_Tables
+	 */
+	public function get_tables(){
+		return $this->get( 'tables' );
 	}
 }

@@ -71,7 +71,7 @@ function do_count() {
           // Only do this for precincts where the ballot was created AND customized
           if (is_array($included_races) ) {
 
-            $precinct_contests = precinct_contests($ballot_data, $included_races, $custom, $issues);
+            $precinct_contests = precinct_contests($ballot_data, $included_races, $custom, $referenda, $issues);
             $election_results = precinct_votes($blog->blog_id, $election_id, $statewide_races, $ep_fields, $precinct_contests, $election_results);
 
             foreach ($precinct_contests as $pc) {
@@ -191,7 +191,7 @@ function count_pollees($election_id, $ep_question, $option, $ballot_id = NULL) {
  * Loop through contests, custom contets, issue-based questions
  *
  */
-function precinct_contests($ballot_data, $included_races, $custom, $issues) {
+function precinct_contests($ballot_data, $included_races, $custom, $referenda, $issues) {
   $precinct_contests = array();
 
   // Loop through contests
@@ -224,7 +224,6 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
               'name' => str_replace(['<br />', '(', ')', ', Jr'], [' & ', '"', '"', ' Jr'], $can->ballotName)
             ];
           }
-
           $precinct_contests[$ballot_section->section]['_cmb_ballot_' . $sanitized_title]['candidates'][] = $details;
         }
       }
@@ -257,6 +256,27 @@ function precinct_contests($ballot_data, $included_races, $custom, $issues) {
     }
   }
 
+  // Loop through referenda
+  $k = 0;
+  foreach ($referenda as $question) {
+    if (!empty($question)) {
+      $sanitized_title = '_cmb_ballot_' . sanitize_title($question['title']) . '-' . $k;
+      $precinct_contests['Issues'][$sanitized_title] = [
+        'title' => $question['title'],
+        'sanitized_title' => $sanitized_title,
+        'question' => $question['question']
+      ];
+
+      if (empty($question['options'])) {
+        $precinct_contests['Issues'][$sanitized_title]['options'] = ['Yes', 'No'];
+      } else {
+        $precinct_contests['Issues'][$sanitized_title]['options'] = $question['options'];
+      }
+      $k++;
+    }
+  }
+  
+  
   // Loop through issue-based questions
   $k = 0;
   foreach ($issues as $question) {
